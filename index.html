@@ -12,6 +12,9 @@
     <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
     <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
     <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+    <script>
+      document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
     <noscript>
       <style type="text/css">
         [data-aos] {
@@ -203,8 +206,12 @@
   </div>
 </div>
     <footer class="footer">
-      <div class="h4 title text-center">Omar AbedelKader</div>
+      <div class="h4 title text-center" id="year">Omar AbedelKader</div>
     </footer>
+    <script>
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+
     <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
     <script src="js/core/popper.min.js?ver=1.1.0"></script>
     <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
