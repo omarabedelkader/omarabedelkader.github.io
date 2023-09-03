@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="newPassword">Set a new password:</label>
+        <input type="password" id="newPassword" name="newPassword" required>
+        <br>
+        <button type="submit">Set Password</button>
+    </form>
+
+    <script>
+        // Function to save and encrypt the password
+        function savePassword(event) {
+            event.preventDefault();
+            const newPassword = document.getElementById("newPassword").value;
+            if (newPassword) {
+                // Encrypt the password (you can use a more secure encryption method)
+                const encryptedPassword = btoa(newPassword);
+
+                // Store the encrypted password in localStorage
+                localStorage.setItem("encryptedPassword", encryptedPassword);
+
+                // Redirect to the verification page
+                window.location.href = "verification.html";
+            }
+        }
+
+        // Attach the savePassword function to the passwordForm's submit event
+        document.getElementById("passwordForm").addEventListener("submit", savePassword);
+    </script>
+</body>
+</html>
+
+
+
+
