@@ -8,3 +8,9 @@ function myFunction() {
       document.getElementById("myButton1").innerHTML="<a href='mailto:omarabedelkader1@gmail.com?'>omarabedelkader1@gmail.com</a>";
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("year").textContent = new Date().getFullYear();
+  });
+
+

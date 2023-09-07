@@ -5259,3 +5259,8 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0; }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: translate(0) scale(1) !important;
+  }
