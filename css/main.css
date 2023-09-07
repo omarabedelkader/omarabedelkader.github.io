@@ -5264,3 +5264,7 @@ a.credit {
     opacity: 1 !important;
     transform: translate(0) scale(1) !important;
   }
+
+.col-lg-6-col-md-12 {
+  font-size: 35px; 
+}
