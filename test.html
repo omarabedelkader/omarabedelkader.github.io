@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        #books {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        li:hover {
+            background-color: #ddd;
+        }
+
+        #chapter-list {
+            display: none;
+        }
+
+        #chapter-content {
+            display: none;
+        }
+
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        #back-button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="books">
+        <h1>My Books</h1>
+        <ul>
+            <li onclick="openBook(1)">Book 1</li>
+            <li onclick="openBook(2)">Book 2</li>
+            <li onclick="openBook(3)">Book 3</li>
+        </ul>
+    </div>
+
+    <div id="chapter-list">
+        <button id="back-button" onclick="backToBooks()">Back to Books</button>
+        <h2>Chapters</h2>
+        <ul>
+            <li onclick="loadChapter(1)">Chapter 1: Introduction</li>
+            <li onclick="loadChapter(2)">Chapter 2: Long Chapter</li>
+            <li onclick="loadChapter(3)">Chapter 3: Conclusion</li>
+        </ul>
+    </div>
+
+    <div id="chapter-content">
+        <h1 id="chapter-title">Chapter Title</h1>
+        <div id="chapter-pages">
+            <div class="chapter-page">
+                <p>Chapter content goes here...</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="watermark">Watermark Text</div>
+
+    <script>
+        function openBook(bookNumber) {
+            // Display the chapter list for the selected book
+            document.getElementById("books").style.display = "none";
+            document.getElementById("chapter-list").style.display = "block";
+            document.getElementById("chapter-content").style.display = "block";
+            document.getElementById("back-button").style.display = "block";
+            // Load the first chapter for the selected book
+            loadChapter(1);
+        }
+
+        function loadChapter(chapterNumber) {
+            // You can load the chapter content dynamically here
+            // For simplicity, let's update the chapter title and content
+            var chapterTitle = "";
+            var chapterContent = "";
+
+            if (chapterNumber === 1) {
+                chapterTitle = "Chapter 1: Introduction";
+                chapterContent = ` What is Natural Language Proccessing  NLP is a subfield of linguistics, computer science, and AI
+    concerned with the interactions between computers and human language, and how to program computers to process
+    and analyze large amounts of natural language data.
+• Natural language processing (NLP) refers to the branch of
+computer science—and more specifically, the branch of artificial intelligence or AI concerned with giving computers
+the ability to understand the text and spoken words in much
+the same way human beings can.
+• Natural Language Processing is different Neuro-Linguistic
+Programming. The most example used in NLP is e-mail
+filtering, when an e-mail is received he enters in a classifier
+is based on NLP to classify the e-mail spam from the email
+which is not spam.
+• Steps: Data Collection, Pre-processing, Feature extraction
+and selection, Learning and Classification, Recognizing activity`
+            } else if (chapterNumber === 2) {
+                chapterTitle = "Chapter 2: Long Chapter";
+                chapterContent = "This is a long chapter that spans multiple pages. ";
+                chapterContent += "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ";
+                // Add more content here to simulate multiple pages.
+            } else if (chapterNumber === 3) {
+                chapterTitle = "Chapter 3: Conclusion";
+                chapterContent = "This is the conclusion chapter.";
+            }
+
+            // Update the chapter title and content in the HTML
+            document.getElementById("chapter-title").textContent = chapterTitle;
+            document.getElementById("chapter-pages").innerHTML = `
+                <div class="chapter-page">
+                    <p>${chapterContent}</p>
+                </div>
+            `;
+        }
+
+        function backToBooks() {
+            // Hide the chapter list and content, and show the book list
+            document.getElementById("chapter-list").style.display = "none";
+            document.getElementById("chapter-content").style.display = "none";
+            document.getElementById("back-button").style.display = "none";
+            document.getElementById("books").style.display = "block";
+        }
+    </script>
+</body>
+</html>
