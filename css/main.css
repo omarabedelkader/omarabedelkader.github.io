@@ -3745,6 +3745,17 @@ Created using IcoMoon - icomoon.io
   color: #FFFFFF;
   text-decoration: none; }
 
+/* Set the height of the section to take up the entire viewport height */
+.section {
+    height: 100vh;
+    overflow-y: auto; /* Add scrollbars if the content overflows */
+}
+
+/* Adjust the margin to give space between sections */
+.section + .section {
+    margin-top: 20px; /* You can adjust this value to control the spacing between sections */
+}
+
 .section {
   padding: 70px 0;
   position: relative;
