@@ -1,6 +1,6 @@
-# Omar AbedelKader's Personal Website
+# Omar AbedelKader's Website
 
-Welcome to my personal website! This website serves as a platform for me to share my thoughts, projects, and experiences with the world. Below, you'll find information on how to navigate the website, learn about me, and get in touch.
+Welcome to my website! This website serves as a platform for me to share my thoughts, projects, and experiences with the world. Below, you'll find information on how to navigate the website, learn about me, and get in touch.
 
 
 ## About
