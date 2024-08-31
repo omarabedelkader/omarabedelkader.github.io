@@ -11,21 +11,18 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.Sc. in Natural Language Processing, University of Lorraine, Nancy, France, 2022-2024
+* B.Sc. in Data Science, Lebanese University, Beirut, Lebanon, 2019-2022
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* August 2023 - September 2024: AI Engineer
+  * INERIS, Verneuil-en-Halatte, France
+  * Duties include: Deep Learning, Machine Learning, NLP, Applied Mathematics
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* June 2023 - August 2023: Graduated Researcher
+  * LIPN - Sorbonne University Paris Nord, Villetaneuse, France
+  * Duties included: Generative Models, Applied Machine Learning, Reinforcement Learning
 
 * Summer 2015: Research Assistant
   * Github University
@@ -34,31 +31,25 @@ Work experience
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Linguistics
+    * Linguistics and Textual Linguistics
+    * Corpus Linguistics
+    * Computational Linguistics
+    * Formal Grammar
+    * Discourse and Lexicometrics
+    * Semantics
+* Programming Languages & Software
+    * Python, Java, R, LaTeX, JavaScript, PHP, MySQL
+    * Django, MongoDB
+* Operating Systems
+    * UNIX, Windows
+* Frameworks & Tools
+    * Data Visualization: Matplotlib, Seaborn
+    * Natural Language Processing (NLP): NLTK, SpaCy
+    * Data Manipulation and Analysis: Pandas, NumPy
+    * Scientific Computing: SciPy, NumPy
+    * Machine Learning and Deep Learning: TensorFlow, Keras
+    * Big Data Processing: Apache Hadoop, Apache Spark
+    * Ontology and Knowledge Management: Protege
+    * Speech Analysis: Praat
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
