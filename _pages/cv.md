@@ -11,14 +11,20 @@ redirect_from:
 
 Education
 ======
+* Ph.D. in Computer Science, University of Lille, Lille, France, 2024-2027
 * M.Sc. in Natural Language Processing, University of Lorraine, Nancy, France, 2022-2024
 * B.Sc. in Data Science, Lebanese University, Beirut, Lebanon, 2019-2022
 
 Work experience
 ======
 * August 2023 - September 2024: AI Engineer
+  * INRIA, Villeneuve-d'Asq, France
+  * Duties include: LLM, Software Engineer, Pharo
+  * Description: My role focuses on developing "INERIS-IA," a tool to classify textual documents based on INERIS's strategic goals using machine learning and natural language processing techniques. Two experiments were conducted: the first used boolean queries for document retrieval, and the second improved corpus quality through document similarity and keyword extraction. The findings show that combining machine learning with human validation significantly improves accuracy while reducing the workload in document classification.
+
+* August 2023 - September 2024: AI Engineer
   * INERIS, Verneuil-en-Halatte, France
-  * Duties include: Deep Learning, Machine Learning, NLP, Applied Mathematics
+  * Duties include: Machine Learning, NLP, Software Engineer
   * Description: My role focuses on developing "INERIS-IA," a tool to classify textual documents based on INERIS's strategic goals using machine learning and natural language processing techniques. Two experiments were conducted: the first used boolean queries for document retrieval, and the second improved corpus quality through document similarity and keyword extraction. The findings show that combining machine learning with human validation significantly improves accuracy while reducing the workload in document classification.
 
 * June 2023 - August 2023: Graduated Researcher
