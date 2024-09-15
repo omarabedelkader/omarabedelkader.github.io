@@ -1,0 +1,7 @@
+| a b sum |
+a := 5.
+b := 10.
+
+sum := a + b.
+
+Transcript show: 'The sum of ', a asString, ' and ', b asString, ' is: ', sum asString; cr.
