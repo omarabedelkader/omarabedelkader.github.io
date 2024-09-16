@@ -3,6 +3,7 @@ layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
+paperurl: 'http://academicpages.github.io/files/paper3.pdf'
 redirect_from:
   - /resume
 ---
@@ -15,12 +16,13 @@ Education
 * M.Sc. in Natural Language Processing, University of Lorraine, Nancy, France, 2022-2024
 * B.Sc. in Data Science, Lebanese University, Beirut, Lebanon, 2019-2022
 
+
 Work experience
 ======
 * August 2023 - September 2024: AI Engineer
   * INRIA, Villeneuve-d'Asq, France
   * Duties include: LLM, Software Engineer, Pharo
-  * Description: My role focuses on developing "INERIS-IA," a tool to classify textual documents based on INERIS's strategic goals using machine learning and natural language processing techniques. Two experiments were conducted: the first used boolean queries for document retrieval, and the second improved corpus quality through document similarity and keyword extraction. The findings show that combining machine learning with human validation significantly improves accuracy while reducing the workload in document classification.
+  * Description: My role focuses on improving code completion and generation using LLMs, specifically targeting the Pharo programming language, which has limited training data. The project involves developing techniques for code completion, type inference, and deployment in Pharo’s IDE, with a focus on runtime performance.
 
 * August 2023 - September 2024: AI Engineer
   * INERIS, Verneuil-en-Halatte, France
@@ -35,7 +37,6 @@ Work experience
   
 Skills
 ======
-
 * Programming Languages & Software
     * Python, Java, R, LaTeX, JavaScript, PHP, MySQL, SmallTalk, Pharo 
     * Django, MongoDB
