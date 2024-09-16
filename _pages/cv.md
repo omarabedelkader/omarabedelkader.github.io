@@ -3,12 +3,15 @@ layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
-paperurl: 'http://academicpages.github.io/files/paper3.pdf'
+
 redirect_from:
   - /resume
 ---
 
 {% include base_path %}
+
+
+[Download CV](http://academicpages.github.io/files/paper3.pdf)
 
 Education
 ======
