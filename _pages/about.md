@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Omar ABEDELKADER is a skilled AI Engineer and Researcher specializing in Natural Language Processing (NLP), Deep Learning, and Applied Mathematics. With a strong background in data science. 
+Omar is a skilled AI Engineer and Researcher specializing in Artificial Intelligence, Deep Learning, and Software Engineer, with a strong background in Data Science. 
 
-Omar has gained professional experience at INERIS and LIPN, where he focused on generative models, machine learning. Omar is multilingual, proficient in various programming languages, and interested in exploring the intersection of AI and linguistics.
+Omar has gained professional experience at INERIS and LIPN, where he focused on generative models, Machine Learning, Software Engineer. Omar is multilingual, proficient in various programming languages, and interested in exploring the intersection of AI and Software Enginneerings.
 
