@@ -1,0 +1,139 @@
+How to implement the "Rock, Paper, Scissors" game using double dispatch.
+
+### Step 1: Understanding the Problem
+The problem uses the "Rock, Paper, Scissors" game to introduce how objects interact based on their types without explicit conditionals. It uses double dispatch, where an object sends a message (method call) to another object to determine the result of their interaction.
+
+### Step 2: Creating the Classes
+We need three main classes: `Stone`, `Paper`, and `Scissors`. Each class represents a player in the game, and their interaction determines who wins, loses, or if it's a draw.
+
+```smalltalk
+Object subclass: #Stone
+    instanceVariableNames: ''
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'StonePaperScissors'.
+
+Object subclass: #Paper
+    instanceVariableNames: ''
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'StonePaperScissors'.
+
+Object subclass: #Scissors
+    instanceVariableNames: ''
+    classVariableNames: ''
+    poolDictionaries: ''
+    category: 'StonePaperScissors'.
+```
+
+### Step 3: Adding the `play:` Method
+This method will be the starting point of the interaction. Each class will define this method to decide what to do when playing against another object.
+
+1. **For `Stone`:**
+   - The `play:` method delegates the interaction to the other object's method (double dispatch).
+   
+   ```smalltalk
+   Stone >> play: anotherTool
+       ^ anotherTool playAgainstStone: self
+   ```
+
+2. **For `Paper`:**
+   ```smalltalk
+   Paper >> play: anotherTool
+       ^ anotherTool playAgainstPaper: self
+   ```
+
+3. **For `Scissors`:**
+   ```smalltalk
+   Scissors >> play: anotherTool
+       ^ anotherTool playAgainstScissors: self
+   ```
+
+### Step 4: Adding the `playAgainst...` Methods
+The second part of the interaction happens when the `playAgainst...` methods are called. Each class will respond differently based on what they're playing against.
+
+#### `Stone` class responses:
+```smalltalk
+Stone >> playAgainstStone: aStone
+    ^ #draw.
+
+Stone >> playAgainstPaper: aPaper
+    ^ #paper.
+
+Stone >> playAgainstScissors: aScissors
+    ^ #stone.
+```
+- **Stone vs. Stone**: It's a draw.
+- **Stone vs. Paper**: Paper wins.
+- **Stone vs. Scissors**: Stone wins.
+
+#### `Paper` class responses:
+```smalltalk
+Paper >> playAgainstStone: aStone
+    ^ #paper.
+
+Paper >> playAgainstPaper: aPaper
+    ^ #draw.
+
+Paper >> playAgainstScissors: aScissors
+    ^ #scissors.
+```
+- **Paper vs. Stone**: Paper wins.
+- **Paper vs. Paper**: It's a draw.
+- **Paper vs. Scissors**: Scissors win.
+
+#### `Scissors` class responses:
+```smalltalk
+Scissors >> playAgainstStone: aStone
+    ^ #stone.
+
+Scissors >> playAgainstPaper: aPaper
+    ^ #scissors.
+
+Scissors >> playAgainstScissors: aScissors
+    ^ #draw.
+```
+- **Scissors vs. Stone**: Stone wins.
+- **Scissors vs. Paper**: Scissors win.
+- **Scissors vs. Scissors**: It's a draw.
+
+### Step 5: Test Cases
+The test cases validate that the game logic is working correctly. Here are some example tests:
+
+```smalltalk
+StonePaperScissorsTest >> testStoneAgainstPaperIsWinning
+    self assert: (Stone new play: Paper new) equals: #paper.
+
+StonePaperScissorsTest >> testScissorAgainstPaperIsWinning
+    self assert: (Scissors new play: Paper new) equals: #scissors.
+
+StonePaperScissorsTest >> testStoneAgainstStone
+    self assert: (Stone new play: Stone new) equals: #draw.
+
+StonePaperScissorsTest >> testStoneAgainstScissorsIsWinning
+    self assert: (Stone new play: Scissors new) equals: #stone.
+
+StonePaperScissorsTest >> testScissorAgainstStoneIsLosing
+    self assert: (Scissors new play: Stone new) equals: #stone.
+
+StonePaperScissorsTest >> testPaperAgainstScissorIsLosing
+    self assert: (Paper new play: Scissors new) equals: #scissors.
+
+StonePaperScissorsTest >> testPaperAgainstStoneIsWinning
+    self assert: (Paper new play: Stone new) equals: #paper.
+```
+
+### Step 6: Explanation of Double Dispatch
+Double dispatch works by first using the `play:` method to delegate the decision-making to the other object involved in the interaction. This is the first dispatch. The second dispatch occurs when the other object, now knowing what it's playing against, decides on the outcome by calling a `playAgainst...` method. This allows the game logic to be determined by the combination of both objects' types without using conditionals.
+
+For example:
+- `Stone new play: Paper new` first calls `play:` on `Stone`, which then calls `playAgainstStone:` on `Paper`. Since `Paper` knows it's playing against `Stone`, it returns `#paper` as the winner.
+
+### Step 7: Conclusion
+This design follows the "Don't ask, tell" principle, where instead of asking about the state or type of objects and using conditionals, you delegate responsibility to the objects themselves. Each object "knows" how to respond when faced with another type of object.
+
+By organizing the logic in this way:
+- **Encapsulation** is preserved, as each class only handles its own logic.
+- **Extensibility** is easier, as adding new elements (e.g., `Lizard` or `Spock` for an extended version of the game) would involve adding new methods without altering the existing ones.
+
+This approach leads to a clean, modular, and maintainable code structure for handling multi-object interactions in object-oriented programming.
