@@ -8,9 +8,8 @@ tags:
   - Beginner
 ---
 
-# Pharo Exercises:
+# Pharo Basics Exercises:
 
-## Basics 
 ### Exercise 1:
 Write a Pharo script to print 'Hello World ' on screen and your name on a separate line.
 
@@ -373,5 +372,61 @@ num2 := 39.
 (num1 ~= num2) ifTrue: [ Transcript show: num1 printString, ' != ', num2 printString; cr. ].
 (num1 < num2) ifTrue: [ Transcript show: num1 printString, ' < ', num2 printString; cr. ].
 (num1 <= num2) ifTrue: [ Transcript show: num1 printString, ' <= ', num2 printString; cr. ].
+
+```
+
+## Exercise 12:
+
+Write a Pharo program and compute the sum of an integer's digits.
+Input Data:
+Input an integer: 25
+Expected Output
+
+The sum of the digits is: 7
+
+
+Solution:
+
+```
+| number sum |
+"Input the number"
+number := 909.
+sum := 0.
+
+"While number is greater than zero, extract each digit and add it to the sum"
+[number > 0] whileTrue: [
+    sum := sum + (number \\ 10).  "Add the last digit to the sum"
+    number := number // 10.        "Remove the last digit"
+].
+
+"Display the result"
+Transcript show: 'The sum of the digits is: ', sum printString; cr.
+
+```
+
+
+## Exercise 13:
+
+Write a Pharo program to reverse a string.
+Input Data:
+Input a string: The quick brown fox
+Expected Output
+
+Reverse string: xof nworb kciuq ehT
+
+
+
+Solution 
+
+```
+| inputString reversedString |
+"Input the string"
+inputString := 'Hello World !'.
+
+"Reverse the string"
+reversedString := inputString reversed.
+
+"Display the result"
+Transcript show: 'Reverse string: ', reversedString; cr.
 
 ```

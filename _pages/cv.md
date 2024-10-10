@@ -44,7 +44,7 @@ Work Experience
 Projects
 ======
 
-* **Project Name**: Neural Network Classification Project  
+* **Project Name**: Real-Fake detection   
   * **Duration**: September 2023 - January 2024  
   * **Organization**: IDMC, Nancy, France  
   * **Technologies Used**: Python, TensorFlow/Keras, Numpy, Matplotlib/Seaborn

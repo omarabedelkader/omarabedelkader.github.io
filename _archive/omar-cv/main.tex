@@ -134,7 +134,7 @@
         \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
         \LenToUnit{\paperheight-1.0 cm}
     ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
+        \small\color{gray}\textit{Last updated in October 2024}\hspace{\widthof{Last updated in September 2024}}
     }}}%
   }%
 }%
@@ -169,7 +169,7 @@
         \kern 0.25 cm%
         \AND%
         \kern 0.25 cm%
-        \mbox{\hrefWithoutArrow{https://omarabedelkader.github.io/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}omarabedelkader.github.io}}%
+        \mbox{\hrefWithoutArrow{http://omarabedelkader.fr/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}omarabedelkader.fr}}%
     \end{header}
 
     \vspace{0.3 cm - 0.3 cm}
@@ -184,7 +184,7 @@
         \begin{twocolentry}{
             \textit{Oct. 2024 – Oct. 2027}}
             \textbf{University of Lille}
-            \textit{Villeneuve-d'Ascq, Hauts-de-France}
+            \textit{Villeneuve-d'Ascq, Nord}
 
             \textit{Ph.D in Computer Science}
             
@@ -194,27 +194,28 @@
         \begin{twocolentry}{
             \textit{Sept. 2022 – Sept. 2024}}
             \textbf{University of Lorraine}
-            \textit{Nancy, Meurthe-et-Moselle}
+            \textit{Nancy, M\&M}
 
             \textit{M.Sc. in Natural Language Processing}
         \end{twocolentry}
         \vspace{0.10 cm}
 
         \begin{twocolentry}{
-            \textit{Sept. 2019 – Sept. 2022}}
+            \textit{Sept. 2019 – July 2022}}
             \textbf{Lebanese University}
-            \textit{Beyrouth, Liban}
+            \textit{Beirut, Lebanon}
 
             \textit{B.Sc. in Data Science}
         \end{twocolentry}
 
         \vspace{0.10 cm}
 
+%%%%%%%%%%%%%%%%%%%%%%% EXPERIENCE
     \section{Experience}
 
 
         \begin{twocolentry}{
-            \textit{Villeneuve d'Asq, HDF}    
+            \textit{Villeneuve d'Asq, Nord}    
                 
             \textit{Oct. 2024 – Oct. 2027}}
                 \textbf{AI Researcher}
@@ -250,7 +251,7 @@
 
 
         \begin{twocolentry}{
-            \textit{Villetaneuse, Paris}    
+            \textit{Villetaneuse, SSD}    
                 
             \textit{June 2023 – Aug. 2023}}
                 \textbf{Intern - AI Researcher}
@@ -265,7 +266,72 @@
             \end{highlights}
         \end{onecolentry}
 
-            
+%%%%%%%%%%%%%%%%%%%%%%% PROJECTS
+        \section{Projets}
+        \begin{twocolentry}{
+            \textit{Nancy, M\&M}    
+                
+            \textit{Sept. 2023 – Jan. 2024}}
+                \textbf{Real-Fake Face detection}
+                
+                \textit{IDMC}
+        \end{twocolentry} 
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item This project demonstrates the process of building and training a neural network for classification tasks using machine learning frameworks. It walks through data preprocessing, model architecture definition, training, evaluation, and visualization of results, providing insights into model performance and prediction accuracy.
+            \end{highlights}
+            \begin{itemize}
+                \item \textbf{GitHub Repository}: \href{https://github.com/omarabedelkader/real-fake-detection}{GitHub}
+              \end{itemize}              
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+            \textit{Nancy,  M\&M}    
+                
+            \textit{Sept. 2022 – June. 2023}}
+                \textbf{EESMACF}
+                
+                \textit{IDMC \& LORIA}
+        \end{twocolentry} 
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item This project focuses on evaluating the effectiveness of two NLP models—SBERT (Sentence-BERT) and MiniLM—in classifying analogies using the FrameNet dataset. FrameNet is a rich semantic database that captures the meanings of lexical units within specific contexts called frames. The objective is to identify valid and invalid analogies in FrameNet, leveraging the capabilities of SBERT and a fine-tuned MiniLM model. SBERT is used to create dense vector embeddings of sentences that retain semantic similarity, while MiniLM is trained and fine-tuned to classify analogies effectively. The project found that MiniLM achieved an impressive 99\% accuracy in distinguishing between valid and invalid analogies, outperforming SBERT, which had around 55\% accuracy.
+            \end{highlights}
+            \begin{itemize}
+                \item \textbf{GitHub Repository}: \href{https://github.com/omarabedelkader/EESMACF}{GitHub}
+                \item \textbf{Paper}: \href{https://github.com/omarabedelkader/EESMACF/blob/main/paper/paper.pdf}{Paper}
+              \end{itemize}
+              
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+
+        \begin{twocolentry}{
+            \textit{IDMC, M\&M}    
+                
+            \textit{Sept. 2022 – Jan. 2023}}
+                \textbf{DeGatto}
+                
+                \textit{IDMC}
+        \end{twocolentry}    
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+              \item The "DeGatto" project is a sentiment analysis framework designed for e-commerce, specifically focusing on women’s apparel reviews. Using a dataset sourced from Kaggle, which includes over 23,000 sentences and aspect-level annotations for material, size, design, and comfort, the project aims to support e-commerce businesses and customers by analyzing feedback at both the sentence and aspect levels. Various NLP, DL, and ML models were tested, including LSTM (BiLSTM), SVM, Logistic Regression, and Multinomial Naive Bayes, with BiLSTM achieving the best results in sentence-level analysis and LinearSVC performing well at aspect-level analysis. A visualization tool was developed using ReactJS and NodeJS, enabling users to view results as bar or pie charts. The project concluded that BiLSTM is the most suitable model for sentence-level sentiment analysis, while LinearSVC excels in aspect-level analysis, providing a robust framework for sentiment classification in e-commerce contexts.      
+            \end{highlights}
+
+            \begin{itemize}
+                \item \textbf{GitHub Repository}: \href{https://github.com/omarabedelkader/DeGatto/tree/main}{GitHub}
+                \item \textbf{Paper}: \href{https://github.com/omarabedelkader/DeGatto/blob/main/paper/DeGatto.pdf}{Paper}
+              \end{itemize}                  
+        \end{onecolentry}   
+
+%%%%%%%%%%%%%%%%%%%%%%% SKILLS
+
     \section{Technologies \& Skills}     
         \begin{onecolentry}
             \textbf{Programming Languages:} Python, Pharo, Java, R, JavaScript, PHP, MySQL.
@@ -307,21 +373,27 @@
         \vspace{0.2 cm}
 
         \begin{onecolentry}
-            \textbf{Research Areas:} LLMs, Code Generation, Type Inference.
+            \textbf{Research Areas:} LLMs, Code Generation, Software Engineer.
         \end{onecolentry}
 
-
+%%%%%%%%%%%%%%%%%%%%%%% VOLUNTEERING
     \section{Volunteering}
 
     \begin{onecolentry}
-        \textbf{Ministère Écologie Territoires:} Contributor in Club IA et Transition écologique
+        \textbf{Ministère de la Transition Écologique:} Contributor in Club IA et Transition écologique
     \end{onecolentry}
     \vspace{0.2 cm}
 
     \begin{onecolentry}
-        \textbf{Conseil National du Numerique (CNNum):} Contributor in Café IA
+        \textbf{Conseil National du Numérique (CNNum):} Contributor in Café IA
     \end{onecolentry}
-    
+    \vspace{0.2 cm}
+
+    \begin{onecolentry}
+        \textbf{Croix-Rouge Française:} Volunteer First Aider
+    \end{onecolentry}
+
+    %%%%%%%%%%%%%%%%%%%%%%% HOBBIES
     \section{Hobbies}
         \begin{onecolentry}
             \textbf{Water Activities:} Swimming · Diving
@@ -343,11 +415,36 @@
         \end{onecolentry}
         \vspace{0.2 cm}
 
+
+    %%%%%%%%%%%%%%%%%%%%%%% LANGUAGE
+    \section{Language}
+        \begin{onecolentry}
+            \textbf{French:} Bilingual
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{English:} B2
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        
+        \begin{onecolentry}
+            \textbf{Arabic:} Bilingual
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Spanish:} A1
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%% REFERENCES        
     \section{References}
     Available on Request
 
 
-    \vspace{13 cm}
+    %\vspace{ cm}
     \begin{figure}[th]
         \centering
         \includegraphics[width=2cm, height=2cm]{qr_code_cv.png}
