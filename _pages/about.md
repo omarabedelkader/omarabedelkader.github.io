@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-Omar is a skilled AI Engineer and Researcher specializing in Artificial Intelligence, Deep Learning, and Software Engineer, with a strong background in Data Science. 
+Omar is an experienced AI Engineer and Researcher with expertise in Artificial Intelligence, Deep Learning, and Software Engineering, backed by a solid foundation in Data Science.
 
-Omar has gained professional experience at INERIS and LIPN, where he focused on generative models, Machine Learning, Software Engineer. Omar is multilingual, proficient in various programming languages, and interested in exploring the intersection of AI and Software Enginneering.
+He has gained valuable professional experience at INERIS and LIPN, where he worked on cutting-edge projects involving generative models, Machine Learning, and advanced software development. A multilingual professional, Omar is proficient in several programming languages and is particularly passionate about exploring the intersection of AI and software engineering.
 
