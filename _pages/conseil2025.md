@@ -1,7 +1,14 @@
+---
+title: "Conseil d'Unité"
+permalink: /cu25/
+author_profile: true
+redirect_from:
+  - /cu25
+---
 ### **Faisons entendre nos voix : Candidature au Conseil d'Unité**  
 #### **Omar Abedelkader, Doctorant au CristAL**  
 
-Chers collègues doctorants,  
+Chères et chers collègues doctorant·e·s,
 
 Nous savons tous que la thèse est une aventure passionnante, mais parfois exigeante. En tant que doctorants, nous partageons les mêmes défis : équilibre entre pression et créativité, quête de reconnaissance, et besoin d’un soutien concret pour avancer. **Aujourd’hui, je veux être votre porte-parole pour transformer ces défis en opportunités.**  
 
