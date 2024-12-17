@@ -10,7 +10,7 @@ redirect_from:
 {% include base_path %}
 
 
-[Download CV](http://omarabedelkader.github.io/files/cv-en.pdf)
+[Download CV](https://omarabedelkader.github.io/files/cv-en.pdf)
 
 Education
 ======
