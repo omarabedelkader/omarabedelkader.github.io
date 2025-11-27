@@ -1,5 +1,5 @@
-#
+# IGNORE FILES AND DIRECTORIES
 
+.vscode
+site
 ./DS_Store
-/vscode
-/site
