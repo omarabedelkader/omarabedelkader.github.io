@@ -11,6 +11,16 @@
 	{{> persoDetails}}
 
 	{{{body}}}
+	<button id="menuShowFloating" style="
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 12px;
+    font-size: 20px;
+    z-index: 1000;
+    display: none;
+">☰</button>
+
 	
 	{{> footer }}
 	

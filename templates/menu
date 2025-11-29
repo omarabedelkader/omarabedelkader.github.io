@@ -10,5 +10,6 @@
 		</div>
 		<div id="tocItem"><a href="{{{webRootPrefix}}}/files/main.pdf">CV</a>
 		</div>
+		<button id="menuToggle">⮜ Hide menu</button>
 	</div>
 </div>

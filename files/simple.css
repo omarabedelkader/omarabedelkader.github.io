@@ -287,6 +287,53 @@ hr {
     opacity: 1;
 }
 
+/* ===== MENU TOGGLE BUTTON ===== */
+#menuToggle {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#menuToggle:hover {
+    background: #e5e5e5;
+}
+
+/* When menu is hidden */
+.menu-hidden {
+    transform: translateX(-250px);
+    transition: transform 0.3s ease;
+}
+
+.menu-visible {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+/* Ensure menu stays above on mobile when sliding */
+#menu {
+    position: relative;
+    z-index: 10;
+}
+
+
+#menuShowFloating {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#menuShowFloating:hover {
+    background: #f2f2f2;
+}
+
 /* =====================================================
    ============  RESPONSIVE MOBILE FIXES  ==============
    ===================================================== */
