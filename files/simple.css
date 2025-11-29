@@ -286,3 +286,60 @@ hr {
 .footer-basic .social > a:hover {
     opacity: 1;
 }
+
+/* =====================================================
+   ============  RESPONSIVE MOBILE FIXES  ==============
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* Remove float layout */
+    #menu {
+        float: none;
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid #e3e3e3;
+    }
+
+    /* Stack content under the menu */
+    #mainContent {
+        margin-left: 0;
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* Header spacing adjustments */
+    #header {
+        padding: 24px 20px;
+        text-align: center;
+    }
+
+    #headerSiteTitle {
+        font-size: 26px;
+    }
+
+    #headerPageTitle {
+        display: block;
+        margin-top: 8px;
+        border-left: none;
+        padding-left: 0;
+        letter-spacing: 2px;
+    }
+
+    /* TOC items spacing */
+    #tocItem {
+        padding: 10px 0;
+    }
+
+    /* About image scaling */
+    #personalDetails img {
+        width: 140px;
+        height: 140px;
+    }
+
+    /* Footer adjustments */
+    .footer-basic {
+        padding: 30px 10px;
+    }
+}
