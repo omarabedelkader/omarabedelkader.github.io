@@ -1,5 +1,6 @@
 # IGNORE FILES AND DIRECTORIES
 
 .vscode
-site
-./DS_Store
+.DS_Store
+.out
+/omar-cv
