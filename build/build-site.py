@@ -71,3 +71,4 @@ html = html.replace(
 HTML_FILE.write_text(html, encoding="utf-8")
 
 print("Site built successfully.")
+

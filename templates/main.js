@@ -79,4 +79,53 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tabsBar.children.length > 0) {
         main.insertBefore(tabsBar, main.firstElementChild);
     }
+    (function () {
+  function setFooterCopyright() {
+    const el = document.getElementById("copyright");
+    if (!el) return;
+
+    const year = new Date().getFullYear();
+    el.textContent = `© ${year} Omar AbedelKader`;
+  }
+
+  function setupCvTabs() {
+    const tabs = Array.from(document.querySelectorAll(".cv-tab"));
+    const full = document.getElementById("cv-full");
+    const industry = document.getElementById("cv-industry");
+
+    if (!tabs.length || !full || !industry) return;
+
+    function activate(which) {
+      const isFull = which === "full";
+      full.hidden = !isFull;
+      industry.hidden = isFull;
+
+      tabs.forEach((btn) => {
+        const active = btn.dataset.cv === which;
+        btn.classList.toggle("is-active", active);
+        btn.setAttribute("aria-selected", active ? "true" : "false");
+      });
+
+      // Optional: remember choice
+      try { localStorage.setItem("cvVersion", which); } catch (_) {}
+    }
+
+    tabs.forEach((btn) => {
+      btn.setAttribute("role", "tab");
+      btn.addEventListener("click", () => activate(btn.dataset.cv));
+    });
+
+    // Restore last selection (optional)
+    let saved = null;
+    try { saved = localStorage.getItem("cvVersion"); } catch (_) {}
+    activate(saved === "industry" ? "industry" : "full");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    setFooterCopyright();
+    setupCvTabs();
+  });
+})();
+
 });
+    

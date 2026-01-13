@@ -73,3 +73,33 @@ footer {
     background: white;
     z-index: 10;
 }
+.site-header {
+  margin-bottom: 1rem;
+}
+
+.cv-switch {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.cv-tab {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.cv-tab.is-active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1.25rem 0;
+  text-align: center;
+  opacity: 0.8;
+}
