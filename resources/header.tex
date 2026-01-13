@@ -1,0 +1,42 @@
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\urlstyle{same}
+
+% Main text font
+\setmainfont{Times New Roman}
+
+
+% Reduce space before/after section titles
+\titlespacing*{\section}
+{0pt}        % left
+{0.8em}      % before
+{0.4em}      % after
+
+\titlespacing*{\subsection}
+{0pt}
+{0.5em}
+{0.2em}
+
+% Bullet lists
+\setlist[itemize]{
+  itemsep=0pt,
+  parsep=0pt,
+  topsep=0pt,
+  partopsep=0pt,
+  leftmargin=*
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}

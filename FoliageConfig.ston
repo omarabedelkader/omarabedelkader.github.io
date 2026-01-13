@@ -1,6 +1,0 @@
-Foliage {
-	#baseUri : 'https://omarabedelkader.github.io',
-	#blogs: [ 
-		'news': 'News'
-	]
-}
