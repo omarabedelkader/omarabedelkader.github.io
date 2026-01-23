@@ -124,6 +124,3 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 
 
 ---
-
-
-_Full academic CV, publications, and additional projects available on request._

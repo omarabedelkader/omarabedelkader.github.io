@@ -269,8 +269,6 @@ def build_industry_md(full_md: str) -> str:
 
     # Small footer line (kept short)
     md.append("\n---\n")
-    md.append("_Full academic CV, publications, and additional projects available on request._")
-
     return "\n\n".join(md).strip() + "\n"
 
 
