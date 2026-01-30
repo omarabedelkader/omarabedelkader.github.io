@@ -22,7 +22,7 @@ pypandoc.convert_file(
         f"--bibliography={resources / 'publications.bib'}",
         f"--csl={resources / 'apa.csl'}",
         "-H", str(resources / "header.tex"),
-        "-V", "geometry=margin=1in",
+        "-V", "geometry=margin=0.5in",
         "-V", "mainfont=Times New Roman",
     ]
 )

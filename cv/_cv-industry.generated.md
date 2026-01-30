@@ -24,16 +24,6 @@ date: "Last updated: January 2026"
 I am an AI researcher with extensive experience in artificial intelligence and software engineering. I am currently pursuing a Ph.D. in Computer Science at the University of Lille. ---
 
 
-## Core Strengths
-
-- Knowledge Bases & Knowledge Engineering
-- Software Engineering & Large Language Models (LLMs)
-- Information Systems & Knowledge Management
-- Research Coordination & Project Leadership
-- Team Management & Mentorship
-- Applied AI for Public and Institutional Use
-
-
 ## Experience
 
 **AI Researcher** — INRIA (Villeneuve-d'Ascq, France)
@@ -41,7 +31,7 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 - Improving code completion and code generation using LLMs, specifically targeting the Pharo programming language, which has limited training data.
 - Developing techniques for code completion, type inference, and deployment in Pharo’s IDE, with a focus on runtime performance.
 
-**AI Engineer** — INERIS (Ver.-en-Halatte, France)
+**AI Engineer** — INERIS (Verneuil-en-Halatte, France)
 *Sept. 2023 – Sept. 2024*
 - Developed “INERIS-IA,” a tool to classify textual documents according to INERIS’s strategic goals using ML and NLP techniques.
 - Created Boolean queries for document retrieval and improved corpus quality through document similarity and keyword extraction.
@@ -49,15 +39,9 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 
 ## Projects
 
-### PharoGPT
-- LLM-based code assistant for the Pharo ecosystem, inspired by ChatGPT and specialized for Smalltalk/Pharo.
-- Fine-tuned language models on Pharo codebases to overcome data scarcity and language-specific challenges.
-- Designed an end-to-end pipeline including data collection, model fine-tuning, evaluation, and deployment.
-- **GitHub Repository:** [PharoGPT](https://github.com/omarabedelkader/PharoGPT)
-
 ### Pharo-Copilot
 - Intelligent code completion and generation tool for Pharo, inspired by GitHub Copilot.
-- Focused on repository-level and package-aware code completion.
+- Focused on repository and package -level code completion.
 - Leveraged LLMs to improve developer productivity in a dynamically typed language.
 - **GitHub Repository:** [Pharo-Copilot](https://github.com/omarabedelkader/Pharo-Copilot)
 
@@ -76,10 +60,10 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 
 ## Leadership & Community
 
-- Project lead for **ChatPharo**, **Pharo-Copilot**, and **PharoGPT**
+- Member of the Organizing Committee, GDR-GPL 2026
+- Project lead for **ChatPharo** , **Pharo-Copilot** and Pharo-LLM
 - Mentor for **Google Summer of Code (GSoC)** 2025
 - President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
-- Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
 
 
 ## Awards
@@ -108,7 +92,7 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 
 ## Skills
 
-- **Programming Languages:** Python, Pharo, Java, R, JavaScript, PHP, MySQL
+- **Programming Languages:** Python, Pharo, Java, JavaScript,
 - **Machine Learning & Deep Learning:** TensorFlow, PyTorch, Keras, Scikit-learn
 - **Natural Language Processing (NLP):** spaCy, NLTK
 - **Big Data & Distributed Systems:** Apache Spark, Hadoop

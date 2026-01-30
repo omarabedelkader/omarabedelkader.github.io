@@ -26,20 +26,10 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ---
 
-## Core Expertise
-
-- Knowledge Bases & Knowledge Engineering
-- Software Engineering & Large Language Models (LLMs)
-- Information Systems & Knowledge Management
-- Research Coordination & Project Leadership
-- Team Management & Mentorship
-- Applied AI for Public and Institutional Use
-
----
-
 ## Responsibilities
 
-- Project lead for **ChatPharo**, **Pharo-Copilot**, and **PharoGPT**
+- Member of the Organizing Committee, GDR-GPL 2026
+- Project lead for **ChatPharo** , **Pharo-Copilot** and Pharo-LLM
 - Mentor for **Google Summer of Code (GSoC)** 2025
 - President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
 - Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
@@ -71,7 +61,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Improving code completion and code generation using LLMs, specifically targeting the Pharo programming language, which has limited training data.
 - Developing techniques for code completion, type inference, and deployment in Pharo’s IDE, with a focus on runtime performance.
 
-**AI Engineer** — INERIS (Ver.-en-Halatte, France)  
+**AI Engineer** — INERIS (Verneuil-en-Halatte, France)  
 *Sept. 2023 – Sept. 2024*  
 - Developed “INERIS-IA,” a tool to classify textual documents according to INERIS’s strategic goals using ML and NLP techniques.
 - Created Boolean queries for document retrieval and improved corpus quality through document similarity and keyword extraction.
@@ -93,25 +83,16 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Software
 
-### PharoGPT
-- LLM-based code assistant for the Pharo ecosystem, inspired by ChatGPT and specialized for Smalltalk/Pharo.
-- Fine-tuned language models on Pharo codebases to overcome data scarcity and language-specific challenges.
-- Designed an end-to-end pipeline including data collection, model fine-tuning, evaluation, and deployment.
-- Integrated directly into the Pharo IDE for interactive code generation and assistance.
-- **GitHub Repository:** [PharoGPT](https://github.com/omarabedelkader/PharoGPT)
-
 ### Pharo-Copilot
 - Intelligent code completion and generation tool for Pharo, inspired by GitHub Copilot.
-- Focused on repository-level and package-aware code completion.
+- Focused on repository and package -level code completion.
 - Leveraged LLMs to improve developer productivity in a dynamically typed language.
-- Used by more than 100 users within the Pharo community.
 - **GitHub Repository:** [Pharo-Copilot](https://github.com/omarabedelkader/Pharo-Copilot)
 
 ### ChatPharo
 - Live conversational interface between Pharo developers and large language models.
 - Enables interactive discussions with LLMs directly from the Pharo environment.
 - Designed an open and extensible architecture to experiment with multiple LLM backends.
-- Project lead with a team of more than 5 contributors.
 - **GitHub Repository:** [ChatPharo](https://github.com/omarabedelkader/ChatPharo)
 
 ### INERIS-IA
@@ -164,7 +145,13 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
   - Graded and corrected exam papers
   - Contributed to the design and preparation of exams
   - Supervised student software development projects
-  - Served on project defense juries, evaluating student work and presentations
+  - Project defense juries, evaluating student work and presentations
+
+- Teaching assistant at IUT : *Software Maintenance*
+
+- Teaching assistant at Polytech: DataBase
+
+- Teaching assistant at Polytech: DataBase
 
 ---
 
@@ -185,25 +172,37 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Mentorship
 
-- **Google Summer of Code (GSoC)** — Mentor  
-  - Project: [LLMInterface](https://gsoc.pharo.org/LLMInterface)
-- **Demain** — Mentor  
-  - Link: [dema1n.org](https://www.dema1n.org)
+- **Google Summer of Code (GSoC) 2025** — Mentor 
+- **Demain ([dema1n.org](https://www.dema1n.org))** — Mentor 
 
 ---
 
 ## Library
 
-- **Neural Networks Library (Pharo):** Author and maintainer of a native neural network library for the Pharo programming language
-  - Designed and implemented core components enabling the creation, training, and evaluation of neural networks directly in Pharo
-  - Provides abstractions for layers, activation functions, and training pipelines within the Smalltalk ecosystem
-  - Actively maintained and used as a foundation for research and educational projects
+### **Pharo-LLM** — Author and Maintainer 
+**GitHub Repository:** [Pharo-LLM](https://github.com/omarabedelkader/pharo-llm) 
 
----
+- Author and maintainer of **Pharo-LLM**
+- How to create a model for a **low-resource language**
+- How to **evaluate a model** (metrics, benchmarks, validation strategies)
+- Research-oriented LLM experimentation inside the Pharo ecosystem
+
+### **Neural Networks Library (Pharo)** — Author and Maintainer  
+**GitHub Repository:** [Pharo-NN](https://github.com/omarabedelkader/Neural-Network) 
+
+- Native **neural networks library** for the Pharo programming language
+- Designed and implemented core components for:
+  - Network architecture definition
+  - Training pipelines
+  - Model evaluation
+- Provides abstractions for layers, activation functions, and learning workflows
+- Actively maintained and used for **research and education** within Smalltalk
+
+--- 
 
 ## Technologies & Skills
 
-**Programming Languages:** Python, Pharo, Java, R, JavaScript, PHP, MySQL  
+**Programming Languages:** Python, Pharo, Java, JavaScript, 
 **Machine Learning & Deep Learning:** TensorFlow, PyTorch, Keras, Scikit-learn  
 **Natural Language Processing (NLP):** spaCy, NLTK  
 **Big Data & Distributed Systems:** Apache Spark, Hadoop  
