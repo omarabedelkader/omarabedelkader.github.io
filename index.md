@@ -38,19 +38,10 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ---
 
-## Education
+## Publications
 
-**University of Lille** — Villeneuve-d'Ascq, France  
-*Ph.D. in Computer Science*  
-(Oct. 2024 – Present)
-
-**University of Lorraine** — Nancy, France  
-*M.Sc. in Natural Language Processing*  
-(Sept. 2022 – Sept. 2024)
-
-**Lebanese University** — Beirut, Lebanon  
-*B.Sc. in Data Science*  
-(Sept. 2019 – July 2022)
+::: {#refs}
+:::
 
 ---
 
@@ -78,6 +69,22 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 **Full-Stack Developer** — SSCC-IT (Andket, Lebanon)  
 *Nov. 2020 – Apr. 2021*  
 - PHP & SQL · Design Patterns · Microsoft SQL Server
+
+---
+
+## Education
+
+**University of Lille** — Villeneuve-d'Ascq, France  
+*Ph.D. in Computer Science*  
+(Oct. 2024 – Present)
+
+**University of Lorraine** — Nancy, France  
+*M.Sc. in Natural Language Processing*  
+(Sept. 2022 – Sept. 2024)
+
+**Lebanese University** — Beirut, Lebanon  
+*B.Sc. in Data Science*  
+(Sept. 2019 – July 2022)
 
 ---
 
@@ -131,27 +138,15 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ---
 
-## Publications
-
-::: {#refs}
-:::
-
----
-
 ## Teaching
 
-- Teaching assistant at IUT: *Introduction to Software Development*
-  - Co-taught split-group sessions alongside the professor, providing hands-on support to students
-  - Graded and corrected exam papers
-  - Contributed to the design and preparation of exams
-  - Supervised student software development projects
-  - Project defense juries, evaluating student work and presentations
+- Teaching assistant at IUT: *Introduction to Software Development* 41,5 h TP
 
-- Teaching assistant at IUT : *Software Maintenance*
+- Teaching assistant at IUT : *Software Maintenance* 12h TP
 
-- Teaching assistant at Polytech: DataBase
+- Teaching assistant at Polytech: *DataBase* 16h TP
 
-- Teaching assistant at Polytech: DataBase
+- Teaching assistant at Polytech: *Internet* 12h TP 
 
 ---
 
