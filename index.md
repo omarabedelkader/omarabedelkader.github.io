@@ -33,6 +33,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Mentor for **Google Summer of Code (GSoC)** 2025
 - President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
 - Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
+- Contributor of the Pharo-AI Organisation
 - Contributor at **Conseil National du Numérique (CNNum)** (*Café IA*)
 - Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects
 
