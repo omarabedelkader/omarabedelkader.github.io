@@ -28,9 +28,11 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Responsibilities
 
-- Member of the Organizing Committee, GDR-GPL 2026
-- Project lead for **ChatPharo** , **Pharo-Copilot** and Pharo-LLM
-- Mentor for **Google Summer of Code (GSoC)** 2025
+- Owner of the Organization **Pharo-LLM**
+- Member of the Organizing Committee, GDR-GPL'26
+- Sub reviewer at BENEVOL'25
+- Project lead for **ChatPharo** and **Pharo-Copilot**
+- Mentor for **Google Summer of Code (GSoC)**'25
 - President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
 - Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
 - Contributor of the Pharo-AI Organisation

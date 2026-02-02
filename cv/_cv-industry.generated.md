@@ -60,10 +60,10 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 
 ## Leadership & Community
 
-- Member of the Organizing Committee, GDR-GPL 2026
-- Project lead for **ChatPharo** , **Pharo-Copilot** and Pharo-LLM
-- Mentor for **Google Summer of Code (GSoC)** 2025
-- President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
+- Owner of the Organization **Pharo-LLM**
+- Member of the Organizing Committee, GDR-GPL'26
+- Sub reviewer at BENEVOL'25
+- Project lead for **ChatPharo** and **Pharo-Copilot**
 
 
 ## Awards
