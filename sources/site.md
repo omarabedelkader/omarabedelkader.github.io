@@ -9,7 +9,7 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 
-## Responsibilities
+### Responsibilities
 
 - Owner of the Organization **[Pharo-LLM](https://github.com/pharo-llm)**
 - Member of the Organizing Committee, [GDR-GPL](https://gdr-gpl.cnrs.fr)'26
