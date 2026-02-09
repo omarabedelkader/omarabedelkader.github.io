@@ -22,6 +22,11 @@ JS_SRC = TEMPLATES / "main.js"
 CSS_DST = DOCS / "style.css"
 JS_DST = DOCS / "main.js"
 
+# NEW: favicon + header include snippet
+FAVICON_SRC = TEMPLATES / "favicon.ico"
+FAVICON_DST = DOCS / "favicon.ico"
+HEADER_INCLUDE = TEMPLATES / "header.html"
+
 DOCS.mkdir(exist_ok=True)
 
 # ======================================================
@@ -30,6 +35,9 @@ DOCS.mkdir(exist_ok=True)
 
 shutil.copyfile(CSS_SRC, CSS_DST)
 shutil.copyfile(JS_SRC, JS_DST)
+
+# NEW: copy favicon into docs/
+shutil.copyfile(FAVICON_SRC, FAVICON_DST)
 
 # ======================================================
 # Pandoc conversion
@@ -44,6 +52,9 @@ extra_args = [
     "--metadata=link-citations:true",
     "--css=style.css",
     "--metadata=pagetitle=Omar AbedelKader",
+
+    # NEW: inject <link rel="icon" ...> into <head>
+    f"--include-in-header={HEADER_INCLUDE}",
 ]
 
 html = pypandoc.convert_text(
