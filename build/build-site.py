@@ -7,13 +7,13 @@ import pypandoc
 # ======================================================
 
 BUILD_DIR = Path(__file__).resolve().parent
-ROOT = BUILD_DIR.parent  # ← project root
+ROOT = BUILD_DIR.parent  # project root
 
 DOCS = ROOT / "docs"
 RESOURCES = ROOT / "resources"
 TEMPLATES = ROOT / "templates"
 
-MD_FILE = ROOT / "index.md"
+MD_FILE = ROOT / "sources" / "site.md"
 HTML_FILE = DOCS / "index.html"
 
 CSS_SRC = TEMPLATES / "style.css"
@@ -43,7 +43,7 @@ extra_args = [
     "--csl=apa.csl",
     "--metadata=link-citations:true",
     "--css=style.css",
-    "--metadata=pagetitle=Omar AbedelKader — CV",
+    "--metadata=pagetitle=Omar AbedelKader",
 ]
 
 html = pypandoc.convert_text(
@@ -59,16 +59,14 @@ html = pypandoc.convert_text(
 
 html = html.replace(
     "<body>",
-    "<body><main>"
+    "<body><main class='cv' id='cv'>"
 ).replace(
     "</body>",
     "</main>"
-    "<footer>Last updated: January 2026</footer>"
-    "<script src='main.js'></script>"
+    "<footer class='site-footer'>Last updated: January 2026</footer>"
+    "<script src='main.js' defer></script>"
     "</body>"
 )
 
 HTML_FILE.write_text(html, encoding="utf-8")
-
 print("Site built successfully.")
-

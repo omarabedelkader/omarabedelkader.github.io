@@ -4,7 +4,7 @@ import pypandoc
 BUILD_DIR = Path(__file__).resolve().parent
 ROOT = BUILD_DIR.parent  # ← project root
 
-input_md = ROOT / "index.md"
+input_md = ROOT / "sources" / "cv.md"
 resources = ROOT / "resources"
 
 output_dir = ROOT / "cv"

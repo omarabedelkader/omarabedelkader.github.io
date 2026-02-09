@@ -3,10 +3,6 @@ title: "Omar AbedelKader"
 date: "Last updated: January 2026"
 ---
 
-
-
----
-
 **Lille, France**  
 **Email:** [omar.abedelkader@inria.fr](mailto:omar.abedelkader@inria.fr)  
 **Website:** [omarabedelkader.github.io](https://omarabedelkader.github.io)  

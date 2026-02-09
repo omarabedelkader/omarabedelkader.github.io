@@ -1,41 +1,29 @@
-\usepackage{titlesec}
-\usepackage{enumitem}
-\usepackage{fontspec}
-\usepackage{hyperref}
+% ----- Typography / layout polish -----
 \usepackage{microtype}
-\usepackage{titling}
-
-\urlstyle{same}
-
-% Main text font
-\setmainfont{Times New Roman}
-
-% --- Compact Pandoc title block (fixes big whitespace) ---
-\setlength{\droptitle}{-5em}
-\pretitle{\begin{center}\LARGE\bfseries}
-\posttitle{\par\end{center}\vspace{-0.8em}}
-\predate{\begin{center}\small}
-\postdate{\par\end{center}\vspace{-1.5em}}
-
-% Reduce space before/after section titles
-\titlespacing*{\section}{0pt}{0.8em}{0.4em}
-\titlespacing*{\subsection}{0pt}{0.5em}{0.2em}
-
-% Bullet lists
-\setlist[itemize]{
-  itemsep=0pt,
-  parsep=0pt,
-  topsep=0pt,
-  partopsep=0pt,
-  leftmargin=*
-}
-
-\hypersetup{
-  colorlinks=true,
-  linkcolor=blue,
-  urlcolor=blue,
-  citecolor=blue
-}
-
+\usepackage{ragged2e}
+\usepackage{setspace}
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt}
+\setlength{\parskip}{4pt}
+
+% Two-column spacing
+\setlength{\columnsep}{18pt}
+\setlength{\columnseprule}{0pt}
+
+% Tighter lists (CV-friendly)
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=2pt}
+\setlist[enumerate]{leftmargin=*, noitemsep, topsep=2pt}
+
+% Section spacing
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{0.7\baselineskip}{0.35\baselineskip}
+\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.25\baselineskip}
+
+% Links (professional + readable)
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdfborder={0 0 0}
+}
+
+% Remove headers/footers for a clean CV (optional)
+\pagestyle{empty}

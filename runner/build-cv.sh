@@ -8,9 +8,6 @@ REQUIREMENTS_FILE="requirements.txt"
 BUILD_DIR="build"
 
 BUILD_CV_SCRIPT="build-cv.py"
-BUILD_CV_INDUSTRY_SCRIPT="build-cv-industry.py"
-BUILD_TEACHING_SCRIPT="build-teaching.py"
-BUILD_SITE_SCRIPT="build-site.py"
 
 # ---- Create virtual environment if it doesn't exist ----
 if [ ! -d "$VENV_DIR" ]; then
@@ -42,7 +39,7 @@ fi
 
 cd "$BUILD_DIR"
 
-# ---- Run build scripts ----
+# ---- Run build script ----
 if [ -f "$BUILD_CV_SCRIPT" ]; then
     echo "Running $BUILD_CV_SCRIPT..."
     python "$BUILD_CV_SCRIPT"
@@ -51,28 +48,4 @@ else
     exit 1
 fi
 
-if [ -f "$BUILD_CV_INDUSTRY_SCRIPT" ]; then
-    echo "Running $BUILD_CV_INDUSTRY_SCRIPT..."
-    python "$BUILD_CV_INDUSTRY_SCRIPT"
-else
-    echo "ERROR: $BUILD_CV_INDUSTRY_SCRIPT not found in $BUILD_DIR"
-    exit 1
-fi
-
-if [ -f "$BUILD_TEACHING_SCRIPT" ]; then
-    echo "Running $BUILD_TEACHING_SCRIPT..."
-    python "$BUILD_TEACHING_SCRIPT"
-else
-    echo "ERROR: $BUILD_TEACHING_SCRIPT not found in $BUILD_DIR"
-    exit 1
-fi
-
-if [ -f "$BUILD_SITE_SCRIPT" ]; then
-    echo "Running $BUILD_SITE_SCRIPT..."
-    python "$BUILD_SITE_SCRIPT"
-else
-    echo "ERROR: $BUILD_SITE_SCRIPT not found in $BUILD_DIR"
-    exit 1
-fi
-
-echo "Build completed successfully."
+echo "CV build completed successfully."

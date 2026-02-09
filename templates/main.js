@@ -1,131 +1,372 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* main.js
+   - Turns each H2 (##) into a tab
+   - Adds search (titles + content), results list, and <mark> highlighting
+   - Keyboard nav: ArrowLeft/ArrowRight/Home/End + Enter/Space to activate
+*/
 
-    const TAB_SECTIONS = [
-        "Education",
-        "Experience",
-        "Software",
-        "Publications",
-        "Teaching",
-        "Talks",
-        "Volunteering"
-    ];
-
-    const main = document.querySelector("main");
-    if (!main) return;
-
-    const headings = [...main.querySelectorAll("h2")];
-
-    const tabsBar = document.createElement("div");
-    tabsBar.className = "tabs";
-
-    const tabContents = {};
-
-    headings.forEach(h2 => {
-        const title = h2.textContent.trim();
-        if (!TAB_SECTIONS.includes(title)) return;
-
-        // Create a stable ID
-        const sectionId = title.toLowerCase().replace(/\s+/g, "-");
-        h2.id = sectionId;
-
-        const content = document.createElement("div");
-        content.className = "tab-content";
-        content.dataset.tab = title;
-        content.dataset.target = sectionId;
-
-        let el = h2.nextElementSibling;
-        content.appendChild(h2);
-
-        while (el && el.tagName !== "H2") {
-            const next = el.nextElementSibling;
-            content.appendChild(el);
-            el = next;
-        }
-
-        tabContents[title] = content;
-    });
-
-    Object.entries(tabContents).forEach(([title, content], i) => {
-        const button = document.createElement("button");
-        button.className = "tab";
-        button.textContent = title;
-
-        if (i === 0) {
-            button.classList.add("active");
-            content.classList.add("active");
-        }
-
-        button.addEventListener("click", () => {
-            document.querySelectorAll(".tab").forEach(b => b.classList.remove("active"));
-            document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-
-            button.classList.add("active");
-            content.classList.add("active");
-
-            // Scroll to the section heading
-            const target = content.querySelector("h2");
-            if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        });
-
-        tabsBar.appendChild(button);
-        main.appendChild(content);
-    });
-
-    if (tabsBar.children.length > 0) {
-        main.insertBefore(tabsBar, main.firstElementChild);
-    }
-    (function () {
-  function setFooterCopyright() {
-    const el = document.getElementById("copyright");
-    if (!el) return;
-
-    const year = new Date().getFullYear();
-    el.textContent = `© ${year} Omar AbedelKader`;
+(function () {
+  function slugify(text) {
+    return String(text)
+      .toLowerCase()
+      .trim()
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .replace(/-+/g, "-");
   }
 
-  function setupCvTabs() {
-    const tabs = Array.from(document.querySelectorAll(".cv-tab"));
-    const full = document.getElementById("cv-full");
-    const industry = document.getElementById("cv-industry");
-
-    if (!tabs.length || !full || !industry) return;
-
-    function activate(which) {
-      const isFull = which === "full";
-      full.hidden = !isFull;
-      industry.hidden = isFull;
-
-      tabs.forEach((btn) => {
-        const active = btn.dataset.cv === which;
-        btn.classList.toggle("is-active", active);
-        btn.setAttribute("aria-selected", active ? "true" : "false");
-      });
-
-      // Optional: remember choice
-      try { localStorage.setItem("cvVersion", which); } catch (_) {}
+  function uniqueId(base, used) {
+    let id = base;
+    let i = 2;
+    while (used.has(id)) {
+      id = `${base}-${i++}`;
     }
+    used.add(id);
+    return id;
+  }
 
-    tabs.forEach((btn) => {
-      btn.setAttribute("role", "tab");
-      btn.addEventListener("click", () => activate(btn.dataset.cv));
-    });
+  function createEl(tag, attrs = {}, children = []) {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === "class") el.className = v;
+      else if (k === "html") el.innerHTML = v;
+      else if (k.startsWith("aria-")) el.setAttribute(k, v);
+      else if (k === "role") el.setAttribute("role", v);
+      else el[k] = v;
+    }
+    for (const c of children) el.append(c);
+    return el;
+  }
+  
+  function clearMarks(root) {
+    const marks = root.querySelectorAll("mark.search-hit");
+    for (const m of marks) {
+      m.replaceWith(document.createTextNode(m.textContent || ""));
+    }
+    root.normalize();
+  }
 
-    // Restore last selection (optional)
-    let saved = null;
-    try { saved = localStorage.getItem("cvVersion"); } catch (_) {}
-    activate(saved === "industry" ? "industry" : "full");
+  function highlightInElement(root, query) {
+    if (!query) return;
+    const q = query.toLowerCase();
+
+    const walker = document.createTreeWalker(
+      root,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode(node) {
+          if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const p = node.parentElement;
+          if (!p) return NodeFilter.FILTER_REJECT;
+          const tag = p.tagName;
+          if (tag === "SCRIPT" || tag === "STYLE" || tag === "NOSCRIPT") return NodeFilter.FILTER_REJECT;
+          // Avoid highlighting inside existing mark tags
+          if (p.closest("mark.search-hit")) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      }
+    );
+
+    const toProcess = [];
+    while (walker.nextNode()) toProcess.push(walker.currentNode);
+
+    for (const textNode of toProcess) {
+      const text = textNode.nodeValue;
+      const lower = text.toLowerCase();
+      let idx = lower.indexOf(q);
+      if (idx === -1) continue;
+
+      const frag = document.createDocumentFragment();
+      let lastIndex = 0;
+
+      while (idx !== -1) {
+        const before = text.slice(lastIndex, idx);
+        if (before) frag.append(document.createTextNode(before));
+
+        const match = text.slice(idx, idx + query.length);
+        frag.append(createEl("mark", { class: "search-hit" }, [document.createTextNode(match)]));
+
+        lastIndex = idx + query.length;
+        idx = lower.indexOf(q, lastIndex);
+      }
+
+      const after = text.slice(lastIndex);
+      if (after) frag.append(document.createTextNode(after));
+
+      textNode.replaceWith(frag);
+    }
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    setFooterCopyright();
-    setupCvTabs();
+    const main = document.querySelector("main#cv");
+    if (!main) return;
+
+    const h2s = Array.from(main.querySelectorAll("h2"));
+    if (h2s.length === 0) return;
+
+    // --------- Build shell (header + sticky UI + panels) ----------
+    const usedIds = new Set();
+
+    const shell = createEl("div", { class: "cv-shell" });
+    const header = createEl("header", { class: "site-header" });
+    const sticky = createEl("div", { class: "sticky-ui" });
+
+    const searchWrap = createEl("div", { class: "search-wrap" });
+    const searchLabel = createEl("label", { class: "search-label", html: "Search" });
+    const searchInput = createEl("input", {
+      class: "search-input",
+      type: "search",
+      placeholder: "Search sections and content…",
+      autocomplete: "off",
+      spellcheck: false
+    });
+    searchLabel.append(searchInput);
+
+    const searchMeta = createEl("div", { class: "search-meta" });
+    const searchCount = createEl("span", { class: "search-count", textContent: "" });
+    const searchClear = createEl("button", { class: "search-clear", type: "button", textContent: "Clear" });
+    searchMeta.append(searchCount, searchClear);
+
+    const results = createEl("div", { class: "search-results", role: "region", "aria-label": "Search results" });
+
+    searchWrap.append(searchLabel, searchMeta, results);
+
+    const tabs = createEl("nav", {
+      class: "tabs",
+      role: "tablist",
+      "aria-label": "CV sections"
+    });
+
+    const panels = createEl("div", { class: "panels" });
+
+    sticky.append(searchWrap, tabs);
+    shell.append(header, sticky, panels);
+
+    // --------- Move content before first H2 into header ----------
+    const firstH2 = h2s[0];
+    while (main.firstChild && main.firstChild !== firstH2) {
+      header.append(main.firstChild);
+    }
+
+    // --------- Build tabs/panels from each H2 block ----------
+    const sections = [];
+    const allH2 = Array.from(main.querySelectorAll("h2")); // (fresh, after moves)
+
+    allH2.forEach((h2, idx) => {
+      const title = (h2.textContent || `Section ${idx + 1}`).trim();
+      const base = slugify(title) || `section-${idx + 1}`;
+      const key = uniqueId(base, usedIds);
+
+      const tabId = `tab-${key}`;
+      const panelId = `panel-${key}`;
+
+      const tabBtn = createEl("button", {
+        class: "tab",
+        type: "button",
+        id: tabId,
+        role: "tab",
+        "aria-selected": "false",
+        "aria-controls": panelId,
+        tabIndex: -1,
+        textContent: title
+      });
+
+      const panel = createEl("section", {
+        class: "tab-panel",
+        id: panelId,
+        role: "tabpanel",
+        "aria-labelledby": tabId
+      });
+      panel.hidden = true;
+
+      // Move H2 + following siblings until next H2 into panel
+      panel.append(h2);
+      let node = panel.lastChild.nextSibling; // after moving h2, but it has no nextSibling in panel
+      // We need to read from DOM: next sibling in main after h2
+      node = panel.querySelector("h2").nextSibling; // inside panel it's empty, so use main traversal instead
+
+      // Correct approach: walk in main from after this h2 (still in main at this moment? no, we moved it)
+      // So: capture siblings before moving. We'll rebuild by scanning main nodes:
+      // (We already moved h2; now repeatedly move main.firstChild until next H2)
+      while (main.firstChild && !(main.firstChild.nodeType === 1 && main.firstChild.tagName === "H2")) {
+        panel.append(main.firstChild);
+      }
+
+      tabs.append(tabBtn);
+      panels.append(panel);
+      sections.push({ title, tabBtn, panel });
+    });
+
+    // Replace main content with shell
+    main.innerHTML = "";
+    main.append(shell);
+
+    function setActive(index, opts = { focus: true, highlightQuery: "" }) {
+      const safeIndex = Math.max(0, Math.min(index, sections.length - 1));
+      sections.forEach((s, i) => {
+        const active = i === safeIndex;
+        s.tabBtn.classList.toggle("is-active", active);
+        s.tabBtn.setAttribute("aria-selected", active ? "true" : "false");
+        s.tabBtn.tabIndex = active ? 0 : -1;
+        s.panel.hidden = !active;
+      });
+
+      const activeSection = sections[safeIndex];
+      if (opts.focus) activeSection.tabBtn.focus({ preventScroll: true });
+
+      // Clear and re-apply highlight in active panel if search query exists
+      const query = (opts.highlightQuery || "").trim();
+      clearMarks(activeSection.panel);
+      if (query.length >= 2) highlightInElement(activeSection.panel, query);
+    }
+
+    function focusTab(nextIndex) {
+      const safe = Math.max(0, Math.min(nextIndex, sections.length - 1));
+      sections[safe].tabBtn.focus({ preventScroll: true });
+    }
+
+    // Click activation
+    tabs.addEventListener("click", (e) => {
+      const btn = e.target.closest("button[role='tab']");
+      if (!btn) return;
+      const index = sections.findIndex(s => s.tabBtn === btn);
+      if (index >= 0) setActive(index, { focus: false, highlightQuery: searchInput.value });
+    });
+
+    // Keyboard navigation (Arrow keys move focus; Enter/Space activates)
+    tabs.addEventListener("keydown", (e) => {
+      const currentIndex = sections.findIndex(s => s.tabBtn === document.activeElement);
+      if (currentIndex === -1) return;
+
+      switch (e.key) {
+        case "ArrowRight":
+          e.preventDefault();
+          focusTab((currentIndex + 1) % sections.length);
+          break;
+        case "ArrowLeft":
+          e.preventDefault();
+          focusTab((currentIndex - 1 + sections.length) % sections.length);
+          break;
+        case "Home":
+          e.preventDefault();
+          focusTab(0);
+          break;
+        case "End":
+          e.preventDefault();
+          focusTab(sections.length - 1);
+          break;
+        case "Enter":
+        case " ":
+          e.preventDefault();
+          setActive(currentIndex, { focus: true, highlightQuery: searchInput.value });
+          break;
+        default:
+          break;
+      }
+    });
+
+    // --------- Search ----------
+    function renderResults(items, query) {
+      results.innerHTML = "";
+      if (!query || items.length === 0) {
+        results.classList.remove("is-open");
+        searchCount.textContent = query ? "No matches" : "";
+        return;
+      }
+
+      const list = createEl("ul", { class: "results-list" });
+      items.slice(0, 10).forEach((item) => {
+        const li = createEl("li", { class: "results-item" });
+        const btn = createEl("button", {
+          class: "results-btn",
+          type: "button"
+        });
+
+        const title = createEl("div", { class: "results-title", textContent: item.title });
+        const snippet = createEl("div", { class: "results-snippet", textContent: item.snippet });
+
+        btn.append(title, snippet);
+        btn.addEventListener("click", () => {
+          setActive(item.index, { focus: false, highlightQuery: query });
+          results.classList.remove("is-open");
+          // Scroll into view nicely
+          sections[item.index].panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        li.append(btn);
+        list.append(li);
+      });
+
+      results.append(list);
+      results.classList.add("is-open");
+      searchCount.textContent = `${items.length} match${items.length === 1 ? "" : "es"}`;
+    }
+
+    function makeSnippet(text, query) {
+      const q = query.toLowerCase();
+      const t = text.replace(/\s+/g, " ").trim();
+      const i = t.toLowerCase().indexOf(q);
+      if (i === -1) return t.slice(0, 140) + (t.length > 140 ? "…" : "");
+      const start = Math.max(0, i - 50);
+      const end = Math.min(t.length, i + q.length + 70);
+      const prefix = start > 0 ? "…" : "";
+      const suffix = end < t.length ? "…" : "";
+      return prefix + t.slice(start, end) + suffix;
+    }
+
+    let searchTimer = null;
+    function runSearch() {
+      const query = (searchInput.value || "").trim();
+      if (!query) {
+        results.innerHTML = "";
+        results.classList.remove("is-open");
+        searchCount.textContent = "";
+        // Clear highlight from active panel only
+        const active = sections.find(s => s.tabBtn.getAttribute("aria-selected") === "true") || sections[0];
+        clearMarks(active.panel);
+        return;
+      }
+
+      const q = query.toLowerCase();
+      const matches = sections
+        .map((s, index) => {
+          const titleMatch = s.title.toLowerCase().includes(q);
+          const text = (s.panel.innerText || "").toLowerCase();
+          const contentMatch = text.includes(q);
+          if (!titleMatch && !contentMatch) return null;
+
+          const raw = (s.panel.innerText || "");
+          return {
+            index,
+            title: s.title,
+            snippet: makeSnippet(raw, query)
+          };
+        })
+        .filter(Boolean);
+
+      renderResults(matches, query);
+
+      // Also highlight in the active tab (only) so it stays fast
+      const activeIndex = sections.findIndex(s => s.tabBtn.getAttribute("aria-selected") === "true");
+      if (activeIndex >= 0) {
+        const activePanel = sections[activeIndex].panel;
+        clearMarks(activePanel);
+        if (query.length >= 2) highlightInElement(activePanel, query);
+      }
+    }
+
+    searchInput.addEventListener("input", () => {
+      window.clearTimeout(searchTimer);
+      searchTimer = window.setTimeout(runSearch, 120);
+    });
+
+    searchClear.addEventListener("click", () => {
+      searchInput.value = "";
+      runSearch();
+      searchInput.focus();
+    });
+
+    // Initial active tab
+    setActive(0, { focus: false, highlightQuery: "" });
   });
 })();
 
-});
-    
