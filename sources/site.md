@@ -1,6 +1,7 @@
 ---
 title: "Omar AbedelKader"
 bibliography: publications.bib
+nocite: "@*"
 ---
 
 ## About Me
