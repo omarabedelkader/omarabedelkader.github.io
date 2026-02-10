@@ -67,6 +67,47 @@ html = pypandoc.convert_text(
     extra_args=extra_args,
 )
 
+# Keep quick-link emojis in a professional position near the page title.
+# main.js builds the emoji bar dynamically inside the sticky area, so we
+# relocate it after that render pass to align with the H1 header.
+EMOJI_REPOSITION_SCRIPT = """
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const moveTopbarNearTitle = () => {
+    const header = document.querySelector('.site-header');
+    const title = header?.querySelector('h1');
+    const topbar = document.querySelector('.sticky-ui .topbar');
+    if (!header || !title || !topbar) {
+      return false;
+    }
+
+    let row = header.querySelector('.header-row');
+    if (!row) {
+      row = document.createElement('div');
+      row.className = 'header-row';
+      header.insertBefore(row, header.firstChild);
+    }
+
+    row.append(title, topbar);
+    return true;
+  };
+
+  if (moveTopbarNearTitle()) {
+    return;
+  }
+
+  const observer = new MutationObserver(() => {
+    if (moveTopbarNearTitle()) {
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+  setTimeout(() => observer.disconnect(), 3000);
+});
+</script>
+"""
+
 # ======================================================
 # Inject layout
 # ======================================================
@@ -79,6 +120,7 @@ html = html.replace(
     "</main>"
      f"<footer class='site-footer'>Last updated: {last_updated_label(MD_FILE)}</footer>"
     "<script src='main.js' defer></script>"
+    f"{EMOJI_REPOSITION_SCRIPT}"
     "</body>"
 )
 

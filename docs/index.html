@@ -194,5 +194,41 @@ TP</p></li>
 Poland<br />
 <em>“Package-Aware Approach for Repository-Level Code Completion in
 Pharo”</em></p>
-</main><footer class='site-footer'>Last updated: February 2026</footer><script src='main.js' defer></script></body>
+</main><footer class='site-footer'>Last updated: February 2026</footer><script src='main.js' defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const moveTopbarNearTitle = () => {
+    const header = document.querySelector('.site-header');
+    const title = header?.querySelector('h1');
+    const topbar = document.querySelector('.sticky-ui .topbar');
+    if (!header || !title || !topbar) {
+      return false;
+    }
+
+    let row = header.querySelector('.header-row');
+    if (!row) {
+      row = document.createElement('div');
+      row.className = 'header-row';
+      header.insertBefore(row, header.firstChild);
+    }
+
+    row.append(title, topbar);
+    return true;
+  };
+
+  if (moveTopbarNearTitle()) {
+    return;
+  }
+
+  const observer = new MutationObserver(() => {
+    if (moveTopbarNearTitle()) {
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+  setTimeout(() => observer.disconnect(), 3000);
+});
+</script>
+</body>
 </html>
