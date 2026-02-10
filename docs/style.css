@@ -39,6 +39,40 @@
   }
 }
 
+/* explicit theme overrides (used by ☀️/🌙 toggle) */
+html.theme-light {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-2: #fbfbfd;
+
+  --text: #111827;
+  --muted: #6b7280;
+
+  --brand: #2563eb;
+  --brand-2: #1d4ed8;
+
+  --border: #e5e7eb;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+html.theme-dark {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --surface: #0f172a;
+  --surface-2: #111c35;
+
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+
+  --brand: #60a5fa;
+  --brand-2: #93c5fd;
+
+  --border: rgba(255, 255, 255, 0.10);
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+/* prefers-color-scheme + color-scheme reference :contentReference[oaicite:3]{index=3} */
+
 * { box-sizing: border-box; }
 
 html, body { height: 100%; }
@@ -118,6 +152,59 @@ hr {
   padding-bottom: 18px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 14px;
+}
+
+/* NEW: H1 + topbar on same line */
+.header-row {
+  display: flex;
+  align-items: center;          /* vertical alignment :contentReference[oaicite:4]{index=4} */
+  justify-content: space-between;/* left title, right icons :contentReference[oaicite:5]{index=5} */
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.header-row h1 {
+  margin: 0;
+}
+
+/* Emoji icon bar (small, right side of the name) */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topbar-btn {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+}
+
+button.topbar-btn {
+  appearance: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.topbar-btn:hover {
+  background: color-mix(in srgb, var(--brand) 8%, transparent);
+  border-color: color-mix(in srgb, var(--brand) 35%, var(--border));
+}
+
+.topbar-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand) 22%, transparent);
 }
 
 /* Sticky UI (Search + Tabs) */
@@ -308,5 +395,6 @@ mark.search-hit {
     padding: 0;
   }
   .sticky-ui { display: none !important; }
+  .topbar { display: none !important; }
   .tab-panel[hidden] { display: block !important; }
 }

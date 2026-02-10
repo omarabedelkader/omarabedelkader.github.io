@@ -110,6 +110,85 @@
     const header = createEl("header", { class: "site-header" });
     const sticky = createEl("div", { class: "sticky-ui" });
 
+    // ---------------- NEW: Top emoji bar (theme + quick links) ----------------
+    const topbar = createEl("div", {
+      class: "topbar",
+      role: "navigation",
+      "aria-label": "Quick links"
+    });
+
+    // Theme toggle button (☀️/🌙) with persistence
+    const THEME_KEY = "cv-theme";
+    const themeBtn = createEl("button", {
+      class: "topbar-btn topbar-theme",
+      type: "button",
+      "aria-label": "Toggle theme",
+      title: "Toggle theme",
+      textContent: "☀️"
+    });
+
+    function applyTheme(theme) {
+      document.documentElement.classList.remove("theme-light", "theme-dark");
+      if (theme === "light") document.documentElement.classList.add("theme-light");
+      if (theme === "dark") document.documentElement.classList.add("theme-dark");
+    }
+
+    function preferredTheme() {
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+
+    function currentTheme() {
+      if (document.documentElement.classList.contains("theme-dark")) return "dark";
+      if (document.documentElement.classList.contains("theme-light")) return "light";
+      return preferredTheme();
+    }
+
+    function updateThemeIcon() {
+      const t = currentTheme();
+      themeBtn.textContent = t === "dark" ? "🌙" : "☀️";
+    }
+
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if (savedTheme === "light" || savedTheme === "dark") applyTheme(savedTheme);
+    updateThemeIcon();
+
+    themeBtn.addEventListener("click", () => {
+      const next = currentTheme() === "dark" ? "light" : "dark";
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+      updateThemeIcon();
+    });
+
+    topbar.append(themeBtn);
+
+    const quickLinks = [
+      { href: "mailto:omar.abedelkader@inria.fr", label: "Email", icon: "✉️" },
+      { href: "https://omarabedelkader.github.io", label: "Website", icon: "🌐" },
+      { href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
+      { href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
+      { href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
+      { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" }
+    ];
+
+    quickLinks.forEach((l) => {
+      const attrs = {
+        class: "topbar-btn",
+        href: l.href,
+        "aria-label": l.label,
+        title: l.label,
+        textContent: l.icon
+      };
+      if (!String(l.href).startsWith("mailto:")) {
+        attrs.target = "_blank";
+        attrs.rel = "me noopener noreferrer";
+      }
+      const a = createEl("a", attrs);
+      topbar.append(a);
+    });
+    // ------------------------------------------------------------------------
+
     const searchWrap = createEl("div", { class: "search-wrap" });
     const searchLabel = createEl("label", { class: "search-label", html: "Search" });
     const searchInput = createEl("input", {
@@ -138,7 +217,8 @@
 
     const panels = createEl("div", { class: "panels" });
 
-    sticky.append(searchWrap, tabs);
+    // CHANGED: topbar is first inside the sticky area
+    sticky.append(topbar, searchWrap, tabs);
     shell.append(header, sticky, panels);
 
     // --------- Move content before first H2 into header ----------
@@ -369,4 +449,3 @@
     setActive(0, { focus: false, highlightQuery: "" });
   });
 })();
-
