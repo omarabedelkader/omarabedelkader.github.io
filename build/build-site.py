@@ -1,7 +1,9 @@
 from pathlib import Path
 from datetime import datetime
+from last_updated import last_updated_label
 import shutil
 import pypandoc
+
 
 # ======================================================
 # Paths
@@ -29,10 +31,6 @@ FAVICON_DST = DOCS / "favicon.ico"
 HEADER_INCLUDE = TEMPLATES / "header.html"
 
 DOCS.mkdir(exist_ok=True)
-
-def get_last_updated() -> str:
-    """Return the current month/year label used in the site footer."""
-    return datetime.now().strftime("%B %Y")
 
 # ======================================================
 # Copy static assets
@@ -79,7 +77,7 @@ html = html.replace(
 ).replace(
     "</body>",
     "</main>"
-    f"<footer class='site-footer'>Last updated: {get_last_updated()}</footer>"
+     f"<footer class='site-footer'>Last updated: {last_updated_label(MD_FILE)}</footer>"
     "<script src='main.js' defer></script>"
     "</body>"
 )

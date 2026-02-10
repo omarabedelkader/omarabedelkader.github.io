@@ -1,4 +1,5 @@
 from pathlib import Path
+from last_updated import last_updated_label
 import pypandoc
 
 BUILD_DIR = Path(__file__).resolve().parent
@@ -22,6 +23,7 @@ pypandoc.convert_file(
         "--standalone",
         "--pdf-engine=xelatex",
         "--citeproc",
+        "-M", f"date=Last updated: {last_updated_label(input_md)}",
         f"--bibliography={resources / 'publications.bib'}",
         f"--csl={resources / 'apa.csl'}",
 
