@@ -1,0 +1,54 @@
+# omarabedelkader.github.io
+
+This repository builds and publishes a personal academic website and CVs.
+
+## What is happening here?
+
+The project uses **Markdown sources** plus a small **Python + Pandoc build pipeline**:
+
+- `sources/` contains the content (`site.md`, `cv.md`, `cv-industry.md`, `teaching.md`).
+- `build/` contains Python scripts that convert Markdown into:
+  - `docs/index.html` (website page for GitHub Pages)
+  - `cv/cv-en.pdf` and `cv/cv-industry.pdf` (PDF CV outputs)
+- `templates/` contains the website static assets (`style.css`, `main.js`, `header.html`, favicon).
+- `resources/` contains citation and LaTeX support files (`publications.bib`, `apa.csl`, `header.tex`).
+- `runner/` contains shell wrappers that set up a virtual environment, install dependencies, and run each build script.
+
+## Build flow
+
+- `run.sh` runs every script in `runner/`.
+- Each runner script:
+  1. Creates/activates `.venv`
+  2. Installs `requirements.txt`
+  3. Runs one Python build script from `build/`
+
+The website build copies CSS/JS/favicon into `docs/`, converts `sources/site.md` to HTML, injects a footer with a "Last updated" label, and includes the client-side script.
+
+## How to run
+
+```bash
+# run all build steps
+bash run.sh
+```
+
+Or run individual targets:
+
+```bash
+bash runner/build-site.sh
+bash runner/build-cv.sh
+bash runner/build-industry.sh
+```
+
+## Deployment model
+
+`docs/` is the publishable site directory for **GitHub Pages**.
+
+So the normal edit cycle is:
+1. Update content in `sources/` (and optionally templates/resources)
+2. Rebuild
+3. Commit generated output (`docs/`, `cv/`) and source changes
+4. Push to GitHub
+
+---
+
+If you just want to update text/content, start with `sources/site.md` and rebuild.
