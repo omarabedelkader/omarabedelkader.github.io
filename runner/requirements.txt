@@ -1,0 +1,8 @@
+charset-normalizer==3.4.4
+markdown-it-py==4.0.0
+mdit-py-plugins==0.5.0
+mdurl==0.1.2
+pillow==12.1.0
+pypandoc==1.16.2
+PyYAML==6.0.3
+reportlab==4.4.7
