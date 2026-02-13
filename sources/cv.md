@@ -28,7 +28,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Responsibilities
 
-- Owner of the Organization **Pharo-LLM**
+- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm)
 - Member of the Organizing Committee, GDR-GPL'26
 - Sub reviewer at BENEVOL'25
 - Project lead for **ChatPharo** and **Pharo-Copilot**
