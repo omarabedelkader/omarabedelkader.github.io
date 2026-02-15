@@ -1,23 +1,31 @@
 ---
 title: "Omar AbedelKader"
-date: "Last updated: January 2026"
+date: ""
 bibliography: publications.bib
 csl: apa.csl
 link-citations: true
 nocite: "@*"
 ---
 
----
-
-**Lille, France**  
-\faEnvelope\ [](mailto:omar.abedelkader@inria.fr) \quad
-\faGlobe\ [](https://omarabedelkader.github.io) \quad
-\faBrain\ [](https://huggingface.co/omarabedelkader) \quad
-\faGithub\ [](https://github.com/omarabedelkader) \quad
-\faRobot\ [](https://ollama.com/omarabedelkader) \quad
-\faLinkedin\ [](https://www.linkedin.com/in/omarabedelkader/) \quad
+::: center
+Last updated: \today
+:::
 
 ---
+
+::: center
+**Lille, France**
+
+\icon{\faEnvelope} \ [](mailto:omar.abedelkader@inria.fr)\quad
+\icon{\faGlobe} \ [](https://omarabedelkader.github.io)\quad
+\icon{\faBrain} \ [](https://huggingface.co/omarabedelkader)\quad
+\icon{\faGithub} \ [](https://github.com/omarabedelkader)\quad
+\icon{\faRobot} \ [](https://ollama.com/omarabedelkader)\quad
+\icon{\faLinkedin} \ [](https://www.linkedin.com/in/omarabedelkader/)
+:::
+
+---
+
 
 ## About Me
 
@@ -32,7 +40,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Member of the Organizing Committee, GDR-GPL'26
 - Member of the Organizing Committee, ESUG'26, ESUG'25, ESUG'24
 - Sub reviewer at BENEVOL'25
-- Leader and Maintainer for multiples projects ( **ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**)
+- Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...)
 - Mentor for GSoC'26, GSoC'25
 - President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
 - Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)

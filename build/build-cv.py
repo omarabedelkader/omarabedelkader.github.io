@@ -25,7 +25,6 @@ pypandoc.convert_file(
         f"--csl={resources / 'apa.csl'}",
         "-H", str(resources / "header.tex"),
         "-V", "geometry=margin=0.5in",
-        "-V", "mainfont=Times New Roman",
     ]
 )
 

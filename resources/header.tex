@@ -1,29 +1,40 @@
 % =========================================================
-%                CV HEADER.TEX
+%                CV HEADER.TEX (CLEAN VERSION)
 % =========================================================
 
-% ----- Typography / layout polish -----
+% ---------- Font / Engine ----------
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% ---------- Micro-typography ----------
 \usepackage{microtype}
 \usepackage{ragged2e}
 \usepackage{setspace}
+
+% ---------- Colors ----------
+\usepackage{xcolor}
+\definecolor{cvblue}{HTML}{1F4E79}
+
+% ---------- Icons ----------
 \usepackage{fontawesome5}
+\newcommand{\icon}[1]{\textcolor{cvblue}{#1}}
 
+% ---------- Layout ----------
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
+\setlength{\parskip}{2pt}
 
-% ----- Two-column spacing -----
-\setlength{\columnsep}{18pt}
+% Two-column spacing (if ever used)
+\setlength{\columnsep}{16pt}
 \setlength{\columnseprule}{0pt}
 
-% ----- Tighter lists (CV-friendly) -----
+% ---------- Lists (tight CV style) ----------
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=*, noitemsep, topsep=2pt}
 \setlist[enumerate]{leftmargin=*, noitemsep, topsep=2pt}
 
-% ----- Section formatting -----
+% ---------- Section formatting ----------
 \usepackage{titlesec}
 
-% Center all ## sections
 \titleformat{\section}
   {\centering\normalfont\Large\bfseries}
   {}
@@ -32,10 +43,9 @@
 
 \titlespacing*{\section}
   {0pt}
-  {0.7\baselineskip}
-  {0.35\baselineskip}
+  {0.4\baselineskip}
+  {0.2\baselineskip}
 
-% Optional: Center ### subsections (remove if undesired)
 \titleformat{\subsection}
   {\centering\normalfont\large\bfseries}
   {}
@@ -44,14 +54,24 @@
 
 \titlespacing*{\subsection}
   {0pt}
-  {0.5\baselineskip}
-  {0.25\baselineskip}
+  {0.3\baselineskip}
+  {0.15\baselineskip}
 
-% ----- Links (professional + readable) -----
+% ---------- Title tightening ----------
+\usepackage{titling}
+
+\pretitle{\begin{center}\Huge\bfseries}
+\posttitle{\par\end{center}\vspace{-0.5em}}
+
+\predate{\begin{center}}
+\postdate{\par\end{center}\vspace{-1em}}
+
+% ---------- Links ----------
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
-  pdfborder={0 0 0}
+  colorlinks=true,
+  urlcolor=cvblue
 }
 
-% ----- Clean page style (no headers/footers) -----
+% ---------- Clean page ----------
 \pagestyle{empty}
