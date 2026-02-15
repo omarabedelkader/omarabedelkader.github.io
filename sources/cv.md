@@ -28,14 +28,15 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Responsibilities
 
-- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm)
+- Founder and Maintainer of the organization **[Pharo-LLM](https://github.com/pharo-llm)**
 - Member of the Organizing Committee, GDR-GPL'26
+- Member of the Organizing Committee, ESUG'26, ESUG'25, ESUG'24
 - Sub reviewer at BENEVOL'25
-- Project lead for **ChatPharo** and **Pharo-Copilot**
-- Mentor for **Google Summer of Code (GSoC)**'25
+- Leader and Maintainer for multiples projects ( **ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**)
+- Mentor for GSoC'26, GSoC'25
 - President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
 - Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
-- Contributor of the Pharo-AI Organisation
+- Member of the Pharo-AI Organisation
 - Contributor at **Conseil National du Numérique (CNNum)** (*Café IA*)
 - Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects
 
