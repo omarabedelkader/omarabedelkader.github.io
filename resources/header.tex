@@ -1,29 +1,56 @@
+% =========================================================
+%                CV HEADER.TEX
+% =========================================================
+
 % ----- Typography / layout polish -----
 \usepackage{microtype}
 \usepackage{ragged2e}
 \usepackage{setspace}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{4pt}
 
-% Two-column spacing
+% ----- Two-column spacing -----
 \setlength{\columnsep}{18pt}
 \setlength{\columnseprule}{0pt}
 
-% Tighter lists (CV-friendly)
+% ----- Tighter lists (CV-friendly) -----
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=*, noitemsep, topsep=2pt}
 \setlist[enumerate]{leftmargin=*, noitemsep, topsep=2pt}
 
-% Section spacing
+% ----- Section formatting -----
 \usepackage{titlesec}
-\titlespacing*{\section}{0pt}{0.7\baselineskip}{0.35\baselineskip}
-\titlespacing*{\subsection}{0pt}{0.5\baselineskip}{0.25\baselineskip}
 
-% Links (professional + readable)
+% Center all ## sections
+\titleformat{\section}
+  {\centering\normalfont\Large\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\section}
+  {0pt}
+  {0.7\baselineskip}
+  {0.35\baselineskip}
+
+% Optional: Center ### subsections (remove if undesired)
+\titleformat{\subsection}
+  {\centering\normalfont\large\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\subsection}
+  {0pt}
+  {0.5\baselineskip}
+  {0.25\baselineskip}
+
+% ----- Links (professional + readable) -----
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
   pdfborder={0 0 0}
 }
 
-% Remove headers/footers for a clean CV (optional)
+% ----- Clean page style (no headers/footers) -----
 \pagestyle{empty}
