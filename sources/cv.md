@@ -10,12 +10,12 @@ nocite: "@*"
 ---
 
 **Lille, France**  
-**Email:** [omar.abedelkader@inria.fr](mailto:omar.abedelkader@inria.fr)  
-**Website:** [omarabedelkader.github.io](https://omarabedelkader.github.io)  
-**Hugging Face:** [omarabedelkader](https://huggingface.co/omarabedelkader)  
-**GitHub:** [omarabedelkader](https://github.com/omarabedelkader)  
-**Ollama:** [omarabedelkader](https://ollama.com/omarabedelkader)  
-**LinkedIn:** [omarabedelkader](https://www.linkedin.com/in/omarabedelkader/)
+\faEnvelope\ [](mailto:omar.abedelkader@inria.fr) \quad
+\faGlobe\ [](https://omarabedelkader.github.io) \quad
+\faBrain\ [](https://huggingface.co/omarabedelkader) \quad
+\faGithub\ [](https://github.com/omarabedelkader) \quad
+\faRobot\ [](https://ollama.com/omarabedelkader) \quad
+\faLinkedin\ [](https://www.linkedin.com/in/omarabedelkader/) \quad
 
 ---
 
