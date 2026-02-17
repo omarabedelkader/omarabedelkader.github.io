@@ -56,7 +56,7 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 
 ## Leadership & Community
 
-- Owner of the Organization **Pharo-LLM**
+- Founder of the Organization **Pharo-LLM**
 - Member of the Organizing Committee, GDR-GPL'26
 - Sub reviewer at BENEVOL'25
 - Project lead for **ChatPharo** and **Pharo-Copilot**
@@ -98,7 +98,6 @@ I am an AI researcher with extensive experience in artificial intelligence and s
 
 ## Languages
 
-- **Arabic:** Native
 - **French:** Native
 - **English:** B2
 

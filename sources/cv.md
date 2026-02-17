@@ -20,7 +20,6 @@ nocite: "@*"
 
 ---
 
-
 ## About Me
 
 I am an AI researcher with extensive experience in artificial intelligence and software engineering.  
@@ -35,10 +34,10 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Member of the Organizing Committee, ESUG'26, ESUG'25, ESUG'24
 - Sub reviewer at BENEVOL'25
 - Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...)
-- Mentor for GSoC'26, GSoC'25
+- Mentor in GSoC'26, GSoC'25
 - President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
 - Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
-- Member of the Pharo-AI Organisation
+- Member in the organization **[Pharo-ai](https://github.com/pharo-ai)**
 - Contributor at **Conseil National du Numérique (CNNum)** (*Café IA*)
 - Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects
 
@@ -142,7 +141,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ## Teaching
 
 - Teaching assistant at IUT: *Introduction to Software Development* 41,5 h TP
-- Teaching assistant at IUT : *Software Maintenance* 12h TP
+- Teaching assistant at IUT : *Software Maintenance* 12h TD
 - Teaching assistant at Polytech: *DataBase* 16h TP
 - Teaching assistant at Polytech: *Internet* 12h TP 
 
@@ -161,50 +160,20 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 **Best Paper Award (3rd place)** — IWST 2025, Gdańsk, Poland  
 *“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
 
----
-
-## Mentorship
-
-- **Google Summer of Code (GSoC) 2025** — Mentor 
-- **Demain ([dema1n.org](https://www.dema1n.org))** — Mentor 
-
----
-
-## Library
-
-### **Pharo-LLM** — Author and Maintainer 
-**GitHub Repository:** [Pharo-LLM](https://github.com/omarabedelkader/pharo-llm) 
-
-- Author and maintainer of **Pharo-LLM**
-- How to create a model for a **low-resource language**
-- How to **evaluate a model** (metrics, benchmarks, validation strategies)
-- Research-oriented LLM experimentation inside the Pharo ecosystem
-
-### **Neural Networks Library (Pharo)** — Author and Maintainer  
-**GitHub Repository:** [Pharo-NN](https://github.com/omarabedelkader/Neural-Network) 
-
-- Native **neural networks library** for the Pharo programming language
-- Designed and implemented core components for:
-  - Network architecture definition
-  - Training pipelines
-  - Model evaluation
-- Provides abstractions for layers, activation functions, and learning workflows
-- Actively maintained and used for **research and education** within Smalltalk
-
 --- 
 
 ## Technologies & Skills
 
-**Programming Languages:** Python, Pharo, Java, JavaScript, 
-**Machine Learning & Deep Learning:** TensorFlow, PyTorch, Keras, Scikit-learn  
-**Natural Language Processing (NLP):** spaCy, NLTK  
-**Big Data & Distributed Systems:** Apache Spark, Hadoop  
-**Data Analysis & Visualization:** Pandas, Matplotlib, Seaborn  
-**Scientific Computing:** NumPy, SciPy  
-**Web Development:** Flask, Django, Laravel, ReactJS  
-**Databases & Cloud:** MongoDB, MySQL, AWS  
-**Operating Systems:** macOS, UNIX, Windows  
-**Research Areas:** Artificial Intelligence, Software Engineering
+- **Programming Languages:** Python, Pharo, Java, JavaScript, 
+- **Machine Learning & Deep Learning:** TensorFlow, PyTorch, Keras, Scikit-learn  
+- **Natural Language Processing (NLP):** spaCy, NLTK  
+- **Big Data & Distributed Systems:** Apache Spark, Hadoop  
+- **Data Analysis & Visualization:** Pandas, Matplotlib, Seaborn  
+- **Scientific Computing:** NumPy, SciPy  
+- **Web Development:** Flask, Django, Laravel, ReactJS  
+- **Databases & Cloud:** MongoDB, MySQL, AWS  
+- **Operating Systems:** macOS, UNIX, Windows  
+- **Research Areas:** Artificial Intelligence, Software Engineering
 
 ---
 
