@@ -55,6 +55,10 @@ extra_args = [
     "--metadata=link-citations:true",
     "--css=style.css",
     "--metadata=pagetitle=Omar AbedelKader",
+    "--metadata=title=Omar AbedelKader",
+    "--metadata=author=Omar AbedelKader",
+    "--metadata=description=Official website of Omar AbedelKader, AI engineer and researcher. Projects, publications, CV, and contact details.",
+    "--metadata=keywords=Omar AbedelKader,Omar Abdelkader,Omar Abedelkader,AI engineer,machine learning,publications,CV",
 
     # NEW: inject <link rel="icon" ...> into <head>
     f"--include-in-header={HEADER_INCLUDE}",

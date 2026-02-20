@@ -169,7 +169,8 @@
       { href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
       { href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
       { href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
-      { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" }
+      { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" },
+      { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: "Google Scholar", icon: "🎓" }
     ];
 
     quickLinks.forEach((l) => {

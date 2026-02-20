@@ -98,3 +98,11 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 **Best Paper Award (3rd place)** — IWST 2025, Gdańsk, Poland  
 *“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
+
+
+--
+
+## CV
+
+- 📄 **[Download Full CV (PDF)](../cv/cv-en.pdf)**
+- 🧾 **[Download One-Page CV (PDF)](../cv/cv-industry.pdf)**
