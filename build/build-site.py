@@ -28,7 +28,7 @@ JS_DST = DOCS / "main.js"
 # NEW: favicon + header include snippet
 FAVICON_SRC = TEMPLATES / "favicon.ico"
 FAVICON_DST = DOCS / "favicon.ico"
-HEADER_INCLUDE = TEMPLATES / "header.html"
+HEADER_INCLUDE = RESOURCES / "seo_head.html"
 
 DOCS.mkdir(exist_ok=True)
 
@@ -130,3 +130,30 @@ html = html.replace(
 
 HTML_FILE.write_text(html, encoding="utf-8")
 print("Site built successfully.")
+
+
+from urllib.parse import urljoin
+
+SITE_URL = "https://omarabedelkader.github.io/"
+
+# robots.txt
+robots_txt = f"""User-agent: *
+Allow: /
+
+Sitemap: {urljoin(SITE_URL, "sitemap.xml")}
+"""
+(DOCS / "robots.txt").write_text(robots_txt, encoding="utf-8")
+
+# sitemap.xml
+lastmod = datetime.utcfromtimestamp(HTML_FILE.stat().st_mtime).strftime("%Y-%m-%d")
+sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{SITE_URL.rstrip('/')}/</loc>
+    <lastmod>{lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+"""
+(DOCS / "sitemap.xml").write_text(sitemap_xml, encoding="utf-8")
