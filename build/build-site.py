@@ -3,7 +3,7 @@ from datetime import datetime
 from last_updated import last_updated_label
 import shutil
 import pypandoc
-
+from publications import render_grouped_publications_markdown
 
 # ======================================================
 # Paths
@@ -46,6 +46,9 @@ shutil.copyfile(FAVICON_SRC, FAVICON_DST)
 # Pandoc conversion
 # ======================================================
 
+PUBLICATIONS_MD = render_grouped_publications_markdown(RESOURCES / "publications.bib")
+source_markdown = MD_FILE.read_text(encoding="utf-8").replace("{{PUBLICATIONS_GROUPED}}", PUBLICATIONS_MD)
+
 extra_args = [
     "--standalone",
     "--citeproc",
@@ -65,7 +68,7 @@ extra_args = [
 ]
 
 html = pypandoc.convert_text(
-    MD_FILE.read_text(encoding="utf-8"),
+    source_markdown,
     to="html5",
     format="md",
     extra_args=extra_args,

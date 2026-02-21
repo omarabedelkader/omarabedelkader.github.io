@@ -27,8 +27,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Publications
 
-::: {#refs}
-:::
+{{PUBLICATIONS_GROUPED}}
 
 ---
 
