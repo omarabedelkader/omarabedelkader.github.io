@@ -1,6 +1,7 @@
 from pathlib import Path
 from datetime import datetime
 from last_updated import last_updated_label
+from urllib.parse import urljoin
 import shutil
 import pypandoc
 
@@ -42,6 +43,15 @@ shutil.copyfile(JS_SRC, JS_DST)
 # NEW: copy favicon into docs/
 shutil.copyfile(FAVICON_SRC, FAVICON_DST)
 
+# Copy generated CV PDFs into docs/cv/ for GitHub Pages publishing.
+CV_SRC_DIR = ROOT / "cv"
+CV_DST_DIR = DOCS / "cv"
+CV_DST_DIR.mkdir(parents=True, exist_ok=True)
+
+for cv_pdf in CV_SRC_DIR.glob("*.pdf"):
+    shutil.copyfile(cv_pdf, CV_DST_DIR / cv_pdf.name)
+
+
 # ======================================================
 # Pandoc conversion
 # ======================================================
@@ -59,8 +69,6 @@ extra_args = [
     "--metadata=title=Omar AbedelKader",
     "--metadata=description=Official website of Omar AbedelKader, AI engineer and researcher. Projects, publications, CV, and contact details.",
     "--metadata=keywords=Omar AbedelKader,Omar Abdelkader,Omar Abedelkader,AI engineer,machine learning,publications,CV",
-
-    # NEW: inject <link rel="icon" ...> into <head>
     f"--include-in-header={HEADER_INCLUDE}",
 ]
 
@@ -71,9 +79,6 @@ html = pypandoc.convert_text(
     extra_args=extra_args,
 )
 
-# Keep quick-link emojis in a professional position near the page title.
-# main.js builds the emoji bar dynamically inside the sticky area, so we
-# relocate it after that render pass to align with the H1 header.
 EMOJI_REPOSITION_SCRIPT = """
 <script>
 document.addEventListener('DOMContentLoaded', () => {
@@ -132,7 +137,9 @@ HTML_FILE.write_text(html, encoding="utf-8")
 print("Site built successfully.")
 
 
-from urllib.parse import urljoin
+# ======================================================
+# SEO
+# ======================================================
 
 SITE_URL = "https://omarabedelkader.github.io/"
 
