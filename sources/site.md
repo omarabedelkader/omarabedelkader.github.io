@@ -12,16 +12,17 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ### Responsibilities
 
-- Owner of the Organization **[Pharo-LLM](https://github.com/pharo-llm)**
-- Member of the Organizing Committee, [GDR-GPL](https://gdr-gpl.cnrs.fr)'26
-- Sub reviewer at [BENEVOL](https://easychair.org/cfp/BENEVOL2025)'25
-- Project lead for **[ChatPharo](https://github.com/omarabedelkader/ChatPharo)** and **[Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)**
-- Mentor for **Google Summer of Code (GSoC)**'25
-- President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
-- Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
-- Contributor of the [Pharo-AI](https://github.com/pharo-ai) Organisation
-- Contributor at **Conseil National du Numérique (CNNum)** (*Café IA*)
-- Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects
+- Founder and Maintainer of the organization **[Pharo-LLM](https://github.com/pharo-llm)**
+- Member of the Organizing Committee, GDR-GPL'26
+- Member of the Organizing Committee, ESUG'26, ESUG'25, ESUG'24
+- Sub reviewer at BENEVOL'25
+- Project Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...)
+- Mentor for **Google Summer of Code (GSoC)**'26, '25.
+- President of **[NeuroTech-Lille](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
+- Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*).
+- Member in the organization **[Pharo-AI](https://github.com/pharo-ai)**
+- Contributor at **Conseil National du Numérique (CNNum)** (*Café IA*).
+- Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects.
 
 ---
 
@@ -96,13 +97,12 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Awards and Honors
 
-**Best Paper Award (3rd place)** — IWST 2025, Gdańsk, Poland  
+### **Best Paper Award (3rd place)** — IWST 2025, Gdańsk, Poland  
 *“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
-
 
 --
 
 ## CV
 
 - 📄 **[Download Full CV (PDF)](../cv/cv-en.pdf)**
-- 🧾 **[Download One-Page CV (PDF)](../cv/cv-industry.pdf)**
+- 📄 **[Download One-Page CV (PDF)](../cv/cv-industry.pdf)**
