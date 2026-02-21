@@ -48,6 +48,7 @@ shutil.copyfile(FAVICON_SRC, FAVICON_DST)
 
 extra_args = [
     "--standalone",
+    "--metadata=lang=en",
     "--citeproc",
     f"--resource-path={RESOURCES}",
     "--bibliography=publications.bib",
@@ -56,7 +57,6 @@ extra_args = [
     "--css=style.css",
     "--metadata=pagetitle=Omar AbedelKader",
     "--metadata=title=Omar AbedelKader",
-    "--metadata=author=Omar AbedelKader",
     "--metadata=description=Official website of Omar AbedelKader, AI engineer and researcher. Projects, publications, CV, and contact details.",
     "--metadata=keywords=Omar AbedelKader,Omar Abdelkader,Omar Abedelkader,AI engineer,machine learning,publications,CV",
 
