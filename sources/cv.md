@@ -11,12 +11,9 @@ nocite: "@*"
 
 **Lille, France**
 
-\icon{\faEnvelope} \ [omarabedelkader](mailto:omar.abedelkader@inria.fr)\quad
-\icon{\faGlobe} \ [](https://omarabedelkader.github.io)\quad
-\icon{\faBrain} \ [](https://huggingface.co/omarabedelkader)\quad
-\icon{\faGithub} \ [](https://github.com/omarabedelkader)\quad
-\icon{\faRobot} \ [](https://ollama.com/omarabedelkader)\quad
-\icon{\faLinkedin} \ [](https://www.linkedin.com/in/omarabedelkader/)
+[\icon{\faEnvelope}](mailto:omar.abedelkader@inria.fr)
+[\icon{\faGithub}](https://github.com/omarabedelkader)
+[\icon{\faLinkedin}](https://www.linkedin.com/in/omarabedelkader/)
 
 ---
 
