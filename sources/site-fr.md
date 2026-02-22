@@ -30,46 +30,19 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 
 ---
 
-## Expérience
-
-### Chercheur en IA — INRIA (Villeneuve-d'Ascq, France)  
-- *Oct. 2024 – Oct. 2027*  
-- Amélioration de la complétion et de la génération de code avec des LLMs, en ciblant le langage Pharo.
-- Développement de techniques de complétion, d'inférence de types et de déploiement dans l'IDE Pharo, avec un focus performance.
-
-### Ingénieur IA — INERIS (Verneuil-en-Halatte, France)  
-- *Sept. 2023 – Sept. 2024*  
-- Développement de « INERIS-IA », un outil de classification documentaire aligné sur les objectifs stratégiques de l'INERIS.
-- Construction de requêtes booléennes et amélioration de la qualité du corpus via similarité documentaire et extraction de mots-clés.
-
-### Stage — Chercheur IA — LIPN (Villetaneuse, France)  
-- *Juin 2023 – Août 2023*  
-- Comparaison de techniques d'échantillonnage pour la planification probabiliste appliquée à la génération de récits.
-- Évaluation de méthodes comme SFE et Gumbel-Softmax pour la cohérence et la créativité narratives.
-
-### Développeur logiciel — BEON-IT (Beyrouth, Liban)  
-- *Mai 2022 – Juin 2022*  
-- Java · Design Patterns · .NET Framework · Threading · Microsoft SQL Server
-
-### Développeur Full-Stack — SSCC-IT (Andket, Liban)  
-- *Nov. 2020 – Avr. 2021*  
-- PHP & SQL · Design Patterns · Microsoft SQL Server
-
----
-
 ## Logiciels
 
 ### Pharo-Copilot
 - Outil intelligent de complétion et génération de code pour Pharo, inspiré de GitHub Copilot.
 - Orienté complétion à l'échelle dépôt et package.
 - Utilise des LLMs pour améliorer la productivité dans un langage dynamiquement typé.
-- **Dépôt GitHub :** [Pharo-Copilot](https://github.com/omarabedelkader/Pharo-Copilot)
+- **Dépôt GitHub :** [Pharo-Copilot](https://github.com/pharo-llm/Pharo-Copilot)
 
 ### ChatPharo
 - Interface conversationnelle en direct entre développeurs Pharo et modèles de langage.
 - Permet des échanges interactifs avec des LLMs directement dans l'environnement Pharo.
 - Architecture ouverte et extensible pour expérimenter plusieurs backends LLM.
-- **Dépôt GitHub :** [ChatPharo](https://github.com/omarabedelkader/ChatPharo)
+- **Dépôt GitHub :** [ChatPharo](https://github.com/pharo-llm/ChatPharo)
 
 ### INERIS-IA
 - Plateforme IA pour la classification documentaire et la gestion des connaissances.
@@ -81,10 +54,10 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 
 ## Enseignement
 
-- Vacataire à l'IUT : *Introduction au développement logiciel* 41,5 h TP
-- Vacataire à l'IUT : *Maintenance logicielle* 12 h TP
-- Vacataire à Polytech : *Base de données* 16 h TP
-- Vacataire à Polytech : *Internet* 12 h TP
+- Vacataire à l'IUT : *Introduction au développement logiciel* 41,5 h TP.  
+- Vacataire à l'IUT : *Maintenance logicielle* 12 h TD.  
+- Vacataire à Polytech : *Base de données* 16 h TP.  
+- Vacataire à Polytech : *Internet* 12 h TP.  
 
 ---
 
@@ -104,4 +77,4 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 
 - 📑 **[📥 CV complet (PDF)](../cv/cv-fr.pdf)**
 - 📄 **[📥 CV une page (PDF)](../cv/cv-industry.pdf)**
-- 🌍 **[Version anglaise](../index.html)**
+- 🌍 **[Version Anglaise](../index.html)**
