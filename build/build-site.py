@@ -106,14 +106,15 @@ def build_page(config):
 
     script_path = "../main.js" if config["lang"] == "fr" else "main.js"
     footer_label = "Dernière mise à jour" if config["lang"] == "fr" else "Last updated"
-
+    copyright_text = "Copyright © 2024 Omar AbedelKader"
+  
     html = html.replace(
         "<body>",
         "<body><main class='cv' id='cv'>"
     ).replace(
         "</body>",
         "</main>"
-        f"<footer class='site-footer'>{footer_label}: {last_updated_label(config['md'])}</footer>"
+        f"<footer class='site-footer'>{footer_label}: {last_updated_label(config['md'])}<br>{copyright_text}</footer>"
         f"<script src='{script_path}' defer></script>"
         f"{EMOJI_REPOSITION_SCRIPT}"
         "</body>"
