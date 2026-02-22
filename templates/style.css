@@ -380,6 +380,7 @@ mark.search-hit {
 .site-footer {
   max-width: var(--maxw);
   margin: 18px auto 38px;
+  padding-bottom: 70px;
   text-align: center;
   color: var(--muted);
   font-size: 12px;
