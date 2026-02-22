@@ -14,14 +14,14 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 - Founder and Maintainer of the organization **[Pharo-LLM](https://github.com/pharo-llm)**
 - Member of the Organizing Committee, GDR-GPL'26
-- Member of the Organizing Committee, ESUG'26, ESUG'25, ESUG'24
-- Sub reviewer at BENEVOL'25
+- Member of the Organizing Committee, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
+- Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**
 - Project Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...)
-- Mentor for **Google Summer of Code (GSoC)**'26, '25.
+- Mentor in **[GSoC'26](https://gsoc.pharo.org)**, **[GSoC'25](https://gsoc.pharo.org)**
 - President of **[NeuroTech-Lille](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
-- Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*).
+- Contributor at **Ministère de la Transition Écologique** (**[*Club IA et Transition écologique*](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')**)
 - Member in the organization **[Pharo-AI](https://github.com/pharo-ai)**
-- Contributor at **Conseil National du Numérique (CNNum)** (*Café IA*).
+- Contributor at **Conseil National du Numérique (CNNum)** (*[Café IA](https://cafeia.org)*)
 - Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects.
 
 ---
@@ -97,10 +97,15 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Awards and Honors
 
-### **Best Paper Award (3rd place)** — IWST 2025, Gdańsk, Poland  
+### Awards:
+- Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
 *“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
 
---
+### Honors:
+- Featured Alumni Testimonial — IDMC, University of Lorraine
+*“Alumni testimonial in NLP & AI featured on the official IDMC Institute website.”* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+
+---
 
 ## CV
 

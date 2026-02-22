@@ -31,14 +31,14 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 - Founder and Maintainer of the organization **[Pharo-LLM](https://github.com/pharo-llm)**
 - Member of the Organizing Committee, GDR-GPL'26
-- Member of the Organizing Committee, ESUG'26, ESUG'25, ESUG'24
-- Sub reviewer at BENEVOL'25
-- Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...)
-- Mentor in GSoC'26, GSoC'25
-- President of **NeuroTech-Lille**, a student association focused on AI and neuroscience
-- Contributor at **Ministère de la Transition Écologique** (*Club IA et Transition écologique*)
-- Member in the organization **[Pharo-ai](https://github.com/pharo-ai)**
-- Contributor at **Conseil National du Numérique (CNNum)** (*Café IA*)
+- Member of the Organizing Committee, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
+- Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**
+- Project Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...)
+- Mentor in **[GSoC'26](https://gsoc.pharo.org)**, **[GSoC'25](https://gsoc.pharo.org)**
+- President of **[NeuroTech-Lille](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
+- Contributor at **Ministère de la Transition Écologique** (**[*Club IA et Transition écologique*](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')**)
+- Member in the organization **[Pharo-AI](https://github.com/pharo-ai)**
+- Contributor at **Conseil National du Numérique (CNNum)** (*[Café IA](https://cafeia.org)*)
 - Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects
 
 ---
@@ -52,37 +52,37 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Experience
 
-### AI Researcher** — INRIA (Villeneuve-d'Ascq, France)   *Oct. 2024 – Oct. 2027*  
+### **AI Researcher** — INRIA (Villeneuve-d'Ascq, France)   *Oct. 2024 – Oct. 2027*  
 - Improving code completion and code generation using LLMs, specifically targeting the Pharo programming language, which has limited training data.
 - Developing techniques for code completion, type inference, and deployment in Pharo’s IDE, with a focus on runtime performance.
 
-### AI Engineer** — INERIS (Verneuil-en-Halatte, France)   *Sept. 2023 – Sept. 2024*  
+### **AI Engineer** — INERIS (Verneuil-en-Halatte, France)   *Sept. 2023 – Sept. 2024*  
 - Developed “INERIS-IA,” a tool to classify textual documents according to INERIS’s strategic goals using ML and NLP techniques.
 - Created Boolean queries for document retrieval and improved corpus quality through document similarity and keyword extraction.
 
-### Intern — AI Researcher** — LIPN (Villetaneuse, France)   *June 2023 – Aug. 2023*  
+### **Intern — AI Researcher** — LIPN (Villetaneuse, France)   *June 2023 – Aug. 2023*  
 - Compared sampling techniques for probabilistic planning, particularly for generating literary narratives.
 - Evaluated methods including the Score Function Estimator (SFE) and advanced techniques such as Gumbel-Softmax, assessing their effectiveness in producing coherent and creative stories.
 
-### Software Developer** — BEON-IT (Beirut, Lebanon)   *May 2022 – June 2022*  
+### **Software Developer** — BEON-IT (Beirut, Lebanon)   *May 2022 – June 2022*  
 - Java · Design Patterns · .NET Framework · Threading · Microsoft SQL Server
 
-### Full-Stack Developer** — SSCC-IT (Andket, Lebanon)   *Nov. 2020 – Apr. 2021*  
+### **Full-Stack Developer** — SSCC-IT (Andket, Lebanon)   *Nov. 2020 – Apr. 2021*  
 - PHP & SQL · Design Patterns · Microsoft SQL Server
 
 ---
 
 ## Education
 
-### University of Lille** — Villeneuve-d'Ascq, France  
+### **University of Lille** — Villeneuve-d'Ascq, France  
 *Ph.D. in Computer Science*  
 (Oct. 2024 – Present)
 
-### University of Lorraine** — Nancy, France  
+### **University of Lorraine** — Nancy, France  
 *M.Sc. in Natural Language Processing*  
 (Sept. 2022 – Sept. 2024)
 
-### Lebanese University** — Beirut, Lebanon  
+### **Lebanese University** — Beirut, Lebanon  
 *B.Sc. in Data Science*  
 (Sept. 2019 – July 2022)
 
@@ -149,7 +149,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Talks
 
-**ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs** — ESUG 2025  
+### **ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs** — ESUG 2025  
 - **Slides:** [PDF](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf)
 - **Video:** *Coming soon*
 
@@ -157,8 +157,13 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Awards and Honors
 
-**Best Paper Award (3rd place)** — IWST 2025, Gdańsk, Poland  
+### Awards:
+- Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
 *“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
+
+### Honors:
+- Featured Alumni Testimonial — IDMC 2024, University of Lorraine
+*“Alumni testimonial in NLP & AI featured on the official IDMC Institute website.”* [Link](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 --- 
 
@@ -173,20 +178,13 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - **Web Development:** Flask, Django, Laravel, ReactJS  
 - **Databases & Cloud:** MongoDB, MySQL, AWS  
 - **Operating Systems:** macOS, UNIX, Windows  
-- **Research Areas:** Artificial Intelligence, Software Engineering
-
----
-
-## Visibility & Testimonials
-
-**Alumni Testimonial — IDMC, University of Lorraine:** Featured on the official IDMC Institute website as an alumni in Natural Language Processing and Artificial Intelligence, sharing your academic and professional journey from MSc to PhD.  
-- [Testimonial page](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- **Research Areas:** Artificial Intelligence, Software Engineering, AI44SE, SE4AI
 
 ---
 
 ## Volunteering
 
-### NeuroTech-Lille — President
+### NeuroTech-Lille — President (2024–Present)
 - Led the executive board and coordinated association activities and projects.
 - Managed the annual budget, including financial planning, expense tracking, and funding allocation.
 - Represented the association in meetings with university administration, partners, and sponsors.
@@ -194,13 +192,13 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Supervised team members and ensured effective collaboration across departments.
 - Defined strategic goals and ensured alignment with the association’s mission.
 
-### Ministère de la Transition Écologique — Contributor (Club IA et Transition écologique)
+### Ministère de la Transition Écologique — Contributor (Club IA et Transition écologique) (2023–Present)
 - Contributed to ongoing AI-driven projects supporting ecological transition initiatives within the French government.
 - Assisted in the development and evaluation of AI use cases for public policy and environmental impact.
 - Collaborated with interdisciplinary teams, including policymakers, researchers, and technical experts.
 - Participated in strategic discussions on responsible and sustainable AI deployment in the public sector.
 
-### Conseil National du Numérique (CNNum) — Contributor (Café IA)
+### Conseil National du Numérique (CNNum) — Contributor (Café IA) (2023–Present)
 - Contributed to national discussions on artificial intelligence, digital policy, and societal impact.
 - Assisted in the preparation and facilitation of Café IA sessions bringing together experts, researchers, and public stakeholders.
 - Participated in the analysis of AI trends, use cases, and regulatory challenges.
