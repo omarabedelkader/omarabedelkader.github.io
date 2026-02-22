@@ -19,6 +19,7 @@ def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
             "booktitle": _extract_field(part, "booktitle"),
             "journal": _extract_field(part, "journal"),
             "year": _extract_field(part, "year"),
+            "doi": _extract_field(part, "doi"),
         }
         entries.append(fields)
     return entries
@@ -55,8 +56,32 @@ def _clean_latex(text: str) -> str:
 def _format_authors(authors: str) -> str:
     if not authors:
         return ""
-    names = [a.strip() for a in re.split(r"\s+and\s+", authors) if a.strip()]
-    return ", ".join(names)
+    def to_apa_name(name: str) -> str:
+        name = name.strip()
+        if not name:
+            return ""
+
+        if "," in name:
+            last, given = [part.strip() for part in name.split(",", 1)]
+        else:
+            parts = name.split()
+            if len(parts) == 1:
+                return parts[0]
+            last, given = parts[-1], " ".join(parts[:-1])
+
+        initials = " ".join(
+            f"{part[0]}."
+            for part in re.split(r"[-\s]+", given)
+            if part and part[0].isalpha()
+        )
+        return f"{last}, {initials}".strip()
+
+    names = [to_apa_name(a) for a in re.split(r"\s+and\s+", authors) if a.strip()]
+    if len(names) == 1:
+        return names[0]
+    if len(names) == 2:
+        return f"{names[0]}, & {names[1]}"
+    return f"{', '.join(names[:-1])}, & {names[-1]}"
 
 
 def generate_publications_markdown(bib_path: Path) -> str:
@@ -70,6 +95,7 @@ def generate_publications_markdown(bib_path: Path) -> str:
         year = entry.get("year", "")
         title = entry.get("title", "")
         venue = entry.get("journal") or entry.get("booktitle")
+        doi = entry.get("doi", "")
 
         segments = []
         if authors:
@@ -77,9 +103,12 @@ def generate_publications_markdown(bib_path: Path) -> str:
         if year:
             segments.append(f"({year}).")
         if title:
-            segments.append(f"*{title}*.")
+            segments.append(f"{title}.")
         if venue:
-            segments.append(f"{venue}.")
+            segments.append(f"*{venue}*.")
+        if doi:
+            doi_url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
+            segments.append(f"DOI: [{doi}]({doi_url}).")
         lines.append(f"- {' '.join(segments).strip()}")
     return "\n".join(lines)
 

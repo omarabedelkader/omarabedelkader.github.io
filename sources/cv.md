@@ -174,7 +174,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - **Web Development:** Flask, Django, Laravel, ReactJS  
 - **Databases & Cloud:** MongoDB, MySQL, AWS  
 - **Operating Systems:** macOS, UNIX, Windows  
-- **Research Areas:** Artificial Intelligence, Software Engineering, AI44SE, SE4AI
+- **Research Areas:** Artificial Intelligence, Software Engineering, AI4SE, SE4AI
 
 ---
 
