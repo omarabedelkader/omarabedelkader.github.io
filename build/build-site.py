@@ -4,6 +4,7 @@ from last_updated import last_updated_label
 from urllib.parse import urljoin
 import shutil
 import pypandoc
+from publications import inject_publications
 
 
 # ======================================================
@@ -72,8 +73,13 @@ extra_args = [
     f"--include-in-header={HEADER_INCLUDE}",
 ]
 
-html = pypandoc.convert_text(
+rendered_md = inject_publications(
     MD_FILE.read_text(encoding="utf-8"),
+        RESOURCES / "publications.bib",
+)
+
+html = pypandoc.convert_text(
+    rendered_md,
     to="html5",
     format="md",
     extra_args=extra_args,
