@@ -3,11 +3,8 @@ title: "Omar AbedelKader"
 date: ""
 ---
 
-**Lille, France**
-
-[\icon{\faEnvelope}](mailto:omar.abedelkader@inria.fr)
-[\icon{\faGithub}](https://github.com/omarabedelkader)
-[\icon{\faLinkedin}](https://www.linkedin.com/in/omarabedelkader/)
+## **Lille, France**  
+## [\icon{\faEnvelope}](mailto:omar.abedelkader@inria.fr)  [\icon{\faGithub}](https://github.com/omarabedelkader)  [\icon{\faLinkedin}](https://www.linkedin.com/in/omarabedelkader/)
 
 ---
 
