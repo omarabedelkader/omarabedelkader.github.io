@@ -18,8 +18,23 @@ DOCS = ROOT / "docs"
 RESOURCES = ROOT / "resources"
 TEMPLATES = ROOT / "templates"
 
-MD_FILE = ROOT / "sources" / "site.md"
-HTML_FILE = DOCS / "index.html"
+SITE_SOURCES = [
+    {
+        "md": ROOT / "sources" / "site.md",
+        "html": DOCS / "index.html",
+        "lang": "en",
+        "pagetitle": "Omar AbedelKader",
+        "description": "Official website of Omar AbedelKader, AI engineer and researcher. Projects, publications, CV, and contact details.",
+    },
+    {
+        "md": ROOT / "sources" / "site-fr.md",
+        "html": DOCS / "fr" / "index.html",
+        "lang": "fr",
+        "pagetitle": "Omar AbedelKader — Version française",
+        "description": "Site officiel d'Omar AbedelKader, ingénieur et chercheur en IA. Projets, publications, CV et coordonnées.",
+    },
+]
+
 
 CSS_SRC = TEMPLATES / "style.css"
 JS_SRC = TEMPLATES / "main.js"
@@ -57,33 +72,54 @@ for cv_pdf in CV_SRC_DIR.glob("*.pdf"):
 # Pandoc conversion
 # ======================================================
 
-extra_args = [
-    "--standalone",
-    "--metadata=lang=en",
-    "--citeproc",
-    f"--resource-path={RESOURCES}",
-    "--bibliography=publications.bib",
-    "--csl=apa.csl",
-    "--metadata=link-citations:true",
-    "--css=style.css",
-    "--metadata=pagetitle=Omar AbedelKader",
-    "--metadata=title=Omar AbedelKader",
-    "--metadata=description=Official website of Omar AbedelKader, AI engineer and researcher. Projects, publications, CV, and contact details.",
-    "--metadata=keywords=Omar AbedelKader,Omar Abdelkader,Omar Abedelkader,AI engineer,machine learning,publications,CV",
-    f"--include-in-header={HEADER_INCLUDE}",
-]
+def build_page(config):
+    config["html"].parent.mkdir(parents=True, exist_ok=True)
 
-rendered_md = inject_publications(
-    MD_FILE.read_text(encoding="utf-8"),
+    extra_args = [
+        "--standalone",
+        f"--metadata=lang={config['lang']}",
+        "--citeproc",
+        f"--resource-path={RESOURCES}",
+        "--bibliography=publications.bib",
+        "--csl=apa.csl",
+        "--metadata=link-citations:true",
+        "--css=../style.css" if config["lang"] == "fr" else "--css=style.css",
+        f"--metadata=pagetitle={config['pagetitle']}",
+        "--metadata=title=Omar AbedelKader",
+        f"--metadata=description={config['description']}",
+        "--metadata=keywords=Omar AbedelKader,Omar Abdelkader,Omar Abedelkader,AI engineer,machine learning,publications,CV",
+        f"--include-in-header={HEADER_INCLUDE}",
+    ]
+
+    rendered_md = inject_publications(
+        config["md"].read_text(encoding="utf-8"),
         RESOURCES / "publications.bib",
-)
+ )
 
-html = pypandoc.convert_text(
-    rendered_md,
-    to="html5",
-    format="md",
-    extra_args=extra_args,
-)
+    html = pypandoc.convert_text(
+        rendered_md,
+        to="html5",
+        format="md",
+        extra_args=extra_args,
+    )
+
+
+    script_path = "../main.js" if config["lang"] == "fr" else "main.js"
+    footer_label = "Dernière mise à jour" if config["lang"] == "fr" else "Last updated"
+
+    html = html.replace(
+        "<body>",
+        "<body><main class='cv' id='cv'>"
+    ).replace(
+        "</body>",
+        "</main>"
+        f"<footer class='site-footer'>{footer_label}: {last_updated_label(config['md'])}</footer>"
+        f"<script src='{script_path}' defer></script>"
+        f"{EMOJI_REPOSITION_SCRIPT}"
+        "</body>"
+    )
+
+    config["html"].write_text(html, encoding="utf-8")
 
 EMOJI_REPOSITION_SCRIPT = """
 <script>
@@ -123,23 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 """
 
-# ======================================================
-# Inject layout
-# ======================================================
+for page in SITE_SOURCES:
+    build_page(page)
 
-html = html.replace(
-    "<body>",
-    "<body><main class='cv' id='cv'>"
-).replace(
-    "</body>",
-    "</main>"
-     f"<footer class='site-footer'>Last updated: {last_updated_label(MD_FILE)}</footer>"
-    "<script src='main.js' defer></script>"
-    f"{EMOJI_REPOSITION_SCRIPT}"
-    "</body>"
-)
-
-HTML_FILE.write_text(html, encoding="utf-8")
 print("Site built successfully.")
 
 
@@ -158,7 +180,7 @@ Sitemap: {urljoin(SITE_URL, "sitemap.xml")}
 (DOCS / "robots.txt").write_text(robots_txt, encoding="utf-8")
 
 # sitemap.xml
-lastmod = datetime.fromtimestamp(HTML_FILE.stat().st_mtime).strftime("%Y-%m-%d")
+lastmod = datetime.fromtimestamp((DOCS / "index.html").stat().st_mtime).strftime("%Y-%m-%d")
 sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -166,6 +188,12 @@ sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>{lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+    <url>
+    <loc>{SITE_URL.rstrip('/')}/fr/</loc>
+    <lastmod>{lastmod}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
 """

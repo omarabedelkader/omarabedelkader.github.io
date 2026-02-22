@@ -162,15 +162,24 @@
     });
 
     topbar.append(themeBtn);
+        const isFrench = document.documentElement.lang === "fr";
+    const languageBtn = createEl("a", {
+      class: "topbar-btn",
+      href: isFrench ? "../index.html" : "fr/",
+      "aria-label": isFrench ? "Voir en anglais" : "Voir en français",
+      title: isFrench ? "Voir en anglais" : "Voir en français",
+      textContent: isFrench ? "🇬🇧" : "🇫🇷"
+    });
+    topbar.append(languageBtn);
 
     const quickLinks = [
-      { href: "mailto:omar.abedelkader@inria.fr", label: "Email", icon: "✉️" },
-      { href: "https://omarabedelkader.github.io", label: "Website", icon: "🌐" },
+      { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
+      { href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
       { href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
       { href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
       { href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
       { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" },
-      { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: "Google Scholar", icon: "🎓" }
+      { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: isFrench ? "Google Scholar" : "Google Scholar", icon: "🎓" }
     ];
 
     quickLinks.forEach((l) => {
@@ -191,11 +200,11 @@
     // ------------------------------------------------------------------------
 
     const searchWrap = createEl("div", { class: "search-wrap" });
-    const searchLabel = createEl("label", { class: "search-label", html: "Search" });
+    const searchLabel = createEl("label", { class: "search-label", html: isFrench ? "Rechercher" : "Search" });
     const searchInput = createEl("input", {
       class: "search-input",
       type: "search",
-      placeholder: "Search sections and content…",
+      placeholder: isFrench ? "Rechercher dans les sections et le contenu…" : "Search sections and content…",
       autocomplete: "off",
       spellcheck: false
     });
@@ -203,17 +212,17 @@
 
     const searchMeta = createEl("div", { class: "search-meta" });
     const searchCount = createEl("span", { class: "search-count", textContent: "" });
-    const searchClear = createEl("button", { class: "search-clear", type: "button", textContent: "Clear" });
+    const searchClear = createEl("button", { class: "search-clear", type: "button", textContent: isFrench ? "Effacer" : "Clear" });
     searchMeta.append(searchCount, searchClear);
 
-    const results = createEl("div", { class: "search-results", role: "region", "aria-label": "Search results" });
+    const results = createEl("div", { class: "search-results", role: "region", "aria-label": isFrench ? "Résultats de recherche" : "Search results" });
 
     searchWrap.append(searchLabel, searchMeta, results);
 
     const tabs = createEl("nav", {
       class: "tabs",
       role: "tablist",
-      "aria-label": "CV sections"
+       "aria-label": isFrench ? "Sections du CV" : "CV sections"
     });
 
     const panels = createEl("div", { class: "panels" });
@@ -350,7 +359,7 @@
       results.innerHTML = "";
       if (!query || items.length === 0) {
         results.classList.remove("is-open");
-        searchCount.textContent = query ? "No matches" : "";
+        searchCount.textContent = query ? (isFrench ? "Aucun résultat" : "No matches") : "";
         return;
       }
 
@@ -379,7 +388,9 @@
 
       results.append(list);
       results.classList.add("is-open");
-      searchCount.textContent = `${items.length} match${items.length === 1 ? "" : "es"}`;
+      searchCount.textContent = isFrench
+        ? `${items.length} correspondance${items.length === 1 ? "" : "s"}`
+        : `${items.length} match${items.length === 1 ? "" : "es"}`;
     }
 
     function makeSnippet(text, query) {

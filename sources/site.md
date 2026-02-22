@@ -108,3 +108,4 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 - 📑 **[📥 Full CV (PDF)](../cv/cv-en.pdf)**
 - 📄 **[📥 One-Page CV (PDF)](../cv/cv-industry.pdf)**
+- 🌍 **[French version](fr/)**

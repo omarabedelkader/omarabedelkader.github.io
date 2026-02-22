@@ -6,18 +6,21 @@ from publications import inject_publications
 BUILD_DIR = Path(__file__).resolve().parent
 ROOT = BUILD_DIR.parent  # ← project root
 
-input_md = ROOT / "sources" / "cv.md"
 resources = ROOT / "resources"
 
 output_dir = ROOT / "cv"
 output_dir.mkdir(exist_ok=True)
 
-output_pdf = output_dir / "cv-en.pdf"
+cv_builds = [
+    (ROOT / "sources" / "cv.md", output_dir / "cv-en.pdf"),
+    (ROOT / "sources" / "cv-fr.md", output_dir / "cv-fr.pdf"),
+]
 
-rendered_md = inject_publications(
-    input_md.read_text(encoding="utf-8"),
-    resources / "publications.bib",
-)
+for input_md, output_pdf in cv_builds:
+    rendered_md = inject_publications(
+        input_md.read_text(encoding="utf-8"),
+        resources / "publications.bib",
+    )
 
 pypandoc.convert_text(
     rendered_md,
