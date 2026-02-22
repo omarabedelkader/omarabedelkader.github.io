@@ -27,7 +27,6 @@ pypandoc.convert_text(
     extra_args=[
         "--pdf-engine=xelatex",
         "--citeproc",
-        "-M", f"date=Last updated: {last_updated_label(input_md)}",
         f"--bibliography={resources / 'publications.bib'}",
         f"--csl={resources / 'apa.csl'}",
         "-H", str(resources / "header.tex"),
