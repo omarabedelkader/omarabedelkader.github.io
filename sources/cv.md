@@ -3,8 +3,6 @@ title: "Omar AbedelKader"
 date: ""
 ---
 
----
-
 **Lille, France**
 
 [\icon{\faEnvelope}](mailto:omar.abedelkader@inria.fr)

@@ -108,7 +108,7 @@ def generate_publications_markdown(bib_path: Path) -> str:
             segments.append(f"*{venue}*.")
         if doi:
             doi_url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
-            segments.append(f"DOI: [{doi}]({doi_url}).")
+            segments.append(f"[DOI]({doi_url}).")
         lines.append(f"- {' '.join(segments).strip()}")
     return "\n".join(lines)
 
