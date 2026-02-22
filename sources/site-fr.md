@@ -95,7 +95,7 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 *« Package-Aware Approach for Repository-Level Code Completion in Pharo »*
 
 ### Distinctions
-- Témoignage alumni mis à l'honneur — IDMC 2024, Université de Lorraine  
+- Alumni mis à l'honneur — IDMC 2024, Université de Lorraine  
 *« Témoignage alumni en TAL et IA publié sur le site officiel de l'IDMC. »* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ---

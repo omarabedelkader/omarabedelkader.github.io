@@ -99,7 +99,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 *“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
 
 ### Honors:
-- Featured Alumni Testimonial — IDMC 2024, University of Lorraine, France
+- Alumni Testimonial — IDMC 2024, University of Lorraine, France
 *“Alumni testimonial in NLP & AI featured on the official IDMC Institute website.”* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ---
