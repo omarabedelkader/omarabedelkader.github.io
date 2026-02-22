@@ -1,10 +1,6 @@
 ---
 title: "Omar AbedelKader"
 date: ""
-bibliography: publications.bib
-csl: apa.csl
-link-citations: true
-nocite: "@*"
 ---
 
 ---
@@ -158,22 +154,22 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 *“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
 
 ### Honors:
-- Featured Alumni Testimonial — IDMC 2024, University of Lorraine
+- Featured Alumni Testimonial — IDMC 2024, University of Lorraine  
 *“Alumni testimonial in NLP & AI featured on the official IDMC Institute website.”* [Link](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 --- 
 
 ## Technologies & Skills
 
-- **Programming Languages:** Python, Pharo, Java, JavaScript, 
-- **Machine Learning & Deep Learning:** TensorFlow, PyTorch, Keras, Scikit-learn  
-- **Natural Language Processing (NLP):** spaCy, NLTK  
-- **Big Data & Distributed Systems:** Apache Spark, Hadoop  
-- **Data Analysis & Visualization:** Pandas, Matplotlib, Seaborn  
-- **Scientific Computing:** NumPy, SciPy  
-- **Web Development:** Flask, Django, Laravel, ReactJS  
-- **Databases & Cloud:** MongoDB, MySQL, AWS  
-- **Operating Systems:** macOS, UNIX, Windows  
+- **Programming Languages:** Python, Pharo, Java, JavaScript
+- **Machine Learning & Deep Learning:** TensorFlow, PyTorch, Keras, Scikit-learn
+- **Natural Language Processing (NLP):** spaCy, NLTK
+- **Big Data & Distributed Systems:** Apache Spark, Hadoop
+- **Data Analysis & Visualization:** Pandas, Matplotlib, Seaborn
+- **Scientific Computing:** NumPy, SciPy
+- **Web Development:** Flask, Django, Laravel, ReactJS
+- **Databases & Cloud:** MongoDB, MySQL, AWS
+- **Operating Systems:** macOS, UNIX, Windows
 - **Research Areas:** Artificial Intelligence, Software Engineering, AI4SE, SE4AI
 
 ---
