@@ -158,7 +158,7 @@ Sitemap: {urljoin(SITE_URL, "sitemap.xml")}
 (DOCS / "robots.txt").write_text(robots_txt, encoding="utf-8")
 
 # sitemap.xml
-lastmod = datetime.utcfromtimestamp(HTML_FILE.stat().st_mtime).strftime("%Y-%m-%d")
+lastmod = datetime.fromtimestamp(HTML_FILE.stat().st_mtime).strftime("%Y-%m-%d")
 sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
