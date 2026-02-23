@@ -20,7 +20,7 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Membre au **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
 - Membre de l'organisation **[Pharo-AI](https://github.com/pharo-ai)**.
 - Contributeur au [**Café IA**](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
-- Encadrement de nombreux projets logiciels et IA en Licence et Master, en recherche comme en contexte industriel.
+- Encadrement de nombreux projets logiciels et IA aux niveaux Licence et Master, incluant des projets orientés recherche ainsi que des projets appliqués en industrie.
 
 ---
 
