@@ -19,7 +19,7 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Président de **[NeuroTech-Lille](https://theneurotech.eu)**, association étudiante centrée sur l'IA et les neurosciences.
 - Membre au **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
 - Membre de l'organisation **[Pharo-AI](https://github.com/pharo-ai)**.
-- Contributeur au [Café IA](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
+- Contributeur au [**Café IA**](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
 - Encadrement de nombreux projets logiciels et IA en Licence et Master, en recherche comme en contexte industriel.
 
 ---
