@@ -17,9 +17,9 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Chef de projet et mainteneur de plusieurs projets (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...).
 - Mentor pour **[GSoC'26](https://gsoc.pharo.org)** et **[GSoC'25](https://gsoc.pharo.org)**.
 - Président de **[NeuroTech-Lille](https://theneurotech.eu)**, association étudiante centrée sur l'IA et les neurosciences.
-- Contributeur au **Ministère de la Transition Écologique** (**[*Club IA et Transition écologique*](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')**).
+- Membre au **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
 - Membre de l'organisation **[Pharo-AI](https://github.com/pharo-ai)**.
-- Contributeur au **Conseil National du Numérique (CNNum)** (*[Café IA](https://cafeia.org)*).
+- Contributeur au [Café IA](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
 - Encadrement de nombreux projets logiciels et IA en Licence et Master, en recherche comme en contexte industriel.
 
 ---
