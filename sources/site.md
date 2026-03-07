@@ -11,8 +11,8 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ### Responsibilities
 
 - Founder and Maintainer of the organization **[Pharo-LLM](https://github.com/pharo-llm)**.
-- Member of the organizing Committee, GDR-GPL'26.
-- Member of the organizing Committee, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
+- Member of the organizing committee, GDR-GPL'26.
+- Member of the organizing committee, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
 - Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**.
 - Project Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...).
 - Mentor in **[GSoC'26](https://gsoc.pharo.org)**, **[GSoC'25](https://gsoc.pharo.org)**.
@@ -56,7 +56,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ## Teaching
 
 - Teaching assistant at IUT: *Introduction to Software Development* 41,5 h TP.  
-- Teaching assistant at IUT : *Software Maintenance* 12h TP.  
+- Teaching assistant at IUT : *Software Maintenance* 12h TD.  
 - Teaching assistant at Polytech: *DataBase* 16h TP.  
 - Teaching assistant at Polytech: *Internet* 12h TP.  
 

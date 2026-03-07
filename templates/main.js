@@ -174,11 +174,11 @@
 
     const quickLinks = [
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
-      { href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
-      { href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
-      { href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
-      { href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
-      { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" },
+      //{ href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
+      //{ href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
+      //{ href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
+      //{ href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
+      //{ href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" },
       { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: isFrench ? "Google Scholar" : "Google Scholar", icon: "🎓" }
     ];
 
