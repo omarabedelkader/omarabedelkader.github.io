@@ -14,7 +14,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Member of the organizing committee, GDR-GPL'26.
 - Member of the organizing committee, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
 - Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**.
-- Project Leader and Maintainer for multiples projects (**[ChatPharo]()**, **[Pharo-Copilot]()**, **[Pharo-Infer]()**...).
+- Project Leader and Maintainer for multiples projects (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
 - Mentor in **[GSoC'26](https://gsoc.pharo.org)**, **[GSoC'25](https://gsoc.pharo.org)**.
 - President of **[NeuroTech-Lille](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
 - Member at **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
@@ -78,11 +78,11 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ### Awards:
 - Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
-*“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
+*"Package-Aware Approach for Repository-Level Code Completion in Pharo"* [🔗](https://ceur-ws.org/Vol-4139/Paper01.pdf)
 
 ### Honors:
 - Alumni Testimonial — IDMC 2024, University of Lorraine, France  
-*Alumni testimonial in NLP & AI in University of Lorraine.* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+*"Alumni testimonial in NLP & AI in University of Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ---
 

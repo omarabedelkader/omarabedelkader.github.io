@@ -21,7 +21,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Member of the organizing Committee, GDR-GPL'26.
 - Member of the organizing Committee, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
 - Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**.
-- Project Leader and Maintainer for multiples projects (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...).
+- Project Leader and Maintainer for multiples projects (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
 - Mentor in **[GSoC'26](https://gsoc.pharo.org)**, **[GSoC'25](https://gsoc.pharo.org)**.
 - President of **[NeuroTech-Lille](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
 - Member at **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
@@ -39,7 +39,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Experience
 
-### **AI Researcher** — INRIA (Villeneuve-d'Ascq, France)   *Oct. 2024 – Oct. 2027*  
+### **AI Researcher** — INRIA (Villeneuve-d'Ascq, France)   *Oct. 2024 – Present*  
 - Improving code completion and code generation using LLMs, specifically targeting the Pharo programming language, which has limited training data.
 - Developing techniques for code completion, type inference, and deployment in Pharo’s IDE, with a focus on runtime performance.
 
@@ -134,11 +134,10 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ---
 
-## Talks
+## Public Talks
 
-### **ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs** — ESUG 2025  
-- **Slides:** [PDF](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf)
-- **Video:** *Coming soon*
+- **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
+- **French Brain Awareness Week**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
 
 ---
 
@@ -146,11 +145,11 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ### Awards:
 - Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
-*“Package-Aware Approach for Repository-Level Code Completion in Pharo”*
+*"Package-Aware Approach for Repository-Level Code Completion in Pharo"* [🔗](https://ceur-ws.org/Vol-4139/Paper01.pdf)
 
 ### Honors:
-- Featured Alumni Testimonial — IDMC 2024, University of Lorraine  
-*“Alumni testimonial in NLP & AI featured on the official IDMC Institute website.”* [Link](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Alumni Testimonial — IDMC 2024, University of Lorraine, France  
+*"Alumni testimonial in NLP & AI in University of Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 --- 
 

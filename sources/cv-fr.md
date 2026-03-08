@@ -21,7 +21,7 @@ Je prépare actuellement un doctorat en informatique à l’Université de Lille
 * Membre du comité d’organisation, GDR-GPL'26.
 * Membre du comité d’organisation, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
 * Sous-relecteur pour **[BENEVOL'25](https://benevol2025.github.io)**.
-* Chef de projet et mainteneur de plusieurs projets (**ChatPharo**, **Pharo-Copilot**, **Pharo-Infer**...).
+* Chef de projet et mainteneur de plusieurs projets (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
 * Mentor dans **[GSoC'26](https://gsoc.pharo.org)**, **[GSoC'25](https://gsoc.pharo.org)**.
 * Président de **[NeuroTech-Lille](https://theneurotech.eu)**, une association étudiante axée sur l’IA et les neurosciences.
 * Membre au **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
