@@ -54,10 +54,10 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 
 ## Enseignement
 
-- Vacataire à l'IUT : *Introduction au développement logiciel* 41,5 h TP.  
-- Vacataire à l'IUT : *Maintenance logicielle* 12 h TD.  
-- Vacataire à Polytech : *Base de données* 16 h TP.  
-- Vacataire à Polytech : *Internet* 12 h TP.  
+- Vacataire à l'IUT : *Introduction au développement logiciel* 41,5 h TP [IUT-Lille](https://moodle.univ-lille.fr/course/view.php?id=28289)
+- Vacataire à l'IUT : *Maintenance logicielle* 12 h TD [IUT-Lille](https://moodle.univ-lille.fr/course/info.php?id=43765)
+- Vacataire à Polytech : *Base de données* 16 h TP [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Vacataire à Polytech : *Internet* 12 h TP [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 
 
 ---

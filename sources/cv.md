@@ -62,16 +62,13 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ## Education
 
 ### **University of Lille** — Villeneuve-d'Ascq, France  
-*Ph.D. in Computer Science*  
-(Oct. 2024 – Present)
+- *Ph.D. in Computer Science* (Oct. 2024 – Present)
 
 ### **University of Lorraine** — Nancy, France  
-*M.Sc. in Natural Language Processing*  
-(Sept. 2022 – Sept. 2024)
+- *M.Sc. in Natural Language Processing* (Sept. 2022 – Sept. 2024)
 
 ### **Lebanese University** — Beirut, Lebanon  
-*B.Sc. in Data Science*  
-(Sept. 2019 – July 2022)
+- *B.Sc. in Data Science* (Sept. 2019 – July 2022)
 
 ---
 
@@ -127,17 +124,17 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Teaching
 
-- Teaching assistant at IUT: *Introduction to Software Development* 41,5 h TP
-- Teaching assistant at IUT : *Software Maintenance* 12h TD
-- Teaching assistant at Polytech: *DataBase* 16h TP
-- Teaching assistant at Polytech: *Internet* 12h TP 
+- Teaching assistant at IUT: *Introduction to Software Development* 41,5 h Labs [IUT-Lille](https://moodle.univ-lille.fr/course/view.php?id=28289)
+- Teaching assistant at IUT : *Software Maintenance* 12h Tutorials [IUT-Lille](https://moodle.univ-lille.fr/course/info.php?id=43765)
+- Teaching assistant at Polytech: *DataBase* 16h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Teaching assistant at Polytech: *Internet* 12h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 
 ---
 
 ## Public Talks
 
+- **French Brain Awareness Week 2026**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
 - **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
-- **French Brain Awareness Week**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
 
 ---
 

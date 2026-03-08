@@ -68,18 +68,15 @@ Je prépare actuellement un doctorat en informatique à l’Université de Lille
 
 ### **Université de Lille** — Villeneuve-d'Ascq, France
 
-*Doctorat en informatique*
-(oct. 2024 – Présent)
+*Doctorat en informatique* (oct. 2024 – Présent)
 
 ### **Université de Lorraine** — Nancy, France
 
-*Master en Traitement Automatique des Langues (NLP)*
-(sept. 2022 – sept. 2024)
+*Master en Traitement Automatique des Langues (TAL)* (sept. 2022 – sept. 2024)
 
 ### **Université libanaise** — Beyrouth, Liban
 
-*Licence en Data Science*
-(sept. 2019 – juil. 2022)
+*Licence en Data Science* (sept. 2019 – juil. 2022)
 
 ---
 
