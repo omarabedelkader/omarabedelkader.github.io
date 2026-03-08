@@ -22,19 +22,19 @@ for input_md, output_pdf in cv_builds:
         resources / "publications.bib",
     )
 
-pypandoc.convert_text(
-    rendered_md,
-    "pdf",
-    format="md",
-    outputfile=str(output_pdf),
-    extra_args=[
-        "--pdf-engine=xelatex",
-        "--citeproc",
-        f"--bibliography={resources / 'publications.bib'}",
-        f"--csl={resources / 'apa.csl'}",
-        "-H", str(resources / "header.tex"),
-        "-V", "geometry=margin=0.5in",
-    ]
-)
+    pypandoc.convert_text(
+        rendered_md,
+        "pdf",
+        format="md",
+        outputfile=str(output_pdf),
+        extra_args=[
+            "--pdf-engine=xelatex",
+            "--citeproc",
+            f"--bibliography={resources / 'publications.bib'}",
+            f"--csl={resources / 'apa.csl'}",
+            "-H", str(resources / "header.tex"),
+            "-V", "geometry=margin=0.5in",
+        ]
+    )
 
 print("CV generated successfully:", output_pdf)
