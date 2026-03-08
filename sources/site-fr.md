@@ -59,6 +59,14 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Vacataire à Polytech : *Base de données* 16 h TP.  
 - Vacataire à Polytech : *Internet* 12 h TP.  
 
+
+---
+
+## Conférences publiques
+- **ESUG 2025** : ChatPharo : une architecture ouverte pour comprendre comment communiquer en direct avec les LLM [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
+- **Semaine française de sensibilisation au cerveau** : L'IA et le cerveau : deux façons d'apprendre, qu'est-ce que cela change pour notre vie quotidienne ? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
+
+
 ---
 
 ## Prix et distinctions
