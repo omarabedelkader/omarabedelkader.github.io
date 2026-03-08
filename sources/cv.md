@@ -213,4 +213,8 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - **French:** Native
 - **English:** B2
 
+---
+
+Visit my website: [omarabedelkader.com](https://omarabedelkader.com)
+
 \cvupdated{Last updated: \today}

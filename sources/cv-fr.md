@@ -149,12 +149,9 @@ Je prépare actuellement un doctorat en informatique à l’Université de Lille
 
 ---
 
-## Présentations
-
-### **ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs** — ESUG 2025
-
-* **Slides:** [PDF](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf)
-* **Video:** *Bientôt disponible*
+## Conférences publiques
+- **ESUG 2025** : ChatPharo : une architecture ouverte pour comprendre comment communiquer en direct avec les LLM [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
+- **Semaine française de sensibilisation au cerveau** : L'IA et le cerveau : deux façons d'apprendre, qu'est-ce que cela change pour notre vie quotidienne ? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [📄](https://omarabedelkader.com/404.html) [🎥](https://omarabedelkader.com/404.html)
 
 ---
 
@@ -235,5 +232,9 @@ Je prépare actuellement un doctorat en informatique à l’Université de Lille
 * **Arabe :** Langue maternelle
 * **Français :** Langue maternelle
 * **Anglais :** B2
+
+---
+
+Visitez mon site web : [omarabedelkader.com](https://omarabedelkader.com)
 
 \cvupdated{Dernière mise à jour : \today}
