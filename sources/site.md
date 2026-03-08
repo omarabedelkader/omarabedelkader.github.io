@@ -67,7 +67,12 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
 - **French Brain Awareness Week**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://omarabedelkader.com/404.html)
 
+<!-- ---
 
+## Collaboration
+ -->
+
+---
 
 ## Awards and Honors
 
