@@ -88,5 +88,5 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 ## CV
 
 - 📑 **[📥 CV complet (PDF)](../cv/cv-fr.pdf)**
-- 📄 **[📥 CV une page (PDF)](../cv/cv-industry.pdf)**
+- 📄 **[📥 CV une page (PDF)](404.html)**
 - 🌍 **[Version Anglaise](../index.html)**
