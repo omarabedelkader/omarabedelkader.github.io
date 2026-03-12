@@ -26,7 +26,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ### Community and Organizational Service
 - Member of the organizing Committee, **gdr-gpl'26 [\icon{\faLink}]()**.
 - Member of the organizing Committee, **ESUG'26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html)**, **ESUG'25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)**, **ESUG'24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html)**.
-- Member in the organization **pharo-ai[](https://github.com/pharo-ai)**.
+- Member in the organization **pharo-ai[\icon{\faGithub}](https://github.com/pharo-ai)**.
 - Member in **AI and Ecological Transition Club [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** at **Ministry of Ecological Transition [\icon{\faLink}](https://www.ecologie.gouv.fr)**.
 - Contributor in **Café IA [\icon{\faLink}](https://cafeia.org)** at **National Digital Council [\icon{\faLink}](https://www.conseil-ia-numerique.fr)**.
 
@@ -190,7 +190,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Collaborated with interdisciplinary teams, including policymakers, researchers, and technical experts.
 - Participated in strategic discussions on responsible and sustainable AI deployment in the public sector.
 
-### Contributor in Café IA at Conseil National du Numérique (CNNum) — (2023–Present) [\icon{\faLink}](https://www.conseil-ia-numerique.fr))
+### Contributor in Café IA at Conseil National du Numérique (CNNum) — (2023–Present) [\icon{\faLink}](https://www.conseil-ia-numerique.fr)
 - Contributed to national discussions on artificial intelligence, digital policy, and societal impact.
 - Assisted in the preparation and facilitation of Café IA sessions bringing together experts, researchers, and public stakeholders.
 - Participated in the analysis of AI trends, use cases, and regulatory challenges.
