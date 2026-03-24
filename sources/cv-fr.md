@@ -26,7 +26,7 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 ### Service communautaire et organisationnel
 - Membre du comité d’organisation, **gdr-gpl'26 [\icon{\faLink}]()**.
 - Membre du comité d’organisation, **ESUG'26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html)**, **ESUG'25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)**, **ESUG'24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html)**.
-- Membre de l’organisation **pharo-ai[\icon{\faGithub}](https://github.com/pharo-ai)**.
+- Membre de l’organisation **pharo-ai [\icon{\faGithub}](https://github.com/pharo-ai)**.
 - Membre du **Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** au **Ministère de la Transition écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)**.
 - Contributeur à **Café IA [\icon{\faLink}](https://cafeia.org)** au **Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)**.
 
@@ -176,12 +176,11 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 
 ## Bénévolat
 
-### Président de Synapse NeuroTech-Lille - (2024–Présent) [\icon{\faLink}](https://theneurotech.eu)
+### Président de Synapse-NeuroTech-Lille-ULille — (2024–Présent) [\icon{\faLink}](https://theneurotech.eu)
 - A dirigé le bureau exécutif et coordonné les activités et projets de l’association.
 - A géré le budget annuel, y compris la planification financière, le suivi des dépenses et l’allocation des financements.
 - A représenté l’association lors de réunions avec l’administration universitaire, des partenaires et des sponsors.
-- A supervisé l’organisation d’événements, d’ateliers et de conférences liés aux neurotechnologies.
-- A encadré les membres de l’équipe et assuré une collaboration efficace entre les départements.
+- A supervisé l’organisation d’événements, d’ateliers et de conférences liés aux neurotechnologies and intelligence aritificielle.
 - A défini des objectifs stratégiques et veillé à leur alignement avec la mission de l’association.
 
 ### Membre du Club IA et Transition écologique au Ministère de la Transition Écologique — (2023–Présent) [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')

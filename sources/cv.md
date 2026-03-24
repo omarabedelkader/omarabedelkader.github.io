@@ -26,7 +26,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ### Community and Organizational Service
 - Member of the organizing Committee, **gdr-gpl'26 [\icon{\faLink}]()**.
 - Member of the organizing Committee, **ESUG'26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html)**, **ESUG'25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)**, **ESUG'24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html)**.
-- Member in the organization **pharo-ai[\icon{\faGithub}](https://github.com/pharo-ai)**.
+- Member in the organization **pharo-ai [\icon{\faGithub}](https://github.com/pharo-ai)**.
 - Member in **AI and Ecological Transition Club [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** at **Ministry of Ecological Transition [\icon{\faLink}](https://www.ecologie.gouv.fr)**.
 - Contributor in **Café IA [\icon{\faLink}](https://cafeia.org)** at **National Digital Council [\icon{\faLink}](https://www.conseil-ia-numerique.fr)**.
 
@@ -176,12 +176,11 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Volunteering
 
-### President of Synapse NeuroTech-Lille - (2024–Present) [\icon{\faLink}](https://theneurotech.eu)
+### President of Synapse-NeuroTech-Lille-ULille - (2024–Present) [\icon{\faLink}](https://theneurotech.eu)
 - Led the executive board and coordinated association activities and projects.
 - Managed the annual budget, including financial planning, expense tracking, and funding allocation.
 - Represented the association in meetings with university administration, partners, and sponsors.
-- Oversaw event planning, workshops, and conferences related to neurotechnology.
-- Supervised team members and ensured effective collaboration across departments.
+- Oversaw event planning, workshops, and conferences related to neurotechnology and artificial intelligence.
 - Defined strategic goals and ensured alignment with the association’s mission.
 
 ### Member in Club IA et Transition écologique at Ministère de la Transition Écologique — (2023–Present) [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')
