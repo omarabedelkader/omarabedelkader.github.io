@@ -24,7 +24,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Project Leader and Maintainer for multiples projects **chatpharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo)**, **pharo-copilot [\icon{\faGithub}](https://github.com/pharo-llm/pharo-copilot)**, **pharo-infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer)** and many **[more](https://github.com/orgs/pharo-llm/repositories)**.
 
 ### Community and Organizational Service
-- Member of the organizing Committee, **gdr-gpl'26 [\icon{\faLink}]()**.
+- Member of the organizing Committee, **gdr-gpl'26 [\icon{\faLink}](https://scilog2026.fr)**.
 - Member of the organizing Committee, **ESUG'26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html)**, **ESUG'25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)**, **ESUG'24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html)**.
 - Member in the organization **pharo-ai [\icon{\faGithub}](https://github.com/pharo-ai)**.
 - Member in **AI and Ecological Transition Club [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** at **Ministry of Ecological Transition [\icon{\faLink}](https://www.ecologie.gouv.fr)**.

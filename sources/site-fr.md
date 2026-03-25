@@ -11,7 +11,7 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 ### Responsabilités
 
 - Fondateur et mainteneur de l'organisation **[Pharo-LLM](https://github.com/pharo-llm)**.
-- Membre du comité d'organisation de GDR-GPL'26.
+- Membre du comité d'organisation de , **GDR-GPL'26 [\icon{\faLink}](https://scilog2026.fr)**..
 - Membre du comité d'organisation de **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
 - Sous-évaluateur à **[BENEVOL'25](https://benevol2025.github.io)**.
 - Chef de projet et mainteneur de plusieurs projets (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
