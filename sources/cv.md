@@ -146,9 +146,9 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Public Talks
 
-- **French Brain Awareness Week 2026**: AI and the brain: two ways of learning, what does that change for our daily lives? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [\icon{\faImages}](https://omarabedelkader.com/404.html) [\icon{\faVideo}](https://omarabedelkader.com/404.html)
+- **French Brain Awareness Week 2026**: AI and the brain: two ways of learning, what does that change for our daily lives? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
-- **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [\icon{\faImages}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://omarabedelkader.com/404.html)
+- **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [\icon{\faImages}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://www.youtube.com/watch?v=_ur_RJORez0)
 
 <!-- ---
 

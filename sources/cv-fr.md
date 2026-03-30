@@ -146,9 +146,9 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 
 ## Présentations publiques
 
-- **Semaine du Cerveau 2026**: IA et cerveau : deux façons d’apprendre, qu’est-ce que cela change dans notre quotidien ? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/) [\icon{\faImages}](https://omarabedelkader.com/404.html) [\icon{\faVideo}](https://omarabedelkader.com/404.html)
+- **Semaine du Cerveau 2026**: IA et cerveau : deux façons d’apprendre, qu’est-ce que cela change dans notre quotidien ? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
-- **ESUG 2025**: ChatPharo : une architecture ouverte pour comprendre comment dialoguer en direct avec les LLM [\icon{\faImages}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://omarabedelkader.com/404.html)
+- **ESUG 2025**: ChatPharo : une architecture ouverte pour comprendre comment dialoguer en direct avec les LLM [\icon{\faImages}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://www.youtube.com/watch?v=_ur_RJORez0)
 
 <!-- ---
 
