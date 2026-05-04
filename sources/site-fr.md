@@ -22,6 +22,14 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Contributeur au [**Café IA**](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
 - Encadrement de nombreux projets logiciels et IA aux niveaux Licence et Master, incluant des projets orientés recherche ainsi que des projets appliqués en industrie.
 
+#### _Ce que je fais pour le plaisir_
+
+- J’ai fondé l’[organisation Xaroq](https://github.com/xaroq) ![GitHub](https://api.iconify.design/simple-icons:github.svg?width=18&height=18) parce que je pense que le développement de navigateurs intégrant l’IA n’est pas encore assez mature.
+
+- Xaroq se concentre sur la création d’un navigateur open source avec un support natif de l’IA. Contrairement aux navigateurs traditionnels ou aux extensions IA, Xaroq est conçu dès le départ avec l’IA intégrée directement dans l’expérience de navigation.
+
+- Le projet est entièrement open source et publié sous licence MIT, ce qui le rend transparent, flexible et accessible aux développeurs qui souhaitent contribuer ou construire dessus.
+
 ---
 
 ## Publications

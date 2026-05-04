@@ -21,6 +21,16 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Member in the organization **[Pharo-AI](https://github.com/pharo-ai)**.
 - Contributor at [**Café IA**](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
 
+#### _What i do for fun_ ?
+
+- I founded the [Xaroq organization](https://github.com/xaroq) ![GitHub](https://api.iconify.design/simple-icons:github.svg?width=18&height=18) because I believe AI-powered browser development is still not mature enough.
+
+- Xaroq is focused on building an open-source browser with native AI support. Unlike traditional browsers or AI browser extensions, Xaroq is designed from the ground up with AI integrated directly into the browsing experience.
+
+- The project is fully open source and released under the MIT License.
+
+- Learn more on [here](https://xaroq.github.io) 
+
 ---
 
 ## Publications
