@@ -15,7 +15,7 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Membre du comité d'organisation de **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
 - Sous-évaluateur à **[BENEVOL'25](https://benevol2025.github.io)**.
 - Chef de projet et mainteneur de plusieurs projets (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
-- Mentor pour **[GSoC'26](https://gsoc.pharo.org)** et **[GSoC'25](https://gsoc.pharo.org)**.
+- Mentor pour **[GSoC'25](https://gsoc.pharo.org)**.
 - Président de **[NeuroTech-Lille](https://theneurotech.eu)**, association étudiante centrée sur l'IA et les neurosciences.
 - Membre au **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
 - Membre de l'organisation **[Pharo-AI](https://github.com/pharo-ai)**.
@@ -31,12 +31,6 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 ---
 
 ## Logiciels
-
-### Pharo-Copilot
-- Outil intelligent de complétion et génération de code pour Pharo, inspiré de GitHub Copilot.
-- Orienté complétion à l'échelle dépôt et package.
-- Utilise des LLMs pour améliorer la productivité dans un langage dynamiquement typé.
-- **Dépôt GitHub :** [Pharo-Copilot](https://github.com/pharo-llm/Pharo-Copilot)
 
 ### ChatPharo
 - Interface conversationnelle en direct entre développeurs Pharo et modèles de langage.
@@ -65,11 +59,6 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 ## Conférences publiques
 - **ESUG 2025** : ChatPharo : une architecture ouverte pour comprendre comment communiquer en direct avec les LLM [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
 - **Semaine française de sensibilisation au cerveau** : L'IA et le cerveau : deux façons d'apprendre, qu'est-ce que cela change pour notre vie quotidienne ? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
-
-<!-- ---
-
-## Collaboration
- -->
 
 ---
 

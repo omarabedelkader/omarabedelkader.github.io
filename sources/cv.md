@@ -32,9 +32,8 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 
 ### Reviewing, Mentoring, and Academic Supervision
-- Mentor in **GSoC'26 [\icon{\faLink}](https://gsoc.pharo.org)**, **GSoC'25 [\icon{\faLink}](https://gsoc.pharo.org)**.
+- Mentor in **GSoC'25 [\icon{\faLink}](https://gsoc.pharo.org)**.
 - Sub reviewer at **BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io)**.
-- Supervised numerous software and AI projects at both Licence and Master’s levels, including research-oriented and applied industry projects.
 
 ---
 
@@ -58,15 +57,15 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Experience
 
-### **AI Researcher** — INRIA (Villeneuve-d'Ascq, France)   *Oct. 2024 – Present*  
+### **AI Researcher** — INRIA, [EVREF], & Labri [Progress] (Villeneuve-d'Ascq, France)   *Oct. 2024 – Present*  
 - Improving code completion and code generation using LLMs, specifically targeting the Pharo programming language, which has limited training data.
 - Developing techniques for code completion, type inference, and deployment in Pharo’s IDE, with a focus on runtime performance.
 
-### **AI Engineer** — INERIS (Verneuil-en-Halatte, France)   *Sept. 2023 – Sept. 2024*  
+### **AI Engineer** — INERIS, [CIVS] (Verneuil-en-Halatte, France)   *Sept. 2023 – Sept. 2024*  
 - Developed “INERIS-IA,” a tool to classify textual documents according to INERIS’s strategic goals using ML and NLP techniques.
 - Created Boolean queries for document retrieval and improved corpus quality through document similarity and keyword extraction.
 
-### **Intern — AI Researcher** — LIPN (Villetaneuse, France)   *June 2023 – Aug. 2023*  
+### **Intern — AI Researcher** — LIPN, [RCLN] (Villetaneuse, France)   *June 2023 – Aug. 2023*  
 - Compared sampling techniques for probabilistic planning, particularly for generating literary narratives.
 - Evaluated methods including the Score Function Estimator (SFE) and advanced techniques such as Gumbel-Softmax, assessing their effectiveness in producing coherent and creative stories.
 
@@ -92,11 +91,6 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ---
 
 ## Software
-
-### Pharo-Copilot [\icon{\faGithub}](https://github.com/pharo-llm/pharo-copilot)
-- Intelligent code completion and generation tool for Pharo, inspired by GitHub Copilot.
-- Focused on repository and package -level code completion.
-- Leveraged LLMs to improve developer productivity in a dynamically typed language.
 
 
 ### ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo)
@@ -149,13 +143,6 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - **French Brain Awareness Week 2026**: AI and the brain: two ways of learning, what does that change for our daily lives? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 - **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [\icon{\faImages}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://www.youtube.com/watch?v=_ur_RJORez0)
-
-<!-- ---
-
-## Collaboration
-
-- EVREF []() - SEART []()
-    - A collaboration between EVREF and - SEAR where i led a pharo-copilot project where it led to create 3 publications -->
 
 --- 
 

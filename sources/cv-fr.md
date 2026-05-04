@@ -32,9 +32,8 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 
 
 ### Relecture, mentorat et encadrement académique
-- Mentor dans **GSoC'26 [\icon{\faLink}](https://gsoc.pharo.org)**, **GSoC'25 [\icon{\faLink}](https://gsoc.pharo.org)**.
+- Mentor dans **GSoC'25 [\icon{\faLink}](https://gsoc.pharo.org)**.
 - Sous-évaluateur à **BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io)**.
-- Encadrement de nombreux projets logiciels et IA aux niveaux Licence et Master, incluant des projets orientés recherche et des projets appliqués à l’industrie.
 
 ---
 
@@ -92,11 +91,6 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 ---
 
 ## Logiciels
-
-### Pharo-Copilot [\icon{\faGithub}](https://github.com/pharo-llm/pharo-copilot)
-- Outil intelligent de complétion et de génération de code pour Pharo, inspiré de GitHub Copilot.
-- Axé sur la complétion de code au niveau dépôt et package.
-- Exploite les LLM pour améliorer la productivité des développeurs dans un langage dynamiquement typé.
 
 
 ### ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo)
