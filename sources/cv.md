@@ -21,7 +21,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 - Founder and Maintainer of the organization **pharo-llm [\icon{\faGithub}](https://github.com/pharo-llm)** on github and **pharo-llm [\icon{\faLink}](https://huggingface.co/pharo-llm)** on hugging face.
 - President of **Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
-- Project Leader and Maintainer for multiples projects **chatpharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo)**, **pharo-copilot [\icon{\faGithub}](https://github.com/pharo-llm/pharo-copilot)**, **pharo-infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer)** and many **[more](https://github.com/orgs/pharo-llm/repositories)**.
+- Project Leader and Maintainer for multiples projects **chatpharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo)**, **pharo-infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer)** and many **[more](https://github.com/orgs/pharo-llm/repositories)**.
 
 ### Community and Organizational Service
 - Member of the organizing Committee, **gdr-gpl'26 [\icon{\faLink}](https://scilog2026.fr)**.
