@@ -69,14 +69,12 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Mehdi Elkolei, Bachelor Intership, 4 month, April 2026 - July 2026  
 - Srajal Dwivedi, Google Summer of Code, 3 month, May 2025 - July 2025 
 
-
 ---
 
 ## Public Talks
 
 - **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
 - **French Brain Awareness Week**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
-
 
 ---
 

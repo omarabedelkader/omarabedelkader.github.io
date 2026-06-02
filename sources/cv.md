@@ -91,7 +91,6 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Software
 
-
 ### ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo)
 - Live conversational interface between Pharo developers and large language models.
 - Enables interactive discussions with LLMs directly from the Pharo environment.
@@ -117,7 +116,6 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Evaluates two NLP models—SBERT (Sentence-BERT) and MiniLM—for classifying analogies using the FrameNet dataset.
 - The objective is to identify valid and invalid analogies by leveraging SBERT embeddings and a fine-tuned MiniLM classifier.
 - MiniLM achieved 99% accuracy in distinguishing valid from invalid analogies, outperforming SBERT (~55% accuracy).
-
 
 ### DeGatto [\icon{\faGithub}](https://github.com/omarabedelkader/DeGatto) [\icon{\faFilePdf}](https://github.com/omarabedelkader/DeGatto/blob/main/paper/DeGatto.pdf)
 - Sentiment analysis framework for e-commerce women’s apparel reviews.

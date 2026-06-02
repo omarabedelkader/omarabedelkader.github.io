@@ -142,7 +142,6 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 - Mehdi Elkolei, Stage de Licence, 4 mois, avril 2026 - juillet 2026  
 - Srajal Dwivedi, Google Summer of Code, 3 mois, mai 2025 - juillet 2025 
 
-
 ---
 
 ## Présentations publiques
