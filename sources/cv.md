@@ -32,7 +32,6 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 
 ### Reviewing, Mentoring, and Academic Supervision
-- Mentor in **GSoC'25 [\icon{\faLink}](https://gsoc.pharo.org)**.
 - Sub reviewer at **BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io)**.
 
 ---
@@ -135,6 +134,13 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Teaching assistant at IUT : *Software Maintenance* 12h Tutorials [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
 - Teaching assistant at Polytech: *DataBase* 16h Labs [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 - Teaching assistant at Polytech: *Internet* 12h Labs [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+
+---
+
+## Supervision
+
+- Mehdi Elkolei, Bachelor Intership, 4 month, April 2026 - July 2026  
+- Srajal Dwivedi, Google Summer of Code, 3 month, May 2025 - July 2025 
 
 ---
 

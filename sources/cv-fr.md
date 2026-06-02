@@ -32,8 +32,7 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 
 
 ### Relecture, mentorat et encadrement académique
-- Mentor dans **GSoC'25 [\icon{\faLink}](https://gsoc.pharo.org)**.
-- Sous-évaluateur à **BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io)**.
+- Sous-reviewer à **BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io)**.
 
 ---
 
@@ -138,6 +137,14 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 
 ---
 
+## Encadrement
+
+- Mehdi Elkolei, Stage de Licence, 4 mois, avril 2026 - juillet 2026  
+- Srajal Dwivedi, Google Summer of Code, 3 mois, mai 2025 - juillet 2025 
+
+
+---
+
 ## Présentations publiques
 
 - **Semaine du Cerveau 2026**: IA et cerveau : deux façons d’apprendre, qu’est-ce que cela change dans notre quotidien ? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
@@ -183,7 +190,7 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 - A collaboré avec des équipes interdisciplinaires, incluant des décideurs publics, des chercheurs et des experts techniques.
 - A pris part à des discussions stratégiques sur le déploiement responsable et durable de l’IA dans le secteur public.
 
-### Contributeur à Café IA au Conseil National du Numérique (CNNum) — (2023–Présent) [\icon{\faLink}](https://www.conseil-ia-numerique.fr))
+### Contributeur à Café IA au Conseil National du Numérique (CNNum) — (2023–Présent) [\icon{\faLink}](https://www.conseil-ia-numerique.fr)
 - A contribué aux discussions nationales sur l’intelligence artificielle, les politiques numériques et leur impact sociétal.
 - A participé à la préparation et à l’animation des sessions Café IA réunissant experts, chercheurs et acteurs publics.
 - A pris part à l’analyse des tendances de l’IA, des cas d’usage et des défis réglementaires.

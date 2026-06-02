@@ -13,9 +13,8 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Fondateur et mainteneur de l'organisation **[Pharo-LLM](https://github.com/pharo-llm)**.
 - Membre du comité d'organisation de **[GDR-GPL'26](https://scilog2026.fr)**.
 - Membre du comité d'organisation de **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
-- Sous-évaluateur à **[BENEVOL'25](https://benevol2025.github.io)**.
+- Sous-reviewer à **[BENEVOL'25](https://benevol2025.github.io)**.
 - Chef de projet et mainteneur de plusieurs projets (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
-- Mentor pour **[GSoC'25](https://gsoc.pharo.org)**.
 - Président de **[NeuroTech-Lille](https://theneurotech.eu)**, association étudiante centrée sur l'IA et les neurosciences.
 - Membre au **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
 - Membre de l'organisation **[Pharo-AI](https://github.com/pharo-ai)**.
@@ -61,6 +60,12 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 - Vacataire à Polytech : *Base de données* 16 h TP [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 - Vacataire à Polytech : *Internet* 12 h TP [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 
+---
+
+## Encadrement
+
+- Mehdi Elkolei, Stage de Licence, 4 mois, avril 2026 - juillet 2026  
+- Srajal Dwivedi, Google Summer of Code, 3 mois, mai 2025 - juillet 2025 
 
 ---
 
