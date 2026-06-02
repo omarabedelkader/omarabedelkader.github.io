@@ -58,7 +58,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Teaching
 
-- Teaching assistant at IUT: *Introduction to Software Development* 41,5 h Labs[IUT-Lille](https://moodle.univ-lille.fr/course/view.php?id=28289)
+- Teaching assistant at IUT: *Introduction to Software Development* 41,5 h Labs [IUT-Lille](https://moodle.univ-lille.fr/course/view.php?id=28289)
 - Teaching assistant at IUT : *Software Maintenance* 12h Tutorials [IUT-Lille](https://moodle.univ-lille.fr/course/info.php?id=43765)
 - Teaching assistant at Polytech: *DataBase* 16h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 - Teaching assistant at Polytech: *Internet* 12h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
@@ -88,5 +88,4 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ## CV
 
 - 📑 **[📥 Full CV (PDF)](../cv/cv-en.pdf)**
-- 📄 **[📥 One-Page CV (PDF)](404.html)**
-- 🌍 **[French Version](fr/)**
+<!-- - 📄 **[📥 One-Page CV (PDF)](404.html)** -->
