@@ -84,10 +84,3 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 ### Distinctions
 - Alumni mis à l'honneur — IDMC 2024, Université de Lorraine, France  
 *Témoignage alumni en TAL et IA dans Université de Lorraine* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
-
----
-
-## CV
-
-- 📑 **[📥 CV complet (PDF)](../cv/cv-fr.pdf)**
-<!-- - 📄 **[📥 CV une page (PDF)](404.html)** -->

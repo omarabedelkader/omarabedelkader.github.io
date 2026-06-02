@@ -89,10 +89,3 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ### Honors:
 - Alumni Testimonial — IDMC 2024, University of Lorraine, France  
 *"Alumni testimonial in NLP & AI in University of Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
-
----
-
-## CV
-
-- 📑 **[📥 Full CV (PDF)](../cv/cv-en.pdf)**
-<!-- - 📄 **[📥 One-Page CV (PDF)](404.html)** -->
