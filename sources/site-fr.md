@@ -11,11 +11,11 @@ Je poursuis actuellement un doctorat en informatique à l'Université de Lille.
 ### Responsabilités
 
 - Fondateur et mainteneur de l'organisation **[Pharo-LLM](https://github.com/pharo-llm)**.
-- Membre du comité d'organisation de **[GDR-GPL'26](https://scilog2026.fr)**.
+- Membre du comité d'organisation de **[GDR-SciLog'26](https://scilog2026.fr)**.
 - Membre du comité d'organisation de **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
 - Sous-reviewer à **[BENEVOL'25](https://benevol2025.github.io)**.
 - Chef de projet et mainteneur de plusieurs projets (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
-- Président de **[NeuroTech-Lille](https://theneurotech.eu)**, association étudiante centrée sur l'IA et les neurosciences.
+- Président de **[Synapse-NeuroTech-Lille](https://theneurotech.eu)**, association étudiante centrée sur l'IA et les neurosciences.
 - Membre au **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
 - Membre de l'organisation **[Pharo-AI](https://github.com/pharo-ai)**.
 - Contributeur au [**Café IA**](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
