@@ -56,7 +56,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Experience
 
-### **AI Researcher** — INRIA, [EVREF], & Labri [Progress] (Villeneuve-d'Ascq, France)   *Oct. 2024 – Present*  
+### **PhD Student** — INRIA, [EVREF], & Labri [Progress] (Villeneuve-d'Ascq, France)   *Oct. 2024 – Present*  
 - Improving code completion and code generation using LLMs, specifically targeting the Pharo programming language, which has limited training data.
 - Developing techniques for code completion, type inference, and deployment in Pharo’s IDE, with a focus on runtime performance.
 
@@ -64,7 +64,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Developed “INERIS-IA,” a tool to classify textual documents according to INERIS’s strategic goals using ML and NLP techniques.
 - Created Boolean queries for document retrieval and improved corpus quality through document similarity and keyword extraction.
 
-### **Intern — AI Researcher** — LIPN, [RCLN] (Villetaneuse, France)   *June 2023 – Aug. 2023*  
+### **Intern** — LIPN, [RCLN] (Villetaneuse, France)   *June 2023 – Aug. 2023*  
 - Compared sampling techniques for probabilistic planning, particularly for generating literary narratives.
 - Evaluated methods including the Score Function Estimator (SFE) and advanced techniques such as Gumbel-Softmax, assessing their effectiveness in producing coherent and creative stories.
 

@@ -56,7 +56,7 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 
 ## Expérience
 
-### **Chercheur en IA** — INRIA (Villeneuve-d'Ascq, France)   *Oct. 2024 – Présent*  
+### **Doctorant** — INRIA (Villeneuve-d'Ascq, France)   *Oct. 2024 – Présent*  
 - Amélioration de la complétion et de la génération de code à l’aide des LLM, en ciblant spécifiquement le langage de programmation Pharo, qui dispose de peu de données d’entraînement.
 - Développement de techniques de complétion de code, d’inférence de types et de déploiement dans l’IDE de Pharo, avec un accent sur les performances à l’exécution.
 
@@ -64,7 +64,7 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 - Développement de “INERIS-IA”, un outil permettant de classifier des documents textuels selon les objectifs stratégiques de l’INERIS à l’aide de techniques de ML et de TAL.
 - Création de requêtes booléennes pour la recherche de documents et amélioration de la qualité du corpus grâce à la similarité documentaire et à l’extraction de mots-clés.
 
-### **Stagiaire — Chercheur en IA** — LIPN (Villetaneuse, France)   *June 2023 – Aug. 2023*  
+### **Stagiaire** — LIPN (Villetaneuse, France)   *June 2023 – Aug. 2023*  
 - Comparaison de techniques d’échantillonnage pour la planification probabiliste, en particulier pour la génération de récits littéraires.
 - Évaluation de méthodes incluant le Score Function Estimator (SFE) et des techniques avancées telles que Gumbel-Softmax, en mesurant leur efficacité pour produire des histoires cohérentes et créatives.
 
@@ -130,10 +130,10 @@ Je poursuis actuellement un doctorat en informatique à l’Université de Lille
 
 ## Enseignement
 
-- Enseignant assistant à l’IUT : *Introduction au développement logiciel* 41,5 h TP [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
-- Enseignant assistant à l’IUT : *Maintenance logicielle* 12h TD [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Enseignant assistant à Polytech : *Base de données* 16h TP [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Enseignant assistant à Polytech : *Internet* 12h TP [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Vacataire à l’IUT : *Introduction au développement logiciel* 41,5 h TP [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
+- Vacataire à l’IUT : *Maintenance logicielle* 12h TD [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
+- Vacataire à Polytech : *Base de données* 16h TP [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Vacataire à Polytech : *Internet* 12h TP [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 
 ---
 
