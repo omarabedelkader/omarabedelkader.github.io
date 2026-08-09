@@ -19,16 +19,6 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Member in the organization **[Pharo-AI](https://github.com/pharo-ai)**.
 - Contributor at [**Café IA**](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
 
-<!-- #### _What i do for fun_ ?
-
-- I founded the [Xaroq organization](https://github.com/xaroq) ![GitHub](https://api.iconify.design/simple-icons:github.svg?width=18&height=18) because I believe AI-powered browser development is still not mature enough.
-
-- Xaroq is focused on building an open-source browser with native AI support. Unlike traditional browsers or AI browser extensions, Xaroq is designed from the ground up with AI integrated directly into the browsing experience.
-
-- The project is fully open source and released under the MIT License.
-
-- Learn more on [here](https://xaroq.github.io)  -->
-
 ---
 
 ## Publications
@@ -75,6 +65,8 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ## Supervision
 
 - Mehdi Elkolei, Bachelor Intership, 4 month, April 2026 - July 2026  
+I supervised Mehdi Elkolei on his work on extending Complishon, Pharo’s context-aware code completion engine. His project focused on four UX-oriented extensions: typo tolerance, implicit prefix expansion, grouped completion entries, and camel-case matching. I guided the technical direction and design choices, with particular attention to usability, modularity, and integration with the existing architecture.
+
 - Srajal Dwivedi, Google Summer of Code, 3 month, May 2025 - July 2025 
 
 ---
