@@ -12,14 +12,15 @@ output_dir = ROOT / "cv"
 output_dir.mkdir(exist_ok=True)
 
 cv_builds = [
-    (ROOT / "sources" / "cv.md", output_dir / "cv-en.pdf"),
-    (ROOT / "sources" / "cv-fr.md", output_dir / "cv-fr.pdf"),
+    (ROOT / "sources" / "cv.md", output_dir / "cv-en.pdf", "en"),
+    (ROOT / "sources" / "cv-fr.md", output_dir / "cv-fr.pdf", "fr"),
 ]
 
-for input_md, output_pdf in cv_builds:
+for input_md, output_pdf, language in cv_builds:
     rendered_md = inject_publications(
         input_md.read_text(encoding="utf-8"),
         resources / "publications.bib",
+        language,
     )
 
     pypandoc.convert_text(

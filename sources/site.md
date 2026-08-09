@@ -13,7 +13,6 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Founder and Maintainer of the organization **[Pharo-LLM](https://github.com/pharo-llm)**.
 - Member of the organizing committee, **[GDR-SciLog'26](https://scilog2026.fr)**.
 - Member of the organizing committee, **[ESUG'26](https://esug.org/2026-Conference/announcement.html)**, **[ESUG'25](https://esug.org/2025-Conference/conf2025.html)**, **[ESUG'24](https://esug.org/2024-Conference/call2024.html)**.
-- Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**.
 - Project Leader and Maintainer for multiples projects (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)**...).
 - President of **[Synpase-NeuroTech-Lille](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
 - Member at **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
@@ -35,6 +34,15 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ## Publications
 
 {{PUBLICATIONS_FROM_BIB}}
+
+
+---
+
+## Reviewing
+
+- Shadow Reviewer at **[ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)**
+- Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**.
+
 
 ---
 
@@ -73,8 +81,14 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ## Public Talks
 
-- **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
+- **ESUG 2026**:  ChatPharo: an AI Assistant inside Pharo [📄]() [🎥]()
+
+- **ESUG 2026**:  The Future of LLM in Pharo: PharoLLM [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
+
 - **French Brain Awareness Week**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
+
+- **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
+
 
 ---
 
@@ -87,3 +101,28 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ### Honors:
 - Alumni Testimonial — IDMC 2024, University of Lorraine, France  
 *"Alumni testimonial in NLP & AI in University of Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+
+
+
+---
+
+## LatexDo
+
+As a Researcher, I got tired of seeing essential research tools hidden behind subscriptions and closed workflows. I created [LatexDo](https://latexdo.org) 
+because I believe researchers should be able to write, compile, collaborate, and own their work without paying for access to the basics.
+LatexDo is my attempt to build that: a free, open-source LaTeX environment shaped by researchers and the community.
+
+### Why LatexDo?
+
+- Fast LaTeX editing
+- Local & offline workflow
+- AI that understands your project
+- Review & rebuttal tools
+- Citation and submission checks
+- Real `.tex` files, no lock-in
+
+## Built for finishing scientific papers.
+
+From first draft to final submission.
+
+[Start with LatexDo](https://latexdo.org)

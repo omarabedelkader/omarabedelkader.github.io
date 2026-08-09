@@ -94,7 +94,8 @@ def build_page(config):
     rendered_md = inject_publications(
         config["md"].read_text(encoding="utf-8"),
         RESOURCES / "publications.bib",
- )
+        config["lang"],
+    )
 
     html = pypandoc.convert_text(
         rendered_md,

@@ -96,6 +96,113 @@
     }
   }
 
+  function setPublicationGroupOpen(toggle, body, open) {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    body.setAttribute("aria-hidden", open ? "false" : "true");
+
+    if (open) {
+      window.clearTimeout(body.publicationCloseTimer);
+      body.hidden = false;
+      if ("inert" in body) body.inert = false;
+      window.requestAnimationFrame(() => {
+        body.classList.add("is-open");
+      });
+      return;
+    }
+
+    body.classList.remove("is-open");
+    if ("inert" in body) body.inert = true;
+    window.clearTimeout(body.publicationCloseTimer);
+    body.publicationCloseTimer = window.setTimeout(() => {
+      if (toggle.getAttribute("aria-expanded") === "false") {
+        body.hidden = true;
+      }
+    }, 190);
+  }
+
+  function openMatchingPublicationGroups(panel, query) {
+    const q = query.toLowerCase();
+    const groups = Array.from(panel.querySelectorAll(".publication-group"));
+    groups.forEach((group) => {
+      const toggle = group.querySelector(".publication-toggle");
+      const body = group.querySelector(".publication-list");
+      if (!toggle || !body) return;
+
+      const groupText = `${toggle.textContent || ""} ${body.textContent || ""}`.toLowerCase();
+      if (groupText.includes(q)) setPublicationGroupOpen(toggle, body, true);
+    });
+  }
+
+  function enhancePublicationGroups(panel) {
+    if (panel.dataset.publicationsEnhanced === "true") return;
+
+    const isGroupBoundary = (node) =>
+      node.nodeType === 1 && (node.tagName === "H3" || node.tagName === "HR");
+
+    const headings = Array.from(panel.children).filter((child) => child.tagName === "H3");
+    if (headings.length === 0) return;
+
+    panel.dataset.publicationsEnhanced = "true";
+
+    headings.forEach((heading, index) => {
+      const title = (heading.textContent || "").trim();
+      const headingId = heading.id || `publication-group-${index + 1}`;
+      const contentId = `${headingId}-items`;
+
+      const group = createEl("section", { class: "publication-group" });
+      const groupHeading = createEl("h3", { class: "publication-heading", id: headingId });
+      const toggle = createEl("button", {
+        class: "publication-toggle",
+        type: "button",
+        "aria-expanded": "false",
+        "aria-controls": contentId
+      });
+      const arrow = createEl("span", {
+        class: "publication-toggle-arrow",
+        "aria-hidden": "true"
+      });
+      const toggleMain = createEl("span", {
+        class: "publication-toggle-main"
+      });
+      const label = createEl("span", {
+        class: "publication-toggle-label",
+        textContent: title
+      });
+      const meta = createEl("span", {
+        class: "publication-toggle-meta",
+        textContent: ""
+      });
+      const body = createEl("div", {
+        class: "publication-list",
+        id: contentId,
+        "aria-hidden": "true"
+      });
+      body.hidden = true;
+      if ("inert" in body) body.inert = true;
+
+      toggleMain.append(label, meta);
+      toggle.append(arrow, toggleMain);
+      groupHeading.append(toggle);
+      group.append(groupHeading, body);
+      heading.parentNode.insertBefore(group, heading);
+
+      let node = heading.nextSibling;
+      heading.remove();
+      while (node && !isGroupBoundary(node)) {
+        const next = node.nextSibling;
+        body.append(node);
+        node = next;
+      }
+
+      const count = body.querySelectorAll("li").length;
+      meta.textContent = count === 1 ? "1 publication" : `${count} publications`;
+
+      toggle.addEventListener("click", () => {
+        setPublicationGroupOpen(toggle, body, toggle.getAttribute("aria-expanded") !== "true");
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", () => {
     const main = document.querySelector("main#cv");
     if (!main) return;
@@ -282,6 +389,10 @@
         panel.append(main.firstChild);
       }
 
+      if (slugify(title) === "publications") {
+        enhancePublicationGroups(panel);
+      }
+
       tabs.append(tabBtn);
       panels.append(panel);
       sections.push({ title, tabBtn, panel });
@@ -307,7 +418,10 @@
       // Clear and re-apply highlight in active panel if search query exists
       const query = (opts.highlightQuery || "").trim();
       clearMarks(activeSection.panel);
-      if (query.length >= 2) highlightInElement(activeSection.panel, query);
+      if (query.length >= 2) {
+        openMatchingPublicationGroups(activeSection.panel, query);
+        highlightInElement(activeSection.panel, query);
+      }
     }
 
     function focusTab(nextIndex) {
@@ -423,11 +537,11 @@
       const matches = sections
         .map((s, index) => {
           const titleMatch = s.title.toLowerCase().includes(q);
-          const text = (s.panel.innerText || "").toLowerCase();
+          const text = (s.panel.textContent || "").toLowerCase();
           const contentMatch = text.includes(q);
           if (!titleMatch && !contentMatch) return null;
 
-          const raw = (s.panel.innerText || "");
+          const raw = (s.panel.textContent || "");
           return {
             index,
             title: s.title,

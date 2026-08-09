@@ -13,7 +13,9 @@ def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
         part = part.strip()
         if not part.startswith("@"):
             continue
+        entry_type_match = re.match(r"@([^{\s]+)", part)
         fields = {
+            "entry_type": entry_type_match.group(1).lower() if entry_type_match else "",
             "author": _extract_field(part, "author"),
             "title": _extract_field(part, "title"),
             "booktitle": _extract_field(part, "booktitle"),
@@ -84,35 +86,73 @@ def _format_authors(authors: str) -> str:
     return f"{', '.join(names[:-1])}, & {names[-1]}"
 
 
-def generate_publications_markdown(bib_path: Path) -> str:
+def _publication_group(entry: dict[str, str]) -> str:
+    entry_type = entry.get("entry_type", "")
+    if entry.get("journal") or entry_type == "article":
+        return "journal"
+    if entry.get("booktitle") or entry_type in {"inproceedings", "conference"}:
+        return "conference"
+    return "other"
+
+
+def _format_publication(entry: dict[str, str]) -> str:
+    authors = _format_authors(entry.get("author", ""))
+    year = entry.get("year", "")
+    title = entry.get("title", "")
+    venue = entry.get("journal") or entry.get("booktitle")
+    doi = entry.get("doi", "")
+
+    segments = []
+    if authors:
+        segments.append(authors)
+    if year:
+        segments.append(f"({year}).")
+    if title:
+        segments.append(f"{title}.")
+    if venue:
+        segments.append(f"*{venue}*.")
+    if doi:
+        doi_url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
+        segments.append(f"[DOI]({doi_url}).")
+    return f"- {' '.join(segments).strip()}"
+
+
+def _publication_headings(language: str) -> dict[str, str]:
+    if language == "fr":
+        return {
+            "journal": "Articles de revue",
+            "conference": "Articles de conférence",
+            "other": "Autres publications",
+        }
+    return {
+        "journal": "Journals",
+        "conference": "Conferences",
+        "other": "Other publications",
+    }
+
+
+def generate_publications_markdown(bib_path: Path, language: str = "en") -> str:
     entries = _parse_bib_entries(bib_path.read_text(encoding="utf-8"))
     if not entries:
         return "- No publications available."
 
-    lines: list[str] = []
+    grouped_entries = {
+        "journal": [],
+        "conference": [],
+        "other": [],
+    }
     for entry in entries:
-        authors = _format_authors(entry.get("author", ""))
-        year = entry.get("year", "")
-        title = entry.get("title", "")
-        venue = entry.get("journal") or entry.get("booktitle")
-        doi = entry.get("doi", "")
+        grouped_entries[_publication_group(entry)].append(_format_publication(entry))
 
-        segments = []
-        if authors:
-            segments.append(authors)
-        if year:
-            segments.append(f"({year}).")
-        if title:
-            segments.append(f"{title}.")
-        if venue:
-            segments.append(f"*{venue}*.")
-        if doi:
-            doi_url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
-            segments.append(f"[DOI]({doi_url}).")
-        lines.append(f"- {' '.join(segments).strip()}")
-    return "\n".join(lines)
+    headings = _publication_headings(language)
+    sections = []
+    for group_name in ("journal", "conference", "other"):
+        lines = grouped_entries[group_name]
+        if lines:
+            sections.append(f"### {headings[group_name]}\n\n" + "\n".join(lines))
+    return "\n\n".join(sections)
 
 
-def inject_publications(markdown_text: str, bib_path: Path) -> str:
-    publication_lines = generate_publications_markdown(bib_path)
+def inject_publications(markdown_text: str, bib_path: Path, language: str = "en") -> str:
+    publication_lines = generate_publications_markdown(bib_path, language)
     return markdown_text.replace(PUBLICATIONS_TOKEN, publication_lines)
