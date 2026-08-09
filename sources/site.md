@@ -104,7 +104,7 @@ As a Researcher, I got tired of seeing essential research tools hidden behind su
 because I believe researchers should be able to write, compile, collaborate, and own their work without paying for access to the basics.
 LatexDo is my attempt to build that: a free, open-source LaTeX environment shaped by researchers and the community.
 
-### Why LatexDo?
+#### Why LatexDo?
 
 - Fast LaTeX editing
 - Local & offline workflow
@@ -113,7 +113,7 @@ LatexDo is my attempt to build that: a free, open-source LaTeX environment shape
 - Citation and submission checks
 - Real `.tex` files, no lock-in
 
-## Built for finishing scientific papers.
+#### Built for finishing scientific papers.
 
 From first draft to final submission.
 
