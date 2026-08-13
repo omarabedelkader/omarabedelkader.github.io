@@ -21,6 +21,7 @@ for input_md, output_pdf, language in cv_builds:
         input_md.read_text(encoding="utf-8"),
         resources / "publications.bib",
         language,
+        grouping="rank",
     )
 
     pypandoc.convert_text(
@@ -34,7 +35,10 @@ for input_md, output_pdf, language in cv_builds:
             f"--bibliography={resources / 'publications.bib'}",
             f"--csl={resources / 'apa.csl'}",
             "-H", str(resources / "header.tex"),
-            "-V", "geometry=margin=0.5in",
+            "-V", "documentclass=article",
+            "-V", "papersize=a4",
+            "-V", "fontsize=10pt",
+            "-V", "geometry=margin=0.62in",
         ]
     )
 

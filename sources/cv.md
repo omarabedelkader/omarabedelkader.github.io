@@ -1,12 +1,18 @@
 ---
-title: "Omar AbedelKader"
+title: ""
 date: ""
 ---
 
-## **Lille, France**  
-## [\icon{\faEnvelope}](mailto:omar.abedelkader@inria.fr)  [\icon{\faGithub}](https://github.com/omarabedelkader)  [\icon{\faLinkedin}](https://www.linkedin.com/in/omarabedelkader/)  [\icon{\faOrcid}](https://orcid.org/0009-0005-1339-5683)
-
----
+```{=latex}
+\cvheader{Omar AbedelKader}{Doctoral Researcher in Computer Science\\
+Inria - EVREF / LaBRI - Progress\\
+University of Lille\\
+Lille, France}{Updated: \today\\
+\href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
+\href{https://omarabedelkader.com}{omarabedelkader.com}\\
+\href{https://github.com/omarabedelkader}{github.com/omarabedelkader}\\
+\href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
+```
 
 ## About Me
 
@@ -210,7 +216,3 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - **English:** B2
 
 ---
-
-Visit my website: [omarabedelkader.com](https://omarabedelkader.com)
-
-\cvupdated{Last updated: \today}

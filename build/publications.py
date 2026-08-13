@@ -22,6 +22,8 @@ def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
             "journal": _extract_field(part, "journal"),
             "year": _extract_field(part, "year"),
             "doi": _extract_field(part, "doi"),
+            "keywords": _extract_field(part, "keywords"),
+            "rank": _extract_field(part, "rank"),
         }
         entries.append(fields)
     return entries
@@ -131,11 +133,49 @@ def _publication_headings(language: str) -> dict[str, str]:
     }
 
 
-def generate_publications_markdown(bib_path: Path, language: str = "en") -> str:
-    entries = _parse_bib_entries(bib_path.read_text(encoding="utf-8"))
-    if not entries:
-        return "- No publications available."
+def _publication_rank(entry: dict[str, str]) -> str:
+    rank = entry.get("rank", "").strip().lower()
+    keywords = [
+        keyword.strip().lower()
+        for keyword in re.split(r"[,;]\s*|\s+", entry.get("keywords", ""))
+        if keyword.strip()
+    ]
 
+    candidates = [rank, *keywords]
+    for candidate in candidates:
+        normalized = candidate.removeprefix("rank-").removeprefix("rank")
+        if normalized in {"a", "b", "c"}:
+            return normalized
+        if normalized in {"q1", "q2", "q3", "q4"}:
+            return normalized
+    return "unranked"
+
+
+def _rank_headings(language: str) -> dict[str, str]:
+    if language == "fr":
+        return {
+            "a": "Rang A",
+            "b": "Rang B",
+            "c": "Rang C",
+            "q1": "Revues Q1",
+            "q2": "Revues Q2",
+            "q3": "Revues Q3",
+            "q4": "Revues Q4",
+            "unranked": "Publications non classées",
+        }
+    return {
+        "a": "Rank A",
+        "b": "Rank B",
+        "c": "Rank C",
+        "q1": "Q1 Journals",
+        "q2": "Q2 Journals",
+        "q3": "Q3 Journals",
+        "q4": "Q4 Journals",
+        "unranked": "Unranked Publications",
+    }
+
+
+def _group_entries_by_venue(entries: list[dict[str, str]]) -> dict[str, list[str]]:
     grouped_entries = {
         "journal": [],
         "conference": [],
@@ -143,16 +183,58 @@ def generate_publications_markdown(bib_path: Path, language: str = "en") -> str:
     }
     for entry in entries:
         grouped_entries[_publication_group(entry)].append(_format_publication(entry))
+    return grouped_entries
 
-    headings = _publication_headings(language)
+
+def _group_entries_by_rank(entries: list[dict[str, str]]) -> dict[str, list[str]]:
+    grouped_entries = {
+        "a": [],
+        "b": [],
+        "c": [],
+        "q1": [],
+        "q2": [],
+        "q3": [],
+        "q4": [],
+        "unranked": [],
+    }
+    for entry in entries:
+        grouped_entries[_publication_rank(entry)].append(_format_publication(entry))
+    return grouped_entries
+
+
+def generate_publications_markdown(
+    bib_path: Path,
+    language: str = "en",
+    grouping: str = "venue",
+) -> str:
+    entries = _parse_bib_entries(bib_path.read_text(encoding="utf-8"))
+    if not entries:
+        return "- No publications available."
+
+    if grouping == "rank":
+        grouped_entries = _group_entries_by_rank(entries)
+        headings = _rank_headings(language)
+        group_order = ("a", "b", "c", "q1", "q2", "q3", "q4", "unranked")
+    elif grouping == "venue":
+        grouped_entries = _group_entries_by_venue(entries)
+        headings = _publication_headings(language)
+        group_order = ("journal", "conference", "other")
+    else:
+        raise ValueError(f"Unknown publication grouping: {grouping}")
+
     sections = []
-    for group_name in ("journal", "conference", "other"):
+    for group_name in group_order:
         lines = grouped_entries[group_name]
         if lines:
             sections.append(f"### {headings[group_name]}\n\n" + "\n".join(lines))
     return "\n\n".join(sections)
 
 
-def inject_publications(markdown_text: str, bib_path: Path, language: str = "en") -> str:
-    publication_lines = generate_publications_markdown(bib_path, language)
+def inject_publications(
+    markdown_text: str,
+    bib_path: Path,
+    language: str = "en",
+    grouping: str = "venue",
+) -> str:
+    publication_lines = generate_publications_markdown(bib_path, language, grouping)
     return markdown_text.replace(PUBLICATIONS_TOKEN, publication_lines)
