@@ -215,7 +215,10 @@
 
     const shell = createEl("div", { class: "cv-shell" });
     const header = createEl("header", { class: "site-header" });
+    const headerRow = createEl("div", { class: "header-row" });
+    const headerActions = createEl("div", { class: "header-actions" });
     const sticky = createEl("div", { class: "sticky-ui" });
+    const isFrench = document.documentElement.lang === "fr";
 
     // ---------------- NEW: Top emoji bar (theme + quick links) ----------------
     const topbar = createEl("div", {
@@ -269,7 +272,6 @@
     });
 
     topbar.append(themeBtn);
-        const isFrench = document.documentElement.lang === "fr";
     const languageBtn = createEl("a", {
       class: "topbar-btn",
       href: isFrench ? "../index.html" : "fr/",
@@ -308,15 +310,19 @@
     // ------------------------------------------------------------------------
 
     const searchWrap = createEl("div", { class: "search-wrap" });
-    const searchLabel = createEl("label", { class: "search-label", html: isFrench ? "Rechercher" : "Search" });
+    const searchLabel = createEl("label", { class: "search-label" });
+    const searchLabelText = createEl("span", {
+      class: "search-label-text",
+      textContent: isFrench ? "Rechercher" : "Search"
+    });
     const searchInput = createEl("input", {
       class: "search-input",
       type: "search",
-      placeholder: isFrench ? "Rechercher dans les sections et le contenu…" : "Search sections and content…",
+      placeholder: isFrench ? "Que voulez-vous trouver ?" : "What do you want to find?",
       autocomplete: "off",
       spellcheck: false
     });
-    searchLabel.append(searchInput);
+    searchLabel.append(searchLabelText, searchInput);
 
     const searchMeta = createEl("div", { class: "search-meta" });
     const searchCount = createEl("span", { class: "search-count", textContent: "" });
@@ -326,6 +332,7 @@
     const results = createEl("div", { class: "search-results", role: "region", "aria-label": isFrench ? "Résultats de recherche" : "Search results" });
 
     searchWrap.append(searchLabel, searchMeta, results);
+    headerActions.append(searchWrap, topbar);
 
     const tabs = createEl("nav", {
       class: "tabs",
@@ -335,14 +342,26 @@
 
     const panels = createEl("div", { class: "panels" });
 
-    // CHANGED: topbar is first inside the sticky area
-    sticky.append(topbar, searchWrap, tabs);
+    sticky.append(tabs);
     shell.append(header, sticky, panels);
 
     // --------- Move content before first H2 into header ----------
     const firstH2 = h2s[0];
     while (main.firstChild && main.firstChild !== firstH2) {
       header.append(main.firstChild);
+    }
+    const title = header.querySelector("h1");
+    if (title) {
+      headerRow.append(title, headerActions);
+      header.insertBefore(headerRow, header.firstChild);
+    } else {
+      headerRow.append(headerActions);
+      header.prepend(headerRow);
+    }
+
+    const titleBlock = header.querySelector("#title-block-header");
+    if (titleBlock && !titleBlock.textContent.trim() && titleBlock.children.length === 0) {
+      titleBlock.remove();
     }
 
     // --------- Build tabs/panels from each H2 block ----------
@@ -472,6 +491,7 @@
     // --------- Search ----------
     function renderResults(items, query) {
       results.innerHTML = "";
+      searchWrap.classList.toggle("has-query", Boolean(query));
       if (!query || items.length === 0) {
         results.classList.remove("is-open");
         searchCount.textContent = query ? (isFrench ? "Aucun résultat" : "No matches") : "";
@@ -523,6 +543,7 @@
     let searchTimer = null;
     function runSearch() {
       const query = (searchInput.value || "").trim();
+      searchWrap.classList.toggle("has-query", Boolean(query));
       if (!query) {
         results.innerHTML = "";
         results.classList.remove("is-open");

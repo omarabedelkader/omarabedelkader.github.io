@@ -19,6 +19,15 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 - Member in the organization **[Pharo-AI](https://github.com/pharo-ai)**.
 - Contributor at [**Café IA**](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
 
+
+### Awards:
+- Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
+*"Package-Aware Approach for Repository-Level Code Completion in Pharo"* [🔗](https://ceur-ws.org/Vol-4139/Paper01.pdf)
+
+### Honors:
+- Alumni Testimonial — IDMC 2024, University of Lorraine, France  
+*"Alumni testimonial in NLP & AI in University of Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+
 ---
 
 ## Publications
@@ -28,7 +37,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ---
 
-## Reviewing
+## Services
 
 - Shadow Reviewer at **[ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)**
 - Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**.
@@ -62,7 +71,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ---
 
-## Supervision
+## Students
 
 - Mehdi Elkolei, Bachelor Intership, 4 month, April 2026 - July 2026  
 I supervised Mehdi Elkolei on his work on extending Complishon, Pharo’s context-aware code completion engine. His project focused on four UX-oriented extensions: typo tolerance, implicit prefix expansion, grouped completion entries, and camel-case matching. I guided the technical direction and design choices, with particular attention to usability, modularity, and integration with the existing architecture.
@@ -80,20 +89,6 @@ I supervised Mehdi Elkolei on his work on extending Complishon, Pharo’s contex
 - **French Brain Awareness Week**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 - **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
-
-
----
-
-## Awards and Honors
-
-### Awards:
-- Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
-*"Package-Aware Approach for Repository-Level Code Completion in Pharo"* [🔗](https://ceur-ws.org/Vol-4139/Paper01.pdf)
-
-### Honors:
-- Alumni Testimonial — IDMC 2024, University of Lorraine, France  
-*"Alumni testimonial in NLP & AI in University of Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
-
 
 
 ---
