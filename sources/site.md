@@ -2,7 +2,7 @@
 title: "Omar AbedelKader"
 ---
 
-**Interests:** Artificial Intelligence · Software Engineering · LLMs · AI4SE
+Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ## About Me
 
@@ -34,17 +34,17 @@ title: "Omar AbedelKader"
 
 ### Current
 
-- Founder and Maintainer of the organization **[Pharo-LLM](https://github.com/pharo-llm)**.
-- Member in the organization **[Pharo-AI](https://github.com/pharo-ai)**.
-- Project Leader and Maintainer for multiples projects (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)** and many **[more](https://github.com/orgs/pharo-llm/repositories)**).
-- Website Maintainer **[GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)**
-- President of **[Synapse-NeuroTech-Lille](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
-- Member at **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
-- Contributor at [Café IA](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
+- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- Member in the organization [Pharo-AI](https://github.com/pharo-ai).
+- Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
+- Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- President of [Synapse-NeuroTech-Lille](https://theneurotech.eu), a student association focused on AI and neuroscience.
+- Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
 
 
 ### 2027 
-- *Shadow Reviewer at **[ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)**
+- *Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 
 ### 2026
 - Member of the organizing committee, [GDR-SciLog’26](https://scilog2026.fr).
@@ -52,7 +52,7 @@ title: "Omar AbedelKader"
 
 ### 2025
 - Member of the organizing committee [ESUG’25](https://esug.org/2025-Conference/conf2025.html)
-- Sub reviewer at **[BENEVOL'25](https://benevol2025.github.io)**.
+- Sub reviewer at [BENEVOL'25](https://benevol2025.github.io).
 
 ### 2024
 - Member of the organizing committee [ESUG’24](https://esug.org/2024-Conference/call2024.html).
@@ -74,14 +74,14 @@ title: "Omar AbedelKader"
 - Live conversational interface between Pharo developers and large language models.
 - Enables interactive discussions with LLMs directly from the Pharo environment.
 - Designed an open and extensible architecture to experiment with multiple LLM backends.
-- **GitHub Repository:** [ChatPharo](https://github.com/pharo-llm/ChatPharo)
+- GitHub Repository: [ChatPharo](https://github.com/pharo-llm/ChatPharo)
 
 ### INERIS-IA
 - AI platform developed at INERIS for document classification and knowledge management.
 - Built a Flask-based web interface integrating multiple ML and NLP models.
 - Trained document classification models aligned with COP 2027 objectives and INERIS strategic themes.
 - Implemented additional features including document similarity, keyword extraction, and corpus quality improvement.
-- **GitHub Repository:** [INERIS-IA](https://github.com/omarabedelkader/INERIS-IA)
+- GitHub Repository: [INERIS-IA](https://github.com/omarabedelkader/INERIS-IA)
 
 ---
 
@@ -102,15 +102,15 @@ I supervised Srajal the ChatPharo project, which aimed to integrate LLMs into th
 ## Public Talks
 
 ### 2026:
-- **ESUG 2026**:  ChatPharo: an AI Assistant inside Pharo [📄]() [🎥]()
-- **ESUG 2026**:  Pharo-LLM: Building a sovereign LLM ecosystem in Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
-- **French Brain Awareness Week**: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
+- ESUG 2026:  ChatPharo: an AI Assistant inside Pharo [📄]() [🎥]()
+- ESUG 2026:  Pharo-LLM: Building a sovereign LLM ecosystem in Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
+- French Brain Awareness Week: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 ### 2025:
-- **ESUG 2025**: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs,  Gdansk, Poland [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
-- **GT GL**: ChatPharo: Talking Live to LLMs from Pharo, Lille, France
-- **Scientific Seminar**: LLM101-2, Lille, France
-- **Scientific Seminar**: LLM101, Lille, France
+- ESUG 2025: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs,  Gdansk, Poland [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
+- GT GL: ChatPharo: Talking Live to LLMs from Pharo, Lille, France
+- Scientific Seminar: LLM101-2, Lille, France
+- Scientific Seminar: LLM101, Lille, France
 
 ---
 

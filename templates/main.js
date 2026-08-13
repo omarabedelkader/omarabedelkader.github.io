@@ -804,7 +804,7 @@
         : `${count} current`,
       bulkOpen: isFrench => isFrench ? "Tout ouvrir" : "Expand all talks",
       bulkClose: isFrench => isFrench ? "Tout fermer" : "Collapse all talks",
-      fallbackLatest: true
+      fallbackLatest: false
     });
   }
 

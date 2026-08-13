@@ -2,7 +2,7 @@
 title: "Omar AbedelKader"
 ---
 
-**Intérêts :** Intelligence artificielle · Génie logiciel · LLM · AI4SE
+Intérêts : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 
 ## À propos de moi
 
@@ -34,17 +34,17 @@ title: "Omar AbedelKader"
 
 ### Actuel
 
-- Fondateur et responsable de l'organisation **[Pharo-LLM](https://github.com/pharo-llm)**.
-- Membre de l'organisation **[Pharo-AI](https://github.com/pharo-ai)**.
-- Chef de projet et mainteneur de plusieurs projets (**[ChatPharo](https://github.com/pharo-llm/chatpharo)**, **[Pharo-Infer](https://github.com/pharo-llm/pharo-infer)** et de nombreux **[plus](https://github.com/orgs/pharo-llm/repositories)**).
-- Responsable du site Web **[GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)**
-- Président de **[Synapse-NeuroTech-Lille](https://theneurotech.eu)**, une association étudiante axée sur l'IA et les neurosciences.
-- Membre de **[Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d')** ([**Ministère de la Transition Écologique**](https://www.ecologie.gouv.fr)).
-- Contributeur à [Café IA](https://cafeia.org) (**[Conseil National du Numérique](https://www.conseil-ia-numerique.fr)**).
+- Fondateur et responsable de l'organisation [Pharo-LLM](https://github.com/pharo-llm).
+- Membre de l'organisation [Pharo-AI](https://github.com/pharo-ai).
+- Chef de projet et mainteneur de plusieurs projets ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et de nombreux [plus](https://github.com/orgs/pharo-llm/repositories)).
+- Responsable du site Web [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Président de [Synapse-NeuroTech-Lille](https://theneurotech.eu), une association étudiante axée sur l'IA et les neurosciences.
+- Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
 
 
 ### 2027 
-- *Réviseur fantôme chez **[ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)**
+- *Réviseur fantôme chez [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 
 ### 2026
 - Membre du comité organisateur, [GDR-SciLog'26](https://scilog2026.fr).
@@ -52,7 +52,7 @@ title: "Omar AbedelKader"
 
 ### 2025
 - Membre du comité d'organisation [ESUG'25](https://esug.org/2025-Conference/conf2025.html)
-- Sous-réviseur chez **[BENEVOL'25](https://benevol2025.github.io)**.
+- Sous-réviseur chez [BENEVOL'25](https://benevol2025.github.io).
 
 ### 2024
 - Membre du comité organisateur [ESUG'24](https://esug.org/2024-Conference/call2024.html).
@@ -74,14 +74,14 @@ title: "Omar AbedelKader"
 - Interface conversationnelle en direct entre les développeurs Pharo et les grands modèles de langage.
 - Permet des discussions interactives avec les LLM directement depuis l'environnement Pharo.
 - Conception d'une architecture ouverte et extensible pour expérimenter plusieurs backends LLM.
-- **Dépôt GitHub :** [ChatPharo](https://github.com/pharo-llm/ChatPharo)
+- Référentiel GitHub : [ChatPharo](https://github.com/pharo-llm/ChatPharo)
 
 ### INERIS-IA
 - Plateforme d'IA développée chez INERIS pour la classification des documents et la gestion des connaissances.
 - Création d'une interface Web basée sur Flask intégrant plusieurs modèles ML et NLP.
 - Modèles de classification de documents formés alignés sur les objectifs de la COP 2027 et les thèmes stratégiques INERIS.
 - Implémentation de fonctionnalités supplémentaires, notamment la similarité des documents, l'extraction de mots clés et l'amélioration de la qualité du corpus.
-- **Dépôt GitHub :** [INERIS-IA](https://github.com/omarabedelkader/INERIS-IA)
+- Référentiel GitHub : [INERIS-IA](https://github.com/omarabedelkader/INERIS-IA)
 
 ---
 
@@ -102,15 +102,15 @@ J'ai supervisé à Srajal le projet ChatPharo, qui visait à intégrer des LLM d
 ## Présentations publiques
 
 ### 2026:
-- **ESUG 2026** : ChatPharo : un assistant IA dans Pharo [📄]() [🎥]()
-- **ESUG 2026** : Pharo-LLM : Création d'un écosystème LLM souverain dans Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
-- **Semaine française de sensibilisation au cerveau** : IA et cerveau : deux manières d'apprendre, qu'est-ce que cela change dans notre quotidien ? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
+- ESUG 2026 : ChatPharo : un assistant IA dans Pharo [📄]() [🎥]()
+- ESUG 2026 : Pharo-LLM : Création d'un écosystème LLM souverain dans Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
+- Semaine française de sensibilisation au cerveau : IA et cerveau : deux manières d'apprendre, qu'est-ce que cela change dans notre quotidien ? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 ### 2025:
-- **ESUG 2025** : ChatPharo : une architecture ouverte pour comprendre comment parler en direct aux LLM, Gdansk, Pologne [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
-- **GT GL** : ChatPharo : discussion en direct avec les LLM de Pharo, Lille, France
-- **Séminaire Scientifique** : LLM101-2, Lille, France
-- **Séminaire Scientifique** : LLM101, Lille, France
+- ESUG 2025 : ChatPharo : une architecture ouverte pour comprendre comment parler en direct aux LLM, Gdansk, Pologne [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
+- GT GL : ChatPharo : Discussion en direct avec les LLM de Pharo, Lille, France
+- Séminaire Scientifique : LLM101-2, Lille, France
+- Séminaire Scientifique : LLM101, Lille, France
 
 ---
 
