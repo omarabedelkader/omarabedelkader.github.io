@@ -16,13 +16,14 @@ The project uses **Markdown sources** plus a small **Python + Pandoc build pipel
 
 ## Build flow
 
-- `run.sh` runs every script in `runner/`.
-- Each runner script:
-  1. Creates/activates `.venv`
-  2. Installs `requirements.txt`
-  3. Runs one Python build script from `build/`
+`run.sh` creates/activates `.venv`, installs `requirements.txt`, then runs four deterministic tasks:
 
-The website build copies CSS/JS/favicon into `docs/`, converts `sources/site.md` to HTML, injects a footer with a "Last updated" label, and includes the client-side script.
+1. Translate `sources/cv.md` to `sources/cv-fr.md`
+2. Build `cv/cv-en.pdf` and `cv/cv-fr.pdf`
+3. Translate `sources/site.md` to `sources/site-fr.md`
+4. Build `docs/index.html` and `docs/fr/index.html`
+
+The translator protects Markdown links, URLs, inline code, fenced code blocks, frontmatter, raw LaTeX commands, and the `{{PUBLICATIONS_FROM_BIB}}` token. The website build copies CSS/JS/favicon into `docs/`, converts the site Markdown to HTML, copies CV PDFs into `docs/cv/`, injects a footer with a "Last updated" label, and includes the client-side script.
 
 ## How to run
 
@@ -31,7 +32,7 @@ The website build copies CSS/JS/favicon into `docs/`, converts `sources/site.md`
 bash run.sh
 ```
 
-Or run individual targets:
+Or run individual build targets:
 
 ```bash
 bash runner/build-site.sh

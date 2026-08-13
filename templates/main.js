@@ -8,6 +8,8 @@
   function slugify(text) {
     return String(text)
       .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
       .trim()
       .replace(/[^\w\s-]/g, "")
       .replace(/\s+/g, "-")
@@ -122,7 +124,7 @@
 
   function openMatchingPublicationGroups(panel, query) {
     const q = query.toLowerCase();
-    const groups = Array.from(panel.querySelectorAll(".publication-group"));
+    const groups = Array.from(panel.querySelectorAll(".publication-group, .service-group"));
     groups.forEach((group) => {
       const toggle = group.querySelector(".publication-toggle");
       const body = group.querySelector(".publication-list");
@@ -133,8 +135,455 @@
     });
   }
 
+  function enhanceProfileInterests(header) {
+    const paragraphs = Array.from(header.querySelectorAll("p"));
+    const interests = paragraphs.find((paragraph) => {
+      const text = (paragraph.textContent || "").trim();
+      return /^(interests|intérêts|interets|centres d.interet)\s*:/i.test(text);
+    });
+    if (!interests || interests.dataset.profileInterestsEnhanced === "true") return interests || null;
+
+    const text = (interests.textContent || "").replace(/\s+/g, " ").trim();
+    const separator = text.indexOf(":");
+    if (separator === -1) return interests;
+
+    const labelText = text.slice(0, separator).trim();
+    const tags = text
+      .slice(separator + 1)
+      .split(/[·•,]/)
+      .map((tag) => tag.trim())
+      .filter(Boolean);
+    if (tags.length === 0) return interests;
+
+    interests.dataset.profileInterestsEnhanced = "true";
+    interests.classList.add("profile-interests");
+    interests.replaceChildren();
+
+    const label = createEl("span", {
+      class: "profile-interests-label",
+      textContent: `${labelText}:`
+    });
+    const tagList = createEl("span", { class: "profile-interests-tags" });
+    tags.forEach((tag) => {
+      tagList.append(createEl("span", { class: "profile-interest-tag", textContent: tag }));
+    });
+    interests.append(label, tagList);
+    return interests;
+  }
+
+  function trimInlineContent(element) {
+    while (element.firstChild && element.firstChild.nodeType === Node.TEXT_NODE && !element.firstChild.nodeValue.trim()) {
+      element.firstChild.remove();
+    }
+    while (element.lastChild && element.lastChild.nodeType === Node.TEXT_NODE && !element.lastChild.nodeValue.trim()) {
+      element.lastChild.remove();
+    }
+    if (element.firstChild && element.firstChild.nodeType === Node.TEXT_NODE) {
+      element.firstChild.nodeValue = element.firstChild.nodeValue.replace(/^\s+/, "");
+    }
+    if (element.lastChild && element.lastChild.nodeType === Node.TEXT_NODE) {
+      element.lastChild.nodeValue = element.lastChild.nodeValue.replace(/\s+$/, "");
+    }
+  }
+
+  function enhanceProfileCurrent(header) {
+    const paragraphs = Array.from(header.querySelectorAll("p"));
+    const current = paragraphs.find((paragraph) => {
+      const text = (paragraph.textContent || "").trim();
+      return /^(current|actuel|actuels|en cours)\s*:/i.test(text);
+    });
+    if (!current || current.dataset.profileCurrentEnhanced === "true") return current || null;
+
+    const text = (current.textContent || "").replace(/\s+/g, " ").trim();
+    const separator = text.indexOf(":");
+    if (separator === -1) return current;
+
+    const labelText = text.slice(0, separator).trim();
+    const labelNode = Array.from(current.children).find((child) =>
+      child.tagName === "STRONG" && (child.textContent || "").includes(":")
+    );
+    const content = createEl("span", { class: "profile-current-items" });
+
+    if (labelNode) {
+      let node = labelNode.nextSibling;
+      while (node) {
+        const next = node.nextSibling;
+        content.append(node);
+        node = next;
+      }
+    } else {
+      content.textContent = text.slice(separator + 1).trim();
+    }
+    trimInlineContent(content);
+    if (!content.textContent.trim()) return current;
+
+    current.dataset.profileCurrentEnhanced = "true";
+    current.classList.add("profile-interests", "profile-current");
+    current.replaceChildren();
+
+    const label = createEl("span", {
+      class: "profile-interests-label profile-current-label",
+      textContent: `${labelText}:`
+    });
+    current.append(label, content);
+    return current;
+  }
+
+  function isSelectedPublicationTitle(title) {
+    const normalized = title.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return normalized === "selected publications" || normalized === "publications selectionnees";
+  }
+
+  function publicationFilterKey(text) {
+    return String(text).replace(/\s+/g, " ").trim().toLowerCase();
+  }
+
+  function collectAndRemoveSelectedPublicationSeed(panel) {
+    const selectedKeys = new Set();
+    const headings = Array.from(panel.children).filter((child) => child.tagName === "H3");
+
+    headings.forEach((heading) => {
+      const title = (heading.textContent || "").trim();
+      if (!isSelectedPublicationTitle(title)) return;
+
+      let node = heading.nextSibling;
+      heading.remove();
+
+      while (node && !(node.nodeType === 1 && (node.tagName === "H3" || node.tagName === "HR"))) {
+        const next = node.nextSibling;
+        if (node.nodeType === 1) {
+          node.querySelectorAll("li").forEach((item) => {
+            selectedKeys.add(publicationFilterKey(item.textContent || ""));
+          });
+        }
+        node.remove();
+        node = next;
+      }
+    });
+
+    return selectedKeys;
+  }
+
+  function addGroupBulkToggle(panel, groups, labels) {
+    if (groups.length === 0) return;
+
+    const firstGroup = groups[0];
+    const existingFilter = firstGroup.previousElementSibling?.classList.contains("publication-filter")
+      ? firstGroup.previousElementSibling
+      : null;
+    const bulkActions = createEl("span", { class: "publication-bulk-actions" });
+    const bulkToggle = createEl("button", {
+      class: "publication-bulk-button publication-bulk-toggle",
+      type: "button",
+      "aria-label": labels.open,
+      "aria-pressed": "false",
+      title: labels.open
+    });
+    const bulkIcon = createEl("span", {
+      class: "publication-bulk-icon publication-bulk-icon-expand",
+      "aria-hidden": "true"
+    });
+    bulkToggle.append(bulkIcon);
+    bulkActions.append(bulkToggle);
+    if (existingFilter) {
+      existingFilter.append(bulkActions);
+    } else {
+      const toolbar = createEl("div", { class: "section-bulk-toolbar" });
+      toolbar.append(bulkActions);
+      panel.insertBefore(toolbar, firstGroup);
+    }
+
+    const visibleGroups = () => groups.filter((group) => !group.hidden);
+
+    const refreshBulkToggle = () => {
+      const visible = visibleGroups();
+      const allOpen = visible.length > 0 && visible.every((group) => {
+        const toggleButton = group.querySelector(".publication-toggle");
+        return toggleButton && toggleButton.getAttribute("aria-expanded") === "true";
+      });
+      const labelText = allOpen ? labels.close : labels.open;
+      bulkToggle.setAttribute("aria-pressed", allOpen ? "true" : "false");
+      bulkToggle.setAttribute("aria-label", labelText);
+      bulkToggle.title = labelText;
+      bulkIcon.className = `publication-bulk-icon ${allOpen ? "publication-bulk-icon-collapse" : "publication-bulk-icon-expand"}`;
+    };
+
+    const setAllOpen = (open) => {
+      visibleGroups().forEach((group) => {
+        const toggleButton = group.querySelector(".publication-toggle");
+        const body = group.querySelector(".publication-list");
+        if (toggleButton && body) setPublicationGroupOpen(toggleButton, body, open);
+      });
+      refreshBulkToggle();
+    };
+
+    bulkToggle.addEventListener("click", () => {
+      const shouldOpen = bulkToggle.getAttribute("aria-pressed") !== "true";
+      setAllOpen(shouldOpen);
+    });
+    groups.forEach((group) => {
+      const toggleButton = group.querySelector(".publication-toggle");
+      if (toggleButton) {
+        toggleButton.addEventListener("click", () => window.setTimeout(refreshBulkToggle, 210));
+      }
+    });
+    panel.addEventListener("groups-visibility-change", refreshBulkToggle);
+
+    refreshBulkToggle();
+  }
+
+  function currentGroupTitle(title) {
+    return String(title || "")
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/:$/, "")
+      .trim();
+  }
+
+  function addCurrentBadge(item, isFrench) {
+    if (item.querySelector(".service-current-badge")) return;
+    item.append(" ", createEl("span", {
+      class: "service-current-badge",
+      textContent: isFrench ? "Actuel" : "Current"
+    }));
+  }
+
+  function setMarkedCurrentItem(item, datasetKey, currentClass, isFrench) {
+    item.dataset[datasetKey] = "true";
+    item.classList.add(currentClass);
+    addCurrentBadge(item, isFrench);
+  }
+
+  function addCurrentItemFilter(panel, groups, isFrench, options) {
+    const currentItems = Array.from(panel.querySelectorAll("li"))
+      .filter((item) => item.dataset[options.datasetKey] === "true");
+    if (currentItems.length === 0 || groups.length === 0) return;
+
+    const control = createEl("div", { class: `publication-filter ${options.filterClass || ""}`.trim() });
+    const label = createEl("span", {
+      class: "publication-filter-label",
+      textContent: isFrench ? "Filtrer" : "Filter"
+    });
+    const toggle = createEl("button", {
+      class: "publication-filter-toggle",
+      type: "button",
+      role: "switch",
+      "aria-checked": "false"
+    });
+    const switchTrack = createEl("span", {
+      class: "publication-filter-track",
+      "aria-hidden": "true"
+    });
+    const switchText = createEl("span", {
+      class: "publication-filter-text",
+      textContent: options.switchText
+    });
+    const count = createEl("span", {
+      class: "publication-filter-count",
+      textContent: ""
+    });
+
+    toggle.append(switchTrack, switchText);
+    control.append(label, toggle, count);
+    panel.insertBefore(control, groups[0]);
+
+    const update = () => {
+      const currentOnly = toggle.getAttribute("aria-checked") === "true";
+      let visibleTotal = 0;
+
+      groups.forEach((group) => {
+        const toggleButton = group.querySelector(".publication-toggle");
+        const body = group.querySelector(".publication-list");
+        const items = Array.from(group.querySelectorAll("li"));
+        let visibleInGroup = 0;
+
+        items.forEach((item) => {
+          const show = !currentOnly || item.dataset[options.datasetKey] === "true";
+          item.hidden = !show;
+          if (show) visibleInGroup += 1;
+        });
+
+        group.hidden = currentOnly && visibleInGroup === 0;
+        visibleTotal += visibleInGroup;
+
+        const meta = group.querySelector(".publication-toggle-meta");
+        if (meta) meta.textContent = options.countLabel(visibleInGroup);
+
+        if (currentOnly && visibleInGroup > 0 && toggleButton && body) {
+          setPublicationGroupOpen(toggleButton, body, true);
+        }
+      });
+
+      count.textContent = currentOnly ? options.countText(visibleTotal) : "";
+      panel.classList.toggle(options.panelClass, currentOnly);
+      panel.dispatchEvent(new CustomEvent("groups-visibility-change"));
+    };
+
+    toggle.addEventListener("click", () => {
+      const next = toggle.getAttribute("aria-checked") !== "true";
+      toggle.setAttribute("aria-checked", next ? "true" : "false");
+      update();
+    });
+
+    update();
+  }
+
+  function addServiceCurrentFilter(panel, groups, isFrench) {
+    addCurrentItemFilter(
+      panel,
+      groups,
+      isFrench,
+      {
+        datasetKey: "currentService",
+        filterClass: "service-current-filter",
+        switchText: isFrench ? "Actuels" : "Current",
+        panelClass: "is-filtering-current-services",
+        countLabel: count => count === 1 ? "1 service" : `${count} services`,
+        countText: count => isFrench
+          ? `${count} actuel${count === 1 ? "" : "s"}`
+          : `${count} current`
+      }
+    );
+  }
+
+  function addPublicationFilter(panel, selectedKeys, isFrench) {
+    if (selectedKeys.size === 0) return;
+
+    const groups = Array.from(panel.querySelectorAll(".publication-group"));
+    if (groups.length === 0) return;
+
+    const control = createEl("div", { class: "publication-filter" });
+    const label = createEl("span", {
+      class: "publication-filter-label",
+      textContent: isFrench ? "Filtrer" : "Filter"
+    });
+    const toggle = createEl("button", {
+      class: "publication-filter-toggle",
+      type: "button",
+      role: "switch",
+      "aria-checked": "false"
+    });
+    const switchTrack = createEl("span", {
+      class: "publication-filter-track",
+      "aria-hidden": "true"
+    });
+    const switchText = createEl("span", {
+      class: "publication-filter-text",
+      textContent: isFrench ? "Publications sélectionnées" : "Selected Publications"
+    });
+    const count = createEl("span", {
+      class: "publication-filter-count",
+      textContent: ""
+    });
+    const bulkActions = createEl("span", {
+      class: "publication-bulk-actions"
+    });
+    const bulkToggle = createEl("button", {
+      class: "publication-bulk-button publication-bulk-toggle",
+      type: "button",
+      "aria-label": isFrench ? "Tout ouvrir" : "Expand all publications",
+      "aria-pressed": "false",
+      title: isFrench ? "Tout ouvrir" : "Expand all publications"
+    });
+    const bulkIcon = createEl("span", {
+      class: "publication-bulk-icon publication-bulk-icon-expand",
+      "aria-hidden": "true"
+    });
+    bulkToggle.append(bulkIcon);
+
+    toggle.append(switchTrack, switchText);
+    bulkActions.append(bulkToggle);
+    control.append(label, toggle, count, bulkActions);
+
+    const firstGroup = groups[0];
+    panel.insertBefore(control, firstGroup);
+
+    const visibleGroups = () => groups.filter((group) => !group.hidden);
+
+    const refreshBulkToggle = () => {
+      const visible = visibleGroups();
+      const allOpen = visible.length > 0 && visible.every((group) => {
+        const toggleButton = group.querySelector(".publication-toggle");
+        return toggleButton && toggleButton.getAttribute("aria-expanded") === "true";
+      });
+      const labelText = allOpen
+        ? (isFrench ? "Tout fermer" : "Collapse all publications")
+        : (isFrench ? "Tout ouvrir" : "Expand all publications");
+      bulkToggle.setAttribute("aria-pressed", allOpen ? "true" : "false");
+      bulkToggle.setAttribute("aria-label", labelText);
+      bulkToggle.title = labelText;
+      bulkIcon.className = `publication-bulk-icon ${allOpen ? "publication-bulk-icon-collapse" : "publication-bulk-icon-expand"}`;
+    };
+
+    const setAllOpen = (open) => {
+      visibleGroups().forEach((group) => {
+        const toggleButton = group.querySelector(".publication-toggle");
+        const body = group.querySelector(".publication-list");
+        if (toggleButton && body) setPublicationGroupOpen(toggleButton, body, open);
+      });
+      refreshBulkToggle();
+    };
+
+    const update = () => {
+      const selectedOnly = toggle.getAttribute("aria-checked") === "true";
+      let visibleTotal = 0;
+
+      groups.forEach((group) => {
+        const toggleButton = group.querySelector(".publication-toggle");
+        const body = group.querySelector(".publication-list");
+        const items = Array.from(group.querySelectorAll("li"));
+        let visibleInGroup = 0;
+
+        items.forEach((item) => {
+          const show = !selectedOnly || item.dataset.selectedPublication === "true";
+          item.hidden = !show;
+          if (show) visibleInGroup += 1;
+        });
+
+        group.hidden = selectedOnly && visibleInGroup === 0;
+        visibleTotal += visibleInGroup;
+
+        const meta = group.querySelector(".publication-toggle-meta");
+        if (meta) {
+          meta.textContent = visibleInGroup === 1 ? "1 publication" : `${visibleInGroup} publications`;
+        }
+
+        if (selectedOnly && visibleInGroup > 0 && toggleButton && body) {
+          setPublicationGroupOpen(toggleButton, body, true);
+        }
+      });
+
+      count.textContent = selectedOnly
+        ? (isFrench ? `${visibleTotal} affichée${visibleTotal === 1 ? "" : "s"}` : `${visibleTotal} shown`)
+        : "";
+      panel.classList.toggle("is-filtering-selected-publications", selectedOnly);
+      refreshBulkToggle();
+    };
+
+    toggle.addEventListener("click", () => {
+      const next = toggle.getAttribute("aria-checked") !== "true";
+      toggle.setAttribute("aria-checked", next ? "true" : "false");
+      update();
+    });
+    bulkToggle.addEventListener("click", () => {
+      const shouldOpen = bulkToggle.getAttribute("aria-pressed") !== "true";
+      setAllOpen(shouldOpen);
+    });
+    groups.forEach((group) => {
+      const toggleButton = group.querySelector(".publication-toggle");
+      if (toggleButton) {
+        toggleButton.addEventListener("click", () => window.setTimeout(refreshBulkToggle, 210));
+      }
+    });
+
+    update();
+  }
+
   function enhancePublicationGroups(panel) {
     if (panel.dataset.publicationsEnhanced === "true") return;
+    const isFrench = document.documentElement.lang === "fr";
+    const selectedKeys = collectAndRemoveSelectedPublicationSeed(panel);
 
     const isGroupBoundary = (node) =>
       node.nodeType === 1 && (node.tagName === "H3" || node.tagName === "HR");
@@ -195,12 +644,284 @@
       }
 
       const count = body.querySelectorAll("li").length;
+      body.querySelectorAll("li").forEach((item) => {
+        const key = publicationFilterKey(item.textContent || "");
+        item.classList.add("publication-item");
+        item.dataset.selectedPublication = selectedKeys.has(key) ? "true" : "false";
+      });
       meta.textContent = count === 1 ? "1 publication" : `${count} publications`;
 
       toggle.addEventListener("click", () => {
         setPublicationGroupOpen(toggle, body, toggle.getAttribute("aria-expanded") !== "true");
       });
     });
+
+    addPublicationFilter(panel, selectedKeys, isFrench);
+  }
+
+  function enhanceServiceGroups(panel) {
+    if (panel.dataset.servicesEnhanced === "true") return;
+
+    const isFrench = document.documentElement.lang === "fr";
+    const currentGroupLabels = new Set(["current", "actuel", "actuels"]);
+    const isGroupBoundary = (node) =>
+      node.nodeType === 1 && (node.tagName === "H3" || node.tagName === "HR");
+
+    const headings = Array.from(panel.children).filter((child) => child.tagName === "H3");
+    if (headings.length === 0) return;
+
+    panel.dataset.servicesEnhanced = "true";
+
+    headings.forEach((heading, index) => {
+      const title = (heading.textContent || "").trim();
+      const isCurrentGroup = currentGroupLabels.has(currentGroupTitle(title));
+      const headingId = heading.id || `service-group-${index + 1}`;
+      const contentId = `${headingId}-items`;
+
+      const group = createEl("section", { class: "publication-group service-group" });
+      const groupHeading = createEl("h3", { class: "publication-heading service-heading", id: headingId });
+      const toggle = createEl("button", {
+        class: "publication-toggle service-toggle",
+        type: "button",
+        "aria-expanded": "false",
+        "aria-controls": contentId
+      });
+      const arrow = createEl("span", {
+        class: "publication-toggle-arrow",
+        "aria-hidden": "true"
+      });
+      const toggleMain = createEl("span", {
+        class: "publication-toggle-main"
+      });
+      const label = createEl("span", {
+        class: "publication-toggle-label",
+        textContent: title
+      });
+      const meta = createEl("span", {
+        class: "publication-toggle-meta",
+        textContent: ""
+      });
+      const body = createEl("div", {
+        class: "publication-list service-list",
+        id: contentId,
+        "aria-hidden": "true"
+      });
+      body.hidden = true;
+      if ("inert" in body) body.inert = true;
+
+      toggleMain.append(label, meta);
+      toggle.append(arrow, toggleMain);
+      groupHeading.append(toggle);
+      group.append(groupHeading, body);
+      heading.parentNode.insertBefore(group, heading);
+
+      let node = heading.nextSibling;
+      heading.remove();
+      while (node && !isGroupBoundary(node)) {
+        const next = node.nextSibling;
+        body.append(node);
+        node = next;
+      }
+
+      body.querySelectorAll("li").forEach((item) => {
+        const marker = item.querySelector(".current-item-marker, .service-current-marker");
+        const isCurrent = isCurrentGroup || Boolean(marker);
+        if (marker) marker.remove();
+        item.classList.add("service-item");
+        item.dataset.currentService = "false";
+        if (isCurrent) {
+          setMarkedCurrentItem(item, "currentService", "service-current-item", isFrench);
+        }
+      });
+
+      const count = body.querySelectorAll("li").length;
+      if (isFrench) {
+        meta.textContent = count === 1 ? "1 service" : `${count} services`;
+      } else {
+        meta.textContent = count === 1 ? "1 service" : `${count} services`;
+      }
+
+      toggle.addEventListener("click", () => {
+        setPublicationGroupOpen(toggle, body, toggle.getAttribute("aria-expanded") !== "true");
+      });
+    });
+
+    const serviceGroups = Array.from(panel.querySelectorAll(".service-group"));
+    addServiceCurrentFilter(panel, serviceGroups, isFrench);
+    addGroupBulkToggle(
+      panel,
+      serviceGroups,
+      {
+        open: isFrench ? "Tout ouvrir" : "Expand all services",
+        close: isFrench ? "Tout fermer" : "Collapse all services"
+      }
+    );
+  }
+
+  function enhanceStudentGroups(panel) {
+    enhanceDatedGroups(panel, {
+      flag: "studentsEnhanced",
+      groupClass: "student-group",
+      headingClass: "student-heading",
+      toggleClass: "student-toggle",
+      listClass: "student-list",
+      itemClass: "student-item",
+      currentClass: "student-current-item",
+      datasetKey: "currentStudent",
+      filterClass: "student-current-filter",
+      switchText: isFrench => isFrench ? "Étudiants actuels" : "Current Students",
+      panelClass: "is-filtering-current-students",
+      countLabel: (count, isFrench) => isFrench
+        ? (count === 1 ? "1 étudiant" : `${count} étudiants`)
+        : (count === 1 ? "1 student" : `${count} students`),
+      countText: (count, isFrench) => isFrench
+        ? `${count} actuel${count === 1 ? "" : "s"}`
+        : `${count} current`,
+      bulkOpen: isFrench => isFrench ? "Tout ouvrir" : "Expand all students",
+      bulkClose: isFrench => isFrench ? "Tout fermer" : "Collapse all students",
+      fallbackLatest: true
+    });
+  }
+
+  function enhanceTalkGroups(panel) {
+    enhanceDatedGroups(panel, {
+      flag: "talksEnhanced",
+      groupClass: "talk-group",
+      headingClass: "talk-heading",
+      toggleClass: "talk-toggle",
+      listClass: "talk-list",
+      itemClass: "talk-item",
+      currentClass: "talk-current-item",
+      datasetKey: "currentTalk",
+      filterClass: "talk-current-filter",
+      switchText: isFrench => isFrench ? "Présentations actuelles" : "Current Talks",
+      panelClass: "is-filtering-current-talks",
+      countLabel: (count, isFrench) => isFrench
+        ? (count === 1 ? "1 présentation" : `${count} présentations`)
+        : (count === 1 ? "1 talk" : `${count} talks`),
+      countText: (count, isFrench) => isFrench
+        ? `${count} actuelle${count === 1 ? "" : "s"}`
+        : `${count} current`,
+      bulkOpen: isFrench => isFrench ? "Tout ouvrir" : "Expand all talks",
+      bulkClose: isFrench => isFrench ? "Tout fermer" : "Collapse all talks",
+      fallbackLatest: true
+    });
+  }
+
+  function enhanceDatedGroups(panel, options) {
+    if (panel.dataset[options.flag] === "true") return;
+
+    const isFrench = document.documentElement.lang === "fr";
+    const currentGroupLabels = new Set(["current", "actuel", "actuels"]);
+    const isGroupBoundary = (node) =>
+      node.nodeType === 1 && (node.tagName === "H3" || node.tagName === "HR");
+
+    const headings = Array.from(panel.children).filter((child) => child.tagName === "H3");
+    if (headings.length === 0) return;
+
+    panel.dataset[options.flag] = "true";
+    let currentCount = 0;
+    let firstGroup = null;
+
+    headings.forEach((heading, index) => {
+      const title = (heading.textContent || "").trim();
+      const isCurrentGroup = currentGroupLabels.has(currentGroupTitle(title));
+      const headingId = heading.id || `${options.groupClass}-${index + 1}`;
+      const contentId = `${headingId}-items`;
+
+      const group = createEl("section", { class: `publication-group ${options.groupClass}` });
+      const groupHeading = createEl("h3", { class: `publication-heading ${options.headingClass}`, id: headingId });
+      const toggle = createEl("button", {
+        class: `publication-toggle ${options.toggleClass}`,
+        type: "button",
+        "aria-expanded": "false",
+        "aria-controls": contentId
+      });
+      const arrow = createEl("span", {
+        class: "publication-toggle-arrow",
+        "aria-hidden": "true"
+      });
+      const toggleMain = createEl("span", {
+        class: "publication-toggle-main"
+      });
+      const label = createEl("span", {
+        class: "publication-toggle-label",
+        textContent: title
+      });
+      const meta = createEl("span", {
+        class: "publication-toggle-meta",
+        textContent: ""
+      });
+      const body = createEl("div", {
+        class: `publication-list ${options.listClass}`,
+        id: contentId,
+        "aria-hidden": "true"
+      });
+      body.hidden = true;
+      if ("inert" in body) body.inert = true;
+
+      toggleMain.append(label, meta);
+      toggle.append(arrow, toggleMain);
+      groupHeading.append(toggle);
+      group.append(groupHeading, body);
+      heading.parentNode.insertBefore(group, heading);
+
+      let node = heading.nextSibling;
+      heading.remove();
+      while (node && !isGroupBoundary(node)) {
+        const next = node.nextSibling;
+        body.append(node);
+        node = next;
+      }
+
+      const count = body.querySelectorAll("li").length;
+      body.querySelectorAll("li").forEach((item) => {
+        const marker = item.querySelector(".current-item-marker, .service-current-marker");
+        const isCurrent = isCurrentGroup || Boolean(marker);
+        if (marker) marker.remove();
+        item.classList.add(options.itemClass);
+        item.dataset[options.datasetKey] = "false";
+        if (isCurrent) {
+          setMarkedCurrentItem(item, options.datasetKey, options.currentClass, isFrench);
+          currentCount += 1;
+        }
+      });
+      meta.textContent = options.countLabel(count, isFrench);
+      if (!firstGroup) firstGroup = group;
+
+      toggle.addEventListener("click", () => {
+        setPublicationGroupOpen(toggle, body, toggle.getAttribute("aria-expanded") !== "true");
+      });
+    });
+
+    const groups = Array.from(panel.querySelectorAll(`.${options.groupClass}`));
+    if (currentCount === 0 && options.fallbackLatest && firstGroup) {
+      firstGroup.querySelectorAll("li").forEach((item) => {
+        setMarkedCurrentItem(item, options.datasetKey, options.currentClass, isFrench);
+      });
+    }
+
+    addCurrentItemFilter(
+      panel,
+      groups,
+      isFrench,
+      {
+        datasetKey: options.datasetKey,
+        filterClass: options.filterClass,
+        switchText: options.switchText(isFrench),
+        panelClass: options.panelClass,
+        countLabel: count => options.countLabel(count, isFrench),
+        countText: count => options.countText(count, isFrench)
+      }
+    );
+    addGroupBulkToggle(
+      panel,
+      groups,
+      {
+        open: options.bulkOpen(isFrench),
+        close: options.bulkClose(isFrench)
+      }
+    );
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -216,6 +937,7 @@
     const shell = createEl("div", { class: "cv-shell" });
     const header = createEl("header", { class: "site-header" });
     const headerRow = createEl("div", { class: "header-row" });
+    const headerTitle = createEl("div", { class: "header-title" });
     const headerActions = createEl("div", { class: "header-actions" });
     const sticky = createEl("div", { class: "sticky-ui" });
     const isFrench = document.documentElement.lang === "fr";
@@ -281,6 +1003,7 @@
     });
     topbar.append(languageBtn);
 
+    const assetPrefix = isFrench ? "../assets/" : "assets/";
     const quickLinks = [
       { href: isFrench ? "../cv/cv-fr.pdf" : "cv/cv-en.pdf", label: isFrench ? "CV complet" : "Full CV", icon: "📄" },
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
@@ -289,22 +1012,33 @@
       //{ href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
       //{ href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
       //{ href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" },
+      { href: "https://orcid.org/0009-0005-1339-5683", label: "ORCID", src: `${assetPrefix}orcid.svg`, className: "topbar-orcid" },
+      { href: "https://dblp.org/pid/426/8188.html", label: "DBLP", src: `${assetPrefix}dblp.svg`, className: "topbar-dblp" },
       { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: isFrench ? "Google Scholar" : "Google Scholar", icon: "🎓" }
     ];
 
     quickLinks.forEach((l) => {
       const attrs = {
-        class: "topbar-btn",
+        class: l.className ? `topbar-btn ${l.className}` : "topbar-btn",
         href: l.href,
         "aria-label": l.label,
-        title: l.label,
-        textContent: l.icon
+        title: l.label
       };
+      if (!l.src) attrs.textContent = l.icon;
       if (!String(l.href).startsWith("mailto:")) {
         attrs.target = "_blank";
         attrs.rel = "me noopener noreferrer";
       }
       const a = createEl("a", attrs);
+      if (l.src) {
+        a.append(createEl("img", {
+          class: "topbar-logo",
+          src: l.src,
+          alt: "",
+          decoding: "async",
+          draggable: false
+        }));
+      }
       topbar.append(a);
     });
     // ------------------------------------------------------------------------
@@ -352,7 +1086,8 @@
     }
     const title = header.querySelector("h1");
     if (title) {
-      headerRow.append(title, headerActions);
+      headerTitle.append(title);
+      headerRow.append(headerTitle, headerActions);
       header.insertBefore(headerRow, header.firstChild);
     } else {
       headerRow.append(headerActions);
@@ -363,6 +1098,10 @@
     if (titleBlock && !titleBlock.textContent.trim() && titleBlock.children.length === 0) {
       titleBlock.remove();
     }
+    const profileInterests = enhanceProfileInterests(header);
+    const profileCurrent = enhanceProfileCurrent(header);
+    if (title && profileInterests) headerTitle.append(profileInterests);
+    if (title && profileCurrent) headerTitle.append(profileCurrent);
 
     // --------- Build tabs/panels from each H2 block ----------
     const sections = [];
@@ -395,21 +1134,24 @@
       });
       panel.hidden = true;
 
-      // Move H2 + following siblings until next H2 into panel
-      panel.append(h2);
-      let node = panel.lastChild.nextSibling; // after moving h2, but it has no nextSibling in panel
-      // We need to read from DOM: next sibling in main after h2
-      node = panel.querySelector("h2").nextSibling; // inside panel it's empty, so use main traversal instead
-
-      // Correct approach: walk in main from after this h2 (still in main at this moment? no, we moved it)
-      // So: capture siblings before moving. We'll rebuild by scanning main nodes:
-      // (We already moved h2; now repeatedly move main.firstChild until next H2)
+      // The tab already labels the section, so do not repeat the same H2 in the panel.
+      h2.remove();
       while (main.firstChild && !(main.firstChild.nodeType === 1 && main.firstChild.tagName === "H2")) {
         panel.append(main.firstChild);
       }
 
-      if (slugify(title) === "publications") {
+      const sectionSlug = slugify(title);
+      if (sectionSlug === "publications") {
         enhancePublicationGroups(panel);
+      }
+      if (sectionSlug === "services") {
+        enhanceServiceGroups(panel);
+      }
+      if (sectionSlug === "students" || sectionSlug === "etudiants" || sectionSlug === "tudiants") {
+        enhanceStudentGroups(panel);
+      }
+      if (sectionSlug === "public-talks" || sectionSlug === "presentations-publiques" || sectionSlug === "prsentations-publiques") {
+        enhanceTalkGroups(panel);
       }
 
       tabs.append(tabBtn);
@@ -448,12 +1190,73 @@
       sections[safe].tabBtn.focus({ preventScroll: true });
     }
 
+    function resolveHashTarget(hash) {
+      const raw = String(hash || "").replace(/^#/, "");
+      if (!raw) return null;
+
+      let id;
+      try {
+        id = decodeURIComponent(raw);
+      } catch (_err) {
+        id = raw;
+      }
+
+      let target = document.getElementById(id);
+      if (!target && id === "current") {
+        target = document.getElementById(isFrench ? "actuel" : "current");
+      }
+      return target;
+    }
+
+    function activateHashTarget(hash, options = {}) {
+      const target = resolveHashTarget(hash);
+      if (!target) return false;
+
+      const targetPanel = target.closest(".tab-panel");
+      const sectionIndex = sections.findIndex((section) => section.panel === targetPanel);
+      if (sectionIndex >= 0) {
+        setActive(sectionIndex, { focus: false, highlightQuery: searchInput.value });
+      }
+
+      if (targetPanel && ["current", "actuel"].includes(target.id)) {
+        const currentToggle = targetPanel.querySelector(".service-current-filter .publication-filter-toggle");
+        if (currentToggle && currentToggle.getAttribute("aria-checked") !== "true") {
+          currentToggle.click();
+        }
+      }
+
+      const group = target.closest(".publication-group, .service-group");
+      const groupToggle = group?.querySelector(".publication-toggle");
+      const groupBody = group?.querySelector(".publication-list");
+      if (groupToggle && groupBody) {
+        setPublicationGroupOpen(groupToggle, groupBody, true);
+      }
+
+      if (options.updateHistory !== false) {
+        window.history.pushState(null, "", hash);
+      }
+      if (options.scroll !== false) {
+        window.setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 0);
+      }
+      return true;
+    }
+
     // Click activation
     tabs.addEventListener("click", (e) => {
       const btn = e.target.closest("button[role='tab']");
       if (!btn) return;
       const index = sections.findIndex(s => s.tabBtn === btn);
       if (index >= 0) setActive(index, { focus: false, highlightQuery: searchInput.value });
+    });
+
+    main.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href^='#']");
+      if (!link) return;
+
+      const hash = link.getAttribute("href");
+      if (activateHashTarget(hash)) e.preventDefault();
     });
 
     // Keyboard navigation (Arrow keys move focus; Enter/Space activates)
@@ -594,6 +1397,8 @@
     });
 
     // Initial active tab
-    setActive(0, { focus: false, highlightQuery: "" });
+    if (!activateHashTarget(window.location.hash, { updateHistory: false, scroll: Boolean(window.location.hash) })) {
+      setActive(0, { focus: false, highlightQuery: "" });
+    }
   });
 })();

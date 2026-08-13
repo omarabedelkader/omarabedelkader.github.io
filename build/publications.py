@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 
 PUBLICATIONS_TOKEN = "{{PUBLICATIONS_FROM_BIB}}"
+CITE_RE = re.compile(r"\\cite\{([^{}]+)\}")
 
 
 def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
@@ -16,6 +17,7 @@ def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
         entry_type_match = re.match(r"@([^{\s]+)", part)
         fields = {
             "entry_type": entry_type_match.group(1).lower() if entry_type_match else "",
+            "key": _extract_key(part),
             "author": _extract_field(part, "author"),
             "title": _extract_field(part, "title"),
             "booktitle": _extract_field(part, "booktitle"),
@@ -27,6 +29,11 @@ def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
         }
         entries.append(fields)
     return entries
+
+
+def _extract_key(entry_text: str) -> str:
+    match = re.match(r"@[^{\s]+\{\s*([^,\s]+)", entry_text)
+    return match.group(1) if match else ""
 
 
 def _extract_field(entry_text: str, field_name: str) -> str:
@@ -119,6 +126,10 @@ def _format_publication(entry: dict[str, str]) -> str:
     return f"- {' '.join(segments).strip()}"
 
 
+def _format_inline_citation(entry: dict[str, str]) -> str:
+    return _format_publication(entry).removeprefix("- ")
+
+
 def _publication_headings(language: str) -> dict[str, str]:
     if language == "fr":
         return {
@@ -131,6 +142,12 @@ def _publication_headings(language: str) -> dict[str, str]:
         "conference": "Conferences",
         "other": "Other publications",
     }
+
+
+def _selected_publications_heading(language: str) -> str:
+    if language == "fr":
+        return "Publications sélectionnées"
+    return "Selected Publications"
 
 
 def _publication_rank(entry: dict[str, str]) -> str:
@@ -149,6 +166,12 @@ def _publication_rank(entry: dict[str, str]) -> str:
         if normalized in {"q1", "q2", "q3", "q4"}:
             return normalized
     return "unranked"
+
+
+def _is_selected_publication(entry: dict[str, str]) -> bool:
+    group = _publication_group(entry)
+    rank = _publication_rank(entry)
+    return (group == "journal" and rank == "q1") or (group == "conference" and rank == "a")
 
 
 def _rank_headings(language: str) -> dict[str, str]:
@@ -206,6 +229,7 @@ def generate_publications_markdown(
     bib_path: Path,
     language: str = "en",
     grouping: str = "venue",
+    include_selected: bool = False,
 ) -> str:
     entries = _parse_bib_entries(bib_path.read_text(encoding="utf-8"))
     if not entries:
@@ -223,6 +247,18 @@ def generate_publications_markdown(
         raise ValueError(f"Unknown publication grouping: {grouping}")
 
     sections = []
+    if include_selected:
+        selected_lines = [
+            _format_publication(entry)
+            for entry in entries
+            if _is_selected_publication(entry)
+        ]
+        if selected_lines:
+            sections.append(
+                f"### {_selected_publications_heading(language)}\n\n"
+                + "\n".join(selected_lines)
+            )
+
     for group_name in group_order:
         lines = grouped_entries[group_name]
         if lines:
@@ -235,6 +271,30 @@ def inject_publications(
     bib_path: Path,
     language: str = "en",
     grouping: str = "venue",
+    include_selected: bool = False,
 ) -> str:
-    publication_lines = generate_publications_markdown(bib_path, language, grouping)
+    entries = _parse_bib_entries(bib_path.read_text(encoding="utf-8"))
+    entries_by_key = {entry["key"]: entry for entry in entries if entry.get("key")}
+
+    def replace_cite(match: re.Match[str]) -> str:
+        keys = [key.strip() for key in match.group(1).split(",") if key.strip()]
+        citations = []
+        missing = []
+        for key in keys:
+            entry = entries_by_key.get(key)
+            if entry is None:
+                missing.append(key)
+            else:
+                citations.append(_format_inline_citation(entry))
+        if missing:
+            raise ValueError(f"Unknown citation key(s): {', '.join(missing)}")
+        return "; ".join(citations)
+
+    markdown_text = CITE_RE.sub(replace_cite, markdown_text)
+    publication_lines = generate_publications_markdown(
+        bib_path,
+        language,
+        grouping,
+        include_selected=include_selected,
+    )
     return markdown_text.replace(PUBLICATIONS_TOKEN, publication_lines)

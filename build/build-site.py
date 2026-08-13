@@ -2,7 +2,9 @@ from pathlib import Path
 from datetime import datetime
 from last_updated import last_updated_label
 from urllib.parse import urljoin
+import re
 import shutil
+import unicodedata
 import pypandoc
 from publications import inject_publications
 
@@ -38,9 +40,11 @@ SITE_SOURCES = [
 
 CSS_SRC = TEMPLATES / "style.css"
 JS_SRC = TEMPLATES / "main.js"
+ASSETS_SRC = TEMPLATES / "assets"
 
 CSS_DST = DOCS / "style.css"
 JS_DST = DOCS / "main.js"
+ASSETS_DST = DOCS / "assets"
 
 # NEW: favicon + header include snippet
 FAVICON_SRC = TEMPLATES / "favicon.ico"
@@ -55,6 +59,8 @@ DOCS.mkdir(exist_ok=True)
 
 shutil.copyfile(CSS_SRC, CSS_DST)
 shutil.copyfile(JS_SRC, JS_DST)
+if ASSETS_SRC.exists():
+    shutil.copytree(ASSETS_SRC, ASSETS_DST, dirs_exist_ok=True)
 
 # NEW: copy favicon into docs/
 shutil.copyfile(FAVICON_SRC, FAVICON_DST)
@@ -66,6 +72,51 @@ CV_DST_DIR.mkdir(parents=True, exist_ok=True)
 
 for cv_pdf in CV_SRC_DIR.glob("*.pdf"):
     shutil.copyfile(cv_pdf, CV_DST_DIR / cv_pdf.name)
+
+
+# ======================================================
+# Markdown preprocessing
+# ======================================================
+
+H2_RE = re.compile(r"^##\s+(.+?)\s*$")
+CURRENT_ITEM_BULLET_RE = re.compile(r"^(\s*[-+]\s+)\*(?![\s*])(.+)$")
+CURRENT_MARKED_SECTIONS = {
+    "services",
+    "students",
+    "etudiants",
+    "public-talks",
+    "presentations-publiques",
+}
+
+
+def section_slug(title):
+    normalized = unicodedata.normalize("NFD", title.lower())
+    ascii_title = "".join(char for char in normalized if unicodedata.category(char) != "Mn")
+    return re.sub(r"[^a-z0-9]+", "-", ascii_title).strip("-")
+
+
+def mark_current_items(markdown):
+    lines = markdown.splitlines(keepends=True)
+    in_marked_section = False
+    processed = []
+
+    for line in lines:
+        newline = "\n" if line.endswith("\n") else ""
+        content = line[:-1] if newline else line
+
+        heading = H2_RE.match(content)
+        if heading:
+            in_marked_section = section_slug(heading.group(1)) in CURRENT_MARKED_SECTIONS
+
+        if in_marked_section:
+            current = CURRENT_ITEM_BULLET_RE.match(content)
+            if current:
+                prefix, body = current.groups()
+                content = f'{prefix}<span class="current-item-marker" data-current-item="true"></span>{body}'
+
+        processed.append(content + newline)
+
+    return "".join(processed)
 
 
 # ======================================================
@@ -95,7 +146,9 @@ def build_page(config):
         config["md"].read_text(encoding="utf-8"),
         RESOURCES / "publications.bib",
         config["lang"],
+        include_selected=True,
     )
+    rendered_md = mark_current_items(rendered_md)
 
     html = pypandoc.convert_text(
         rendered_md,

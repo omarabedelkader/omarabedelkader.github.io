@@ -26,6 +26,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 ### Leadership and Founding Roles
 
 - Founder and Maintainer of the organization **pharo-llm [\icon{\faGithub}](https://github.com/pharo-llm)** on github and **pharo-llm [\icon{\faLink}](https://huggingface.co/pharo-llm)** on hugging face.
+- Website Maintainer **[GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)**
 - President of **Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu)**, a student association focused on AI and neuroscience.
 - Project Leader and Maintainer for multiples projects **chatpharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo)**, **pharo-infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer)** and many **[more](https://github.com/orgs/pharo-llm/repositories)**.
 
@@ -46,7 +47,7 @@ I am currently pursuing a Ph.D. in Computer Science at the University of Lille.
 
 ### Awards:
 - Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
-*"Package-Aware Approach for Repository-Level Code Completion in Pharo"* [\icon{\faLink}](https://ceur-ws.org/Vol-4139/Paper01.pdf)
+\cite{iwst1}
 
 ### Honors:
 - Alumni Testimonial — IDMC 2024, University of Lorraine, France  

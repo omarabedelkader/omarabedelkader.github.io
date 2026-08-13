@@ -32,6 +32,7 @@ for input_md, output_pdf, language in cv_builds:
         extra_args=[
             "--pdf-engine=xelatex",
             "--citeproc",
+            f"--metadata=lang={'fr-FR' if language == 'fr' else 'en-US'}",
             f"--bibliography={resources / 'publications.bib'}",
             f"--csl={resources / 'apa.csl'}",
             "-H", str(resources / "header.tex"),
