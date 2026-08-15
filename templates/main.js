@@ -332,15 +332,6 @@
     refreshBulkToggle();
   }
 
-  function currentGroupTitle(title) {
-    return String(title || "")
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/:$/, "")
-      .trim();
-  }
-
   function addCurrentBadge(item, isFrench) {
     if (item.querySelector(".service-current-badge")) return;
     item.append(" ", createEl("span", {
@@ -663,7 +654,6 @@
     if (panel.dataset.servicesEnhanced === "true") return;
 
     const isFrench = document.documentElement.lang === "fr";
-    const currentGroupLabels = new Set(["current", "actuel", "actuels"]);
     const isGroupBoundary = (node) =>
       node.nodeType === 1 && (node.tagName === "H3" || node.tagName === "HR");
 
@@ -674,7 +664,6 @@
 
     headings.forEach((heading, index) => {
       const title = (heading.textContent || "").trim();
-      const isCurrentGroup = currentGroupLabels.has(currentGroupTitle(title));
       const headingId = heading.id || `service-group-${index + 1}`;
       const contentId = `${headingId}-items`;
 
@@ -725,7 +714,7 @@
 
       body.querySelectorAll("li").forEach((item) => {
         const marker = item.querySelector(".current-item-marker, .service-current-marker");
-        const isCurrent = isCurrentGroup || Boolean(marker);
+        const isCurrent = Boolean(marker);
         if (marker) marker.remove();
         item.classList.add("service-item");
         item.dataset.currentService = "false";
@@ -779,7 +768,7 @@
         : `${count} current`,
       bulkOpen: isFrench => isFrench ? "Tout ouvrir" : "Expand all students",
       bulkClose: isFrench => isFrench ? "Tout fermer" : "Collapse all students",
-      fallbackLatest: true
+      fallbackLatest: false
     });
   }
 
@@ -812,7 +801,6 @@
     if (panel.dataset[options.flag] === "true") return;
 
     const isFrench = document.documentElement.lang === "fr";
-    const currentGroupLabels = new Set(["current", "actuel", "actuels"]);
     const isGroupBoundary = (node) =>
       node.nodeType === 1 && (node.tagName === "H3" || node.tagName === "HR");
 
@@ -825,7 +813,6 @@
 
     headings.forEach((heading, index) => {
       const title = (heading.textContent || "").trim();
-      const isCurrentGroup = currentGroupLabels.has(currentGroupTitle(title));
       const headingId = heading.id || `${options.groupClass}-${index + 1}`;
       const contentId = `${headingId}-items`;
 
@@ -877,7 +864,7 @@
       const count = body.querySelectorAll("li").length;
       body.querySelectorAll("li").forEach((item) => {
         const marker = item.querySelector(".current-item-marker, .service-current-marker");
-        const isCurrent = isCurrentGroup || Boolean(marker);
+        const isCurrent = Boolean(marker);
         if (marker) marker.remove();
         item.classList.add(options.itemClass);
         item.dataset[options.datasetKey] = "false";
@@ -978,8 +965,14 @@
     }
 
     function updateThemeIcon() {
-      const t = currentTheme();
-      themeBtn.textContent = t === "dark" ? "🌙" : "☀️";
+      const nextTheme = currentTheme() === "dark" ? "light" : "dark";
+      const label = nextTheme === "light"
+        ? (isFrench ? "Passer au thème clair" : "Switch to light theme")
+        : (isFrench ? "Passer au thème sombre" : "Switch to dark theme");
+
+      themeBtn.textContent = nextTheme === "light" ? "☀️" : "🌙";
+      themeBtn.setAttribute("aria-label", label);
+      themeBtn.title = label;
     }
 
     const savedTheme = localStorage.getItem(THEME_KEY);
@@ -1054,6 +1047,9 @@
       type: "search",
       placeholder: isFrench ? "Que voulez-vous trouver ?" : "What do you want to find?",
       autocomplete: "off",
+      inputMode: "search",
+      enterKeyHint: "search",
+      "aria-label": isFrench ? "Rechercher" : "Search",
       spellcheck: false
     });
     searchLabel.append(searchLabelText, searchInput);
@@ -1175,6 +1171,7 @@
 
       const activeSection = sections[safeIndex];
       if (opts.focus) activeSection.tabBtn.focus({ preventScroll: true });
+      activeSection.tabBtn.scrollIntoView({ block: "nearest", inline: "nearest" });
 
       // Clear and re-apply highlight in active panel if search query exists
       const query = (opts.highlightQuery || "").trim();
@@ -1188,6 +1185,7 @@
     function focusTab(nextIndex) {
       const safe = Math.max(0, Math.min(nextIndex, sections.length - 1));
       sections[safe].tabBtn.focus({ preventScroll: true });
+      sections[safe].tabBtn.scrollIntoView({ block: "nearest", inline: "nearest" });
     }
 
     function resolveHashTarget(hash) {

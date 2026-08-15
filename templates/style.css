@@ -16,10 +16,11 @@
   --border: #e5e7eb;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 
-  --radius: 16px;
-  --radius-sm: 12px;
+  --radius: 8px;
+  --radius-sm: 8px;
 
   --maxw: 980px;
+  --page-pad: 28px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,7 +76,14 @@ html.theme-dark {
 
 * { box-sizing: border-box; }
 
-html, body { height: 100%; }
+html {
+  min-height: 100%;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body { min-height: 100%; }
 
 body {
   margin: 0;
@@ -85,6 +93,26 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+code,
+a,
+li,
+p {
+  overflow-wrap: anywhere;
 }
 
 a {
@@ -99,9 +127,10 @@ a:hover {
 }
 
 main.cv {
+  width: min(var(--maxw), calc(100% - 32px));
   max-width: var(--maxw);
   margin: 28px auto;
-  padding: 28px;
+  padding: var(--page-pad);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -110,25 +139,27 @@ main.cv {
 
 @media (max-width: 680px) {
   main.cv {
+    width: 100%;
     margin: 0;
     border-radius: 0;
     border-left: none;
     border-right: none;
-    padding: 20px;
+    padding: 18px 16px;
   }
 }
 
 /* Headings */
 h1 {
   margin: 0 0 10px;
-  font-size: clamp(28px, 4vw, 38px);
-  letter-spacing: -0.02em;
+  font-size: 38px;
+  line-height: 1.08;
+  letter-spacing: 0;
 }
 
 h2 {
   margin: 0 0 12px;
   font-size: 22px;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
 }
 
 h3 {
@@ -139,7 +170,11 @@ h3 {
 
 p { margin: 0 0 12px; }
 
-ul { margin: 0 0 12px 1.2rem; }
+ul,
+ol {
+  margin: 0 0 12px;
+  padding-left: 1.25rem;
+}
 
 hr {
   border: none;
@@ -152,6 +187,15 @@ hr {
   padding-bottom: 18px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 14px;
+}
+
+.cv-shell,
+.site-header,
+.header-title,
+.panels,
+.tab-panel {
+  max-width: 100%;
+  min-width: 0;
 }
 
 .profile-interests {
@@ -909,24 +953,163 @@ button.topbar-btn {
 }
 
 @media (max-width: 680px) {
+  body {
+    line-height: 1.5;
+  }
+
   .header-row {
     align-items: stretch;
     flex-direction: column;
+    gap: 12px;
   }
 
   .header-actions {
     flex: none;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 10px;
   }
 
-  .header-actions .search-wrap {
+  .header-actions .search-wrap,
+  .header-actions .search-wrap:hover,
+  .header-actions .search-wrap:focus-within,
+  .header-actions .search-wrap.has-query {
+    flex: 1 0 100%;
     width: 100%;
   }
 
+  .header-actions .search-wrap::before {
+    left: 12px;
+  }
+
+  .header-actions .search-input,
+  .header-actions .search-wrap:hover .search-input,
+  .header-actions .search-wrap:focus-within .search-input,
+  .header-actions .search-wrap.has-query .search-input {
+    height: 42px;
+    padding: 9px 12px 9px 38px;
+    border-color: var(--border);
+    background: var(--surface-2);
+    color: var(--text);
+    cursor: text;
+    font-size: 16px;
+  }
+
+  .header-actions .search-input::placeholder,
+  .header-actions .search-wrap:hover .search-input::placeholder,
+  .header-actions .search-wrap:focus-within .search-input::placeholder {
+    color: color-mix(in srgb, var(--muted) 82%, transparent);
+  }
+
+  .header-actions .search-meta,
+  .header-actions .search-results {
+    position: static;
+    left: auto;
+    right: auto;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .header-actions .search-meta {
+    margin-top: 8px;
+  }
+
+  .header-actions .search-wrap.has-query .search-meta {
+    display: flex;
+  }
+
+  .header-actions .search-results {
+    margin-top: 8px;
+    max-height: 46vh;
+  }
+
+  .header-actions .search-results.is-open,
+  .header-actions .search-wrap:hover .search-results.is-open,
+  .header-actions .search-wrap:focus-within .search-results.is-open {
+    display: block;
+  }
+
+  .topbar {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .topbar-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .sticky-ui {
+    padding: 10px 0 12px;
+    overflow: hidden;
+  }
+
+  .tabs {
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 9px 12px;
+  }
+
+  .publication-toggle {
+    align-items: flex-start;
+    min-height: 50px;
+    padding: 10px 12px;
+  }
+
+  .publication-toggle-arrow {
+    flex-basis: 26px;
+    width: 26px;
+    height: 26px;
+    margin-top: 1px;
+  }
+
   .publication-list {
-    padding-left: 14px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .publication-list.is-open {
+    max-height: none;
+    overflow: visible;
+  }
+
+  .publication-filter {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .publication-filter-toggle {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .publication-filter-text,
+  .publication-filter-count {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .publication-bulk-actions {
+    margin-left: 0;
   }
 
   .profile-interests,
@@ -934,10 +1117,62 @@ button.topbar-btn {
     gap: 6px;
   }
 
+  .profile-interests {
+    align-items: flex-start;
+  }
+
+  .profile-interests-tags {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
   .profile-interest-tag {
+    display: inline-flex;
+    min-width: 0;
     white-space: normal;
   }
 
+  .profile-interest-tag + .profile-interest-tag::before {
+    content: none;
+  }
+
+  .tab-panel > * {
+    max-width: 100%;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.1rem;
+  }
+
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  main.cv {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .topbar-btn {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -965,6 +1200,16 @@ mark.search-hit {
   text-align: center;
   color: var(--muted);
   font-size: 12px;
+}
+
+@media (max-width: 680px) {
+  .site-footer {
+    width: 100%;
+    margin: 16px auto 28px;
+    padding-right: 16px;
+    padding-bottom: 32px;
+    padding-left: 16px;
+  }
 }
 
 /* Print: show all content (no tabs/search) */

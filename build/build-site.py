@@ -50,6 +50,8 @@ ASSETS_DST = DOCS / "assets"
 FAVICON_SRC = TEMPLATES / "favicon.ico"
 FAVICON_DST = DOCS / "favicon.ico"
 HEADER_INCLUDE = RESOURCES / "seo_head.html"
+VIEWPORT_META = '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
+VIEWPORT_RE = re.compile(r'<meta name="viewport" content="[^"]*" />')
 
 DOCS.mkdir(exist_ok=True)
 
@@ -119,6 +121,10 @@ def mark_current_items(markdown):
     return "".join(processed)
 
 
+def normalize_mobile_viewport(html):
+    return VIEWPORT_RE.sub(VIEWPORT_META, html, count=1)
+
+
 # ======================================================
 # Pandoc conversion
 # ======================================================
@@ -157,6 +163,7 @@ def build_page(config):
         extra_args=extra_args,
     )
 
+    html = normalize_mobile_viewport(html)
 
     script_path = "../main.js" if config["lang"] == "fr" else "main.js"
     footer_label = "Dernière mise à jour" if config["lang"] == "fr" else "Last updated"
