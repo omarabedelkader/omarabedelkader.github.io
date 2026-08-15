@@ -1,0 +1,48 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{TLCresume}
+
+\def\name{Omar AbedelKader}
+\def\phone{(33) 7 65 88 13 96}
+\def\city{Lille, France}
+\def\email{omar.abedelkader@inria.fr}
+\def\LinkedIn{omarabedelkader}
+\def\github{omarabedelkader}
+%AI Software Engineer
+\def\role{Dr en Intelligence Artificielle}
+\def\portfoliourl{https://omarabedelkader.com}
+\def\portfolioname{omarabedelkader.com}
+
+\input{_header}
+
+\begin{document}
+\pagestyle{others}
+\thispagestyle{first_page}
+
+\input{sections/objective}
+
+\section{Skills}
+\input{sections/skills}
+
+\section{Technical Experience}
+\input{sections/experience}
+
+\section{Education}
+\input{sections/education}
+
+\section{Activities}
+\input{sections/activities}
+
+\vfill
+\begin{center}
+{\scriptsize\color{black!50}Last updated: \today}
+\end{center}
+
+\end{document}
+
+
+
+% Want icons ONLY (no text)? Replace each line in \rhead{...} with just:
+% \href{\portfoliourl}{\icon{\faIcon{globe}}} \\
+% \href{https://github.com/\github}{\icon{\faIcon{github}}} \\
+% \href{https://www.linkedin.com/in/\LinkedIn}{\icon{\faIcon{linkedin}}}

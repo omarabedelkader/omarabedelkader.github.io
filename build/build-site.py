@@ -52,6 +52,7 @@ FAVICON_DST = DOCS / "favicon.ico"
 HEADER_INCLUDE = RESOURCES / "seo_head.html"
 VIEWPORT_META = '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />'
 VIEWPORT_RE = re.compile(r'<meta name="viewport" content="[^"]*" />')
+NEWS_TOKEN = "{{NEWS_FROM_SOURCES}}"
 
 DOCS.mkdir(exist_ok=True)
 
@@ -125,6 +126,16 @@ def normalize_mobile_viewport(html):
     return VIEWPORT_RE.sub(VIEWPORT_META, html, count=1)
 
 
+def inject_news(markdown, language):
+    if NEWS_TOKEN not in markdown:
+        return markdown
+
+    news_file = ROOT / "sources" / ("news-fr.md" if language == "fr" else "news.md")
+    fallback = "- Aucune actualité." if language == "fr" else "- No news."
+    news = news_file.read_text(encoding="utf-8").strip() if news_file.exists() else fallback
+    return markdown.replace(NEWS_TOKEN, news)
+
+
 # ======================================================
 # Pandoc conversion
 # ======================================================
@@ -154,6 +165,7 @@ def build_page(config):
         config["lang"],
         include_selected=True,
     )
+    rendered_md = inject_news(rendered_md, config["lang"])
     rendered_md = mark_current_items(rendered_md)
 
     html = pypandoc.convert_text(
@@ -177,49 +189,10 @@ def build_page(config):
         "</main>"
         f"<footer class='site-footer'>{footer_label}: {last_updated_label(config['md'])}<br>{copyright_text}</footer>"
         f"<script src='{script_path}' defer></script>"
-        f"{EMOJI_REPOSITION_SCRIPT}"
         "</body>"
     )
 
     config["html"].write_text(html, encoding="utf-8")
-
-EMOJI_REPOSITION_SCRIPT = """
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const moveTopbarNearTitle = () => {
-    const header = document.querySelector('.site-header');
-    const title = header?.querySelector('h1');
-    const topbar = document.querySelector('.sticky-ui .topbar');
-    if (!header || !title || !topbar) {
-      return false;
-    }
-
-    let row = header.querySelector('.header-row');
-    if (!row) {
-      row = document.createElement('div');
-      row.className = 'header-row';
-      header.insertBefore(row, header.firstChild);
-    }
-
-    row.append(title, topbar);
-    return true;
-  };
-
-  if (moveTopbarNearTitle()) {
-    return;
-  }
-
-  const observer = new MutationObserver(() => {
-    if (moveTopbarNearTitle()) {
-      observer.disconnect();
-    }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
-  setTimeout(() => observer.disconnect(), 3000);
-});
-</script>
-"""
 
 for page in SITE_SOURCES:
     build_page(page)

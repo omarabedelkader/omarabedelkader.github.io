@@ -1,0 +1,6 @@
+- **2027** — Service: Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
+- **2026** — Journal article: *Evaluating Package-Level Scoping Strategies for Repository-Level Code Completion in Pharo* published in *Journal of Computer Languages (COLA)*. [DOI](https://doi.org/10.1016/j.cola.2026.101412)
+- **2026** — Conference paper: *Alternative UX Extensions and Their Trade-offs for Code Completion in Pharo* accepted at *International Workshop on Smalltalk Technologies (IWST)*. [DOI](https://doi.org/10.48550/arXiv.2607.24253)
+- **2026** — Conference paper: *Teaching LLMs a Low-Resource Language: Enhancing Code Completion in Pharo* accepted at *International Conference on Software Maintenance and Evolution (ICSME)*. [DOI](https://doi.org/10.48550/arXiv.2607.04939)
+- **2026** — Public talk: ESUG 2026: ChatPharo: an AI Assistant inside Pharo
+- **2026** — Public talk: ESUG 2026: Pharo-LLM: Building a sovereign LLM ecosystem in Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf)

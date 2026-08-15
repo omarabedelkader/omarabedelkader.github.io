@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VENV_DIR="$ROOT_DIR/.venv"
 PYTHON_BIN="python3"
 REQUIREMENTS_FILE="$ROOT_DIR/requirements.txt"
+TOTAL_TASKS=5
 
 if [ ! -d "$VENV_DIR" ]; then
   echo "Creating virtual environment..."
@@ -23,7 +24,7 @@ run_task() {
   local title="$2"
   shift 2
 
-  echo "==> Task ${number}/4: ${title}"
+  echo "==> Task ${number}/${TOTAL_TASKS}: ${title}"
   (cd "$ROOT_DIR" && "$@")
 }
 
@@ -44,7 +45,10 @@ run_task 3 "Translate site: sources/site.md -> sources/site-fr.md" \
     --source en \
     --target fr
 
-run_task 4 "Build website HTML: docs/index.html and docs/fr/index.html" \
+run_task 4 "Generate website news: sources/news.md and sources/news-fr.md" \
+  python build/generate-news.py
+
+run_task 5 "Build website HTML: docs/index.html and docs/fr/index.html" \
   python build/build-site.py
 
 echo "Pipeline completed successfully."

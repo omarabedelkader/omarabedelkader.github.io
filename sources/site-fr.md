@@ -10,7 +10,7 @@ Intérêts : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 - Je suis un chercheur en IA possédant une vaste expérience en intelligence artificielle et en génie logiciel.  
 - Je poursuis actuellement un doctorat en informatique au [Université de Lille](https://www.univ-lille.fr).
 - Je suis actuellement impliqué dans plusieurs initiatives open source, de recherche, d'IA et communautaires, auxquelles je contribue en tant que fondateur, mainteneur, chef de projet, président et membre actif. 
-- Vous pouvez voir la liste complète de mes responsabilités actuelles [ici](#current).
+- Vous pouvez voir la liste complète de mes responsabilités actuelles [ici](#actuel).
 
 
 ### Récompenses :
@@ -20,6 +20,12 @@ Intérêts : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 ### Honneurs:
 - Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France  
 *"Témoignage d'anciens élèves en PNL & IA à l'Université de Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+
+---
+
+## Nouvelles
+
+{{NEWS_FROM_SOURCES}}
 
 ---
 
@@ -44,7 +50,7 @@ Intérêts : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 
 
 ### 2027 
-- *Réviseur fantôme chez [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
+- *Réviseur fantôme à [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 
 ### 2026
 - Membre du comité organisateur, [GDR-SciLog'26](https://scilog2026.fr).

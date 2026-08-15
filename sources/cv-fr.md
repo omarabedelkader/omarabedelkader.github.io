@@ -22,7 +22,7 @@ Lille, France}{Dernière mise à jour : \today\\
 - Je suis un chercheur en IA possédant une vaste expérience en intelligence artificielle et en génie logiciel.  
 - Je poursuis actuellement un doctorat en informatique à l'Université de Lille [\icon{\faLink}](https://www.univ-lille.fr).
 - Je suis actuellement impliqué dans plusieurs initiatives open source, de recherche, d'IA et communautaires, auxquelles je contribue en tant que fondateur, mainteneur, chef de projet, président et membre actif. 
-- Vous pouvez voir la liste complète de mes responsabilités actuelles **[ici](#current)**.
+- Vous pouvez voir la liste complète de mes responsabilités actuelles **[ici](#actuel)**.
 
 
 ### Récompenses :

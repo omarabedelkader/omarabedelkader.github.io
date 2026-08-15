@@ -1004,7 +1004,7 @@
       //{ href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
       //{ href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
       //{ href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
-      //{ href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "💼" },
+      { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "in", className: "topbar-linkedin" },
       { href: "https://orcid.org/0009-0005-1339-5683", label: "ORCID", src: `${assetPrefix}orcid.svg`, className: "topbar-orcid" },
       { href: "https://dblp.org/pid/426/8188.html", label: "DBLP", src: `${assetPrefix}dblp.svg`, className: "topbar-dblp" },
       { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: isFrench ? "Google Scholar" : "Google Scholar", icon: "🎓" }
@@ -1062,7 +1062,7 @@
     const results = createEl("div", { class: "search-results", role: "region", "aria-label": isFrench ? "Résultats de recherche" : "Search results" });
 
     searchWrap.append(searchLabel, searchMeta, results);
-    headerActions.append(searchWrap, topbar);
+    headerActions.append(searchWrap);
 
     const tabs = createEl("nav", {
       class: "tabs",
@@ -1083,9 +1083,12 @@
     const title = header.querySelector("h1");
     if (title) {
       headerTitle.append(title);
+      headerTitle.append(topbar);
       headerRow.append(headerTitle, headerActions);
       header.insertBefore(headerRow, header.firstChild);
     } else {
+      headerTitle.append(topbar);
+      headerRow.append(headerTitle);
       headerRow.append(headerActions);
       header.prepend(headerRow);
     }

@@ -255,7 +255,7 @@ hr {
   color: var(--brand);
 }
 
-/* NEW: H1 + topbar on same line */
+/* Header layout */
 .header-row {
   display: flex;
   align-items: flex-start;          /* vertical alignment :contentReference[oaicite:4]{index=4} */
@@ -286,25 +286,27 @@ hr {
   padding-top: 2px;
 }
 
-/* Emoji icon bar (small, right side of the name) */
+/* Emoji icon bar under the name */
 .topbar {
   flex: 0 0 auto;
+  align-self: flex-start;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 8px;
-  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .topbar-btn {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
   border: 0;
   background: transparent;
-  color: var(--text);
-  font-size: 16px;
+  color: var(--brand);
+  font-size: 22px;
   line-height: 1;
   text-decoration: none;
   user-select: none;
@@ -324,20 +326,27 @@ button.topbar-btn {
 
 .topbar-logo {
   display: block;
-  width: 19px;
-  height: 19px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   pointer-events: none;
 }
 
 .topbar-orcid .topbar-logo {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
 }
 
 .topbar-dblp .topbar-logo {
-  width: 19px;
-  height: 19px;
+  width: 22px;
+  height: 22px;
+}
+
+.topbar-linkedin {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
 }
 
 .topbar-btn:focus-visible {

@@ -265,7 +265,8 @@ class MarkdownTranslator:
                 translated_label = label
             else:
                 translated_label = self._translate_text(label)
-            return protector.add(f"{bang}[{translated_label}]({target})")
+            translated_target = "#actuel" if self.target == "fr" and target == "#current" else target
+            return protector.add(f"{bang}[{translated_label}]({translated_target})")
 
         return MARKDOWN_LINK_RE.sub(replace, text)
 
@@ -297,6 +298,7 @@ class MarkdownTranslator:
         exact_replacements = {
             "Sur moi": "À propos de moi",
             "Logiciel": "Logiciels",
+            "News": "Actualités",
             "Discussions publiques": "Présentations publiques",
             "Stage Bachelor": "Stage de licence",
         }
@@ -312,6 +314,7 @@ class MarkdownTranslator:
             "Mise à jour\xa0:": "Dernière mise à jour :",
             "Mise à jour :": "Dernière mise à jour :",
             "Shadow Reviewer chez": "Réviseur fantôme à",
+            "Réviseur fantôme chez": "Réviseur fantôme à",
         }
         for source, target in replacements.items():
             text = text.replace(source, target)
