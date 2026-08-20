@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="keywords" content="Omar AbedelKader,Omar Abdelkader,Omar
+Abedelkader,AI engineer,machine learning,software
+engineering,Pharo,blog" />
+  <meta name="description" content="Posts by Omar AbedelKader on AI, software engineering, Pharo, and research practice." />
+  <title>Blog | Omar AbedelKader</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="canonical" href="https://omarabedelkader.github.io/blog/" />
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="alternate" hreflang="en" href="https://omarabedelkader.github.io/blog/" />
+  <link rel="alternate" hreflang="fr" href="https://omarabedelkader.github.io/fr/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://omarabedelkader.github.io/blog/" />
+  <link rel="alternate" type="application/rss+xml" title="Omar AbedelKader — Blog" href="https://omarabedelkader.github.io/blog/feed.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog" />
+  <meta property="og:description" content="Posts by Omar AbedelKader on AI, software engineering, Pharo, and research practice." />
+  <meta property="og:url" content="https://omarabedelkader.github.io/blog/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog" />
+  <meta name="twitter:description" content="Posts by Omar AbedelKader on AI, software engineering, Pharo, and research practice." />
+</head>
+<body><main class='cv blog-index' id='blog-index'>
+
+<header id="title-block-header">
+<h1 class="title">Blog</h1>
+</header>
+<div class="blog-archive" data-blog-archive="" data-total="1"
+data-year-label="Year" data-tag-label="Topic"
+data-result-label="Showing"
+data-no-matches="No posts match these filters." data-singular="post"
+data-plural="posts">
+<div class="blog-toolbar">
+<label class="blog-search-label"> <span>Search</span>
+<input type="search" data-blog-search placeholder="Search posts" autocomplete="off" spellcheck="false" />
+</label>
+<div class="blog-view-toggle" role="toolbar" aria-label="View">
+<button type="button" class="blog-view-button is-active" data-blog-view="grid" aria-pressed="true">
+Grid
+</button>
+<button type="button" class="blog-view-button" data-blog-view="list" aria-pressed="false">
+List
+</button>
+</div>
+</div>
+<div class="blog-filter-group" aria-label="Filter by year">
+<div class="blog-filter-label">
+Filter by year
+</div>
+<div class="blog-chip-row" role="toolbar">
+<button type="button" class="blog-filter-chip is-active" data-blog-year="all" aria-pressed="true">
+<span>All</span><strong>1</strong>
+</button>
+<button type="button" class="blog-filter-chip" data-blog-year="2026" aria-pressed="false">
+<span>2026</span><strong>1</strong>
+</button>
+</div>
+</div>
+<div class="blog-filter-group" aria-label="Filter by topic">
+<div class="blog-filter-label">
+Filter by topic
+</div>
+<div class="blog-chip-row" role="toolbar">
+<button type="button" class="blog-filter-chip is-active" data-blog-tag="all" aria-pressed="true" data-label="All topics">
+<span>All topics</span><strong>1</strong>
+</button>
+<button type="button" class="blog-filter-chip" data-blog-tag="ai" data-label="AI" aria-pressed="false">
+<span>AI</span><strong>1</strong>
+</button>
+</div>
+</div>
+<p class="blog-archive-count" data-blog-count>
+Showing 1 post
+</p>
+<div class="blog-archive-years">
+<section class="blog-year-section" data-blog-year-section data-blog-year="2026" data-count="1">
+<h2>
+2026
+</h2>
+<div class="blog-index-list" role="list">
+<article class="blog-card" role="listitem" data-blog-card data-year="2026" data-tags="ai" data-search="my post title short seo/index summary. ai">
+<h3>
+<a href="001/">My Post Title</a>
+</h3>
+<p class="blog-card-meta">
+<time datetime="2026-08-20">August 20, 2026</time><span
+class="blog-tags"><span class="blog-tag">AI</span></span>
+</p>
+<p>
+Short SEO/index summary.
+</p>
+</article>
+</div>
+</section>
+</div>
+<p class="blog-empty" data-blog-empty hidden>
+</p>
+<script>
+(() => {
+  const archive = document.querySelector("[data-blog-archive]");
+  if (!archive) return;
+
+  const yearButtons = Array.from(archive.querySelectorAll("[data-blog-year]"));
+  const tagButtons = Array.from(archive.querySelectorAll("[data-blog-tag]"));
+  const viewButtons = Array.from(archive.querySelectorAll("[data-blog-view]"));
+  const search = archive.querySelector("[data-blog-search]");
+  const sections = Array.from(archive.querySelectorAll("[data-blog-year-section]"));
+  const cards = Array.from(archive.querySelectorAll("[data-blog-card]"));
+  const count = archive.querySelector("[data-blog-count]");
+  const empty = archive.querySelector("[data-blog-empty]");
+  const singular = archive.dataset.singular || "post";
+  const plural = archive.dataset.plural || "posts";
+  const resultLabel = archive.dataset.resultLabel || "Showing";
+  const yearLabel = archive.dataset.yearLabel || "Year";
+  const tagLabel = archive.dataset.tagLabel || "Topic";
+  const noMatches = archive.dataset.noMatches || "No matching posts.";
+
+  const state = {
+    year: "all",
+    tag: "all",
+    query: "",
+    view: "grid"
+  };
+
+  const countLabel = (value) => `${value} ${value === 1 ? singular : plural}`;
+  const setPressed = (buttons, key, value) => {
+    buttons.forEach((button) => {
+      const active = button.dataset[key] === value;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+    });
+  };
+
+  const apply = () => {
+    let visibleCount = 0;
+    const query = state.query.trim().toLowerCase();
+
+    cards.forEach((card) => {
+      const yearMatches = state.year === "all" || card.dataset.year === state.year;
+      const tagMatches = state.tag === "all" || (card.dataset.tags || "").split(" ").includes(state.tag);
+      const queryMatches = !query || (card.dataset.search || "").includes(query);
+      const visible = yearMatches && tagMatches && queryMatches;
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    sections.forEach((section) => {
+      section.hidden = !section.querySelector("[data-blog-card]:not([hidden])");
+    });
+
+    setPressed(yearButtons, "blogYear", state.year);
+    setPressed(tagButtons, "blogTag", state.tag);
+    setPressed(viewButtons, "blogView", state.view);
+    archive.classList.toggle("is-list", state.view === "list");
+    archive.classList.toggle("is-grid", state.view !== "list");
+
+    if (count) {
+      const filters = [];
+      if (state.year !== "all") filters.push(`${yearLabel} ${state.year}`);
+      if (state.tag !== "all") {
+        const tagButton = tagButtons.find((button) => button.dataset.blogTag === state.tag);
+        filters.push(`${tagLabel} ${(tagButton && tagButton.dataset.label) || state.tag}`);
+      }
+      count.textContent = filters.length
+        ? `${resultLabel} ${countLabel(visibleCount)} · ${filters.join(" · ")}`
+        : `${resultLabel} ${countLabel(visibleCount)}`;
+    }
+
+    if (empty) {
+      empty.hidden = visibleCount !== 0;
+      empty.textContent = noMatches;
+    }
+  };
+
+  yearButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.year = button.dataset.blogYear || "all";
+      apply();
+    });
+  });
+
+  tagButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.tag = button.dataset.blogTag || "all";
+      apply();
+    });
+  });
+
+  viewButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      state.view = button.dataset.blogView || "grid";
+      apply();
+    });
+  });
+
+  if (search) {
+    search.addEventListener("input", () => {
+      state.query = search.value || "";
+      apply();
+    });
+  }
+
+  apply();
+})();
+</script>
+</div>
+
+</main><footer class='site-footer'>Last updated: August 2026<br>Copyright © 2024 Omar AbedelKader</footer></body>
+</html>

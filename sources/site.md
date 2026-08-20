@@ -29,6 +29,12 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ---
 
+## Blog
+
+{{BLOG_FROM_SOURCES}}
+
+---
+
 ## Publications
 
 {{PUBLICATIONS_FROM_BIB}}

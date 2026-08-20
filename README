@@ -6,9 +6,10 @@ This repository builds and publishes a personal academic website and CVs.
 
 The project uses **Markdown sources** plus a small **Python + Pandoc build pipeline**:
 
-- `sources/` contains the content (`site.md`, `cv.md`, `cv-industry.md`, `teaching.md`).
+- `sources/` contains the content (`site.md`, `cv.md`, `cv-fr.md`, and blog posts under `sources/blog/`).
 - `build/` contains Python scripts that convert Markdown into:
-  - `docs/index.html` (website page for GitHub Pages)
+  - `docs/index.html` and `docs/fr/index.html` (website pages for GitHub Pages)
+  - `docs/blog/`, `docs/fr/blog/`, and RSS feeds generated from Markdown blog posts
   - `cv/cv-en.pdf` and `cv/cv-industry.pdf` (PDF CV outputs)
 - `templates/` contains the website static assets (`style.css`, `main.js`, `header.html`, favicon).
 - `resources/` contains citation and LaTeX support files (`publications.bib`, `apa.csl`, `header.tex`).
@@ -16,12 +17,14 @@ The project uses **Markdown sources** plus a small **Python + Pandoc build pipel
 
 ## Build flow
 
-`run.sh` creates/activates `.venv`, installs `requirements.txt`, then runs four deterministic tasks:
+`run.sh` creates/activates `.venv`, installs `requirements.txt`, then runs six deterministic tasks:
 
 1. Translate `sources/cv.md` to `sources/cv-fr.md`
 2. Build `cv/cv-en.pdf` and `cv/cv-fr.pdf`
 3. Translate `sources/site.md` to `sources/site-fr.md`
-4. Build `docs/index.html` and `docs/fr/index.html`
+4. Translate published blog posts from `sources/blog/*.md` to `sources/blog-fr/*.md`
+5. Generate website news snippets
+6. Build `docs/index.html`, `docs/fr/index.html`, blog pages, RSS feeds, and `docs/sitemap.xml`
 
 The translator protects Markdown links, URLs, inline code, fenced code blocks, frontmatter, raw LaTeX commands, and the `{{PUBLICATIONS_FROM_BIB}}` token. The website build copies CSS/JS/favicon into `docs/`, converts the site Markdown to HTML, copies CV PDFs into `docs/cv/`, injects a footer with a "Last updated" label, and includes the client-side script.
 
@@ -31,6 +34,31 @@ The translator protects Markdown links, URLs, inline code, fenced code blocks, f
 # run all build steps
 bash run.sh
 ```
+
+`run.sh` is quiet by default: it prints each task name and the final result, while successful command output is hidden. For troubleshooting, run `VERBOSE=1 bash run.sh`.
+
+## Blog posts
+
+Write English posts as Markdown files in `sources/blog/`. Files whose name starts with `_` are ignored, so `sources/blog/_template.md` is safe to keep as a template. Published posts are listed on `/blog/` and `/fr/blog/` as a full archive with grid/list views, search, year filters, and topic filters.
+
+A post can be as small as:
+
+```markdown
+---
+title: "My Post Title"
+date: "2026-08-20"
+description: "A short summary for indexes and SEO."
+tags:
+  - AI
+draft: false
+---
+
+Post content in Markdown.
+```
+
+The opening `---` must start at the first column of the file. This is intentional: malformed front matter should fail the build instead of publishing broken instructions as a public article.
+
+Then run `bash run.sh`. The build translates the post to French, writes the generated translation under `sources/blog-fr/`, publishes English and French HTML pages under `docs/blog/` and `docs/fr/blog/`, updates RSS feeds, and adds sitemap entries. Each post ends with an issue link for reporting problems.
 
 Or run individual build targets:
 

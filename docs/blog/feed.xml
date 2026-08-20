@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Omar AbedelKader — Blog</title>
+  <link>https://omarabedelkader.github.io/blog/</link>
+  <description>Posts on AI, software engineering, Pharo, and research practice.</description>
+  <language>en</language>
+  <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
+  <item>
+    <title>My Post Title</title>
+    <link>https://omarabedelkader.github.io/blog/001/</link>
+    <guid isPermaLink="true">https://omarabedelkader.github.io/blog/001/</guid>
+    <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Short SEO/index summary.</description>
+  </item>
+</channel>
+</rss>

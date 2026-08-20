@@ -297,6 +297,7 @@ class MarkdownTranslator:
 
         exact_replacements = {
             "Sur moi": "À propos de moi",
+            "Blogue": "Blog",
             "Logiciel": "Logiciels",
             "News": "Actualités",
             "Discussions publiques": "Présentations publiques",
@@ -342,6 +343,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--source", default="en")
     parser.add_argument("--target", default="fr")
+    parser.add_argument("--quiet", action="store_true")
     return parser.parse_args()
 
 
@@ -351,7 +353,8 @@ def main() -> int:
     translator = MarkdownTranslator(source=args.source, target=args.target)
     translated = translator.translate_markdown(markdown)
     args.output.write_text(translated, encoding="utf-8")
-    print(f"Translated {args.input} -> {args.output}")
+    if not args.quiet:
+        print(f"Translated {args.input} -> {args.output}")
     return 0
 
 

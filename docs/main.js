@@ -998,6 +998,7 @@
 
     const assetPrefix = isFrench ? "../assets/" : "assets/";
     const quickLinks = [
+      { href: "blog/", label: "Blog", icon: "✍️", external: false },
       { href: isFrench ? "../cv/cv-fr.pdf" : "cv/cv-en.pdf", label: isFrench ? "CV complet" : "Full CV", icon: "📄" },
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
       //{ href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
@@ -1018,7 +1019,7 @@
         title: l.label
       };
       if (!l.src) attrs.textContent = l.icon;
-      if (!String(l.href).startsWith("mailto:")) {
+      if (!String(l.href).startsWith("mailto:") && l.external !== false) {
         attrs.target = "_blank";
         attrs.rel = "me noopener noreferrer";
       }

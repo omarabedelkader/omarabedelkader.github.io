@@ -29,6 +29,12 @@ Intérêts : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 
 ---
 
+## Blog
+
+{{BLOG_FROM_SOURCES}}
+
+---
+
 ## Publications
 
 {{PUBLICATIONS_FROM_BIB}}
