@@ -1,26 +1,46 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+import os
 import re
 import sys
 import time
+from html import unescape
 from pathlib import Path
 
 try:
+    import requests
     from deep_translator import GoogleTranslator
 except ModuleNotFoundError as exc:
     raise SystemExit(
-        "Missing dependency: deep-translator. "
+        "Missing dependency: deep-translator or requests. "
         "Install dependencies with `pip install -r requirements.txt`."
     ) from exc
 
 
 FENCE_RE = re.compile(r"(```[^\n]*\n[\s\S]*?\n```|~~~[^\n]*\n[\s\S]*?\n~~~)")
 HR_RE = re.compile(r"\s{0,3}([-*_])(?:\s*\1){2,}\s*$")
+GOOGLE_TRANSLATE_JSON_URL = "https://translate.googleapis.com/translate_a/single"
+MYMEMORY_TRANSLATE_URL = "https://api.mymemory.translated.net/get"
+TRANSLATION_CACHE_FILE = Path(
+    os.environ.get(
+        "TRANSLATION_CACHE_FILE",
+        str(Path(__file__).resolve().parents[1] / ".translation-cache.json"),
+    )
+)
 MARKDOWN_PREFIX_RE = re.compile(
     r"^(\s{0,3}(?:#{1,6}\s+|[-*+]\s+(?:\[[ xX]\]\s+)?|>\s+|\d+\.\s+))(.*)$"
 )
 MARKDOWN_LINK_RE = re.compile(r"(!?)\[([^\]\n]*)\]\(([^)\n]*)\)")
+MARKDOWN_EMPHASIS_RE = re.compile(
+    r"(\*\*|__)(?=\S)(.+?)(?<=\S)\1"
+    r"|(?<!\*)\*(?![\s*])(.+?)(?<!\s)\*(?!\*)"
+    r"|(?<![A-Za-z0-9_])_(?![\s_])(.+?)(?<!\s)_(?![A-Za-z0-9_])"
+)
+EMPHASIZED_NOT_RE = re.compile(r"(\*\*|__|\*|_)not\1", re.IGNORECASE)
+TOKEN_RE = re.compile(r"XQMDTOKEN\d+QX")
 PROTECTED_TERMS = (
     "AbedelKader",
     "AI4SE",
@@ -37,6 +57,7 @@ PROTECTED_TERMS = (
     "GDR-SciLog",
     "GitHub",
     "Google Summer of Code",
+    "Hugging Face",
     "ICSE",
     "ICSME",
     "IDMC",
@@ -47,17 +68,32 @@ PROTECTED_TERMS = (
     "LatexDo",
     "LinearSVC",
     "MiniLM",
+    "Model Context Protocol",
     "ORCID",
     "Pharo",
     "Pharo-AI",
+    "Pharo-Copilot",
+    "Pharo-HuggingFace",
     "Pharo-Infer",
     "Pharo-LLM",
+    "Pharo-MCP",
     "PharoLLM",
     "Progress",
+    "Qwen",
+    "RAG",
     "RCLN",
     "SBERT",
     "SE4AI",
     "Synapse-NeuroTech-Lille",
+    "ChatGPT",
+    "Claude",
+    "DeepSeek",
+    "HuggingFace",
+    "LM Studio",
+    "Ollama",
+    "Tonel",
+    "vLLM",
+    "feenk",
 )
 
 
@@ -83,6 +119,7 @@ class MarkdownTranslator:
     def __init__(self, source: str, target: str) -> None:
         self.target = target
         self.translator = GoogleTranslator(source=source, target=target)
+        self.translation_cache = self._load_translation_cache()
 
     def translate_markdown(self, markdown: str) -> str:
         frontmatter, body = self._split_frontmatter(markdown)
@@ -234,6 +271,54 @@ class MarkdownTranslator:
         return leading + self._translate_text(core) + trailing
 
     def _translate_text(self, text: str) -> str:
+        emphasized_not = self._translate_emphasized_not(text)
+        if emphasized_not is not None:
+            return emphasized_not
+
+        emphasized = self._translate_markdown_emphasis(text)
+        if emphasized is not None:
+            return emphasized
+
+        return self._translate_plain_text(text)
+
+    def _translate_emphasized_not(self, text: str) -> str | None:
+        match = EMPHASIZED_NOT_RE.search(text)
+        if not match:
+            return None
+
+        delimiter = match.group(1)
+        plain_text = f"{text[:match.start()]}not{text[match.end():]}"
+        translated = self._translate_plain_text(plain_text)
+
+        if self.target == "fr":
+            return re.sub(r"\bpas\b", f"{delimiter}pas{delimiter}", translated, count=1)
+        return translated
+
+    def _translate_markdown_emphasis(self, text: str) -> str | None:
+        translated: list[str] = []
+        position = 0
+        found = False
+
+        for match in MARKDOWN_EMPHASIS_RE.finditer(text):
+            found = True
+            translated.append(self._translate_with_outer_space(text[position : match.start()]))
+
+            delimiter = match.group(1)
+            inner = match.group(2)
+            if delimiter is None:
+                delimiter = "*" if match.group(3) is not None else "_"
+                inner = match.group(3) if match.group(3) is not None else match.group(4)
+
+            translated.append(f"{delimiter}{self._translate_with_outer_space(inner or '')}{delimiter}")
+            position = match.end()
+
+        if not found:
+            return None
+
+        translated.append(self._translate_with_outer_space(text[position:]))
+        return "".join(translated)
+
+    def _translate_plain_text(self, text: str) -> str:
         if not re.search(r"[A-Za-z]", text):
             return text
 
@@ -255,8 +340,42 @@ class MarkdownTranslator:
         )
         protected = self._protect_terms(protected, protector)
 
-        translated = self._translate_chunk(protected)
+        if not self._has_translatable_text(protected):
+            return protector.restore(protected)
+
+        translated = self._translate_protected_text(protected)
         return self._postprocess_translation(protector.restore(translated))
+
+    def _has_translatable_text(self, text: str) -> bool:
+        return bool(re.search(r"[A-Za-zÀ-ÿ]", TOKEN_RE.sub("", text)))
+
+    def _translate_protected_text(self, text: str) -> str:
+        if not TOKEN_RE.search(text):
+            return self._translate_chunk(text)
+
+        try:
+            return self._translate_chunk(text, attempts=1)
+        except RuntimeError:
+            translated = self._translate_around_tokens(text)
+            self._remember_translation(text, translated)
+            return translated
+
+    def _translate_around_tokens(self, text: str) -> str:
+        translated: list[str] = []
+        position = 0
+
+        for match in TOKEN_RE.finditer(text):
+            translated.append(self._translate_fragment(text[position : match.start()]))
+            translated.append(match.group(0))
+            position = match.end()
+
+        translated.append(self._translate_fragment(text[position:]))
+        return "".join(translated)
+
+    def _translate_fragment(self, text: str) -> str:
+        if not self._has_translatable_text(text):
+            return text
+        return self._translate_chunk(text)
 
     def _protect_markdown_links(self, text: str, protector: Protector) -> str:
         def replace(match: re.Match[str]) -> str:
@@ -321,20 +440,116 @@ class MarkdownTranslator:
             text = text.replace(source, target)
         return text
 
-    def _translate_chunk(self, text: str) -> str:
+    def _translate_chunk(self, text: str, attempts: int = 3) -> str:
+        cached = self._cached_translation(text)
+        if cached is not None:
+            return cached
+
         last_error: Exception | None = None
-        for attempt in range(3):
-            try:
-                translated = self.translator.translate(text)
-                if translated is None:
-                    raise RuntimeError("translator returned no text")
-                return translated
-            except Exception as exc:  # deep-translator wraps provider errors broadly.
-                last_error = exc
-                if attempt < 2:
-                    time.sleep(1 + attempt)
+        for attempt in range(attempts):
+            for translate in (
+                self._translate_with_deep_translator,
+                self._translate_with_google_json,
+                self._translate_with_mymemory,
+            ):
+                try:
+                    translated = translate(text)
+                    self._remember_translation(text, translated)
+                    return translated
+                except Exception as exc:
+                    last_error = exc
+
+            if attempt < attempts - 1:
+                time.sleep(1 + attempt)
 
         raise RuntimeError(f"Translation failed for: {text[:120]!r}") from last_error
+
+    def _translate_with_deep_translator(self, text: str) -> str:
+        translated = self.translator.translate(text)
+        if translated is None:
+            raise RuntimeError("translator returned no text")
+        return translated
+
+    def _translate_with_google_json(self, text: str) -> str:
+        response = requests.get(
+            GOOGLE_TRANSLATE_JSON_URL,
+            params={
+                "client": "gtx",
+                "sl": self.translator.source,
+                "tl": self.translator.target,
+                "dt": "t",
+                "q": text,
+            },
+            timeout=20,
+        )
+        response.raise_for_status()
+        payload = response.json()
+
+        try:
+            translated = "".join(part[0] for part in payload[0] if part and part[0])
+        except (IndexError, TypeError) as exc:
+            raise RuntimeError("Google JSON translator returned an unexpected response") from exc
+
+        if not translated:
+            raise RuntimeError("Google JSON translator returned no text")
+        return translated
+
+    def _translate_with_mymemory(self, text: str) -> str:
+        response = requests.get(
+            MYMEMORY_TRANSLATE_URL,
+            params={
+                "q": text,
+                "langpair": f"{self.translator.source}|{self.translator.target}",
+            },
+            timeout=20,
+        )
+        response.raise_for_status()
+        payload = response.json()
+
+        try:
+            translated = payload["responseData"]["translatedText"]
+        except (KeyError, TypeError) as exc:
+            raise RuntimeError("MyMemory translator returned an unexpected response") from exc
+
+        if not translated:
+            raise RuntimeError("MyMemory translator returned no text")
+        return unescape(str(translated))
+
+    def _cache_key(self, text: str) -> str:
+        key = "\0".join((self.translator.source, self.translator.target, text))
+        return hashlib.sha256(key.encode("utf-8")).hexdigest()
+
+    def _cached_translation(self, text: str) -> str | None:
+        return self.translation_cache.get(self._cache_key(text))
+
+    def _remember_translation(self, text: str, translated: str) -> None:
+        self.translation_cache[self._cache_key(text)] = translated
+        self._save_translation_cache()
+
+    def _load_translation_cache(self) -> dict[str, str]:
+        if not TRANSLATION_CACHE_FILE.exists():
+            return {}
+
+        try:
+            data = json.loads(TRANSLATION_CACHE_FILE.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return {}
+
+        if not isinstance(data, dict):
+            return {}
+        return {str(key): str(value) for key, value in data.items()}
+
+    def _save_translation_cache(self) -> None:
+        try:
+            TRANSLATION_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+            temp_path = TRANSLATION_CACHE_FILE.with_name(f"{TRANSLATION_CACHE_FILE.name}.tmp")
+            temp_path.write_text(
+                json.dumps(self.translation_cache, ensure_ascii=False, sort_keys=True) + "\n",
+                encoding="utf-8",
+            )
+            temp_path.replace(TRANSLATION_CACHE_FILE)
+        except OSError:
+            pass
 
 
 def parse_args() -> argparse.Namespace:

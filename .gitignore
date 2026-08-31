@@ -77,6 +77,8 @@ htmlcov/
 # ======================================================
 *.log
 *.sqlite3
+.translation-cache.json
+.translation-cache.json.tmp
 
 # ======================================================
 # Environment files (secrets)
@@ -335,5 +337,4 @@ TSWLatexianTemp*
 
 # generated if using elsarticle.cls
 *.spl
-
 

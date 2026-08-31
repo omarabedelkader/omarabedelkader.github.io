@@ -7,3 +7,4 @@ pillow==12.1.0
 pypandoc==1.16.2
 PyYAML==6.0.3
 reportlab==4.4.7
+requests==2.34.2

@@ -4,9 +4,9 @@ date: ""
 ---
 
 ```{=latex}
-\cvheader{Omar AbedelKader}{Chercheur doctorant en informatique\\
+\cvheader{Omar AbedelKader}{Chercheur doctoral en informatique\\
 Inria - EVREF / LaBRI - Progress\\
-Université de Lille\\
+l'Université de Lille\\
 Lille, France}{Dernière mise à jour : \today\\
 \href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
 \href{https://omarabedelkader.com}{omarabedelkader.com}\\
@@ -14,12 +14,12 @@ Lille, France}{Dernière mise à jour : \today\\
 \href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
 ```
 
-## Intérêts : Intelligence artificielle · Génie logiciel · LLM · AI4SE
+## Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 
 ## À propos de moi
 
 ### Biographie:
-- Je suis un chercheur en IA possédant une vaste expérience en intelligence artificielle et en génie logiciel.  
+- Je suis un chercheur en IA avec une vaste expérience en intelligence artificielle et en génie logiciel.  
 - Je poursuis actuellement un doctorat en informatique à l'Université de Lille [\icon{\faLink}](https://www.univ-lille.fr).
 - Je suis actuellement impliqué dans plusieurs initiatives open source, de recherche, d'IA et communautaires, auxquelles je contribue en tant que fondateur, mainteneur, chef de projet, président et membre actif. 
 - Vous pouvez voir la liste complète de mes responsabilités actuelles **[ici](#actuel)**.
@@ -76,10 +76,10 @@ Lille, France}{Dernière mise à jour : \today\\
 
 ## Enseignement
 
-- Assistant d'enseignement à l'IUT : *Introduction au développement logiciel* 41,5 h Labs IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
-- Assistant à l'IUT : *Maintenance logicielles* 12h Travaux dirigés IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Assistant d'enseignement à Polytech : *DataBase* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Assistant d'enseignement à Polytech : *Internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Chargée d'enseignement à l'IUT : *Introduction au développement de logiciels* 41,5 h Laboratoires IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
+- Assistant d'enseignement à l'IUT : *Maintenance du logiciel* 12h Travaux dirigés IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
+- Assistante pédagogique à Polytech : *Base de données* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Assistante pédagogique à Polytech : *Internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
 
 ---
 
@@ -118,7 +118,7 @@ J'ai supervisé à Srajal le projet ChatPharo, qui visait à intégrer des LLM d
 
 ### 2026:
 - ESUG 2026 : ChatPharo : un assistant IA dans Pharo [\icon{\faFilePdf}]() [\icon{\faVideo}]()
-- ESUG 2026 : Pharo-LLM : Création d'un écosystème LLM souverain dans Pharo [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
+- ESUG 2026 : Pharo-LLM : Création d'un écosystème LLM souverain dans Pharo [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
 - Semaine française de sensibilisation au cerveau : IA et cerveau : deux manières d'apprendre, qu'est-ce que cela change dans notre quotidien ? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 ### 2025:
@@ -131,17 +131,17 @@ J'ai supervisé à Srajal le projet ChatPharo, qui visait à intégrer des LLM d
 
 ## Loisirs
 
-- **Activités nautiques :** Natation · Plongée
+- **Activités nautiques :** Natation · Plongée
 - **Sports de plein air et d'aventure :** Randonnée · Ski · Parachutisme
-- **Activités créatives et artistiques :** Photographie
+- **Activités créatives et artistiques :** Photographie
 - **Sports de précision :** Boxe · Bowling · Golf
 
 ---
 
 ## Langues
 
-- **Arabe :** Natif
-- **Français :** Natif
-- **Anglais :** B2
+- **Arabe:** Indigène
+- **Français:** Indigène
+- **Anglais:** B2
 
 ---

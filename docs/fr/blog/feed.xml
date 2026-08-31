@@ -7,11 +7,11 @@
   <language>fr</language>
   <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
   <item>
-    <title>Titre de mon message</title>
+    <title>Comment appliquer des LLM dans Pharo ?</title>
     <link>https://omarabedelkader.github.io/fr/blog/001/</link>
     <guid isPermaLink="true">https://omarabedelkader.github.io/fr/blog/001/</guid>
     <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Bref résumé SEO/index.</description>
+    <description>Pourquoi j&#x27;ai créé Pharo-LLM</description>
   </item>
 </channel>
 </rss>

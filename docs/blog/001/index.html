@@ -7,8 +7,8 @@
   <meta name="keywords" content="Omar AbedelKader,Omar Abdelkader,Omar
 Abedelkader,AI engineer,machine learning,software
 engineering,Pharo,blog" />
-  <meta name="description" content="Short SEO/index summary." />
-  <title>My Post Title | Omar AbedelKader</title>
+  <meta name="description" content="Why I created Pharo-LLM" />
+  <title>How to Apply LLMs in Pharo? | Omar AbedelKader</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,23 +37,253 @@ engineering,Pharo,blog" />
   <link rel="alternate" hreflang="x-default" href="https://omarabedelkader.github.io/blog/001/" />
   <link rel="alternate" type="application/rss+xml" title="Omar AbedelKader — Blog" href="https://omarabedelkader.github.io/blog/feed.xml" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="My Post Title" />
-  <meta property="og:description" content="Short SEO/index summary." />
+  <meta property="og:title" content="How to Apply LLMs in Pharo?" />
+  <meta property="og:description" content="Why I created Pharo-LLM" />
   <meta property="og:url" content="https://omarabedelkader.github.io/blog/001/" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="My Post Title" />
-  <meta name="twitter:description" content="Short SEO/index summary." />
+  <meta name="twitter:title" content="How to Apply LLMs in Pharo?" />
+  <meta name="twitter:description" content="Why I created Pharo-LLM" />
   <meta property="article:published_time" content="2026-08-20" />
-  <meta property="article:tag" content="AI" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"My Post Title","description":"Short SEO/index summary.","datePublished":"2026-08-20","dateModified":"2026-08-20","author":{"@type":"Person","name":"Omar AbedelKader","url":"https://omarabedelkader.github.io/"},"mainEntityOfPage":"https://omarabedelkader.github.io/blog/001/","inLanguage":"en","keywords":["AI"]}</script>
+  <meta property="article:tag" content="LLM" />
+  <meta property="article:tag" content="Pharo" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Apply LLMs in Pharo?","description":"Why I created Pharo-LLM","datePublished":"2026-08-20","dateModified":"2026-08-20","author":{"@type":"Person","name":"Omar AbedelKader","url":"https://omarabedelkader.github.io/"},"mainEntityOfPage":"https://omarabedelkader.github.io/blog/001/","inLanguage":"en","keywords":["LLM","Pharo"]}</script>
 </head>
 <body><main class='cv blog-page' id='blog-post'>
 
 <header id="title-block-header">
-<h1 class="title">My Post Title</h1>
+<h1 class="title">How to Apply LLMs in Pharo?</h1>
 </header>
-<div class="blog-post-meta"><time datetime="2026-08-20">August 20, 2026</time><span class="blog-tags"><span class="blog-tag">AI</span></span></div>
-<p>Write the real post content here.</p>
-<aside class="blog-issue-note"><p>If you think there is a problem with this post, please <a href="https://github.com/omarabedelkader/omarabedelkader.github.io/issues/new?title=Problem+with+blog+post%3A+My+Post+Title&amp;body=I+found+a+problem+on+this+blog+post%3A%0A%0Ahttps%3A%2F%2Fomarabedelkader.github.io%2Fblog%2F001%2F%0A%0AProblem%3A%0A">create an issue</a>.</p></aside>
+<div class="blog-post-meta"><time datetime="2026-08-20">August 20, 2026</time><span class="blog-tags"><span class="blog-tag">LLM</span><span class="blog-tag">Pharo</span></span></div>
+<p>When I started my PhD two years ago, I came from a professional
+background where I was mostly applying LLMs inside professional tools
+and building tools around them.</p>
+<p>At the beginning of my PhD, my supervisor told me that I could attend
+ESUG’24. There, I saw the feenk presentation about AI.</p>
+<p>At the same time, I started looking at what was happening around LLMs
+in the Pharo ecosystem, and I noticed that there was not much work in
+this direction. Benoit was one of the few people I knew who was already
+experimenting with LLMs in Pharo.</p>
+<p>I became really interested in understanding how we could apply LLMs
+inside Pharo.</p>
+<p>That is why I launched <strong>Pharo-LLM</strong>.</p>
+<p>At the time of writing, the Pharo-LLM organization has <strong>21
+followers</strong>, and I can see more and more people becoming
+interested in the tools we have developed.</p>
+<p>But Pharo-LLM has also changed a lot since I started it.</p>
+<h2 id="what-is-pharo-llm">What is Pharo-LLM?</h2>
+<p>At the beginning, my goal was quite simple: I wanted to have the
+tools necessary to integrate LLMs into Pharo.</p>
+<p>But I did not want Pharo-LLM to be just another wrapper around an
+external API.</p>
+<p>The idea gradually became to build a set of tools and libraries that
+allow us to create, run, and interact with LLMs directly inside
+Pharo.</p>
+<p>More importantly, I want these tools to feel <strong>native to
+Pharo</strong>.</p>
+<p>That means integrating LLMs with the things that make Pharo
+interesting: objects, inspectors, debuggers, and our development
+workflows.</p>
+<p>Today, the Pharo-LLM ecosystem includes several projects:</p>
+<ul>
+<li><strong>ChatPharo</strong> — a conversational interface inside
+Pharo.</li>
+<li><strong>Pharo-Copilot</strong> — an intelligent code completion
+engine.</li>
+<li><strong>Pharo-Infer</strong> — an inference engine for LLMs in
+Pharo.</li>
+<li><strong>Pharo-MCP</strong> — an implementation of the Model Context
+Protocol in Pharo.</li>
+<li><strong>Pharo-HuggingFace</strong> — an interface for interacting
+with Hugging Face.</li>
+<li>And more experiments and tools that are still being developed.</li>
+</ul>
+<p>The objective is not simply to connect Pharo to LLMs.</p>
+<p>The objective is to explore what an <strong>LLM ecosystem built
+specifically for Pharo</strong> could look like.</p>
+<h2 id="from-using-llms-to-controlling-them">From using LLMs to
+controlling them</h2>
+<p>While developing Pharo-LLM, I started thinking about another
+problem.</p>
+<p>Today, when we use an LLM, we often depend on an external
+provider.</p>
+<p>We depend on:</p>
+<ul>
+<li>their API,</li>
+<li>their prices,</li>
+<li>their rate limits,</li>
+<li>their infrastructure,</li>
+<li>and a network connection.</li>
+</ul>
+<p>When we are working with source code or private projects, we also
+have to think about privacy.</p>
+<p>So my initial question:</p>
+<blockquote>
+<p><strong>How can we apply LLMs in Pharo?</strong></p>
+</blockquote>
+<p>slowly became another question:</p>
+<blockquote>
+<p><strong>How can we build a sovereign LLM ecosystem in
+Pharo?</strong></p>
+</blockquote>
+<p>For me, there are three important parts to this:</p>
+<ol type="1">
+<li>Having the tools inside Pharo to create, run, and interact with
+LLMs.</li>
+<li>Having the ability to train and fine-tune our own models.</li>
+<li>Having the ability to deploy and maintain our own models.</li>
+</ol>
+<p>This is the direction I now want to explore with Pharo-LLM.</p>
+<h2 id="training-models-for-pharo">Training models for Pharo</h2>
+<p>One concrete example of this vision is
+<strong>Pharo-Copilot</strong>.</p>
+<p>Pharo-Copilot is a code completion engine that uses LLMs to predict
+the next Pharo code tokens.</p>
+<p>Instead of completing only one token or one word, the idea is to
+generate <strong>multi-token code completions</strong>.</p>
+<p>But if we want a model that is really useful for Pharo, we need it to
+understand Pharo.</p>
+<p>So we experimented with open-weight code LLMs such as Qwen.</p>
+<p>Our approach uses two steps:</p>
+<ol type="1">
+<li><strong>Continued pre-training</strong> to teach the model Pharo
+syntax and APIs.</li>
+<li><strong>Supervised fine-tuning</strong> to adapt the model
+specifically for code completion.</li>
+</ol>
+<p>To build the training data, we collected around <strong>1,200 Pharo
+repositories from GitHub</strong>.</p>
+<p>We filtered them according to their licenses, Tonel format, and
+compatibility with Pharo 10 or newer. After this process, we obtained
+around <strong>415 repositories</strong> for our experiments.</p>
+<p>We experimented with models ranging from around <strong>0.5B to 7B
+parameters</strong>.</p>
+<p>What is interesting is that we do not necessarily need a huge model
+to obtain useful results.</p>
+<p>Our benchmarks showed that the Pharo-specialized models improve
+significantly over their base versions, both for Pharo syntax and for
+repository-level context.</p>
+<p>This is important for the vision of Pharo-LLM.</p>
+<p>Instead of always asking:</p>
+<blockquote>
+<p><strong>How can we use the biggest general-purpose model
+available?</strong></p>
+</blockquote>
+<p>we can also ask:</p>
+<blockquote>
+<p><strong>How good can a small model become when it is specialized for
+Pharo?</strong></p>
+</blockquote>
+<h2 id="running-our-own-models">Running our own models</h2>
+<p>Training or fine-tuning a model is only one part of the problem.</p>
+<p>After that, we need to run it.</p>
+<p>Today, Pharo-LLM can interact with cloud APIs such as ChatGPT,
+Claude, and DeepSeek.</p>
+<p>We can also use local APIs provided by tools such as Ollama, LM
+Studio, or vLLM.</p>
+<p>But I wanted to explore what happens if we go one step further.</p>
+<p>What if we can run the model through infrastructure that belongs
+directly to the Pharo ecosystem?</p>
+<p>This is why I started <strong>Pharo-Infer</strong>.</p>
+<p>An inference engine loads a trained language model and prepares it
+for execution. It converts prompts into tokens, generates tokens as
+output, and manages things such as memory, context, sampling, and
+streaming during generation.</p>
+<p>With Pharo-Infer, the idea is to provide this inference layer as part
+of the Pharo ecosystem, using open-source components such as
+<code>llama.cpp</code> for low-level model execution.</p>
+<h2 id="why-owning-the-model-matters">Why owning the model matters</h2>
+<p>Owning the model and the inference infrastructure gives us several
+interesting properties.</p>
+<h3 id="no-artificial-api-limits">No artificial API limits</h3>
+<p>We are not constrained by rate limits or quotas imposed by somebody
+else’s service.</p>
+<h3 id="better-privacy">Better privacy</h3>
+<p>Sensitive source code can stay on the developer’s machine or inside
+the organization’s infrastructure.</p>
+<h3 id="better-reliability">Better reliability</h3>
+<p>We do not have to depend on an Internet connection during development
+or during a demo.</p>
+<h3 id="more-control">More control</h3>
+<p>We can adapt both the model and the infrastructure to specific
+domains and workflows, and integrate them directly with Pharo.</p>
+<p>This last point is particularly important to me.</p>
+<p>Pharo is an environment where we like the idea that
+<strong>everything is moldable</strong>.</p>
+<p>If our AI infrastructure lives completely outside Pharo, behind
+another application or service, then we lose part of that idea.</p>
+<p>Of course, having our own inference engine also has a cost.</p>
+<p>It means more maintenance work, performance optimization, hardware
+management, and model management.</p>
+<p>But it also gives us independence, better privacy, and deeper
+integration.</p>
+<h2 id="what-about-teams">What about teams?</h2>
+<p>Having our own models does not mean that every developer needs to run
+a model locally on their laptop.</p>
+<p>For a team, we can deploy a model once on a shared server and let the
+whole team use it.</p>
+<p>We can connect that model to the team’s repositories, documentation,
+and project knowledge using RAG.</p>
+<p>This allows us to keep the model up to date with the latest project
+changes without retraining it every time something changes.</p>
+<p>More importantly, the source code and sensitive data can remain
+inside the organization’s infrastructure.</p>
+<p>The team can then share the same LLM infrastructure without depending
+entirely on an external provider.</p>
+<h2 id="the-pharo-llm-vision">The Pharo-LLM vision</h2>
+<p>When I started Pharo-LLM, I mainly wanted to understand how we could
+apply LLMs inside Pharo.</p>
+<p>Today, I see the project differently.</p>
+<p>The goal is <strong>not</strong> to train a huge general-purpose
+model.</p>
+<p>The goal is <strong>not</strong> to replace every external LLM
+provider.</p>
+<p>And the goal is <strong>not</strong> simply to put a ChatGPT-like
+interface inside Pharo.</p>
+<p>The goal is to give the Pharo community <strong>choice and
+control</strong>.</p>
+<p>We should be able to use an external provider when it makes
+sense.</p>
+<p>We should be able to run a local model when privacy or independence
+matters.</p>
+<p>We should be able to fine-tune a model specifically for Pharo when we
+need specialization.</p>
+<p>And we should be able to deploy and maintain our own models when we
+want control over the complete infrastructure.</p>
+<p>There are still limitations.</p>
+<p>Training and fine-tuning require time, data preparation, and
+experimentation. Bigger models require more resources and are harder to
+maintain.</p>
+<p>Building this ecosystem also requires the community to share
+datasets, benchmarks, models, tools, and improvements.</p>
+<p>But our experiments already show something interesting:</p>
+<blockquote>
+<p>A smaller model specialized for Pharo can perform much better than
+its general-purpose base version on Pharo-specific tasks.</p>
+</blockquote>
+<p>This makes me think that there is a real opportunity here.</p>
+<h2 id="from-dependency-to-autonomy">From dependency to autonomy</h2>
+<p>Two years ago, I started with a simple question:</p>
+<blockquote>
+<p><strong>How can we apply LLMs in Pharo?</strong></p>
+</blockquote>
+<p>Today, the question I am interested in is:</p>
+<blockquote>
+<p><strong>How much of the LLM stack can we own inside
+Pharo?</strong></p>
+</blockquote>
+<p>From the tools we use to interact with models, to the models we
+fine-tune, to the infrastructure that runs them.</p>
+<p>This is the direction I want Pharo-LLM to take.</p>
+<p>Not because external providers are bad, but because I think the Pharo
+community should have the possibility to choose.</p>
+<p>Use the cloud when it makes sense.</p>
+<p>Run locally when it makes sense.</p>
+<p>Train specialized models when it makes sense.</p>
+<p>Own the complete stack when we need it.</p>
+<p>For me, <strong>Pharo-LLM is not only a technical
+project.</strong></p>
+<p><strong>It is a strategic investment in independence.</strong></p>
+<p>Contributions are very welcome!</p>
+<aside class="blog-issue-note"><p>If you think there is a problem with this post, please <a href="https://github.com/omarabedelkader/omarabedelkader.github.io/issues/new?title=Problem+with+blog+post%3A+How+to+Apply+LLMs+in+Pharo%3F&amp;body=I+found+a+problem+on+this+blog+post%3A%0A%0Ahttps%3A%2F%2Fomarabedelkader.github.io%2Fblog%2F001%2F%0A%0AProblem%3A%0A">create an issue</a>.</p></aside>
 </main><footer class='site-footer'>Last updated: August 2026<br>Copyright © 2024 Omar AbedelKader</footer></body>
 </html>

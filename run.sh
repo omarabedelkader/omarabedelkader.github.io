@@ -20,13 +20,13 @@ run_command() {
   if "$@" >"$log_file" 2>&1; then
     rm -f "$log_file"
     return 0
+  else
+    local status=$?
+    echo "Command failed: $*" >&2
+    sed -n '1,200p' "$log_file" >&2
+    rm -f "$log_file"
+    return "$status"
   fi
-
-  local status=$?
-  echo "Command failed: $*" >&2
-  sed -n '1,200p' "$log_file" >&2
-  rm -f "$log_file"
-  return "$status"
 }
 
 if [ ! -d "$VENV_DIR" ]; then
