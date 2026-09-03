@@ -139,7 +139,12 @@
     const paragraphs = Array.from(header.querySelectorAll("p"));
     const interests = paragraphs.find((paragraph) => {
       const text = (paragraph.textContent || "").trim();
-      return /^(interests|intérêts|interets|centres d.interet)\s*:/i.test(text);
+      const normalized = text
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[’‘`]/g, "'")
+        .replace(/\s+/g, " ");
+      return /^(interests|interets|centres d['.]?interet)\s*:/i.test(normalized);
     });
     if (!interests || interests.dataset.profileInterestsEnhanced === "true") return interests || null;
 
@@ -986,19 +991,59 @@
       updateThemeIcon();
     });
 
-    topbar.append(themeBtn);
     const languageBtn = createEl("a", {
-      class: "topbar-btn",
+      class: "topbar-btn header-language",
       href: isFrench ? "../index.html" : "fr/",
       "aria-label": isFrench ? "Voir en anglais" : "Voir en français",
       title: isFrench ? "Voir en anglais" : "Voir en français",
       textContent: isFrench ? "🇬🇧" : "🇫🇷"
     });
-    topbar.append(languageBtn);
+    const sectionHashTranslations = {
+      toFr: {
+        "about-me": "a-propos-de-moi",
+        news: "nouvelles",
+        blog: "blog",
+        publications: "publications",
+        services: "services",
+        current: "actuel",
+        teaching: "enseignement",
+        software: "logiciels",
+        students: "etudiants",
+        "public-talks": "presentations-publiques",
+        latexdo: "latexdo"
+      },
+      toEn: {
+        "a-propos-de-moi": "about-me",
+        nouvelles: "news",
+        blog: "blog",
+        publications: "publications",
+        services: "services",
+        actuel: "current",
+        enseignement: "teaching",
+        logiciels: "software",
+        etudiants: "students",
+        "presentations-publiques": "public-talks",
+        latexdo: "latexdo"
+      }
+    };
+
+    function decodeHashValue(value) {
+      try {
+        return decodeURIComponent(value);
+      } catch (_err) {
+        return value;
+      }
+    }
+
+    function translateHashValue(value) {
+      const normalized = slugify(decodeHashValue(value));
+      if (!normalized) return "";
+      const direction = isFrench ? sectionHashTranslations.toEn : sectionHashTranslations.toFr;
+      return direction[normalized] || normalized;
+    }
 
     const assetPrefix = isFrench ? "../assets/" : "assets/";
     const quickLinks = [
-      { href: "blog/", label: "Blog", icon: "✍️", external: false },
       { href: isFrench ? "../cv/cv-fr.pdf" : "cv/cv-en.pdf", label: isFrench ? "CV complet" : "Full CV", icon: "📄" },
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
       //{ href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
@@ -1063,7 +1108,7 @@
     const results = createEl("div", { class: "search-results", role: "region", "aria-label": isFrench ? "Résultats de recherche" : "Search results" });
 
     searchWrap.append(searchLabel, searchMeta, results);
-    headerActions.append(searchWrap);
+    headerActions.append(searchWrap, languageBtn, themeBtn);
 
     const tabs = createEl("nav", {
       class: "tabs",
@@ -1083,6 +1128,14 @@
     }
     const title = header.querySelector("h1");
     if (title) {
+      const titleLink = createEl("a", {
+        class: "home-title-link",
+        href: isFrench ? "../index.html#about-me" : "#about-me",
+        "aria-label": isFrench ? "Retour à la page principale en anglais" : "Return to About Me",
+        title: isFrench ? "Retour à la page principale en anglais" : "Return to About Me"
+      });
+      while (title.firstChild) titleLink.append(title.firstChild);
+      title.append(titleLink);
       headerTitle.append(title);
       headerTitle.append(topbar);
       headerRow.append(headerTitle, headerActions);
@@ -1156,12 +1209,41 @@
 
       tabs.append(tabBtn);
       panels.append(panel);
-      sections.push({ title, tabBtn, panel });
+      sections.push({ title, key, tabBtn, panel });
     });
 
     // Replace main content with shell
     main.innerHTML = "";
     main.append(shell);
+
+    function matchingSection(hashValue) {
+      const normalized = slugify(decodeHashValue(hashValue));
+      if (!normalized) return null;
+      return sections.find((section) => section.key === normalized || slugify(section.title) === normalized) || null;
+    }
+
+    function activeSectionHash() {
+      const active = sections.find((section) => section.tabBtn.getAttribute("aria-selected") === "true");
+      return active ? active.key : "";
+    }
+
+    function languageSourceHash() {
+      const rawHash = window.location.hash.replace(/^#/, "");
+      if (!rawHash) return activeSectionHash();
+
+      const active = sections.find((section) => section.tabBtn.getAttribute("aria-selected") === "true");
+      const decodedHash = decodeHashValue(rawHash);
+      const target = document.getElementById(decodedHash) || matchingSection(decodedHash)?.panel || null;
+      const targetPanel = target?.closest(".tab-panel") || null;
+      if (!active || target === active.panel || targetPanel === active.panel) return rawHash;
+      return active.key;
+    }
+
+    function updateLanguageHref() {
+      const targetHash = translateHashValue(languageSourceHash());
+      const baseHref = isFrench ? "../index.html" : "fr/";
+      languageBtn.href = targetHash ? `${baseHref}#${encodeURIComponent(targetHash)}` : baseHref;
+    }
 
     function setActive(index, opts = { focus: true, highlightQuery: "" }) {
       const safeIndex = Math.max(0, Math.min(index, sections.length - 1));
@@ -1184,6 +1266,7 @@
         openMatchingPublicationGroups(activeSection.panel, query);
         highlightInElement(activeSection.panel, query);
       }
+      updateLanguageHref();
     }
 
     function focusTab(nextIndex) {
@@ -1206,6 +1289,9 @@
       let target = document.getElementById(id);
       if (!target && id === "current") {
         target = document.getElementById(isFrench ? "actuel" : "current");
+      }
+      if (!target) {
+        target = matchingSection(id)?.panel || null;
       }
       return target;
     }
@@ -1237,6 +1323,7 @@
       if (options.updateHistory !== false) {
         window.history.pushState(null, "", hash);
       }
+      updateLanguageHref();
       if (options.scroll !== false) {
         window.setTimeout(() => {
           target.scrollIntoView({ behavior: "smooth", block: "start" });

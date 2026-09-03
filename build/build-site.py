@@ -290,6 +290,18 @@ def footer_html(lang: str, source_path: Path) -> str:
     )
 
 
+def blog_language_switch_html(lang: str, html_path: Path, alternate_html_path: Path) -> str:
+    label = "Voir en anglais" if lang == "fr" else "Voir en français"
+    flag = "🇬🇧" if lang == "fr" else "🇫🇷"
+    nav_label = "Langue" if lang == "fr" else "Language"
+    return (
+        f'<nav class="blog-header-actions" aria-label="{html_attr(nav_label)}">'
+        f'<a class="topbar-btn blog-language-switch" href="{html_attr(relative_url(html_path, alternate_html_path))}" '
+        f'aria-label="{html_attr(label)}" title="{html_attr(label)}">{flag}</a>'
+        "</nav>"
+    )
+
+
 # ======================================================
 # Blog source model
 # ======================================================
@@ -603,6 +615,7 @@ def convert_blog_markdown(
     main_class: str,
     main_id: str,
     before_content: str,
+    header_actions: str,
     after_title: str,
     after_content: str,
     footer_source: Path,
@@ -626,6 +639,8 @@ def convert_blog_markdown(
     html = pypandoc.convert_text(markdown, to="html5", format="md", extra_args=extra_args)
     html = normalize_mobile_viewport(html)
     html = html.replace("</head>", f"  {head_html}\n</head>", 1)
+    if header_actions:
+        html = html.replace("</header>", f"{header_actions}\n</header>", 1)
     if after_title:
         html = html.replace("</header>", f"</header>\n{after_title}", 1)
     html = html.replace(
@@ -930,6 +945,7 @@ def build_blog_index(posts: list[BlogPost], lang: str) -> None:
         main_class="blog-index",
         main_id="blog-index",
         before_content="",
+        header_actions=blog_language_switch_html(lang, html_path, alternate_path),
         after_title="",
         after_content="",
         footer_source=latest_blog_source(posts),
@@ -996,6 +1012,7 @@ def build_blog_post(post: BlogPost, alternate_post: BlogPost) -> None:
         main_class="blog-page",
         main_id="blog-post",
         before_content="",
+        header_actions=blog_language_switch_html(post.lang, html_path, alternate_path),
         after_title=post_meta,
         after_content=issue_note_html(post),
         footer_source=post.source_path,
