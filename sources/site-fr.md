@@ -80,13 +80,50 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 
 ---
 
-## Logiciels
+## Projets
 
-### ChatPharo
+- [Pharo-LLM](#pharo-llm)
+  - [ChatPharo](https://github.com/pharo-llm/ChatPharo)
+  - [Pharo-Infer](https://github.com/pharo-llm/pharo-infer)
+  - [Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)
+  - [Autres projets Pharo-LLM](https://github.com/orgs/pharo-llm/repositories)
+- [LatexDo](#latexdo)
+- [INERIS-IA](#ineris-ia)
+
+### Pharo-LLM
+
+[Pharo-LLM](https://pharo-llm.github.io/) est un écosystème open source qui vise à intégrer les grands modèles de langage et les outils de développement assistés par IA dans Pharo. J'ai fondé et je maintiens l'organisation ainsi que ses projets.
+
+- Développe des outils LLM conçus pour l'environnement Pharo et les flux de programmation en direct.
+- Comprend des projets tels que [ChatPharo](https://github.com/pharo-llm/ChatPharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et [Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot).
+- Organisation GitHub : [Pharo-LLM](https://github.com/pharo-llm)
+- Site Web : [pharo-llm.github.io](https://pharo-llm.github.io/)
+
+#### ChatPharo
 - Interface conversationnelle en direct entre les développeurs Pharo et les grands modèles de langage.
 - Permet des discussions interactives avec les LLM directement depuis l'environnement Pharo.
 - Conception d'une architecture ouverte et extensible pour expérimenter plusieurs backends LLM.
 - Référentiel GitHub : [ChatPharo](https://github.com/pharo-llm/ChatPharo)
+
+### LatexDo
+
+En tant que chercheur, j'en avais assez de voir des outils de recherche essentiels cachés derrière des abonnements et des flux de travail fermés. J'ai créé [LatexDo](https://latexdo.org) parce que je crois que les chercheurs devraient pouvoir écrire, compiler, collaborer et s'approprier leur travail sans payer pour accéder aux bases.
+LatexDo est ma tentative de construire cela : un environnement LaTeX gratuit et open source façonné par les chercheurs et la communauté.
+
+#### Pourquoi LatexDo ?
+
+- Édition LaTeX rapide
+- Flux de travail local et hors ligne
+- Une IA qui comprend votre projet
+- Outils de révision et de réfutation
+- Vérifications des citations et des soumissions
+- Fichiers `.tex` réels, pas de verrouillage
+
+#### Conçu pour terminer des articles scientifiques.
+
+De la première ébauche à la soumission finale.
+
+[Commencez par LatexDo](https://latexdo.org)
 
 ### INERIS-IA
 - Plateforme d'IA développée chez INERIS pour la classification des documents et la gestion des connaissances.
@@ -123,26 +160,3 @@ J'ai supervisé à Srajal le projet ChatPharo, qui visait à intégrer des LLM d
 - GT GL : ChatPharo : Discussion en direct avec les LLM de Pharo, Lille, France
 - Séminaire Scientifique : LLM101-2, Lille, France
 - Séminaire Scientifique : LLM101, Lille, France
-
----
-
-## LatexDo
-
-En tant que chercheur, j'en avais assez de voir des outils de recherche essentiels cachés derrière des abonnements et des flux de travail fermés. J'ai créé [LatexDo](https://latexdo.org) 
-parce que je crois que les chercheurs devraient pouvoir écrire, compiler, collaborer et s'approprier leur travail sans payer pour accéder aux bases.
-LatexDo est ma tentative de construire cela : un environnement LaTeX gratuit et open source façonné par les chercheurs et la communauté.
-
-#### Pourquoi LatexDo ?
-
-- Édition LaTeX rapide
-- Flux de travail local et hors ligne
-- Une IA qui comprend votre projet
-- Outils de révision et de réfutation
-- Vérifications des citations et des soumissions
-- Fichiers `.tex` réels, pas de verrouillage
-
-#### Conçu pour terminer des articles scientifiques.
-
-De la première ébauche à la soumission finale.
-
-[Commencez par LatexDo](https://latexdo.org)
