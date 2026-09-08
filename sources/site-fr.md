@@ -86,18 +86,18 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
   - [ChatPharo](https://github.com/pharo-llm/ChatPharo)
   - [Pharo-Infer](https://github.com/pharo-llm/pharo-infer)
   - [Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)
-  - [Autres projets Pharo-LLM](https://github.com/orgs/pharo-llm/repositories)
+  - [Plus de projets Pharo-LLM](https://github.com/orgs/pharo-llm/repositories)
 - [LatexDo](#latexdo)
 - [INERIS-IA](#ineris-ia)
 
 ### Pharo-LLM
 
-[Pharo-LLM](https://pharo-llm.github.io/) est un écosystème open source qui vise à intégrer les grands modèles de langage et les outils de développement assistés par IA dans Pharo. J'ai fondé et je maintiens l'organisation ainsi que ses projets.
+[Pharo-LLM](https://pharo-llm.github.io/) est un écosystème open source permettant d'intégrer de grands modèles de langage et des outils de développement assistés par l'IA à Pharo. J'ai fondé et maintenu l'organisation et ses projets.
 
-- Développe des outils LLM conçus pour l'environnement Pharo et les flux de programmation en direct.
-- Comprend des projets tels que [ChatPharo](https://github.com/pharo-llm/ChatPharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et [Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot).
-- Organisation GitHub : [Pharo-LLM](https://github.com/pharo-llm)
-- Site Web : [pharo-llm.github.io](https://pharo-llm.github.io/)
+- Développe des outils LLM conçus pour l'environnement Pharo et les flux de travail de programmation en direct.
+- Inclut des projets tels que [ChatPharo](https://github.com/pharo-llm/ChatPharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et [Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot).
+- GitHub Organisation : [Pharo-LLM](https://github.com/pharo-llm)
+- Site Internet : [pharo-llm.github.io](https://pharo-llm.github.io/)
 
 #### ChatPharo
 - Interface conversationnelle en direct entre les développeurs Pharo et les grands modèles de langage.
@@ -107,7 +107,7 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 
 ### LatexDo
 
-En tant que chercheur, j'en avais assez de voir des outils de recherche essentiels cachés derrière des abonnements et des flux de travail fermés. J'ai créé [LatexDo](https://latexdo.org) parce que je crois que les chercheurs devraient pouvoir écrire, compiler, collaborer et s'approprier leur travail sans payer pour accéder aux bases.
+En tant que chercheur, j’en avais assez de voir des outils de recherche essentiels cachés derrière des abonnements et des workflows fermés. J'ai créé [LatexDo](https://latexdo.org) parce que je pense que les chercheurs devraient pouvoir écrire, compiler, collaborer et s'approprier leur travail sans payer pour accéder aux bases.
 LatexDo est ma tentative de construire cela : un environnement LaTeX gratuit et open source façonné par les chercheurs et la communauté.
 
 #### Pourquoi LatexDo ?
