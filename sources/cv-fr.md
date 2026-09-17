@@ -5,8 +5,8 @@ date: ""
 
 ```{=latex}
 \cvheader{Omar AbedelKader}{Chercheur doctoral en informatique\\
-Inria - EVREF / LaBRI - Progress\\
-l'Université de Lille\\
+Inria - EVREF / Progress - LaBRI \\
+Université de Lille / Université de Bordeaux\\
 Lille, France}{Dernière mise à jour : \today\\
 \href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
 \href{https://omarabedelkader.com}{omarabedelkader.com}\\
@@ -44,30 +44,39 @@ Lille, France}{Dernière mise à jour : \today\\
 
 ## Services
 
-### Actuel
-
-- Fondateur et responsable de l'organisation Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
-- Membre de l'organisation Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
-- Chef de projet et mainteneur de plusieurs projets (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) et bien d'autres [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
-- Responsable du site Web GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- Président de Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu), une association étudiante axée sur l'IA et les neurosciences.
-- Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
-- Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
-
-
 ### 2027 
-- *Réviseur fantôme à ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
+- Réviseur fantôme à ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
+- Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
+- Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
+- Responsable du site Web GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Chef de projet et mainteneur de plusieurs projets (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) et bien d'autres [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
+- Membre de l'organisation Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
+- Fondateur et responsable de l'organisation Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
 
 ### 2026
 - Membre du comité d'organisation, GDR-SciLog'26 [\icon{\faLink}](https://scilog2026.fr).
 - Membre du comité d'organisation, ESUG'26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html).
+- Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
+- Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
+- Président de Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu), une association étudiante axée sur l'IA et les neurosciences.
+- Responsable du site Web GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Chef de projet et mainteneur de plusieurs projets (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) et bien d'autres [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
+- Membre de l'organisation Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
+- Fondateur et responsable de l'organisation Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
 
 ### 2025
 - Membre du comité d'organisation ESUG’25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)
 - Sous-réviseur chez BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io).
+- Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
+- Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
+- Chef de projet et mainteneur de plusieurs projets (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) et bien d'autres [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
+- Membre de l'organisation Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
+- Fondateur et responsable de l'organisation Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
 
 ### 2024
 - Membre du comité d'organisation ESUG'24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
+- Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
+- Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
 
 ### 2023
 - Secouriste volontaire à la Croix-Rouge française

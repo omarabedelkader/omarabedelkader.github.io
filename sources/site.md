@@ -44,30 +44,40 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ## Services
 
-### Current
-
-- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
-- Member in the organization [Pharo-AI](https://github.com/pharo-ai).
-- Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
-- Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- President of [Synapse-NeuroTech-Lille](https://theneurotech.eu), a student association focused on AI and neuroscience.
+### 2027 
+- Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
 - Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
+- Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
+- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- Member in the organization [Pharo-AI](https://github.com/pharo-ai).
 
-
-### 2027 
-- *Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 
 ### 2026
 - Member of the organizing committee, [GDR-SciLog’26](https://scilog2026.fr).
 - Member of the organizing committee, [ESUG’26](https://esug.org/2026-Conference/announcement.html).
+- Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
+- President of [Synapse-NeuroTech-Lille](https://theneurotech.eu), a student association focused on AI and neuroscience.
+- Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
+- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- Member in the organization [Pharo-AI](https://github.com/pharo-ai).
 
 ### 2025
 - Member of the organizing committee [ESUG’25](https://esug.org/2025-Conference/conf2025.html)
 - Sub reviewer at [BENEVOL'25](https://benevol2025.github.io).
+- Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
+- Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
+- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- Member in the organization [Pharo-AI](https://github.com/pharo-ai).
 
 ### 2024
 - Member of the organizing committee [ESUG’24](https://esug.org/2024-Conference/call2024.html).
+- Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
 
 ---
 
@@ -80,59 +90,6 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ---
 
-## Projects
-
-- [Pharo-LLM](#pharo-llm)
-  - [ChatPharo](https://github.com/pharo-llm/ChatPharo)
-  - [Pharo-Infer](https://github.com/pharo-llm/pharo-infer)
-  - [Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot)
-  - [More Pharo-LLM projects](https://github.com/orgs/pharo-llm/repositories)
-- [LatexDo](#latexdo)
-- [INERIS-IA](#ineris-ia)
-
-### Pharo-LLM
-
-[Pharo-LLM](https://pharo-llm.github.io/) is an open-source ecosystem for bringing large language models and AI-assisted development tools to Pharo. I founded and maintain the organization and its projects.
-
-- Develops LLM tooling designed for the Pharo environment and live programming workflows.
-- Includes projects such as [ChatPharo](https://github.com/pharo-llm/ChatPharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer), and [Pharo-Copilot](https://github.com/pharo-llm/pharo-copilot).
-- GitHub Organization: [Pharo-LLM](https://github.com/pharo-llm)
-- Website: [pharo-llm.github.io](https://pharo-llm.github.io/)
-
-#### ChatPharo
-- Live conversational interface between Pharo developers and large language models.
-- Enables interactive discussions with LLMs directly from the Pharo environment.
-- Designed an open and extensible architecture to experiment with multiple LLM backends.
-- GitHub Repository: [ChatPharo](https://github.com/pharo-llm/ChatPharo)
-
-### LatexDo
-
-As a researcher, I got tired of seeing essential research tools hidden behind subscriptions and closed workflows. I created [LatexDo](https://latexdo.org) because I believe researchers should be able to write, compile, collaborate, and own their work without paying for access to the basics.
-LatexDo is my attempt to build that: a free, open-source LaTeX environment shaped by researchers and the community.
-
-#### Why LatexDo?
-
-- Fast LaTeX editing
-- Local & offline workflow
-- AI that understands your project
-- Review & rebuttal tools
-- Citation and submission checks
-- Real `.tex` files, no lock-in
-
-#### Built for finishing scientific papers.
-
-From first draft to final submission.
-
-[Start with LatexDo](https://latexdo.org)
-
-### INERIS-IA
-- AI platform developed at INERIS for document classification and knowledge management.
-- Built a Flask-based web interface integrating multiple ML and NLP models.
-- Trained document classification models aligned with COP 2027 objectives and INERIS strategic themes.
-- Implemented additional features including document similarity, keyword extraction, and corpus quality improvement.
-- GitHub Repository: [INERIS-IA](https://github.com/omarabedelkader/INERIS-IA)
-
----
 
 ## Students
 

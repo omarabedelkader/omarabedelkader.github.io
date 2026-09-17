@@ -1,6 +1,6 @@
 - **2027** — Service: Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
-- **2026** — Journal article: *Evaluating Package-Level Scoping Strategies for Repository-Level Code Completion in Pharo* published in *Journal of Computer Languages (COLA)*. [DOI](https://doi.org/10.1016/j.cola.2026.101412)
-- **2026** — Conference paper: *Alternative UX Extensions and Their Trade-offs for Code Completion in Pharo* accepted at *International Workshop on Smalltalk Technologies (IWST)*. [DOI](https://doi.org/10.48550/arXiv.2607.24253)
-- **2026** — Conference paper: *Teaching LLMs a Low-Resource Language: Enhancing Code Completion in Pharo* accepted at *International Conference on Software Maintenance and Evolution (ICSME)*. [DOI](https://doi.org/10.48550/arXiv.2607.04939)
-- **2026** — Public talk: ESUG 2026: ChatPharo: an AI Assistant inside Pharo
-- **2026** — Public talk: ESUG 2026: Pharo-LLM: Building a sovereign LLM ecosystem in Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf)
+- **2027** — Service: Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://
+- **2027** — Service: Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
+- **2027** — Service: Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- **2027** — Service: Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
+- **2027** — Service: Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
