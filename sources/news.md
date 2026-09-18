@@ -1,6 +1,6 @@
 - **2027** — Service: Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
-- **2027** — Service: Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://
+- **2027** — Service: Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') [Ministère de la Transition Écologique](https://www
 - **2027** — Service: Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
 - **2027** — Service: Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
 - **2027** — Service: Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
-- **2027** — Service: Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- **2027** — Service: Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).

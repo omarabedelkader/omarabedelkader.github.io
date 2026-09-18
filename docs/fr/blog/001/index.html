@@ -56,26 +56,40 @@ AbedelKader</title>
 <nav class="blog-header-actions" aria-label="Langue"><a class="topbar-btn blog-language-switch" href="../../../blog/001/" aria-label="Voir en anglais" title="Voir en anglais">🇬🇧</a></nav>
 </header>
 <div class="blog-post-meta"><time datetime="2026-08-20">20 août 2026</time><span class="blog-tags"><span class="blog-tag">LLM</span><span class="blog-tag">Pharo</span></span></div>
-<p>QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS <strong><a
-href="https://github.com/pharo-llm">Pharo-LLM</a></strong>Au moment où
-cet article a été rédigé, <strong><a
+<p>Lorsque j’ai commencé mon doctorat en 2024, je venais d’un parcours
+professionnel où j’appliquais principalement des LLM dans des outils
+logiciels et construisais des outils autour d’eux. Au début de mon
+doctorat, mon superviseur m’a dit que je pouvais fréquenter <a
+href="https://esug.org/2024-Conference/conf2024.html">ESUG’24</a>. Là,
+j’ai vu le <a
+href="https://archive.esug.org/ESUG2024/day4/07-gt4llm.pdf">Présentation
+Feenk</a> sur l’IA. En parallèle, j’ai commencé à regarder ce qui se
+passait autour des LLM dans l’écosystème Pharo, et j’ai remarqué qu’il
+n’y avait pas beaucoup de travail dans ce sens. <a
+href="https://badetitou.fr">Benoit</a> était l’une des rares personnes
+que je connaissais à expérimenter déjà les LLM dans Pharo. Je suis
+devenu vraiment intéressé à comprendre comment nous pourrions appliquer
+les LLM dans Pharo. C’est pourquoi j’ai lancé <strong><a
+href="https://github.com/pharo-llm">Pharo-LLM</a></strong>. Au moment de
+la rédaction, le <strong><a
 href="https://github.com/pharo-llm">Pharo-LLM</a></strong>
 l’organisation a <strong>21 abonnés</strong>, et je vois de plus en plus
-de gens s’intéresser aux outils que nous avons développés. Mais
-Pharo-LLM a également beaucoup changé depuis que je l’ai commencé.</p>
+de personnes s’intéresser aux outils que nous avons développés. Mais
+Pharo-LLM a également beaucoup changé depuis que je l’ai lancé.</p>
 <h2 id="quest-ce-que-pharo-llm">Qu’est-ce que Pharo-LLM ?</h2>
-<p>Au début, mon objectif était assez simple : je voulais avoir les
-outils nécessaires pour intégrer les LLM dans Pharo. Mais je ne voulais
-pas <strong><a
-href="https://github.com/pharo-llm">Pharo-LLM</a></strong> d’être juste
-un autre wrapper autour d’une API externe. L’idée est progressivement
-devenue de construire un ensemble d’outils et de bibliothèques qui nous
-permettent de créer, d’exécuter et d’interagir avec les LLM directement
-à l’intérieur de Pharo. Plus important encore, je veux que ces outils se
-sentent <strong>natif de Pharo</strong>. Cela signifie intégrer les LLM
-avec les éléments qui rendent Pharo intéressant : les objets, les
-inspecteurs, les débogueurs et nos flux de travail de développement.</p>
-<p>Aujourd’hui, l’écosystème Pharo-LLM comprend plusieurs projets :</p>
+<p>Au début, mon objectif était assez simple : je souhaitais disposer
+des outils nécessaires pour intégrer des LLM dans Pharo. Mais je ne
+voulais pas <strong><a
+href="https://github.com/pharo-llm">Pharo-LLM</a></strong> être juste un
+autre wrapper autour d’une API externe. L’idée s’est progressivement
+transformée en la création d’un ensemble d’outils et de bibliothèques
+qui nous permettent de créer, d’exécuter et d’interagir avec des LLM
+directement dans Pharo. Plus important encore, je veux que ces outils
+donnent l’impression <strong>natif de Pharo</strong>. Cela signifie
+intégrer les LLM avec les éléments qui rendent Pharo intéressant : les
+objets, les inspecteurs, les débogueurs et nos workflows de
+développement.</p>
+<p>Aujourd’hui, l’écosystème Pharo-LLM comprend plusieurs projets :</p>
 <ul>
 <li><strong><a
 href="https://github.com/pharo-llm/chatpharo">ChatPharo</a></strong> —
@@ -91,24 +105,24 @@ qui sont encore en cours de développement.</li>
 </ul>
 <p>L’objectif n’est pas simplement de connecter Pharo aux LLM.
 L’objectif est d’explorer ce qu’un <strong>Écosystème LLM conçu
-spécifiquement pour Pharo</strong> pourrait ressembler.</p>
+spécifiquement pour Pharo</strong> Cela peut prendre la forme de</p>
 <h2 id="de-lutilisation-des-llm-à-leur-contrôle">De l’utilisation des
 LLM à leur contrôle</h2>
 <p>En développant Pharo-LLM, j’ai commencé à penser à un autre problème.
 Aujourd’hui, lorsque nous utilisons un LLM, nous dépendons souvent d’un
-fournisseur externe. Nous dépendons (de leur API ; de leurs prix ; de
-leurs limites de taux ; de leur infrastructure ; et d’une connexion
-réseau) Lorsque nous travaillons avec du code source ou des projets
+fournisseur externe. Nous dépendons de leurs API, de leurs prix, de
+leurs limites tarifaires, de leur infrastructure et d’une connexion
+réseau. Lorsque nous travaillons avec du code source ou des projets
 privés, nous devons également penser à la confidentialité.</p>
-<p>Donc, ma question initiale est <strong>Comment pouvons-nous appliquer
-les LLM dans Pharo ?</strong> et est lentement devenu une autre
-question : <strong>Comment pouvons-nous construire un écosystème LLM
-souverain dans Pharo ?</strong>. Pour moi, il y a trois parties
-importantes à cela, i. Avoir les outils à l’intérieur de Pharo pour
-créer, exécuter et interagir avec les LLM, ii. Avoir la capacité de
-former et d’affiner nos propres modèles, iii. Avoir la capacité de
-déployer et de maintenir nos propres modèles. C’est la direction que je
-veux maintenant explorer avec Pharo-LLM.</p>
+<p>Donc ma première question, <strong>Comment pouvons-nous appliquer les
+LLM dans Pharo ?</strong>, est lentement devenu une autre question :
+<strong>Comment pouvons-nous construire un écosystème LLM souverain dans
+Pharo ?</strong>. Pour moi, il y a trois parties importantes à cela, i.
+Avoir les outils à l’intérieur de Pharo pour créer, exécuter et
+interagir avec les LLM, ii. Avoir la capacité de former et d’affiner nos
+propres modèles, iii. Avoir la capacité de déployer et de maintenir nos
+propres modèles. C’est la direction que je veux maintenant explorer avec
+Pharo-LLM.</p>
 <h2 id="modèles-de-formation-pour-pharo">Modèles de formation pour
 Pharo</h2>
 <p>Un exemple concret est <strong><a
@@ -116,9 +130,9 @@ href="https://github.com/pharo-llm/pharo-copilot">Pharo-Copilot</a></strong>.
 Pharo-Copilot est un moteur de complétion de code qui utilise des LLM
 pour prédire les prochains jetons de code Pharo. Au lieu de remplir un
 seul jeton ou un seul mot, l’idée est de générer <strong>complétions de
-code multi-jetons</strong>. Mais si nous voulons un modèle vraiment
-utile pour Pharo, nous en avons besoin pour comprendre Pharo. Nous avons
-donc expérimenté avec les LLM de code <a
+code multi-token</strong>. Mais si nous voulons un modèle vraiment utile
+pour Pharo, nous en avons besoin pour comprendre Pharo. Nous avons donc
+expérimenté avec les LLM de code <a
 href="https://huggingface.co/collections/pharo-llm/pharo-copilot-qwen25-coder">poids
 ouvert</a>. Vous pouvez trouver l’article décrivant ce travail et nos
 résultats <a href="https://arxiv.org/pdf/2607.04939">ici</a>.</p>
@@ -141,20 +155,10 @@ cadre de l’écosystème Pharo, en utilisant des composants open-source
 tels que <a href="https://github.com/ggml-org/llama.cpp">llama.cpp</a>
 pour l’exécution de modèles de bas niveau.</p>
 <p>QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS</p>
-<p>Ce dernier point est particulièrement important pour moi. Pharo est
-un environnement où nous aimons l’idée que tout est moulable. Si notre
-infrastructure d’IA vit complètement en dehors de Pharo, derrière une
-autre application ou un autre service, alors nous perdons une partie de
-cette idée.</p>
-<p>Bien sûr, avoir notre propre moteur d’inférence a aussi un coût. Cela
-signifie plus de travail de maintenance, d’optimisation des
-performances, de gestion du matériel et de gestion des modèles. Mais en
-retour, cela nous donne une plus grande indépendance, une meilleure
-confidentialité et la possibilité d’une intégration beaucoup plus
-profonde avec Pharo.</p>
-<h2 id="et-les-équipes">Et les équipes ?</h2>
 <p>QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS</p>
-<h2 id="la-vision-pharo-llm">La vision Pharo-LLM</h2>
+<h2 id="quen-est-il-des-équipes">Qu’en est-il des équipes ?</h2>
+<p>QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS</p>
+<h2 id="la-vision-pharo-llm">LA vision Pharo-LLM</h2>
 <p>QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS</p>
 <blockquote>
 <p>Un modèle plus petit spécialisé pour Pharo peut fonctionner beaucoup
@@ -167,7 +171,7 @@ moi</p>
 <p>Pharo-LLM n’est pas seulement un projet technique. C’est un
 investissement stratégique dans l’indépendance.</p>
 </blockquote>
-<p>Les contributions sont les bienvenues !</p>
+<p>Les contributions sont les bienvenues !</p>
 <aside class="blog-issue-note"><p>Si vous pensez qu'il y a un problème avec ce billet, veuillez <a href="https://github.com/omarabedelkader/omarabedelkader.github.io/issues/new?title=Probl%C3%A8me+avec+le+billet+%3A+Comment+appliquer+des+LLM+dans+Pharo%C2%A0%3F&amp;body=J%27ai+trouv%C3%A9+un+probl%C3%A8me+sur+ce+billet+%3A%0A%0Ahttps%3A%2F%2Fomarabedelkader.github.io%2Ffr%2Fblog%2F001%2F%0A%0AProbl%C3%A8me+%3A%0A">ouvrir une issue</a>.</p></aside>
 </main><footer class='site-footer'>Dernière mise à jour: September 2026<br>Copyright © 2024 Omar AbedelKader</footer></body>
 </html>

@@ -46,11 +46,11 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ### 2027 
 - Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
-- Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') [Ministère de la Transition Écologique](https://www.ecologie.gouv.fr).
 - Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
 - Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
 - Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
-- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
 - Member in the organization [Pharo-AI](https://github.com/pharo-ai).
 
 
@@ -62,7 +62,7 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 - President of [Synapse-NeuroTech-Lille](https://theneurotech.eu), a student association focused on AI and neuroscience.
 - Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
 - Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
-- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
 - Member in the organization [Pharo-AI](https://github.com/pharo-ai).
 
 ### 2025
@@ -71,7 +71,7 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 - Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
 - Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
 - Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
-- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
+- Founder of the organization [Pharo-LLM](https://github.com/pharo-llm).
 - Member in the organization [Pharo-AI](https://github.com/pharo-ai).
 
 ### 2024
