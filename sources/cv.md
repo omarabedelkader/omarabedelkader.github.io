@@ -145,6 +145,24 @@ I supervised Srajal the ChatPharo project, which aimed to integrate LLMs into th
 
 ---
 
+## Professional Experience
+
+- PhD Student - Oct. 2024 - Oct. 2027 - INRIA Lille / LaBRI Bordeaux
+- Invited Researcher - Sep.2026 - Dec.2026 - Polytechnique Montréal - Montréal, Canada
+- AI Engineer -  Sept. 2023 - Sept. 2024 - Institut national de l'environnement industriel et des risques (INERIS) - Verneuil-en-Halatte, France 
+- Intern - June. 2023 - Aug. 2023 - Laboratoire d'Informatique de Paris Nord (LIPN) - Villetaneuse, France
+
+
+---
+
+## Education 
+
+- Ph.D.in Computer Science, University of Lille
+- M.Sc. in Natural Language Processing, University of Lorraine
+- B.Sc. in Data Science, Lebanese University
+
+---
+
 ## Hobbies
 
 - **Water Activities:** Swimming · Diving
@@ -153,6 +171,7 @@ I supervised Srajal the ChatPharo project, which aimed to integrate LLMs into th
 - **Precision Sports:** Boxing · Bowling · Golf
 
 ---
+
 
 ## Languages
 
