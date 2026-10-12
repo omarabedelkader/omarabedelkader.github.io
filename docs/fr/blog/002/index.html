@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="keywords" content="Omar AbedelKader,Omar Abdelkader,Omar
+Abedelkader,AI engineer,machine learning,software
+engineering,Pharo,blog" />
+  <meta name="description" content="Que signifie l'indépendance pour Pharo ?" />
+  <title>Qui dirige votre modèle ? Indépendance et rôle de pharo-infer |
+Omar AbedelKader</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../../style.css" />
+  <link rel="canonical" href="https://www.omarabedelkader.com/fr/blog/002/" />
+  <link rel="icon" href="../../../favicon.ico" />
+  <link rel="alternate" hreflang="en" href="https://www.omarabedelkader.com/blog/002/" />
+  <link rel="alternate" hreflang="fr" href="https://www.omarabedelkader.com/fr/blog/002/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.omarabedelkader.com/blog/002/" />
+  <link rel="alternate" type="application/rss+xml" title="Omar AbedelKader — Blog" href="https://www.omarabedelkader.com/fr/blog/feed.xml" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Qui dirige votre modèle ? Indépendance et rôle de pharo-infer" />
+  <meta property="og:description" content="Que signifie l&#x27;indépendance pour Pharo ?" />
+  <meta property="og:url" content="https://www.omarabedelkader.com/fr/blog/002/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Qui dirige votre modèle ? Indépendance et rôle de pharo-infer" />
+  <meta name="twitter:description" content="Que signifie l&#x27;indépendance pour Pharo ?" />
+  <meta property="article:published_time" content="2026-10-12" />
+  <meta property="article:tag" content="LLM" />
+  <meta property="article:tag" content="Pharo" />
+  <meta property="article:tag" content="Pharo-Infer" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Qui dirige votre modèle ? Indépendance et rôle de pharo-infer","description":"Que signifie l'indépendance pour Pharo ?","datePublished":"2026-10-12","dateModified":"2026-10-12","author":{"@type":"Person","name":"Omar AbedelKader","url":"https://www.omarabedelkader.com/"},"mainEntityOfPage":"https://www.omarabedelkader.com/fr/blog/002/","inLanguage":"fr","keywords":["LLM","Pharo","Pharo-Infer"]}</script>
+</head>
+<body><main class='cv blog-page' id='blog-post'>
+<p class="blog-back"><a href="../">← Tous les billets</a></p>
+<header id="title-block-header">
+<h1 class="title">Qui dirige votre modèle ? Indépendance et rôle de
+pharo-infer</h1>
+<nav class="blog-header-actions" aria-label="Langue"><a class="topbar-btn blog-language-switch" href="../../../blog/002/" aria-label="Voir en anglais" title="Voir en anglais">🇬🇧</a></nav>
+</header>
+<div class="blog-post-meta"><time datetime="2026-10-12">12 octobre 2026</time><span class="blog-tags"><span class="blog-tag">LLM</span><span class="blog-tag">Pharo</span><span class="blog-tag">Pharo-Infer</span></span></div>
+<p>Dans mon <a href="../001/">article précédent</a>, j’ai écrit que
+Pharo-LLM est, pour moi, un investissement stratégique dans
+l’indépendance. J’ai mentionné <strong><a
+href="https://github.com/pharo-llm/pharo-infer">pharo-infer</a></strong>
+dans un paragraphe et est passé à autre chose. Je veux y revenir, non
+pas pour expliquer comment l’installer, mais pour expliquer pourquoi je
+pense que c’est important. Parce que derrière ce petit projet il y a une
+question que je trouve plus importante que n’importe quel benchmark :
+<strong>lorsque vous utilisez un LLM, qui l’exécute
+réellement ?</strong></p>
+<h2
+id="un-modèle-nest-pas-un-outil-tant-que-quelque-chose-ne-lexécute-pas">Un
+modèle n’est pas un outil tant que quelque chose ne l’exécute pas</h2>
+<p>Nous parlons souvent des modèles comme s’ils étaient toute
+l’histoire : lequel est le meilleur, lequel est le plus grand, lequel
+écrit le meilleur code. Mais un modèle n’est qu’un fichier plein de
+chiffres. Seule, elle ne fait rien. Pour obtenir une réponse, quelque
+chose doit charger ce fichier, transformer votre texte en jetons,
+calculer le jeton suivant encore et encore, et transformer le résultat
+en texte. Ce « quelque chose » s’appelle un moteur d’inférence.</p>
+<p>Le moteur d’inférence est la partie dont personne ne parle, et c’est
+exactement la partie qui décide de votre liberté. Celui qui exécute le
+moteur décide quand le modèle est disponible, à quelle vitesse il
+répond, combien vous pouvez l’utiliser, ce qu’il en coûte et ce qu’il
+advient du texte que vous envoyez. Vous pouvez avoir le meilleur modèle
+ouvert au monde : si vous ne pouvez l’atteindre que par le moteur de
+quelqu’un d’autre, vous êtes toujours un invité.</p>
+<h2 id="trois-façons-de-dépendre-de-quelquun">Trois façons de dépendre
+de quelqu’un</h2>
+<p>Je vois trois situations, et chacune est un niveau de dépendance
+différent.</p>
+<p><strong>La première est celle est du nuage de mots. </strong> Vous
+envoyez votre invite à une entreprise, et la réponse revient. C’est le
+moyen le plus simple, et souvent le plus puissant. Mais vous dépendez de
+tout : de leurs prix, de leurs limites tarifaires, de leurs conditions
+d’utilisation, de leur décision de conserver ou de retirer un modèle et
+d’une connexion réseau. Et votre code source quitte votre machine chaque
+fois que vous posez une question.</p>
+<p><strong>Le second est le serveur local.</strong> Vous exécutez un
+outil tel que Ollama, LM Studio ou vLLM sur votre propre machine, et
+votre environnement lui parle. C’est déjà un grand pas en avant : les
+données restent avec vous, et personne ne peut vous couper l’accès. Mais
+du point de vue de Pharo, le modèle est encore un étranger. Il vit dans
+un autre processus, derrière un port, géré par un outil que nous ne
+contrôlons pas et que nous ne pouvons pas inspecter à partir de l’image.
+Pharo n’est qu’un client qui frappe à une porte.</p>
+<p><strong>Le troisième est le modèle à l’intérieur de
+l’environnement.</strong> C’est ce que fait pharo-infer. Le fichier
+modèle est chargé directement par l’image Pharo, et le calcul est piloté
+de l’intérieur, en utilisant <a
+href="https://github.com/ggml-org/llama.cpp">llama.cpp</a> pour le
+travail de bas niveau. Il n’y a pas de serveur, pas de pont, pas de
+deuxième programme à démarrer. Le modèle n’est pas un service que Pharo
+appelle. C’est quelque chose que Pharo exécute.</p>
+<h2 id="pourquoi-la-troisième-voie-est-importante-pour-moi">Pourquoi la
+troisième voie est importante pour moi</h2>
+<p>Quelqu’un pourrait dire : la deuxième façon suffit. Les données sont
+déjà privées, le modèle est déjà à vous. Pourquoi aller plus loin ?</p>
+<p>Ma réponse vient de ce qu’est Pharo. Dans Pharo, nous aimons l’idée
+que tout peut être inspecté, compris et modifié. Le compilateur est là.
+Le débogueur est là. Les outils que nous utilisons pour construire le
+système font partie du système. Ce n’est pas un détail ; c’est la raison
+pour laquelle beaucoup d’entre nous sont ici.</p>
+<p>Maintenant, regardez comment l’IA arrive généralement dans un
+environnement de développement. Il arrive sous la forme d’une boîte
+noire au bout d’un fil. On peut lui envoyer du texte et lire ce qui
+revient, et c’est tout. La nouvelle composante la plus importante de nos
+outils est la seule que nous ne pouvons pas ouvrir.</p>
+<p>Avec le modèle en cours d’exécution à l’intérieur de l’image, cela
+change. Le modèle qui est chargé, le contexte avec lequel il fonctionne,
+la génération qui est en cours : tout cela devient des objets. Nous
+pouvons les regarder, les connecter à l’inspecteur ou au débogueur, et
+construire des outils dessus de la même manière que nous construisons
+tout le reste. Je ne sais pas encore tout ce que nous en ferons. Mais je
+sais qu’on ne peut même pas essayer tant que le mannequin vit à
+l’extérieur.</p>
+<p>Donc, pour moi, l’indépendance n’est pas seulement une question de
+vie privée ou de prix. Il s’agit de <strong>garder l’IA à l’intérieur de
+la partie du monde que nous sommes en mesure de comprendre et de
+modifier</strong>.</p>
+<h2 id="ce-que-lindépendance-ne-signifie-pas">Ce que l’indépendance ne
+signifie pas</h2>
+<p>Je veux être prudent ici, car « indépendance » est un mot facile à
+utiliser à mauvais escient.</p>
+<p>Il ne s’agit pas de refuser les modèles cloud. Ils sont souvent
+meilleurs, et pour de nombreuses tâches, les utiliser est le bon choix.
+Pharo-LLM les prend en charge et continuera de le faire.</p>
+<p>Cela ne signifie pas que tout doit être réécrit dans Pharo.
+pharo-infer ne réimplémente pas les mathématiques du modèle. llama.cpp
+fait ce travail, il le fait très bien, et il est open source. Dépendre
+d’un projet ouvert que l’on peut lire, construire et remplacer n’est pas
+la même chose que dépendre d’un service que l’on ne peut que louer.</p>
+<p>Et cela ne signifie pas que chaque développeur doit exécuter un
+modèle sur un ordinateur portable. Comme je l’ai écrit dans le post
+précédent, une équipe peut partager un modèle sur son propre
+serveur.</p>
+<p>L’indépendance signifie que <strong>le choix reste le nôtre</strong>.
+Le jour où un fournisseur modifie ses prix, supprime un modèle ou
+modifie ses conditions, nous ne sommes pas coincés. Le jour où nous
+travaillons sur un code qui ne doit pas sortir du bâtiment, nous avons
+une réponse. Le jour où il n’y a pas de réseau, la démo est toujours en
+cours d’exécution.</p>
+<h2 id="le-prix-de-la-liberté.">Le prix de la liberté.</h2>
+<p>Cette indépendance n’est pas libre, et je ne veux pas prétendre
+qu’elle l’est.</p>
+<p>Exécuter un modèle vous-même signifie que la mémoire et le calcul
+sont à vous de fournir. Un modèle local est généralement plus petit que
+les grands modèles commerciaux, et pour les tâches générales, il est
+plus faible. Quelqu’un doit maintenir le moteur à mesure que les
+bibliothèques sous-jacentes évoluent. Et pour une petite communauté
+comme la nôtre, chaque heure consacrée aux infrastructures est une heure
+passée nulle part ailleurs.</p>
+<p>QUERY LENGTH LIMIT EXCEEDED. MAX ALLOWED QUERY : 500 CHARS</p>
+<h2 id="un-petit-projet-pour-une-grande-question">Un petit projet pour
+une grande question</h2>
+<p>pharo-infer n’est pas un grand projet. Il ne concurrencera pas
+l’infrastructure des grands fournisseurs, et ce n’est pas son objectif.
+Son objectif est de s’assurer que dans Pharo, la réponse à « qui gère
+votre modèle ? » peut être : <strong>faire</strong>.</p>
+<p>Je pense que chaque communauté qui se soucie de ses outils devra
+répondre à cette question à un moment donné. Je préfère que nous y
+répondions tôt, alors que c’est encore un choix et pas encore une
+urgence. Le projet est ici : <strong><a
+href="https://github.com/pharo-llm/pharo-infer">pharo-infer</a></strong>.
+Si cette vision vous parle, les contributions et les discussions sont
+les bienvenues !</p>
+
+</main><footer class='site-footer'>Si vous pensez qu'il y a un problème avec ce billet, veuillez <a href="https://github.com/omarabedelkader/omarabedelkader.github.io/issues/new?title=Probl%C3%A8me+avec+le+billet+%3A+Qui+dirige+votre+mod%C3%A8le%C2%A0%3F+Ind%C3%A9pendance+et+r%C3%B4le+de+pharo-infer&amp;body=J%27ai+trouv%C3%A9+un+probl%C3%A8me+sur+ce+billet+%3A%0A%0Ahttps%3A%2F%2Fwww.omarabedelkader.com%2Ffr%2Fblog%2F002%2F%0A%0AProbl%C3%A8me+%3A%0A">ouvrir une issue</a>.<br>Dernière mise à jour: October 2026<br>Copyright © 2024 Omar AbedelKader</footer></body>
+</html>

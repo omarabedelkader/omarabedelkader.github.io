@@ -80,8 +80,9 @@ NEWS_TOKEN = "{{NEWS_FROM_SOURCES}}"
 SECTION_PAGE_EXCLUDED = {"blog", "index", "404", "conf"}
 
 SHORT_CV_DIR = ROOT / "cv-short"
-# The short CV is written for LaTeX; these are the web equivalents of its icon links.
-SHORT_CV_WEB_ICONS = {
+# `[\\icon{\\faLink}](url)` is the CV (LaTeX) way to write a link and renders as nothing
+# in HTML. These are the web equivalents, so such a link is visible wherever it is written.
+WEB_ICONS = {
     "\\faLink": "🔗",
     "\\faGithub": "GitHub",
     "\\faFilePdf": "📄",
@@ -104,15 +105,15 @@ if ASSETS_SRC.exists():
 shutil.copyfile(FAVICON_SRC, FAVICON_DST)
 
 CV_SRC_DIR = ROOT / "cv-full"
-CV_DST_DIR = DOCS / "cv"
+CV_DST_DIR = DOCS / "cv-full"
 CV_DST_DIR.mkdir(parents=True, exist_ok=True)
 
 for cv_pdf in CV_SRC_DIR.glob("*.pdf"):
     shutil.copyfile(cv_pdf, CV_DST_DIR / cv_pdf.name)
 
 for short_cv_pdf in SHORT_CV_DIR.glob("*.pdf"):
-    (DOCS / "short-cv").mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(short_cv_pdf, DOCS / "short-cv" / short_cv_pdf.name)
+    (DOCS / "cv-short").mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(short_cv_pdf, DOCS / "cv-short" / short_cv_pdf.name)
 
 
 # ======================================================
@@ -619,6 +620,7 @@ def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> list[P
     )
     rendered_md = inject_news(rendered_md, config["lang"])
     rendered_md = inject_blog_summary(rendered_md, config["lang"], posts_by_lang)
+    rendered_md = web_icon_links(rendered_md)
     rendered_md = mark_current_items(rendered_md)
 
     preamble, sections = split_site_sections(rendered_md)
@@ -667,13 +669,18 @@ def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> list[P
 # ======================================================
 
 def short_cv_html_path(lang: str) -> Path:
-    return DOCS / "fr" / "short-cv" / "index.html" if lang == "fr" else DOCS / "short-cv" / "index.html"
+    return DOCS / "fr" / "cv-short" / "index.html" if lang == "fr" else DOCS / "cv-short" / "index.html"
+
+
+def web_icon_links(markdown: str) -> str:
+    for icon, replacement in WEB_ICONS.items():
+        markdown = markdown.replace(f"\\icon{{{icon}}}", replacement)
+    return markdown
 
 
 def short_cv_web_markdown(markdown: str) -> str:
     _metadata, body = split_frontmatter(markdown)
-    for icon, replacement in SHORT_CV_WEB_ICONS.items():
-        body = body.replace(f"\\icon{{{icon}}}", replacement)
+    body = web_icon_links(body)
     # Icon-only links without a target (slides or video not published yet) would render as dead links.
     return re.sub(r"\s*\[[^\]]*\]\(\s*\)", "", body)
 
@@ -693,7 +700,7 @@ def build_short_cv_pages() -> list[Path]:
             if lang == "fr"
             else "Short CV of Omar AbedelKader: the essentials on one page."
         )
-        pdf_href = relative_url(html_path, DOCS / "short-cv" / f"short-cv-{lang}.pdf")
+        pdf_href = relative_url(html_path, DOCS / "cv-short" / f"short-cv-{lang}.pdf")
         home_href = relative_url(html_path, DOCS / ("fr/index.html" if lang == "fr" else "index.html"))
         full_cv_href = relative_url(html_path, CV_DST_DIR / f"cv-{lang}.pdf")
         links = (

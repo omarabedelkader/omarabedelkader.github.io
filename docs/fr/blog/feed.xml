@@ -5,7 +5,14 @@
   <link>https://www.omarabedelkader.com/fr/blog/</link>
   <description>Billets sur l&#x27;IA, le génie logiciel, Pharo et la pratique de la recherche.</description>
   <language>fr</language>
-  <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 12 Oct 2026 00:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Qui dirige votre modèle ? Indépendance et rôle de pharo-infer</title>
+    <link>https://www.omarabedelkader.com/fr/blog/002/</link>
+    <guid isPermaLink="true">https://www.omarabedelkader.com/fr/blog/002/</guid>
+    <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+    <description>Que signifie l&#x27;indépendance pour Pharo ?</description>
+  </item>
   <item>
     <title>Comment appliquer des LLM dans Pharo ?</title>
     <link>https://www.omarabedelkader.com/fr/blog/001/</link>

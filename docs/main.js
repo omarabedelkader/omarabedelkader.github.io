@@ -1044,8 +1044,8 @@
 
     const assetPrefix = isFrench ? "../assets/" : "assets/";
     const quickLinks = [
-      { href: isFrench ? "../cv/cv-fr.pdf" : "cv/cv-en.pdf", label: isFrench ? "CV complet" : "Full CV", icon: "📄" },
-      { href: "short-cv/", label: isFrench ? "CV court" : "Short CV", icon: "📃", external: false },
+      { href: isFrench ? "../cv-full/cv-fr.pdf" : "cv-full/cv-en.pdf", label: isFrench ? "CV complet" : "Full CV", icon: "📄" },
+      { href: "cv-short/", label: isFrench ? "CV court" : "Short CV", icon: "📃", external: false },
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
       //{ href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
       //{ href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
@@ -1054,7 +1054,7 @@
       { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "in", className: "topbar-linkedin" },
       { href: "https://orcid.org/0009-0005-1339-5683", label: "ORCID", src: `${assetPrefix}orcid.svg`, className: "topbar-orcid" },
       { href: "https://dblp.org/pid/426/8188.html", label: "DBLP", src: `${assetPrefix}dblp.svg`, className: "topbar-dblp" },
-      { href: "https://conf.researchr.org/profile/omarabedelkader", label: "Researchr", icon: "🔬" },
+      { href: "https://conf.researchr.org/profile/omarabedelkader", label: "Researchr", src: `${assetPrefix}researchr.png`, className: "topbar-researchr" },
       { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: isFrench ? "Google Scholar" : "Google Scholar", icon: "🎓" }
     ];
 

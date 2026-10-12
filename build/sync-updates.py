@@ -184,6 +184,8 @@ def render_bib_entry(entry_type: str, key: str, fields: dict[str, str], origin: 
     lines = [f"% Imported from {origin} on {date.today().isoformat()}. Review and edit freely: it will not be re-imported."]
     lines.append(f"@{entry_type}{{{key},")
     body = [f"  {name} = {{{bib_value(value)}}}" for name, value in fields.items() if value]
+    # Empty on purpose: optional links to fill in by hand (see EXTRA_LINK_LABELS in publications.py).
+    body.extend(f"  {name} = {{}}" for name in ("preprint", "artifact", "code", "slides"))
     lines.append(",\n".join(body))
     lines.append("}")
     return "\n".join(lines)
@@ -396,6 +398,7 @@ def sync_researchr(state: dict, texts: dict[Path, str], report: Report) -> None:
                 "booktitle": booktitle,
                 "year": str(item.year),
                 "url": item.href,
+                "source": item.href,
             },
             origin="conf.researchr.org",
         )
@@ -480,6 +483,7 @@ def scholar_bib_entry(row: ScholarRow, details: dict[str, str], existing_keys: s
     fields["doi"] = doi
     if not doi:
         fields["url"] = link
+    fields["source"] = SCHOLAR_DETAIL_URL.format(id=row.citation_id)
 
     return key, render_bib_entry(entry_type, key, fields, origin=f"Google Scholar ({row.citation_id})")
 

@@ -29,7 +29,7 @@ The project uses **Markdown sources** plus a small **Python + Pandoc build pipel
 
 Task 1 needs the network; if a source cannot be reached it prints a warning and the build continues. `SKIP_SYNC=1 bash run.sh` skips it.
 
-The translator protects Markdown links, URLs, inline code, fenced code blocks, frontmatter, raw LaTeX commands, and the `{{PUBLICATIONS_FROM_BIB}}` token. The website build copies CSS/JS/favicon into `docs/`, converts the site Markdown to HTML, copies CV PDFs into `docs/cv/`, injects a footer with a "Last updated" label, and includes the client-side script.
+The translator protects Markdown links, URLs, inline code, fenced code blocks, frontmatter, raw LaTeX commands, and the `{{PUBLICATIONS_FROM_BIB}}` token. The website build copies CSS/JS/favicon into `docs/`, converts the site Markdown to HTML, copies CV PDFs into `docs/cv-full/` and `docs/cv-short/`, injects a footer with a "Last updated" label, and includes the client-side script.
 
 ## How to run
 
@@ -52,15 +52,31 @@ section gets a page automatically.
 All canonical, `hreflang`, sitemap and `robots.txt` addresses use the custom domain set as `SITE_URL` in
 `build/build-site.py`.
 
+## Extra links on a publication
+
+Each entry of `resources/publications.bib` can carry optional links, shown after the DOI in the publication list of
+the site and of the full CV:
+
+```bibtex
+  preprint = {https://arxiv.org/abs/2601.05617},
+  artifact = {https://zenodo.org/records/...},
+  code     = {https://github.com/...},
+  slides   = {https://...},
+```
+
+`dataset`, `video` and `poster` work the same way. A value is a URL; a DOI (`10.xxxx/...`) or an arXiv identifier
+(`2601.05617`) is also accepted. An empty field (`preprint = {}`) shows nothing. The short CV leaves these links out
+to stay on one page.
+
 ## Short CV
 
 `cv-short/` holds a one-page CV with the most important items, in English and French (`.md` and `.pdf`). It is
 generated from `sources/cv.md` on every build and must not be edited by hand; what is kept from each section is
-set by `RULES` in `build/short_cv.py`. It is published at `/short-cv/` and `/fr/short-cv/`.
+set by `RULES` in `build/short_cv.py`. It is published at `/cv-short/` and `/fr/cv-short/`.
 
 `cv-full/` holds the full CV the same way: `cv-en.pdf`, `cv-fr.pdf`, and a readable `cv-en.md` / `cv-fr.md` with the
 publication list filled in. These `.md` files are generated copies; edit `sources/cv.md` instead. The published
-addresses are unchanged (`/cv/cv-en.pdf`, `/short-cv/`), so existing links to the CV keep working.
+folders have the same names: `/cv-full/cv-en.pdf`, `/cv-short/`.
 
 ## Monthly automation
 

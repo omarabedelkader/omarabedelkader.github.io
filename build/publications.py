@@ -6,6 +6,19 @@ import re
 PUBLICATIONS_TOKEN = "{{PUBLICATIONS_FROM_BIB}}"
 CITE_RE = re.compile(r"\\cite\{([^{}]+)\}")
 
+# Optional links of a publication. Each one is a field of the .bib entry holding
+# a URL (`preprint = {https://arxiv.org/abs/...}`); empty or missing fields are
+# simply not shown. The order here is the order of the links on the page.
+EXTRA_LINK_LABELS: dict[str, dict[str, str]] = {
+    "preprint": {"en": "Preprint", "fr": "Prépublication"},
+    "artifact": {"en": "Artifact", "fr": "Artefact"},
+    "code": {"en": "Code", "fr": "Code"},
+    "dataset": {"en": "Dataset", "fr": "Données"},
+    "slides": {"en": "Slides", "fr": "Diapositives"},
+    "video": {"en": "Video", "fr": "Vidéo"},
+    "poster": {"en": "Poster", "fr": "Poster"},
+}
+
 
 def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
     entries: list[dict[str, str]] = []
@@ -25,6 +38,9 @@ def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
             "year": _extract_field(part, "year"),
             "doi": _extract_field(part, "doi"),
             "url": _extract_field(part, "url"),
+            # Page the entry was imported from (Google Scholar, conf.researchr.org); quoted in the news.
+            "source": _extract_field(part, "source"),
+            **{name: _extract_field(part, name) for name in EXTRA_LINK_LABELS},
             "keywords": _extract_field(part, "keywords"),
             "rank": _extract_field(part, "rank"),
         }
@@ -105,7 +121,20 @@ def _publication_group(entry: dict[str, str]) -> str:
     return "other"
 
 
-def _format_publication(entry: dict[str, str]) -> str:
+def _link_target(value: str) -> str:
+    """Accept a full URL, a DOI (10.xxxx/...), or an arXiv identifier (2601.05617)."""
+    value = value.strip()
+    if value.startswith(("http://", "https://")):
+        return value
+    if value.startswith("10."):
+        return f"https://doi.org/{value}"
+    arxiv = re.fullmatch(r"(?:arxiv:)?(\d{4}\.\d{4,5}(?:v\d+)?)", value, flags=re.IGNORECASE)
+    if arxiv:
+        return f"https://arxiv.org/abs/{arxiv.group(1)}"
+    return value
+
+
+def _format_publication(entry: dict[str, str], language: str = "en", extras: bool = True) -> str:
     authors = _format_authors(entry.get("author", ""))
     year = entry.get("year", "")
     title = entry.get("title", "")
@@ -126,11 +155,17 @@ def _format_publication(entry: dict[str, str]) -> str:
         segments.append(f"[DOI]({doi_url}).")
     elif entry.get("url"):
         segments.append(f"[Link]({entry['url']}).")
+    if extras:
+        for name, labels in EXTRA_LINK_LABELS.items():
+            if entry.get(name):
+                label = labels.get(language, labels["en"])
+                segments.append(f"[{label}]({_link_target(entry[name])}).")
     return f"- {' '.join(segments).strip()}"
 
 
-def _format_inline_citation(entry: dict[str, str]) -> str:
-    return _format_publication(entry).removeprefix("- ")
+def _format_inline_citation(entry: dict[str, str], language: str = "en") -> str:
+    # A citation inside a sentence stays short: the extra links are in the publication list.
+    return _format_publication(entry, language, extras=False).removeprefix("- ")
 
 
 def _publication_headings(language: str) -> dict[str, str]:
@@ -201,18 +236,18 @@ def _rank_headings(language: str) -> dict[str, str]:
     }
 
 
-def _group_entries_by_venue(entries: list[dict[str, str]]) -> dict[str, list[str]]:
+def _group_entries_by_venue(entries: list[dict[str, str]], language: str = "en") -> dict[str, list[str]]:
     grouped_entries = {
         "journal": [],
         "conference": [],
         "other": [],
     }
     for entry in entries:
-        grouped_entries[_publication_group(entry)].append(_format_publication(entry))
+        grouped_entries[_publication_group(entry)].append(_format_publication(entry, language))
     return grouped_entries
 
 
-def _group_entries_by_rank(entries: list[dict[str, str]]) -> dict[str, list[str]]:
+def _group_entries_by_rank(entries: list[dict[str, str]], language: str = "en") -> dict[str, list[str]]:
     grouped_entries = {
         "a": [],
         "b": [],
@@ -224,7 +259,7 @@ def _group_entries_by_rank(entries: list[dict[str, str]]) -> dict[str, list[str]
         "unranked": [],
     }
     for entry in entries:
-        grouped_entries[_publication_rank(entry)].append(_format_publication(entry))
+        grouped_entries[_publication_rank(entry)].append(_format_publication(entry, language))
     return grouped_entries
 
 
@@ -239,11 +274,11 @@ def generate_publications_markdown(
         return "- No publications available."
 
     if grouping == "rank":
-        grouped_entries = _group_entries_by_rank(entries)
+        grouped_entries = _group_entries_by_rank(entries, language)
         headings = _rank_headings(language)
         group_order = ("a", "b", "c", "q1", "q2", "q3", "q4", "unranked")
     elif grouping == "venue":
-        grouped_entries = _group_entries_by_venue(entries)
+        grouped_entries = _group_entries_by_venue(entries, language)
         headings = _publication_headings(language)
         group_order = ("journal", "conference", "other")
     else:
@@ -252,7 +287,7 @@ def generate_publications_markdown(
     sections = []
     if include_selected:
         selected_lines = [
-            _format_publication(entry)
+            _format_publication(entry, language)
             for entry in entries
             if _is_selected_publication(entry)
         ]
@@ -281,7 +316,8 @@ def recent_publications_markdown(bib_path: Path, limit: int = 5) -> str:
 
     # sorted() is stable, so entries of the same year keep their order in the .bib file.
     recent = sorted(entries, key=year_of, reverse=True)[:limit]
-    return "\n".join(_format_publication(entry) for entry in recent)
+    # The short CV has to fit on one page, so it leaves the extra links out.
+    return "\n".join(_format_publication(entry, extras=False) for entry in recent)
 
 
 def inject_publications(
@@ -303,7 +339,7 @@ def inject_publications(
             if entry is None:
                 missing.append(key)
             else:
-                citations.append(_format_inline_citation(entry))
+                citations.append(_format_inline_citation(entry, language))
         if missing:
             raise ValueError(f"Unknown citation key(s): {', '.join(missing)}")
         return "; ".join(citations)

@@ -5,7 +5,14 @@
   <link>https://www.omarabedelkader.com/blog/</link>
   <description>Posts on AI, software engineering, Pharo, and research practice.</description>
   <language>en</language>
-  <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 12 Oct 2026 00:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Who Runs Your Model? Independence and the Role of pharo-infer</title>
+    <link>https://www.omarabedelkader.com/blog/002/</link>
+    <guid isPermaLink="true">https://www.omarabedelkader.com/blog/002/</guid>
+    <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+    <description>What independence means for Pharo ?</description>
+  </item>
   <item>
     <title>How to Apply LLMs in Pharo?</title>
     <link>https://www.omarabedelkader.com/blog/001/</link>

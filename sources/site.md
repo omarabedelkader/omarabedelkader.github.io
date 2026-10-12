@@ -11,6 +11,7 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 - I am currently pursuing a Ph.D. in Computer Science at the [University of Lille](https://www.univ-lille.fr).
 - I am currently involved in several open-source, research, AI, and community initiatives, where I contribute as a founder, maintainer, project leader, president, and active member. 
 - You can see the full list of my current responsibilities [here](#current).
+- You can see my short CV [here](cv-short/).
 
 
 ### Awards:
@@ -41,7 +42,7 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 ## Services
 
 ### 2027 
-- Committee Member in Artifact Track at FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
+- Committee Member in Artifact Track at [FormaliSE'27](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') [Ministère de la Transition Écologique](https://www.ecologie.gouv.fr).
 - Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
@@ -80,6 +81,13 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ## Teaching
 
+### 2027
+- Teaching assistant at IUT : *Software Maintenance* 12h Tutorials [IUT-Lille](https://moodle.univ-lille.fr/course/info.php?id=43765)
+- Teaching assistant at Polytech: *DataBase* 16h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Teaching assistant at Polytech: *Internet* 12h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+
+
+### 2026
 - Teaching assistant at IUT: *Introduction to Software Development* 41,5 h Labs [IUT-Lille](https://moodle.univ-lille.fr/course/view.php?id=28289)
 - Teaching assistant at IUT : *Software Maintenance* 12h Tutorials [IUT-Lille](https://moodle.univ-lille.fr/course/info.php?id=43765)
 - Teaching assistant at Polytech: *DataBase* 16h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)

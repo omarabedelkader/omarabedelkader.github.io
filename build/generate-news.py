@@ -103,9 +103,27 @@ def publication_link(entry: dict[str, str]) -> str:
     if doi:
         url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
         return f" [DOI]({url})"
-    if entry.get("url"):
+    # When the only link is the page the entry came from, the source link already covers it.
+    if entry.get("url") and entry["url"] != entry.get("source"):
         return f" [Link]({entry['url']})"
     return ""
+
+
+SOURCE_NAMES = {
+    "scholar.google.": "Google Scholar",
+    "conf.researchr.org": "conf.researchr.org",
+}
+
+
+def source_link(entry: dict[str, str], language: str) -> str:
+    """Link to the page the publication was found on, when the entry records one."""
+    source = entry.get("source", "")
+    if not source:
+        return ""
+    name = next((label for domain, label in SOURCE_NAMES.items() if domain in source), "")
+    separator = " : " if language == "fr" else ": "
+    label = f"Source{separator}{name}" if name else "Source"
+    return f" [{label}]({source})"
 
 
 def bullet_key(section: str, year: int, body: str) -> str:
@@ -130,18 +148,20 @@ def publication_items(max_year: int | None = None) -> list[NewsItem]:
         venue = entry.get("journal") or entry.get("booktitle") or "publication venue"
         group = _publication_group(entry)
         link = publication_link(entry)
+        source_en = source_link(entry, "en")
+        source_fr = source_link(entry, "fr")
 
         if group == "journal":
-            en = f"**{year}** — Journal article: *{title}* published in *{venue}*.{link}"
-            fr = f"**{year}** — Article de revue : *{title}* publié dans *{venue}*.{link}"
+            en = f"**{year}** — Journal article: *{title}* published in *{venue}*.{link}{source_en}"
+            fr = f"**{year}** — Article de revue : *{title}* publié dans *{venue}*.{link}{source_fr}"
             priority = 100
         elif group == "conference":
-            en = f"**{year}** — Conference paper: *{title}* accepted at *{venue}*.{link}"
-            fr = f"**{year}** — Article de conférence : *{title}* accepté à *{venue}*.{link}"
+            en = f"**{year}** — Conference paper: *{title}* accepted at *{venue}*.{link}{source_en}"
+            fr = f"**{year}** — Article de conférence : *{title}* accepté à *{venue}*.{link}{source_fr}"
             priority = 90
         else:
-            en = f"**{year}** — Publication: *{title}*."
-            fr = f"**{year}** — Publication : *{title}*."
+            en = f"**{year}** — Publication: *{title}*.{link}{source_en}"
+            fr = f"**{year}** — Publication : *{title}*.{link}{source_fr}"
             priority = 80
 
         items.append(NewsItem(year, priority, order, en, fr, key=f"publication:{entry.get('key') or title}"))
