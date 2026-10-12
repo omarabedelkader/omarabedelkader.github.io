@@ -905,8 +905,8 @@ def blog_archive_script() -> str:
   const archive = document.querySelector("[data-blog-archive]");
   if (!archive) return;
 
-  const yearButtons = Array.from(archive.querySelectorAll("[data-blog-year]"));
-  const tagButtons = Array.from(archive.querySelectorAll("[data-blog-tag]"));
+  const yearSelect = archive.querySelector("[data-blog-year-filter]");
+  const tagSelect = archive.querySelector("[data-blog-tag-filter]");
   const viewButtons = Array.from(archive.querySelectorAll("[data-blog-view]"));
   const search = archive.querySelector("[data-blog-search]");
   const sections = Array.from(archive.querySelectorAll("[data-blog-year-section]"));
@@ -953,8 +953,6 @@ def blog_archive_script() -> str:
       section.hidden = !section.querySelector("[data-blog-card]:not([hidden])");
     });
 
-    setPressed(yearButtons, "blogYear", state.year);
-    setPressed(tagButtons, "blogTag", state.tag);
     setPressed(viewButtons, "blogView", state.view);
     archive.classList.toggle("is-list", state.view === "list");
     archive.classList.toggle("is-grid", state.view !== "list");
@@ -963,8 +961,8 @@ def blog_archive_script() -> str:
       const filters = [];
       if (state.year !== "all") filters.push(`${yearLabel} ${state.year}`);
       if (state.tag !== "all") {
-        const tagButton = tagButtons.find((button) => button.dataset.blogTag === state.tag);
-        filters.push(`${tagLabel} ${(tagButton && tagButton.dataset.label) || state.tag}`);
+        const tagOption = tagSelect && tagSelect.selectedOptions[0];
+        filters.push(`${tagLabel} ${(tagOption && tagOption.dataset.label) || state.tag}`);
       }
       count.textContent = filters.length
         ? `${resultLabel} ${countLabel(visibleCount)} · ${filters.join(" · ")}`
@@ -977,19 +975,19 @@ def blog_archive_script() -> str:
     }
   };
 
-  yearButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      state.year = button.dataset.blogYear || "all";
+  if (yearSelect) {
+    yearSelect.addEventListener("change", () => {
+      state.year = yearSelect.value;
       apply();
     });
-  });
+  }
 
-  tagButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      state.tag = button.dataset.blogTag || "all";
+  if (tagSelect) {
+    tagSelect.addEventListener("change", () => {
+      state.tag = tagSelect.value;
       apply();
     });
-  });
+  }
 
   viewButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -1041,7 +1039,6 @@ def build_blog_index(posts: list[BlogPost], lang: str) -> None:
         list_label = "Liste" if lang == "fr" else "List"
         years_label = "Filtrer par année" if lang == "fr" else "Filter by year"
         tags_label = "Filtrer par sujet" if lang == "fr" else "Filter by topic"
-        all_button = "Tous" if lang == "fr" else "All"
 
         tags = sorted({tag for post in posts for tag in post.tags}, key=str.casefold)
 
@@ -1051,54 +1048,45 @@ def build_blog_index(posts: list[BlogPost], lang: str) -> None:
             f'<span>{escape(search_label)}</span>',
             f'<input type="search" data-blog-search placeholder="{html_attr(search_placeholder)}" autocomplete="off" spellcheck="false" />',
             "</label>",
-            f'<div class="blog-view-toggle" role="toolbar" aria-label="{html_attr(view_label)}">',
-            (
-                '<button type="button" class="blog-view-button is-active" data-blog-view="grid" aria-pressed="true">'
-                f"{escape(grid_label)}</button>"
-            ),
-            (
-                '<button type="button" class="blog-view-button" data-blog-view="list" aria-pressed="false">'
-                f"{escape(list_label)}</button>"
-            ),
-            "</div>",
-            "</div>",
-            f'<div class="blog-filter-group" aria-label="{html_attr(years_label)}">',
-            f'<div class="blog-filter-label">{escape(years_label)}</div>',
-            '<div class="blog-chip-row" role="toolbar">',
-            (
-                '<button type="button" class="blog-filter-chip is-active" data-blog-year="all" aria-pressed="true">'
-                f'<span>{escape(all_button)}</span><strong>{len(posts)}</strong></button>'
-            ),
+            f'<select class="blog-filter-select" data-blog-year-filter aria-label="{html_attr(years_label)}">',
+            f'<option value="all">{escape(all_years_label)}</option>',
         ]
         for year in years:
             controls.append(
-                '<button type="button" class="blog-filter-chip" '
-                f'data-blog-year="{year}" aria-pressed="false">'
-                f'<span>{year}</span><strong>{len(posts_by_year[year])}</strong></button>'
+                f'<option value="{year}">{year} ({len(posts_by_year[year])})</option>'
             )
-        controls.extend(["</div>", "</div>"])
+        controls.append("</select>")
 
         if tags:
             controls.extend(
                 [
-                    f'<div class="blog-filter-group" aria-label="{html_attr(tags_label)}">',
-                    f'<div class="blog-filter-label">{escape(tags_label)}</div>',
-                    '<div class="blog-chip-row" role="toolbar">',
-                    (
-                        '<button type="button" class="blog-filter-chip is-active" data-blog-tag="all" '
-                        f'aria-pressed="true" data-label="{html_attr(all_tags_label)}">'
-                        f'<span>{escape(all_tags_label)}</span><strong>{len(posts)}</strong></button>'
-                    ),
+                    f'<select class="blog-filter-select" data-blog-tag-filter aria-label="{html_attr(tags_label)}">',
+                    f'<option value="all">{escape(all_tags_label)}</option>',
                 ]
             )
             for tag in tags:
                 tag_count = sum(1 for post in posts if tag in post.tags)
                 controls.append(
-                    '<button type="button" class="blog-filter-chip" '
-                    f'data-blog-tag="{html_attr(tag_slug(tag))}" data-label="{html_attr(tag)}" aria-pressed="false">'
-                    f'<span>{escape(tag)}</span><strong>{tag_count}</strong></button>'
+                    f'<option value="{html_attr(tag_slug(tag))}" data-label="{html_attr(tag)}">'
+                    f'{escape(tag)} ({tag_count})</option>'
                 )
-            controls.extend(["</div>", "</div>"])
+            controls.append("</select>")
+
+        controls.extend(
+            [
+                f'<div class="blog-view-toggle" role="group" aria-label="{html_attr(view_label)}">',
+                (
+                    '<button type="button" class="blog-view-button is-active" data-blog-view="grid" aria-pressed="true">'
+                    f"{escape(grid_label)}</button>"
+                ),
+                (
+                    '<button type="button" class="blog-view-button" data-blog-view="list" aria-pressed="false">'
+                    f"{escape(list_label)}</button>"
+                ),
+                "</div>",
+                "</div>",
+            ]
+        )
 
         sections = []
         for year in years:
