@@ -79,7 +79,7 @@ NEWS_TOKEN = "{{NEWS_FROM_SOURCES}}"
 # under `blog/`, and the other names are files that already exist in `docs/`.
 SECTION_PAGE_EXCLUDED = {"blog", "index", "404", "conf"}
 
-SHORT_CV_DIR = ROOT / "short-cv"
+SHORT_CV_DIR = ROOT / "cv-short"
 # The short CV is written for LaTeX; these are the web equivalents of its icon links.
 SHORT_CV_WEB_ICONS = {
     "\\faLink": "🔗",
@@ -103,7 +103,7 @@ if ASSETS_SRC.exists():
 
 shutil.copyfile(FAVICON_SRC, FAVICON_DST)
 
-CV_SRC_DIR = ROOT / "cv"
+CV_SRC_DIR = ROOT / "cv-full"
 CV_DST_DIR = DOCS / "cv"
 CV_DST_DIR.mkdir(parents=True, exist_ok=True)
 

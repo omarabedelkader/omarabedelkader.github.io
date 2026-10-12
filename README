@@ -10,7 +10,7 @@ The project uses **Markdown sources** plus a small **Python + Pandoc build pipel
 - `build/` contains Python scripts that convert Markdown into:
   - `docs/index.html` and `docs/fr/index.html` (website pages for GitHub Pages)
   - `docs/blog/`, `docs/fr/blog/`, and RSS feeds generated from Markdown blog posts
-  - `cv/cv-en.pdf` and `cv/cv-industry.pdf` (PDF CV outputs)
+  - `cv-full/` (full CV) and `cv-short/` (one-page CV), each as `.md` and `.pdf`, in English and French
 - `templates/` contains the website static assets (`style.css`, `main.js`, `header.html`, favicon).
 - `resources/` contains citation and LaTeX support files (`publications.bib`, `apa.csl`, `header.tex`).
 - `runner/` contains shell wrappers that set up a virtual environment, install dependencies, and run each build script.
@@ -21,7 +21,7 @@ The project uses **Markdown sources** plus a small **Python + Pandoc build pipel
 
 1. Check Google Scholar and conf.researchr.org and import what is new (see "Monthly automation")
 2. Translate `sources/cv.md` to `sources/cv-fr.md`
-3. Build `cv/cv-en.pdf` and `cv/cv-fr.pdf`, then the short CV in `short-cv/`
+3. Build the full CV in `cv-full/`, then the short CV in `cv-short/`
 4. Translate `sources/site.md` to `sources/site-fr.md`
 5. Translate published blog posts from `sources/blog/*.md` to `sources/blog-fr/*.md`
 6. Add news lines for items that are new in the sources
@@ -54,9 +54,13 @@ All canonical, `hreflang`, sitemap and `robots.txt` addresses use the custom dom
 
 ## Short CV
 
-`short-cv/` holds a one-page CV with the most important items, in English and French (`.md` and `.pdf`). It is
+`cv-short/` holds a one-page CV with the most important items, in English and French (`.md` and `.pdf`). It is
 generated from `sources/cv.md` on every build and must not be edited by hand; what is kept from each section is
 set by `RULES` in `build/short_cv.py`. It is published at `/short-cv/` and `/fr/short-cv/`.
+
+`cv-full/` holds the full CV the same way: `cv-en.pdf`, `cv-fr.pdf`, and a readable `cv-en.md` / `cv-fr.md` with the
+publication list filled in. These `.md` files are generated copies; edit `sources/cv.md` instead. The published
+addresses are unchanged (`/cv/cv-en.pdf`, `/short-cv/`), so existing links to the CV keep working.
 
 ## Monthly automation
 
@@ -123,7 +127,7 @@ bash runner/build-industry.sh
 So the normal edit cycle is:
 1. Update content in `sources/` (and optionally templates/resources)
 2. Rebuild
-3. Commit generated output (`docs/`, `cv/`) and source changes
+3. Commit generated output (`docs/`, `cv-full/`, `cv-short/`) and source changes
 4. Push to GitHub
 
 ---

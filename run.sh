@@ -66,7 +66,7 @@ run_task 2 "Translate CV: sources/cv.md -> sources/cv-fr.md" \
     --target fr \
     --quiet
 
-run_task 3 "Build CV PDFs: cv/ (full) and short-cv/ (short), English and French" \
+run_task 3 "Build CV PDFs: cv-full/ and cv-short/, English and French" \
   python build/build-cv.py
 
 run_task 4 "Translate site: sources/site.md -> sources/site-fr.md" \

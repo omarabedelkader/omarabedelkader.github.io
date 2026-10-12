@@ -12,10 +12,10 @@ ROOT = BUILD_DIR.parent  # ← project root
 
 resources = ROOT / "resources"
 
-output_dir = ROOT / "cv"
+output_dir = ROOT / "cv-full"
 output_dir.mkdir(exist_ok=True)
 
-short_cv_dir = ROOT / "short-cv"
+short_cv_dir = ROOT / "cv-short"
 short_cv_dir.mkdir(exist_ok=True)
 
 cv_builds = [
@@ -107,7 +107,13 @@ def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
 
 
 for input_md, output_pdf, language in cv_builds:
-    render_pdf(input_md.read_text(encoding="utf-8"), output_pdf, language)
+    markdown = input_md.read_text(encoding="utf-8")
+    render_pdf(markdown, output_pdf, language)
+    # Readable copy next to the PDF, with the publication list filled in. Edit sources/, not this file.
+    output_pdf.with_suffix(".md").write_text(
+        inject_publications(markdown, resources / "publications.bib", language, grouping="rank"),
+        encoding="utf-8",
+    )
 
 print("CV generated successfully:", output_pdf)
 

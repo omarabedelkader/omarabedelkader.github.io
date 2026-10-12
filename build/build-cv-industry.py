@@ -8,7 +8,7 @@ ROOT = BUILD_DIR.parent  # project root
 input_md = ROOT / "sources" / "cv-industry.md"
 resources = ROOT / "resources"
 
-output_dir = ROOT / "cv"
+output_dir = ROOT / "cv-full"
 output_dir.mkdir(exist_ok=True)
 
 output_pdf = output_dir / "cv-industry.pdf"
