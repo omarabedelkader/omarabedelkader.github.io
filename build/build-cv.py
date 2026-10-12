@@ -5,6 +5,7 @@ import unicodedata
 import pypandoc
 from last_updated import last_updated_label
 from publications import inject_publications
+from short_cv import shorten
 
 BUILD_DIR = Path(__file__).resolve().parent
 ROOT = BUILD_DIR.parent  # ← project root
@@ -13,6 +14,9 @@ resources = ROOT / "resources"
 
 output_dir = ROOT / "cv"
 output_dir.mkdir(exist_ok=True)
+
+short_cv_dir = ROOT / "short-cv"
+short_cv_dir.mkdir(exist_ok=True)
 
 cv_builds = [
     (ROOT / "sources" / "cv.md", output_dir / "cv-en.pdf", "en"),
@@ -72,9 +76,9 @@ def style_doi_links(markdown: str) -> str:
     return DOI_LINK_RE.sub(r"[\\textcolor{cvblue}{DOI}](\1)", markdown)
 
 
-for input_md, output_pdf, language in cv_builds:
+def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
     rendered_md = inject_publications(
-        input_md.read_text(encoding="utf-8"),
+        markdown,
         resources / "publications.bib",
         language,
         grouping="rank",
@@ -101,4 +105,22 @@ for input_md, output_pdf, language in cv_builds:
         ]
     )
 
+
+for input_md, output_pdf, language in cv_builds:
+    render_pdf(input_md.read_text(encoding="utf-8"), output_pdf, language)
+
 print("CV generated successfully:", output_pdf)
+
+# Short CV: derived from the same sources, so it is refreshed on every build.
+english_cv = cv_builds[0][0].read_text(encoding="utf-8")
+for input_md, _output_pdf, language in cv_builds:
+    short_md = shorten(
+        input_md.read_text(encoding="utf-8"),
+        resources / "publications.bib",
+        reference=None if language == "en" else english_cv,
+    )
+    short_source = short_cv_dir / f"short-cv-{language}.md"
+    short_source.write_text(short_md, encoding="utf-8")
+    render_pdf(short_md, short_cv_dir / f"short-cv-{language}.pdf", language)
+
+print("Short CV generated successfully:", short_cv_dir)

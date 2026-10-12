@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://omarabedelkader.github.io/sitemap.xml
+Sitemap: https://www.omarabedelkader.com/sitemap.xml

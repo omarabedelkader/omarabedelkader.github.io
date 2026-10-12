@@ -2,14 +2,14 @@
 <rss version="2.0">
 <channel>
   <title>Omar AbedelKader — Blog</title>
-  <link>https://omarabedelkader.github.io/fr/blog/</link>
+  <link>https://www.omarabedelkader.com/fr/blog/</link>
   <description>Billets sur l&#x27;IA, le génie logiciel, Pharo et la pratique de la recherche.</description>
   <language>fr</language>
   <lastBuildDate>Thu, 20 Aug 2026 00:00:00 GMT</lastBuildDate>
   <item>
     <title>Comment appliquer des LLM dans Pharo ?</title>
-    <link>https://omarabedelkader.github.io/fr/blog/001/</link>
-    <guid isPermaLink="true">https://omarabedelkader.github.io/fr/blog/001/</guid>
+    <link>https://www.omarabedelkader.com/fr/blog/001/</link>
+    <guid isPermaLink="true">https://www.omarabedelkader.com/fr/blog/001/</guid>
     <pubDate>Thu, 20 Aug 2026 00:00:00 GMT</pubDate>
     <description>Pourquoi j&#x27;ai créé Pharo-LLM</description>
   </item>

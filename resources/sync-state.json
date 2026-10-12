@@ -1,0 +1,105 @@
+{
+  "news": [
+    "Public talk:2025:gtglchatpharotalkinglivetollmsfrompharolillefrance",
+    "Public talk:2025:https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf",
+    "Public talk:2025:scientificseminarllm1012lillefrance",
+    "Public talk:2025:scientificseminarllm101lillefrance",
+    "Public talk:2026:esug2026chatpharoanaiassistantinsidepharo",
+    "Public talk:2026:https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf",
+    "Public talk:2026:https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/",
+    "Recognition:2024:https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/",
+    "Recognition:2025:bestpaperaward3rdplaceiwst2025gdańskpoland",
+    "Service:2024:https://cafeia.org",
+    "Service:2024:https://esug.org/2024-Conference/call2024.html",
+    "Service:2024:https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d'",
+    "Service:2025:https://benevol2025.github.io",
+    "Service:2025:https://cafeia.org",
+    "Service:2025:https://esug.org/2025-Conference/conf2025.html",
+    "Service:2025:https://github.com/pharo-ai",
+    "Service:2025:https://github.com/pharo-llm",
+    "Service:2025:https://github.com/pharo-llm/chatpharo",
+    "Service:2025:https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d'",
+    "Service:2026:https://cafeia.org",
+    "Service:2026:https://esug.org/2026-Conference/announcement.html",
+    "Service:2026:https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/",
+    "Service:2026:https://github.com/pharo-ai",
+    "Service:2026:https://github.com/pharo-llm",
+    "Service:2026:https://github.com/pharo-llm/chatpharo",
+    "Service:2026:https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d'",
+    "Service:2026:https://scilog2026.fr",
+    "Service:2026:https://theneurotech.eu",
+    "Service:2027:https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members",
+    "Service:2027:https://cafeia.org",
+    "Service:2027:https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee",
+    "Service:2027:https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/",
+    "Service:2027:https://github.com/pharo-ai",
+    "Service:2027:https://github.com/pharo-llm",
+    "Service:2027:https://github.com/pharo-llm/chatpharo",
+    "Service:2027:https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d'",
+    "Student supervision:2025:srajaldwivedigooglesummerofcodeintership3monthmay2025july2025",
+    "Student supervision:2026:mehdielkoleibachelorintership4monthapril2026july2026",
+    "publication:cola",
+    "publication:icsme26",
+    "publication:iwst1",
+    "publication:iwst2"
+  ],
+  "researchr": {
+    "Contributed Item|https://arxiv.org/abs/2601.05617": {
+      "bibkey": "iwst1",
+      "conference": "IWST",
+      "first_seen": "2026-10-12",
+      "status": "already-in-bib",
+      "text": "Author of Package-Aware Approach for Repository-Level Code Completion in Pharo",
+      "year": 2025
+    },
+    "Contributed Item|https://conf.researchr.org/details/icsme-2026/icsme-2026-papers/7/Teaching-LLMs-a-Low-Resource-Language-Enhancing-Code-Completion-in-Pharo": {
+      "bibkey": "icsme26",
+      "conference": "ICSME",
+      "first_seen": "2026-10-12",
+      "status": "already-in-bib",
+      "text": "Author of Teaching LLMs a Low-Resource Language: Enhancing Code Completion in Pharo within the Research Papers Track-track",
+      "year": 2026
+    },
+    "Contributed Item|https://conf.researchr.org/details/iwst-2026/iwst-2026-papers/7/Alternative-UX-Extensions-and-Their-Trade-offs-for-Code-Completion-in-Pharo": {
+      "bibkey": "iwst2",
+      "conference": "IWST",
+      "first_seen": "2026-10-12",
+      "status": "already-in-bib",
+      "text": "Author of Alternative UX Extensions and Their Trade-offs for Code Completion in Pharo within the IWST 2026-track",
+      "year": 2026
+    },
+    "Member of Committee|https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members": {
+      "conference": "FormaliSE",
+      "first_seen": "2026-10-12",
+      "status": "already-listed",
+      "text": "Committee Member in Artifact Evaluation Committee Members within the Artifact Track-track",
+      "year": 2027
+    }
+  },
+  "scholar": {
+    "9yKSN-GCB0IC": {
+      "bibkey": "iwst2",
+      "first_seen": "2026-10-12",
+      "status": "already-in-bib",
+      "title": "Alternative ux extensions and their trade-offs for code completion in pharo"
+    },
+    "d1gkVwhDpl0C": {
+      "bibkey": "icsme26",
+      "first_seen": "2026-10-12",
+      "status": "already-in-bib",
+      "title": "Teaching LLMs a Low-Resource Language: Enhancing Code Completion in Pharo"
+    },
+    "qjMakFHDy7sC": {
+      "bibkey": "cola",
+      "first_seen": "2026-10-12",
+      "status": "already-in-bib",
+      "title": "Evaluating package-level scoping strategies for repository-level code completion in Pharo"
+    },
+    "u-x6o8ySG0sC": {
+      "bibkey": "iwst1",
+      "first_seen": "2026-10-12",
+      "status": "already-in-bib",
+      "title": "Package-Aware Approach for Repository-Level Code Completion in Pharo"
+    }
+  }
+}

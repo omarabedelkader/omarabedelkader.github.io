@@ -17,14 +17,17 @@ The project uses **Markdown sources** plus a small **Python + Pandoc build pipel
 
 ## Build flow
 
-`run.sh` creates/activates `.venv`, installs `requirements.txt`, then runs six deterministic tasks:
+`run.sh` creates/activates `.venv`, installs `requirements.txt`, then runs seven tasks. It does everything except commit and push:
 
-1. Translate `sources/cv.md` to `sources/cv-fr.md`
-2. Build `cv/cv-en.pdf` and `cv/cv-fr.pdf`
-3. Translate `sources/site.md` to `sources/site-fr.md`
-4. Translate published blog posts from `sources/blog/*.md` to `sources/blog-fr/*.md`
-5. Generate website news snippets
-6. Build `docs/index.html`, `docs/fr/index.html`, blog pages, RSS feeds, and `docs/sitemap.xml`
+1. Check Google Scholar and conf.researchr.org and import what is new (see "Monthly automation")
+2. Translate `sources/cv.md` to `sources/cv-fr.md`
+3. Build `cv/cv-en.pdf` and `cv/cv-fr.pdf`, then the short CV in `short-cv/`
+4. Translate `sources/site.md` to `sources/site-fr.md`
+5. Translate published blog posts from `sources/blog/*.md` to `sources/blog-fr/*.md`
+6. Add news lines for items that are new in the sources
+7. Build `docs/index.html`, `docs/fr/index.html`, one page per section, the short CV page, blog pages, RSS feeds, and `docs/sitemap.xml`
+
+Task 1 needs the network; if a source cannot be reached it prints a warning and the build continues. `SKIP_SYNC=1 bash run.sh` skips it.
 
 The translator protects Markdown links, URLs, inline code, fenced code blocks, frontmatter, raw LaTeX commands, and the `{{PUBLICATIONS_FROM_BIB}}` token. The website build copies CSS/JS/favicon into `docs/`, converts the site Markdown to HTML, copies CV PDFs into `docs/cv/`, injects a footer with a "Last updated" label, and includes the client-side script.
 
@@ -36,6 +39,51 @@ bash run.sh
 ```
 
 `run.sh` is quiet by default: it prints each task name and the final result, while successful command output is hidden. For troubleshooting, run `VERBOSE=1 bash run.sh`.
+
+## One page per section
+
+Every `##` section of `sources/site.md` also gets its own address, named after the English heading:
+`/publications.html`, `/services.html`, `/teaching.html`, `/news.html`, `/students.html`, `/public-talks.html`,
+`/about-me.html`, and the same names under `/fr/`. Each page holds only its own section (so search engines see
+distinct pages); its other tabs are links to the other pages. The home page keeps every section as tabs, and
+clicking a tab there updates the address bar to match. The blog keeps its own archive at `/blog/`. A new `##`
+section gets a page automatically.
+
+All canonical, `hreflang`, sitemap and `robots.txt` addresses use the custom domain set as `SITE_URL` in
+`build/build-site.py`.
+
+## Short CV
+
+`short-cv/` holds a one-page CV with the most important items, in English and French (`.md` and `.pdf`). It is
+generated from `sources/cv.md` on every build and must not be edited by hand; what is kept from each section is
+set by `RULES` in `build/short_cv.py`. It is published at `/short-cv/` and `/fr/short-cv/`.
+
+## Monthly automation
+
+`.github/workflows/monthly-update.yml` runs on the last day of each month (and on demand from the Actions tab).
+It does what `./run.sh` does, then commits and pushes:
+
+1. `build/sync-updates.py` reads the Google Scholar profile and the conf.researchr.org profile.
+   - A new paper is added to `resources/publications.bib`. For a paper found on conf.researchr.org, the authors,
+     track and schedule come from its details page.
+   - A new committee role is added to the Services section of `sources/site.md` and `sources/cv.md`.
+2. If something was added, `run.sh` runs: the French files, the news, the CVs, the short CV and the site are rebuilt.
+3. The result is committed and pushed. The commit message lists what was added and anything that needs attention.
+
+To preview what the sync would do without writing anything: `python build/sync-updates.py --dry-run`.
+
+### Hand fixes are kept
+
+The automation never revisits something it has already handled, so a manual fix followed by `./run.sh` stays:
+
+- `resources/sync-state.json` records every Scholar paper, researchr item and news line already handled. A recorded
+  item is not imported or announced again, even after its entry is edited or deleted. Delete an ID from this file to
+  have it reconsidered.
+- `sources/news.md` and `sources/news-fr.md` only grow from the top: existing lines are never rewritten, so they can
+  be edited or removed freely.
+- `sources/site-fr.md` and `sources/cv-fr.md`: a line is translated again only when its English line changes
+  (`resources/translation-state.json` tracks this). French lines corrected in place are kept. Adding or removing
+  whole lines in a French file breaks the alignment and causes one full re-translation.
 
 ## Blog posts
 

@@ -15,11 +15,7 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 
 ### Récompenses :
 - Prix du meilleur article (3e place) — IWST 2025, Gdańsk, Pologne  
-\cite{iwst1}
-
-### Honneurs
-- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France  
-*« Témoignage alumni en PNL & IA à l'Université de Lorraine »* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ---
 

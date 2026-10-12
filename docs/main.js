@@ -1045,6 +1045,7 @@
     const assetPrefix = isFrench ? "../assets/" : "assets/";
     const quickLinks = [
       { href: isFrench ? "../cv/cv-fr.pdf" : "cv/cv-en.pdf", label: isFrench ? "CV complet" : "Full CV", icon: "📄" },
+      { href: "short-cv/", label: isFrench ? "CV court" : "Short CV", icon: "📃", external: false },
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
       //{ href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
       //{ href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
@@ -1217,6 +1218,45 @@
     main.innerHTML = "";
     main.append(shell);
 
+    // Each section also has its own page (publications.html, services.html, ...).
+    // The build lists them in tab order; a null entry means the section has no page.
+    let sectionPages = null;
+    let ownPage = null;
+    try {
+      const parsed = JSON.parse(main.dataset.sectionPages || "null");
+      if (Array.isArray(parsed) && parsed.length === sections.length) sectionPages = parsed;
+
+      // A section page holds only its own section: the other tabs are links to their pages.
+      const ownSection = Number.parseInt(main.dataset.ownSection || "", 10);
+      const titles = JSON.parse(main.dataset.sectionTitles || "null");
+      if (Array.isArray(parsed) && Array.isArray(titles) && sections.length === 1 && parsed[ownSection]) {
+        ownPage = parsed[ownSection];
+        tabs.innerHTML = "";
+        titles.forEach((title, index) => {
+          if (index === ownSection) {
+            tabs.append(sections[0].tabBtn);
+            return;
+          }
+          tabs.append(createEl("a", {
+            class: "tab",
+            href: parsed[index] || `./#${slugify(title)}`,
+            textContent: title
+          }));
+        });
+      }
+    } catch (_err) {
+      sectionPages = null;
+    }
+    const siteTitle = "Omar AbedelKader";
+
+    function showSectionAddress(index) {
+      if (!sectionPages) return;
+      const page = sectionPages[index];
+      window.history.replaceState(null, "", page || `./#${sections[index].key}`);
+      document.title = index === 0 ? siteTitle : `${sections[index].title} | ${siteTitle}`;
+      updateLanguageHref();
+    }
+
     function matchingSection(hashValue) {
       const normalized = slugify(decodeHashValue(hashValue));
       if (!normalized) return null;
@@ -1241,6 +1281,14 @@
     }
 
     function updateLanguageHref() {
+      const activeIndex = sections.findIndex((section) => section.tabBtn.getAttribute("aria-selected") === "true");
+      const activePage = ownPage || (sectionPages && activeIndex >= 0 ? sectionPages[activeIndex] : null);
+      if (activePage && !window.location.hash) {
+        // Same section, other language: the page names are identical in both.
+        languageBtn.href = (isFrench ? "../" : "fr/") + (activePage === "./" ? "" : activePage);
+        return;
+      }
+
       const targetHash = translateHashValue(languageSourceHash());
       const baseHref = isFrench ? "../index.html" : "fr/";
       languageBtn.href = targetHash ? `${baseHref}#${encodeURIComponent(targetHash)}` : baseHref;
@@ -1338,7 +1386,10 @@
       const btn = e.target.closest("button[role='tab']");
       if (!btn) return;
       const index = sections.findIndex(s => s.tabBtn === btn);
-      if (index >= 0) setActive(index, { focus: false, highlightQuery: searchInput.value });
+      if (index >= 0) {
+        setActive(index, { focus: false, highlightQuery: searchInput.value });
+        showSectionAddress(index);
+      }
     });
 
     main.addEventListener("click", (e) => {
@@ -1346,7 +1397,15 @@
       if (!link) return;
 
       const hash = link.getAttribute("href");
-      if (activateHashTarget(hash)) e.preventDefault();
+      if (activateHashTarget(hash)) {
+        e.preventDefault();
+        const section = matchingSection(hash.replace(/^#/, ""));
+        if (section) showSectionAddress(sections.indexOf(section));
+      } else if (ownPage) {
+        // The target is in another section: the home page has them all.
+        e.preventDefault();
+        window.location.href = `./${hash}`;
+      }
     });
 
     // Keyboard navigation (Arrow keys move focus; Enter/Space activates)
@@ -1375,6 +1434,7 @@
         case " ":
           e.preventDefault();
           setActive(currentIndex, { focus: true, highlightQuery: searchInput.value });
+          showSectionAddress(currentIndex);
           break;
         default:
           break;

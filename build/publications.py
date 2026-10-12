@@ -24,6 +24,7 @@ def _parse_bib_entries(bib_text: str) -> list[dict[str, str]]:
             "journal": _extract_field(part, "journal"),
             "year": _extract_field(part, "year"),
             "doi": _extract_field(part, "doi"),
+            "url": _extract_field(part, "url"),
             "keywords": _extract_field(part, "keywords"),
             "rank": _extract_field(part, "rank"),
         }
@@ -37,7 +38,7 @@ def _extract_key(entry_text: str) -> str:
 
 
 def _extract_field(entry_text: str, field_name: str) -> str:
-    pattern = rf"{field_name}\s*=\s*(\{{(?:[^{{}}]|\{{[^{{}}]*\}})*\}}|\"[^\"]*\")"
+    pattern = rf"(?<![A-Za-z]){field_name}\s*=\s*(\{{(?:[^{{}}]|\{{[^{{}}]*\}})*\}}|\"[^\"]*\")"
     match = re.search(pattern, entry_text, flags=re.IGNORECASE | re.DOTALL)
     if not match:
         return ""
@@ -123,6 +124,8 @@ def _format_publication(entry: dict[str, str]) -> str:
     if doi:
         doi_url = doi if doi.startswith("http") else f"https://doi.org/{doi}"
         segments.append(f"[DOI]({doi_url}).")
+    elif entry.get("url"):
+        segments.append(f"[Link]({entry['url']}).")
     return f"- {' '.join(segments).strip()}"
 
 
@@ -264,6 +267,21 @@ def generate_publications_markdown(
         if lines:
             sections.append(f"### {headings[group_name]}\n\n" + "\n".join(lines))
     return "\n\n".join(sections)
+
+
+def recent_publications_markdown(bib_path: Path, limit: int = 5) -> str:
+    """Flat list of the most recent publications, newest first (used by the short CV)."""
+    entries = _parse_bib_entries(bib_path.read_text(encoding="utf-8"))
+    if not entries:
+        return "- No publications available."
+
+    def year_of(entry: dict[str, str]) -> int:
+        year = entry.get("year", "")
+        return int(year) if year.isdigit() else 0
+
+    # sorted() is stable, so entries of the same year keep their order in the .bib file.
+    recent = sorted(entries, key=year_of, reverse=True)[:limit]
+    return "\n".join(_format_publication(entry) for entry in recent)
 
 
 def inject_publications(

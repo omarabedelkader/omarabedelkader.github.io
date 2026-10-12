@@ -31,7 +31,8 @@ RESOURCES = ROOT / "resources"
 SOURCES = ROOT / "sources"
 TEMPLATES = ROOT / "templates"
 
-SITE_URL = "https://omarabedelkader.github.io/"
+# The custom domain in docs/CNAME; omarabedelkader.github.io only redirects to it.
+SITE_URL = "https://www.omarabedelkader.com/"
 ISSUES_NEW_URL = "https://github.com/omarabedelkader/omarabedelkader.github.io/issues/new"
 
 SITE_SOURCES = [
@@ -73,6 +74,19 @@ FRONTMATTER_RE = re.compile(r"^---\s*\n(?P<yaml>.*?)\n---\s*\n?", re.DOTALL)
 H1_RE = re.compile(r"^\s*#\s+([^\n]+?)\s*#*\s*$", re.MULTILINE)
 LEADING_H1_RE = re.compile(r"^\s*#\s+([^\n]+?)\s*#*\s*\n+")
 NEWS_TOKEN = "{{NEWS_FROM_SOURCES}}"
+
+# Sections that do not get a `<section>.html` page: the blog has its own archive
+# under `blog/`, and the other names are files that already exist in `docs/`.
+SECTION_PAGE_EXCLUDED = {"blog", "index", "404", "conf"}
+
+SHORT_CV_DIR = ROOT / "short-cv"
+# The short CV is written for LaTeX; these are the web equivalents of its icon links.
+SHORT_CV_WEB_ICONS = {
+    "\\faLink": "🔗",
+    "\\faGithub": "GitHub",
+    "\\faFilePdf": "📄",
+    "\\faVideo": "🎥",
+}
 BLOG_TOKEN = "{{BLOG_FROM_SOURCES}}"
 
 DOCS.mkdir(exist_ok=True)
@@ -95,6 +109,10 @@ CV_DST_DIR.mkdir(parents=True, exist_ok=True)
 
 for cv_pdf in CV_SRC_DIR.glob("*.pdf"):
     shutil.copyfile(cv_pdf, CV_DST_DIR / cv_pdf.name)
+
+for short_cv_pdf in SHORT_CV_DIR.glob("*.pdf"):
+    (DOCS / "short-cv").mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(short_cv_pdf, DOCS / "short-cv" / short_cv_pdf.name)
 
 
 # ======================================================
@@ -281,11 +299,31 @@ def relative_url(from_html: Path, to_html: Path) -> str:
     return rel
 
 
-def footer_html(lang: str, source_path: Path) -> str:
+def issue_line_html(lang: str, html_path: Path, title: str, is_post: bool = False) -> str:
+    """Sentence inviting readers to report a problem, with the page prefilled in the issue."""
+    page_url = absolute_url_for_html(html_path)
+    if lang == "fr":
+        issue_title = f"Problème avec {'le billet' if is_post else 'la page'} : {title}"
+        body = f"J'ai trouvé un problème sur {'ce billet' if is_post else 'cette page'} :\n\n{page_url}\n\nProblème :\n"
+        text = f"Si vous pensez qu'il y a un problème avec {'ce billet' if is_post else 'cette page'}, veuillez "
+        link_text = "ouvrir une issue"
+    else:
+        issue_title = f"Problem with {'blog post' if is_post else 'page'}: {title}"
+        body = f"I found a problem on this {'blog post' if is_post else 'page'}:\n\n{page_url}\n\nProblem:\n"
+        text = f"If you think there is a problem with this {'post' if is_post else 'page'}, please "
+        link_text = "create an issue"
+
+    issue_href = f"{ISSUES_NEW_URL}?{urlencode({'title': issue_title, 'body': body})}"
+    return f'{text}<a href="{html_attr(issue_href)}">{link_text}</a>.'
+
+
+def footer_html(lang: str, source_path: Path, html_path: Path, title: str, is_post: bool = False) -> str:
+    """The one footer of the site: report-a-problem line, last update, copyright."""
     footer_label = "Dernière mise à jour" if lang == "fr" else "Last updated"
     copyright_text = "Copyright © 2024 Omar AbedelKader"
     return (
-        f"<footer class='site-footer'>{footer_label}: {last_updated_label(source_path)}"
+        f"<footer class='site-footer'>{issue_line_html(lang, html_path, title, is_post)}"
+        f"<br>{footer_label}: {last_updated_label(source_path)}"
         f"<br>{copyright_text}</footer>"
     )
 
@@ -476,9 +514,51 @@ def inject_blog_summary(markdown: str, language: str, posts_by_lang: dict[str, l
 # Pandoc conversion
 # ======================================================
 
-def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> None:
-    config["html"].parent.mkdir(parents=True, exist_ok=True)
+def section_titles(markdown: str) -> list[str]:
+    return [match.group(1) for line in markdown.splitlines() if (match := H2_RE.match(line))]
 
+
+def section_page_names() -> list[str | None]:
+    """File name of each section's own page, in section order (None: no page).
+
+    The names come from the English headings so that both languages share the
+    same URLs: `publications.html` and `fr/publications.html`.
+    """
+    english = (SOURCES / "site.md").read_text(encoding="utf-8")
+    names: list[str | None] = []
+    for title in section_titles(english):
+        slug = section_slug(title)
+        names.append(None if not slug or slug in SECTION_PAGE_EXCLUDED else f"{slug}.html")
+    return names
+
+
+def split_site_sections(markdown: str) -> tuple[str, list[tuple[str, str]]]:
+    """Return the text before the first `##` and each (title, section text)."""
+    preamble: list[str] = []
+    sections: list[tuple[str, list[str]]] = []
+    for line in markdown.split("\n"):
+        heading = H2_RE.match(line)
+        if heading:
+            sections.append((heading.group(1), [line]))
+        elif sections:
+            sections[-1][1].append(line)
+        else:
+            preamble.append(line)
+    return "\n".join(preamble), [(title, "\n".join(lines)) for title, lines in sections]
+
+
+def site_page_path(lang: str, name: str) -> Path:
+    return DOCS / "fr" / name if lang == "fr" else DOCS / name
+
+
+def render_site_page(
+    markdown: str,
+    config: dict,
+    html_path: Path,
+    pagetitle: str,
+    description: str,
+    main_attrs: dict[str, str],
+) -> None:
     extra_args = [
         "--standalone",
         f"--metadata=lang={config['lang']}",
@@ -488,12 +568,48 @@ def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> None:
         "--csl=apa.csl",
         "--metadata=link-citations:true",
         "--css=../style.css" if config["lang"] == "fr" else "--css=style.css",
-        f"--metadata=pagetitle={config['pagetitle']}",
+        f"--metadata=pagetitle={pagetitle}",
         "--metadata=title=Omar AbedelKader",
-        f"--metadata=description={config['description']}",
+        f"--metadata=description={description}",
         "--metadata=keywords=Omar AbedelKader,Omar Abdelkader,Omar Abedelkader,AI engineer,machine learning,publications,CV,blog",
         f"--include-in-header={HEADER_INCLUDE}",
     ]
+
+    html = pypandoc.convert_text(markdown, to="html5", format="md", extra_args=extra_args)
+    html = normalize_mobile_viewport(html)
+
+    # Canonical address, the same page in the other language, and the sharing tags.
+    other_lang = "en" if config["lang"] == "fr" else "fr"
+    head = blog_head_common(
+        html_path=html_path,
+        lang=config["lang"],
+        title=pagetitle,
+        description=description,
+        og_type="website",
+        alternate_html_path=site_page_path(other_lang, html_path.name),
+        feed_xml_path=None,
+    )
+    html = html.replace("</head>", f"  {head}\n</head>", 1)
+
+    attrs = "".join(f" {name}='{html_attr(value)}'" for name, value in main_attrs.items())
+    script_path = "../main.js" if config["lang"] == "fr" else "main.js"
+    html = html.replace(
+        "<body>",
+        f"<body><main class='cv' id='cv'{attrs}>",
+        1,
+    ).replace(
+        "</body>",
+        "</main>"
+        f"{footer_html(config['lang'], config['md'], html_path, pagetitle)}"
+        f"<script src='{script_path}' defer></script>"
+        "</body>",
+        1,
+    )
+    html_path.write_text(html, encoding="utf-8")
+
+
+def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> list[Path]:
+    config["html"].parent.mkdir(parents=True, exist_ok=True)
 
     rendered_md = inject_publications(
         config["md"].read_text(encoding="utf-8"),
@@ -505,30 +621,117 @@ def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> None:
     rendered_md = inject_blog_summary(rendered_md, config["lang"], posts_by_lang)
     rendered_md = mark_current_items(rendered_md)
 
-    html = pypandoc.convert_text(
+    preamble, sections = split_site_sections(rendered_md)
+    titles = [title for title, _text in sections]
+    page_names = section_page_names()
+    if len(page_names) != len(titles):
+        raise SystemExit(f"{config['md']}: expected the same `##` sections as sources/site.md")
+
+    # main.js reads these lists: where each tab lives, and what the tabs are called.
+    tab_urls = json.dumps(["./" if index == 0 else name for index, name in enumerate(page_names)])
+
+    # Home page: every section, as tabs.
+    render_site_page(
         rendered_md,
-        to="html5",
-        format="md",
-        extra_args=extra_args,
+        config,
+        config["html"],
+        config["pagetitle"],
+        config["description"],
+        {"data-section-pages": tab_urls},
     )
 
-    html = normalize_mobile_viewport(html)
+    # One page per section, holding only that section, so each address has its own content.
+    written: list[Path] = []
+    for index, ((title, text), name) in enumerate(zip(sections, page_names)):
+        if name is None:
+            continue
+        path = site_page_path(config["lang"], name)
+        render_site_page(
+            f"{preamble}\n{text}\n",
+            config,
+            path,
+            f"{title} | Omar AbedelKader",
+            f"{title} — {config['description']}",
+            {
+                "data-section-pages": tab_urls,
+                "data-section-titles": json.dumps(titles, ensure_ascii=False),
+                "data-own-section": str(index),
+            },
+        )
+        written.append(path)
+    return written
 
-    script_path = "../main.js" if config["lang"] == "fr" else "main.js"
-    html = html.replace(
-        "<body>",
-        "<body><main class='cv' id='cv'>",
-        1,
-    ).replace(
-        "</body>",
-        "</main>"
-        f"{footer_html(config['lang'], config['md'])}"
-        f"<script src='{script_path}' defer></script>"
-        "</body>",
-        1,
-    )
 
-    config["html"].write_text(html, encoding="utf-8")
+# ======================================================
+# Short CV page
+# ======================================================
+
+def short_cv_html_path(lang: str) -> Path:
+    return DOCS / "fr" / "short-cv" / "index.html" if lang == "fr" else DOCS / "short-cv" / "index.html"
+
+
+def short_cv_web_markdown(markdown: str) -> str:
+    _metadata, body = split_frontmatter(markdown)
+    for icon, replacement in SHORT_CV_WEB_ICONS.items():
+        body = body.replace(f"\\icon{{{icon}}}", replacement)
+    # Icon-only links without a target (slides or video not published yet) would render as dead links.
+    return re.sub(r"\s*\[[^\]]*\]\(\s*\)", "", body)
+
+
+def build_short_cv_pages() -> list[Path]:
+    written: list[Path] = []
+    for lang in ("en", "fr"):
+        source = SHORT_CV_DIR / f"short-cv-{lang}.md"
+        if not source.exists():
+            continue
+
+        html_path = short_cv_html_path(lang)
+        alternate_path = short_cv_html_path("fr" if lang == "en" else "en")
+        title = "CV court" if lang == "fr" else "Short CV"
+        description = (
+            "CV court d'Omar AbedelKader : l'essentiel sur une page."
+            if lang == "fr"
+            else "Short CV of Omar AbedelKader: the essentials on one page."
+        )
+        pdf_href = relative_url(html_path, DOCS / "short-cv" / f"short-cv-{lang}.pdf")
+        home_href = relative_url(html_path, DOCS / ("fr/index.html" if lang == "fr" else "index.html"))
+        full_cv_href = relative_url(html_path, CV_DST_DIR / f"cv-{lang}.pdf")
+        links = (
+            f'<p class="blog-post-meta"><a href="{html_attr(home_href)}">{"Accueil" if lang == "fr" else "Home"}</a>'
+            f'<a href="{html_attr(pdf_href)}">{"CV court (PDF)" if lang == "fr" else "Short CV (PDF)"}</a>'
+            f'<a href="{html_attr(full_cv_href)}">{"CV complet (PDF)" if lang == "fr" else "Full CV (PDF)"}</a></p>'
+        )
+        markdown = inject_publications(
+            short_cv_web_markdown(source.read_text(encoding="utf-8")),
+            RESOURCES / "publications.bib",
+            lang,
+        )
+        convert_blog_markdown(
+            markdown=markdown,
+            html_path=html_path,
+            lang=lang,
+            title=f"Omar AbedelKader — {title}",
+            pagetitle=f"{title} | Omar AbedelKader",
+            description=description,
+            head_html=blog_head_common(
+                html_path=html_path,
+                lang=lang,
+                title=title,
+                description=description,
+                og_type="profile",
+                alternate_html_path=alternate_path,
+                feed_xml_path=None,
+            ),
+            main_class="blog-page short-cv-page",
+            main_id="short-cv",
+            before_content="",
+            header_actions=blog_language_switch_html(lang, html_path, alternate_path),
+            after_title=links,
+            after_content="",
+            footer_source=SOURCES / ("cv-fr.md" if lang == "fr" else "cv.md"),
+        )
+        written.append(html_path)
+    return written
 
 
 def blog_head_common(
@@ -649,7 +852,7 @@ def convert_blog_markdown(
         1,
     ).replace(
         "</body>",
-        f"{after_content}\n</main>{footer_html(lang, footer_source)}</body>",
+        f"{after_content}\n</main>{footer_html(lang, footer_source, html_path, title, is_post=main_id == 'blog-post')}</body>",
         1,
     )
     html_path.write_text(html, encoding="utf-8")
@@ -944,7 +1147,7 @@ def build_blog_index(posts: list[BlogPost], lang: str) -> None:
         head_html=head,
         main_class="blog-index",
         main_id="blog-index",
-        before_content="",
+        before_content=home_back_link_html(lang, html_path),
         header_actions=blog_language_switch_html(lang, html_path, alternate_path),
         after_title="",
         after_content="",
@@ -952,27 +1155,19 @@ def build_blog_index(posts: list[BlogPost], lang: str) -> None:
     )
 
 
-def issue_note_html(post: BlogPost) -> str:
-    page_url = absolute_url_for_html(blog_post_html_path(post))
-    if post.lang == "fr":
-        title = f"Problème avec le billet : {post.title}"
-        body = f"J'ai trouvé un problème sur ce billet :\n\n{page_url}\n\nProblème :\n"
-        text = "Si vous pensez qu'il y a un problème avec ce billet, veuillez "
-        link_text = "ouvrir une issue"
-        suffix = "."
-    else:
-        title = f"Problem with blog post: {post.title}"
-        body = f"I found a problem on this blog post:\n\n{page_url}\n\nProblem:\n"
-        text = "If you think there is a problem with this post, please "
-        link_text = "create an issue"
-        suffix = "."
+def back_link_html(html_path: Path, target: Path, label: str) -> str:
+    href = relative_url(html_path, target)
+    return f'<p class="blog-back"><a href="{html_attr(href)}">← {label}</a></p>'
 
-    issue_href = f"{ISSUES_NEW_URL}?{urlencode({'title': title, 'body': body})}"
-    return (
-        '<aside class="blog-issue-note">'
-        f'<p>{text}<a href="{html_attr(issue_href)}">{link_text}</a>{suffix}</p>'
-        "</aside>"
-    )
+
+def blog_back_link_html(lang: str, html_path: Path) -> str:
+    label = "Tous les billets" if lang == "fr" else "All posts"
+    return back_link_html(html_path, blog_index_html_path(lang), label)
+
+
+def home_back_link_html(lang: str, html_path: Path) -> str:
+    home = DOCS / "fr" / "index.html" if lang == "fr" else DOCS / "index.html"
+    return back_link_html(html_path, home, "Accueil" if lang == "fr" else "Home")
 
 
 def build_blog_post(post: BlogPost, alternate_post: BlogPost) -> None:
@@ -1011,10 +1206,10 @@ def build_blog_post(post: BlogPost, alternate_post: BlogPost) -> None:
         head_html=head,
         main_class="blog-page",
         main_id="blog-post",
-        before_content="",
+        before_content=blog_back_link_html(post.lang, html_path),
         header_actions=blog_language_switch_html(post.lang, html_path, alternate_path),
         after_title=post_meta,
-        after_content=issue_note_html(post),
+        after_content="",
         footer_source=post.source_path,
     )
 
@@ -1098,7 +1293,7 @@ def sitemap_entry(loc: str, lastmod: str, changefreq: str, priority: str) -> str
     )
 
 
-def write_seo_files(posts_by_lang: dict[str, list[BlogPost]]) -> None:
+def write_seo_files(posts_by_lang: dict[str, list[BlogPost]], extra_pages: list[Path]) -> None:
     robots_txt = f"""User-agent: *
 Allow: /
 
@@ -1113,6 +1308,9 @@ Sitemap: {urljoin(SITE_URL, "sitemap.xml")}
         sitemap_entry(urljoin(SITE_URL, "blog/"), home_lastmod, "weekly", "0.8"),
         sitemap_entry(urljoin(SITE_URL, "fr/blog/"), home_lastmod, "weekly", "0.8"),
     ]
+
+    for page in extra_pages:
+        entries.append(sitemap_entry(absolute_url_for_html(page), home_lastmod, "monthly", "0.6"))
 
     for post in posts_by_lang["en"] + posts_by_lang["fr"]:
         post_lastmod = (post.updated or post.published).isoformat()
@@ -1129,10 +1327,12 @@ Sitemap: {urljoin(SITE_URL, "sitemap.xml")}
 
 def main() -> int:
     posts_by_lang = collect_blog_posts()
+    extra_pages: list[Path] = []
     for page in SITE_SOURCES:
-        build_page(page, posts_by_lang)
+        extra_pages.extend(build_page(page, posts_by_lang))
     build_blog(posts_by_lang)
-    write_seo_files(posts_by_lang)
+    extra_pages.extend(build_short_cv_pages())
+    write_seo_files(posts_by_lang, extra_pages)
     print("Site and blog built successfully.")
     return 0
 

@@ -15,11 +15,7 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ### Awards:
 - Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
-\cite{iwst1}
-
-### Honors:
-- Alumni Testimonial — IDMC 2024, University of Lorraine, France  
-*"Alumni testimonial in NLP & AI in University of Lorraine"* [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Alumni Testimonial — IDMC 2024, University of Lorraine, France [🔗](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ---
 

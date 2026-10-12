@@ -7,6 +7,7 @@ import os
 import re
 import sys
 import time
+from collections import deque
 from html import unescape
 from pathlib import Path
 
@@ -30,6 +31,10 @@ TRANSLATION_CACHE_FILE = Path(
         str(Path(__file__).resolve().parents[1] / ".translation-cache.json"),
     )
 )
+# Source-line fingerprints of the last translation of each output file. They let
+# the next run keep every line whose source did not change, including lines
+# corrected by hand in the translated file.
+TRANSLATION_STATE_FILE = Path(__file__).resolve().parents[1] / "resources" / "translation-state.json"
 MARKDOWN_PREFIX_RE = re.compile(
     r"^(\s{0,3}(?:#{1,6}\s+|[-*+]\s+(?:\[[ xX]\]\s+)?|>\s+|\d+\.\s+))(.*)$"
 )
@@ -120,6 +125,9 @@ class MarkdownTranslator:
         self.target = target
         self.translator = GoogleTranslator(source=source, target=target)
         self.translation_cache = self._load_translation_cache()
+        # Source lines whose translation is already known to the caller; they are
+        # passed through untranslated and replaced by the caller afterwards.
+        self.known_lines: set[str] = set()
 
     def translate_markdown(self, markdown: str) -> str:
         frontmatter, body = self._split_frontmatter(markdown)
@@ -149,6 +157,8 @@ class MarkdownTranslator:
     def _translate_fence(self, fence: str) -> str:
         lines = fence.splitlines(keepends=True)
         if not lines:
+            return fence
+        if all(line.rstrip("\n") in self.known_lines for line in lines):
             return fence
 
         info = lines[0].strip()
@@ -244,7 +254,7 @@ class MarkdownTranslator:
         return "".join(translated)
 
     def _translate_markdown_line(self, line: str) -> str:
-        if not line.strip() or HR_RE.fullmatch(line):
+        if not line.strip() or HR_RE.fullmatch(line) or line in self.known_lines:
             return line
 
         trailing_spaces = len(line) - len(line.rstrip(" "))
@@ -562,12 +572,72 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def line_fingerprint(line: str) -> str:
+    return hashlib.sha256(line.encode("utf-8")).hexdigest()[:16]
+
+
+def state_key(output: Path) -> str:
+    try:
+        return output.resolve().relative_to(TRANSLATION_STATE_FILE.parents[1]).as_posix()
+    except ValueError:
+        return output.resolve().as_posix()
+
+
+def load_translation_state() -> dict[str, list[str]]:
+    try:
+        data = json.loads(TRANSLATION_STATE_FILE.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def previous_translations(output: Path, state: dict[str, list[str]]) -> dict[str, deque[str]]:
+    """Map each previously translated source line to its line(s) in the current output file."""
+    fingerprints = state.get(state_key(output))
+    if not fingerprints or not output.exists():
+        return {}
+
+    output_lines = output.read_text(encoding="utf-8").split("\n")
+    if len(output_lines) != len(fingerprints):
+        # Lines were added to or removed from the translated file, so it can no longer be aligned.
+        return {}
+
+    known: dict[str, deque[str]] = {}
+    for fingerprint, line in zip(fingerprints, output_lines):
+        known.setdefault(fingerprint, deque()).append(line)
+    return known
+
+
 def main() -> int:
     args = parse_args()
     markdown = args.input.read_text(encoding="utf-8")
-    translator = MarkdownTranslator(source=args.source, target=args.target)
-    translated = translator.translate_markdown(markdown)
-    args.output.write_text(translated, encoding="utf-8")
+    source_lines = markdown.split("\n")
+    state = load_translation_state()
+    known = previous_translations(args.output, state)
+
+    if known and all(line_fingerprint(line) in known for line in source_lines):
+        translated_lines = source_lines
+    else:
+        translator = MarkdownTranslator(source=args.source, target=args.target)
+        translator.known_lines = {line for line in source_lines if line_fingerprint(line) in known}
+        translated_lines = translator.translate_markdown(markdown).split("\n")
+        if len(translated_lines) != len(source_lines):
+            raise SystemExit(f"{args.input}: the translation changed the number of lines")
+
+    output_lines: list[str] = []
+    for source_line, translated_line in zip(source_lines, translated_lines):
+        previous = known.get(line_fingerprint(source_line))
+        if previous:
+            # A source line repeated in the file keeps its translations in order.
+            output_lines.append(previous.popleft() if len(previous) > 1 else previous[0])
+        else:
+            output_lines.append(translated_line)
+
+    args.output.write_text("\n".join(output_lines), encoding="utf-8")
+    state[state_key(args.output)] = [line_fingerprint(line) for line in source_lines]
+    # One line per translated file keeps the committed diff small.
+    rows = [f" {json.dumps(key)}: {json.dumps(value)}" for key, value in sorted(state.items())]
+    TRANSLATION_STATE_FILE.write_text("{\n" + ",\n".join(rows) + "\n}\n", encoding="utf-8")
     if not args.quiet:
         print(f"Translated {args.input} -> {args.output}")
     return 0
