@@ -560,6 +560,11 @@ def render_site_page(
     description: str,
     main_attrs: dict[str, str],
 ) -> None:
+    # Keep the Markdown link portable across translations; open the local-language PDF.
+    short_cv_pdf = DOCS / "cv-short" / f"short-cv-{config['lang']}.pdf"
+    markdown = markdown.replace(
+        "](cv-short/)", f"]({relative_url(html_path, short_cv_pdf)})"
+    )
     extra_args = [
         "--standalone",
         f"--metadata=lang={config['lang']}",
