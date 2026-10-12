@@ -45,6 +45,7 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 ## Services
 
 ### 2027 
+- Committee Member in Artifact Track at FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') [Ministère de la Transition Écologique](https://www.ecologie.gouv.fr).
 - Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).

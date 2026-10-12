@@ -45,6 +45,7 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 ## Services 
 
 ### 2027 
+- Membre du comité de suivi des artefacts à FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer à [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') [Ministère de la Transition Écologique](https://www.ecologie.gouv.fr).
 - Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).

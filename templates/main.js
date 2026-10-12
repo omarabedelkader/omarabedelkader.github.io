@@ -1053,6 +1053,7 @@
       { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "in", className: "topbar-linkedin" },
       { href: "https://orcid.org/0009-0005-1339-5683", label: "ORCID", src: `${assetPrefix}orcid.svg`, className: "topbar-orcid" },
       { href: "https://dblp.org/pid/426/8188.html", label: "DBLP", src: `${assetPrefix}dblp.svg`, className: "topbar-dblp" },
+      { href: "https://conf.researchr.org/profile/omarabedelkader", label: "Researchr", icon: "🔬" },
       { href: "https://scholar.google.com/citations?hl=fr&user=Wl01zhQAAAAJ", label: isFrench ? "Google Scholar" : "Google Scholar", icon: "🎓" }
     ];
 

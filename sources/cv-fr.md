@@ -45,6 +45,7 @@ Lille, France}{Dernière mise à jour : \today\\
 ## Services 
 
 ### 2027 
+- Membre du comité de suivi des artefacts à FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer à ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
 - Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
@@ -85,6 +86,12 @@ Lille, France}{Dernière mise à jour : \today\\
 
 ## Enseignement
 
+### 2027
+- Assistant d'enseignement à l'IUT : *Mise à jour du Logiciel* 12h Tutoriels IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
+- Assistante pédagogique à Polytech : *Base de données* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Assistante pédagogique à Polytech : *L'internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+
+### 2026
 - Assistant d'enseignement à l'IUT : *Introduction au développement de logiciels* 41,5 h Labos IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
 - Assistant d'enseignement à l'IUT : *Mise à jour du Logiciel* 12h Tutoriels IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
 - Assistante pédagogique à Polytech : *Base de données* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
@@ -149,7 +156,6 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 
 ## Langues
 
-- **Arabe :** Langue maternelle
 - **French:** Langue maternelle
 - **French:** B2
 

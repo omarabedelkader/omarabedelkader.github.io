@@ -45,6 +45,7 @@ Lille, France}{Updated: \today\\
 ## Services
 
 ### 2027 
+- Committee Member in Artifact Track at FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer at ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
 - Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
@@ -85,6 +86,12 @@ Lille, France}{Updated: \today\\
 
 ## Teaching
 
+### 2027
+- Teaching assistant at IUT : *Software Maintenance* 12h Tutorials IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
+- Teaching assistant at Polytech: *DataBase* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+- Teaching assistant at Polytech: *Internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+
+### 2026
 - Teaching assistant at IUT: *Introduction to Software Development* 41,5 h Labs IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
 - Teaching assistant at IUT : *Software Maintenance* 12h Tutorials IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
 - Teaching assistant at Polytech: *DataBase* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
@@ -149,7 +156,6 @@ I supervised Srajal the ChatPharo project, which aimed to integrate LLMs into th
 
 ## Languages
 
-- **Arabic:** Native
 - **French:** Native
 - **English:** B2
 
