@@ -10,7 +10,7 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 - Je suis un chercheur en IA avec une vaste expérience en intelligence artificielle et en génie logiciel.  
 - Je poursuis actuellement un doctorat en informatique au [l'Université de Lille](https://www.univ-lille.fr).
 - Je suis actuellement impliqué dans plusieurs initiatives open source, de recherche, d'IA et communautaires, où je contribue en tant que fondateur, responsable, chef de projet, président et membre actif. 
-- Vous pouvez voir la liste complète de mes responsabilités actuelles [ici](#actuel).
+- Vous pouvez voir la liste complète de mes responsabilités actuelles [ici](services.html).
 - Vous pouvez voir mon court CV [ici](cv-short/).
 
 

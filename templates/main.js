@@ -1049,7 +1049,7 @@
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
       //{ href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
       //{ href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
-      //{ href: "https://github.com/omarabedelkader", label: "GitHub", icon: "🐙" },
+      { href: "https://github.com/omarabedelkader", label: "GitHub", src: `${assetPrefix}github.svg`, className: "topbar-github" },
       //{ href: "https://ollama.com/omarabedelkader", label: "Ollama", icon: "🦙" },
       { href: "https://www.linkedin.com/in/omarabedelkader/", label: "LinkedIn", icon: "in", className: "topbar-linkedin" },
       { href: "https://orcid.org/0009-0005-1339-5683", label: "ORCID", src: `${assetPrefix}orcid.svg`, className: "topbar-orcid" },
@@ -1465,6 +1465,7 @@
         btn.append(title, snippet);
         btn.addEventListener("click", () => {
           setActive(item.index, { focus: false, highlightQuery: query });
+          showSectionAddress(item.index);
           results.classList.remove("is-open");
           // Scroll into view nicely
           sections[item.index].panel.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1548,7 +1549,8 @@
 
     // Initial active tab
     if (!activateHashTarget(window.location.hash, { updateHistory: false, scroll: Boolean(window.location.hash) })) {
-      setActive(0, { focus: false, highlightQuery: "" });
+      const initialIndex = Number.parseInt(main.dataset.initialSection || "0", 10);
+      setActive(Number.isInteger(initialIndex) ? initialIndex : 0, { focus: false, highlightQuery: "" });
     }
   });
 })();

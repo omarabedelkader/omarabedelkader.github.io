@@ -10,7 +10,7 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 - I am an AI researcher with extensive experience in artificial intelligence and software engineering.  
 - I am currently pursuing a Ph.D. in Computer Science at the [University of Lille](https://www.univ-lille.fr).
 - I am currently involved in several open-source, research, AI, and community initiatives, where I contribute as a founder, maintainer, project leader, president, and active member. 
-- You can see the full list of my current responsibilities [here](#current).
+- You can see the full list of my current responsibilities [here](services.html).
 - You can see my short CV [here](cv-short/).
 
 

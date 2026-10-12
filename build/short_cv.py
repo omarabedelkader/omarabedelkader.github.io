@@ -7,18 +7,15 @@ is kept from each section is decided by `RULES` below.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from pathlib import Path
 import re
 import unicodedata
-
-from publications import PUBLICATIONS_TOKEN, recent_publications_markdown
 
 H2_RE = re.compile(r"^##\s+(.+?)\s*$")
 H3_RE = re.compile(r"^###\s+")
 BULLET_RE = re.compile(r"^\s*[-+]\s+")
 HR_RE = re.compile(r"^\s*-{3,}\s*$")
 
-RECENT_PUBLICATIONS = 5
+PUBLICATIONS_URL = "https://www.omarabedelkader.com/publications.html"
 
 
 @dataclass(frozen=True)
@@ -123,7 +120,7 @@ def shorten_section(body: list[str], rule: Rule) -> list[str]:
     return result
 
 
-def shorten(markdown: str, bib_path: Path, reference: str | None = None) -> str:
+def shorten(markdown: str, reference: str | None = None, *, language: str = "en") -> str:
     """Build the short CV.
 
     `reference` is the English CV when `markdown` is a translation: the sections
@@ -137,13 +134,18 @@ def shorten(markdown: str, bib_path: Path, reference: str | None = None) -> str:
             raise ValueError("The translated CV does not have the same sections as the English CV")
         headings = reference_headings
 
-    recent = recent_publications_markdown(bib_path, RECENT_PUBLICATIONS)
     parts = ["\n".join(preamble).rstrip()]
     for (heading, body), rule_heading in zip(sections, headings):
         rule = rule_for(rule_heading)
         if rule is None:
             continue
-        lines = shorten_section(body, rule)
-        text = "\n".join(lines).replace(PUBLICATIONS_TOKEN, recent)
+        if section_slug(rule_heading) == "publications":
+            text = (
+                f"La liste de mes publications est disponible [ici]({PUBLICATIONS_URL})."
+                if language == "fr"
+                else f"The list of my publications can be seen [here]({PUBLICATIONS_URL})."
+            )
+        else:
+            text = "\n".join(shorten_section(body, rule))
         parts.append(f"## {heading}\n\n{text}".rstrip())
     return "\n\n".join(part for part in parts if part) + "\n"

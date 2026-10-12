@@ -347,6 +347,17 @@ button.topbar-btn {
   pointer-events: none;
 }
 
+/* Official GitHub mark from github.com/primer/octicons (MIT). */
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light) .topbar-github .topbar-logo {
+    filter: invert(1);
+  }
+}
+
+html.theme-dark .topbar-github .topbar-logo {
+  filter: invert(1);
+}
+
 .topbar-orcid .topbar-logo {
   width: 23px;
   height: 23px;
@@ -609,7 +620,7 @@ button.topbar-btn {
 .tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 4px;
 }
 
 .tab {
@@ -1086,7 +1097,7 @@ a.tab:hover {
 
   .tabs {
     flex-wrap: nowrap;
-    gap: 6px;
+    gap: 4px;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     padding-bottom: 2px;

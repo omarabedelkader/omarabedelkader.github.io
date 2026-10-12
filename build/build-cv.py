@@ -122,8 +122,8 @@ english_cv = cv_builds[0][0].read_text(encoding="utf-8")
 for input_md, _output_pdf, language in cv_builds:
     short_md = shorten(
         input_md.read_text(encoding="utf-8"),
-        resources / "publications.bib",
         reference=None if language == "en" else english_cv,
+        language=language,
     )
     short_source = short_cv_dir / f"short-cv-{language}.md"
     short_source.write_text(short_md, encoding="utf-8")

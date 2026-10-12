@@ -628,7 +628,7 @@ def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> list[P
     rendered_md = web_icon_links(rendered_md)
     rendered_md = mark_current_items(rendered_md)
 
-    preamble, sections = split_site_sections(rendered_md)
+    _preamble, sections = split_site_sections(rendered_md)
     titles = [title for title, _text in sections]
     page_names = section_page_names()
     if len(page_names) != len(titles):
@@ -647,22 +647,21 @@ def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> list[P
         {"data-section-pages": tab_urls},
     )
 
-    # One page per section, holding only that section, so each address has its own content.
+    # Every section URL loads the full site so tabs and search retain all content.
     written: list[Path] = []
-    for index, ((title, text), name) in enumerate(zip(sections, page_names)):
+    for index, ((title, _text), name) in enumerate(zip(sections, page_names)):
         if name is None:
             continue
         path = site_page_path(config["lang"], name)
         render_site_page(
-            f"{preamble}\n{text}\n",
+            rendered_md,
             config,
             path,
             f"{title} | Omar AbedelKader",
             f"{title} — {config['description']}",
             {
                 "data-section-pages": tab_urls,
-                "data-section-titles": json.dumps(titles, ensure_ascii=False),
-                "data-own-section": str(index),
+                "data-initial-section": str(index),
             },
         )
         written.append(path)
