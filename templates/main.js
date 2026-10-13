@@ -1045,7 +1045,6 @@
     const assetPrefix = isFrench ? "../assets/" : "assets/";
     const quickLinks = [
       { href: isFrench ? "../cv-full/cv-fr.pdf" : "cv-full/cv-en.pdf", label: isFrench ? "CV complet" : "Full CV", icon: "📄" },
-      { href: isFrench ? "../cv-short/short-cv-fr.pdf" : "cv-short/short-cv-en.pdf", label: isFrench ? "CV court" : "Short CV", icon: "📃", external: false },
       { href: "mailto:omar.abedelkader@inria.fr", label: isFrench ? "E-mail" : "Email", icon: "✉️" },
       //{ href: "https://omarabedelkader.github.io", label: isFrench ? "Site web" : "Website", icon: "🌐" },
       //{ href: "https://huggingface.co/omarabedelkader", label: "Hugging Face", icon: "🤗" },
