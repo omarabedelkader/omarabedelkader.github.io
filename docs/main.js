@@ -1465,6 +1465,7 @@
         btn.append(title, snippet);
         btn.addEventListener("click", () => {
           setActive(item.index, { focus: false, highlightQuery: query });
+          showSectionAddress(item.index);
           results.classList.remove("is-open");
           // Scroll into view nicely
           sections[item.index].panel.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -1548,7 +1549,8 @@
 
     // Initial active tab
     if (!activateHashTarget(window.location.hash, { updateHistory: false, scroll: Boolean(window.location.hash) })) {
-      setActive(0, { focus: false, highlightQuery: "" });
+      const initialIndex = Number.parseInt(main.dataset.initialSection || "0", 10);
+      setActive(Number.isInteger(initialIndex) ? initialIndex : 0, { focus: false, highlightQuery: "" });
     }
   });
 })();

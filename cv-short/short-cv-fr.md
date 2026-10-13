@@ -7,11 +7,11 @@ date: ""
 \cvheader{Omar AbedelKader}{Chercheur doctoral en informatique\\
 Inria - EVREF / Progress - LaBRI \\
 Université de Lille / Université de Bordeaux\\
-Lille, France}{Dernière mise à jour : \today\\
-\href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
-\href{https://omarabedelkader.com}{omarabedelkader.com}\\
-\href{https://github.com/omarabedelkader}{github.com/omarabedelkader}\\
-\href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
+\icon{\faMapMarker*}~Lille, France}{\icon{\faCalendar*}~Dernière mise à jour : \today\\
+\icon{\faEnvelope}~\href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
+\href{https://www.omarabedelkader.com}{\faGlobe~omarabedelkader.com}\\
+\icon{\faGithub}~\href{https://github.com/omarabedelkader}{github.com/omarabedelkader}\\
+\icon{\faOrcid}~\href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
 ```
 
 ## Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI4SE
@@ -23,15 +23,12 @@ Lille, France}{Dernière mise à jour : \today\\
 - Je poursuis actuellement un doctorat en informatique à l'Université de Lille [\icon{\faLink}](https://www.univ-lille.fr).
 
 ### Récompenses :
-- Prix du meilleur article (3e place) — IWST 2025, Gdańsk, Pologne  
-\cite{iwst1}
+- Prix du meilleur article (3e place) — IWST 2025, Gdańsk, Pologne
+- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France * [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ## Publications
 
-- Elkolei, M., AbedelKader, O., Ducasse, S., & Zaitsev (2026). Alternative UX Extensions and Their Trade-offs for Code Completion in Pharo. *International Workshop on Smalltalk Technologies (IWST)*. [DOI](https://doi.org/10.48550/arXiv.2607.24253).
-- AbedelKader, O., Ducasse, S., Zaitsev, O., Robbes, R., & Polito, G. (2026). Evaluating Package-Level Scoping Strategies for Repository-Level Code Completion in Pharo. *Journal of Computer Languages (COLA)*. [DOI](https://doi.org/10.1016/j.cola.2026.101412).
-- Kier, K., Giagnorio, A., Abedelkader, O., Zaitsev, O., Peharz, R., Robbes, R., Bavota, G., & Ducasse, S. (2026). Teaching LLMs a Low-Resource Language: Enhancing Code Completion in Pharo. *International Conference on Software Maintenance and Evolution (ICSME)*. [DOI](https://doi.org/10.48550/arXiv.2607.04939).
-- AbedelKader, O., Ducasse, S., Zaitsev, O., Robbes, R., & Polito, G. (2025). Package-Aware Approach for Repository-Level Code Completion in Pharo. *International Workshop on Smalltalk Technologies (IWST)*. [DOI](https://doi.org/10.48550/arXiv.2601.05617).
+La liste de mes publications est disponible [ici](https://www.omarabedelkader.com/publications.html).
 
 ## Services
 

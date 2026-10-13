@@ -7,11 +7,11 @@ date: ""
 \cvheader{Omar AbedelKader}{Doctoral Researcher in Computer Science\\
 Inria - EVREF / Progress - LaBRI \\
 University of Lille / UNiversity of Bordeaux\\
-Lille, France}{Updated: \today\\
-\href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
-\href{https://omarabedelkader.com}{omarabedelkader.com}\\
-\href{https://github.com/omarabedelkader}{github.com/omarabedelkader}\\
-\href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
+\icon{\faMapMarker*}~Lille, France}{\icon{\faCalendar*}~Updated: \today\\
+\icon{\faEnvelope}~\href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
+\href{https://www.omarabedelkader.com}{\faGlobe~omarabedelkader.com}\\
+\icon{\faGithub}~\href{https://github.com/omarabedelkader}{github.com/omarabedelkader}\\
+\icon{\faOrcid}~\href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
 ```
 
 ## Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
@@ -19,19 +19,17 @@ Lille, France}{Updated: \today\\
 ## About Me
 
 ### Biography:
-- I am an AI researcher with extensive experience in artificial intelligence and software engineering.  
+- I am an AI researcher with extensive experience in artificial intelligence and software engineering.
 - I am currently pursuing a Ph.D. in Computer Science at the University of Lille [\icon{\faLink}](https://www.univ-lille.fr).
 - I am currently involved in several open-source, research, AI, and community initiatives, where I contribute as a founder, maintainer, project leader, president, and active member. 
 - You can see the full list of my current responsibilities **[here](#current)**.
 
 
 ### Awards:
-- Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland  
-AbedelKader, O., Ducasse, S., Zaitsev, O., Robbes, R., & Polito, G. (2025). Package-Aware Approach for Repository-Level Code Completion in Pharo. *International Workshop on Smalltalk Technologies (IWST)*. [DOI](https://doi.org/10.48550/arXiv.2601.05617).
+- Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland
+- Alumni Testimonial — IDMC 2024, University of Lorraine, France * [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
-### Honors:
-- Alumni Testimonial — IDMC 2024, University of Lorraine, France  
-*"Alumni testimonial in NLP & AI in University of Lorraine"* [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+
 
 ---
 
