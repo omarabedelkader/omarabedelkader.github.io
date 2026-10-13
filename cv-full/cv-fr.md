@@ -4,12 +4,12 @@ date: ""
 ---
 
 ```{=latex}
-\cvheader{Omar AbedelKader}{Chercheur doctoral en informatique\\
-Inria - EVREF / Progress - LaBRI \\
+\cvheader{Omar AbedelKader}{Doctorat en science  informatique\\
+EVREF - Inria / Progress - LaBRI \\
 Université de Lille / Université de Bordeaux\\
 \icon{\faMapMarker*}~Lille, France}{\icon{\faCalendar*}~Dernière mise à jour : \today\\
 \icon{\faEnvelope}~\href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
-\href{https://www.omarabedelkader.com}{\faGlobe~omarabedelkader.com}\\
+\href{https://www.omarabedelkader.com}{\cvwebsiteicon~www.omarabedelkader.com}\\
 \icon{\faGithub}~\href{https://github.com/omarabedelkader}{github.com/omarabedelkader}\\
 \icon{\faOrcid}~\href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
 ```
@@ -156,19 +156,26 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 
 ## Expériences professionnelles
 
-- Doctorant - oct. 2024 - oct. 2027 - INRIA Lille / LaBRI Bordeaux
-- Chercheur invité - Sept.2026 - Déc.2026 - Polytechnique Montréal - Montréal, Canada
-- Ingénieur IA -  Sept. 2023 - Sept. 2024 - Institut national de l'environnement industriel et des risques (INERIS) - Verneuil-en-Halatte, France 
-- Stagiaire - Juin 2023 - Août 2023 - Laboratoire d'Informatique de Paris Nord (LIPN) - Villetaneuse, France
+- **Doctorante** · *Oct. 2024 - Oct. 2027*  
+  INRIA Lille / LaBRI Bordeaux
+- **Chercheur invité** · *Sept. 2026 - Déc. 2026*  
+  Polytechnique Montréal · Montréal, Canada
+- **Ingénieur IA** · *Sept. 2023 - Sept. 2024*  
+  Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France
+- **Stagiaire** · *Juin 2023 - Août 2023*  
+  Laboratoire d'Informatique de Paris Nord (LIPN) · Villetaneuse, France
 
 
 ---
 
-## éducation 
+## éducation
 
-- Doctorat en Informatique, Université de Lille
-- Maîtrise en traitement du langage naturel, Université de Lorraine
-- B.Sc. en science des données, Université libanaise
+- **Doctorat en informatique**  
+  l'Université de Lille
+- **M.Sc. en traitement du langage naturel**  
+  L'Université de Lorraine
+- **B.Sc. en science des données**  
+  Université Libanaise
 
 ---
 

@@ -4,12 +4,12 @@ date: ""
 ---
 
 ```{=latex}
-\cvheader{Omar AbedelKader}{Doctoral Researcher in Computer Science\\
-Inria - EVREF / Progress - LaBRI \\
-University of Lille / UNiversity of Bordeaux\\
+\cvheader{Omar AbedelKader}{PhD in Computer Science\\
+EVREF - Inria / Progress - LaBRI \\
+University of Lille / University of Bordeaux\\
 \icon{\faMapMarker*}~Lille, France}{\icon{\faCalendar*}~Updated: \today\\
 \icon{\faEnvelope}~\href{mailto:omar.abedelkader@inria.fr}{omar.abedelkader@inria.fr}\\
-\href{https://www.omarabedelkader.com}{\faGlobe~omarabedelkader.com}\\
+\href{https://www.omarabedelkader.com}{\cvwebsiteicon~www.omarabedelkader.com}\\
 \icon{\faGithub}~\href{https://github.com/omarabedelkader}{github.com/omarabedelkader}\\
 \icon{\faOrcid}~\href{https://orcid.org/0009-0005-1339-5683}{ORCID 0009-0005-1339-5683}}
 ```
@@ -59,16 +59,23 @@ The list of my publications can be seen [here](https://www.omarabedelkader.com/p
 
 ## Professional Experience
 
-- PhD Student - Oct. 2024 - Oct. 2027 - INRIA Lille / LaBRI Bordeaux
-- Invited Researcher - Sep.2026 - Dec.2026 - Polytechnique Montréal - Montréal, Canada
-- AI Engineer -  Sept. 2023 - Sept. 2024 - Institut national de l'environnement industriel et des risques (INERIS) - Verneuil-en-Halatte, France
-- Intern - June. 2023 - Aug. 2023 - Laboratoire d'Informatique de Paris Nord (LIPN) - Villetaneuse, France
+- **PhD Student** · *Oct. 2024 - Oct. 2027*  
+  INRIA Lille / LaBRI Bordeaux
+- **Invited Researcher** · *Sept. 2026 - Dec. 2026*  
+  Polytechnique Montréal · Montréal, Canada
+- **AI Engineer** · *Sept. 2023 - Sept. 2024*  
+  Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France
+- **Intern** · *June 2023 - Aug. 2023*  
+  Laboratoire d'Informatique de Paris Nord (LIPN) · Villetaneuse, France
 
 ## Education
 
-- Ph.D.in Computer Science, University of Lille
-- M.Sc. in Natural Language Processing, University of Lorraine
-- B.Sc. in Data Science, Lebanese University
+- **Ph.D. in Computer Science**  
+  University of Lille
+- **M.Sc. in Natural Language Processing**  
+  University of Lorraine
+- **B.Sc. in Data Science**  
+  Lebanese University
 
 ## Languages
 
