@@ -279,11 +279,15 @@ def rss_date(value: date) -> str:
 
 
 def html_url_path(html_path: Path) -> str:
+    # The host (Cloudflare) 308-redirects `page.html` to `page`, so public URLs
+    # must be extensionless or Google sees every canonical as a redirect.
     rel = html_path.relative_to(DOCS).as_posix()
     if rel == "index.html":
         return ""
     if rel.endswith("/index.html"):
         return rel[:-10]
+    if rel.endswith(".html"):
+        return rel[:-5]
     return rel
 
 

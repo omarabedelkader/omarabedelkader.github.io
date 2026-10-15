@@ -28,7 +28,7 @@ Université de Lille / Université de Bordeaux\\
 
 ## Publications
 
-La liste de mes publications est disponible [ici](https://www.omarabedelkader.com/publications.html).
+La liste de mes publications est disponible [ici](https://www.omarabedelkader.com/publications).
 
 ## Services
 

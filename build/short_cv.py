@@ -15,7 +15,7 @@ H3_RE = re.compile(r"^###\s+")
 BULLET_RE = re.compile(r"^\s*[-+]\s+")
 HR_RE = re.compile(r"^\s*-{3,}\s*$")
 
-PUBLICATIONS_URL = "https://www.omarabedelkader.com/publications.html"
+PUBLICATIONS_URL = "https://www.omarabedelkader.com/publications"
 
 
 @dataclass(frozen=True)

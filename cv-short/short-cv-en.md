@@ -28,7 +28,7 @@ University of Lille / University of Bordeaux\\
 
 ## Publications
 
-The list of my publications can be seen [here](https://www.omarabedelkader.com/publications.html).
+The list of my publications can be seen [here](https://www.omarabedelkader.com/publications).
 
 ## Services
 
