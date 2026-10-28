@@ -29,7 +29,9 @@
     "Service:2026:https://scilog2026.fr",
     "Service:2026:https://theneurotech.eu",
     "Service:2027:https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members",
+    "Service:2027:https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee",
     "Service:2027:https://cafeia.org",
+    "Service:2027:https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee",
     "Service:2027:https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee",
     "Service:2027:https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/",
     "Service:2027:https://github.com/pharo-ai",
@@ -73,6 +75,20 @@
       "first_seen": "2026-10-12",
       "status": "already-listed",
       "text": "Committee Member in Artifact Evaluation Committee Members within the Artifact Track-track",
+      "year": 2027
+    },
+    "Member of Committee|https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee": {
+      "conference": "Mining Software Repositories",
+      "first_seen": "2026-10-28",
+      "status": "added-to-services",
+      "text": "Committee Member in Technical Papers - Junior Program Committee within the Junior PC-track",
+      "year": 2027
+    },
+    "Member of Committee|https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee": {
+      "conference": "International Conference on Technical Debt",
+      "first_seen": "2026-10-28",
+      "status": "added-to-services",
+      "text": "Junior PC Member in Junior Program Committee within the Junior Program Committee-track",
       "year": 2027
     }
   },
