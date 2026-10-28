@@ -53,6 +53,15 @@ SCHOLAR_DETAIL_URL = (
 )
 RESEARCHR_PROFILE_URL = "https://conf.researchr.org/profile/omarabedelkader"
 
+# researchr gives full conference names; the site uses the usual short ones.
+CONFERENCE_SHORT_NAMES = {
+    "Mining Software Repositories": "MSR",
+    "International Conference on Technical Debt": "TechDebt",
+    "International Conference on Software Engineering": "ICSE",
+    "International Conference on Software Maintenance and Evolution": "ICSME",
+}
+PC_RE = re.compile(r"\bPC\b|program committee", re.IGNORECASE)
+
 # How the site owner is written in the .bib file, whatever the remote spelling.
 OWNER_ASCII_NAME = "omar abedelkader"
 OWNER_BIB_NAME = "AbedelKader, Omar"
@@ -268,7 +277,8 @@ class ResearchrItem:
 
     @property
     def edition(self) -> str:
-        return f"{self.conference}'{self.year % 100:02d}"
+        name = CONFERENCE_SHORT_NAMES.get(self.conference, self.conference)
+        return f"{name}'{self.year % 100:02d}"
 
 
 def parse_researchr_profile(html: str) -> list[ResearchrItem]:
@@ -325,10 +335,24 @@ def parse_researchr_details(html: str) -> dict[str, str]:
     return details
 
 
+def service_description(item: ResearchrItem) -> str:
+    """Short wording such as "Committee Member in Artifact Track" or "Junior PC Member"."""
+    role, track = split_track(item.text)
+    # researchr repeats the committee name after "in": "Committee Member in Artifact Evaluation Committee Members".
+    role = role.split(" in ", 1)[0]
+    if PC_RE.search(role) or PC_RE.search(track):
+        if not PC_RE.search(role):
+            junior = "Junior " if "junior" in f"{role} {track}".lower() else ""
+            role = f"{junior}PC Member"
+        return role
+    if track and not track.lower().endswith("track"):
+        track = f"{track} Track"
+    return f"{role} in {track}" if track else role
+
+
 def service_bullets(item: ResearchrItem) -> tuple[str, str]:
     """Bullet for site.md (inline links) and for cv.md (icon links)."""
-    role, track = split_track(item.text)
-    description = f"{role}, {track}" if track and track.lower() not in role.lower() else role
+    description = service_description(item)
     site = f"- {description} at [{item.edition}]({item.href})" if item.href else f"- {description} at {item.edition}"
     cv = (
         f"- {description} at {item.edition} [\\icon{{\\faLink}}]({item.href})"

@@ -1,5 +1,5 @@
-- **2027** — Service: Junior PC Member in Junior Program Committee at [International Conference on Technical Debt'27](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
-- **2027** — Service: Committee Member in Technical Papers - Junior Program Committee, Junior PC at [Mining Software Repositories'27](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
+- **2027** — Service: Junior PC Member at [TechDebt'27](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
+- **2027** — Service: Junior PC Member at [MSR'27](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
 - **2027** — Service: Committee Member in Artifact Track at [FormaliSE'27](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - **2027** — Service: Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - **2027** — Service: Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') [Ministère de la Transition Écologique](https://www.ecologie.gouv.fr).

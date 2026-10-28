@@ -445,6 +445,7 @@ class MarkdownTranslator:
             "Mise à jour :": "Dernière mise à jour :",
             "Shadow Reviewer chez": "Réviseur fantôme à",
             "Réviseur fantôme chez": "Réviseur fantôme à",
+            "Membre junior PC chez": "Membre du PC junior à",
         }
         for source, target in replacements.items():
             text = text.replace(source, target)

@@ -43,8 +43,8 @@ University of Lille / University of Bordeaux\\
 ## Services
 
 ### 2027 
-- Junior PC Member in Junior Program Committee at International Conference on Technical Debt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
-- Committee Member in Technical Papers - Junior Program Committee, Junior PC at Mining Software Repositories'27 [\icon{\faLink}](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
+- Junior PC Member at TechDebt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
+- Junior PC Member at MSR'27 [\icon{\faLink}](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
 - Committee Member in Artifact Track at FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer at ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
