@@ -72,7 +72,8 @@ jobs:
           echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends \
-            texlive-xetex texlive-latex-recommended texlive-latex-extra texlive-fonts-extra \
+            texlive-xetex texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-fonts-extra \
             lmodern ttf-mscorefonts-installer
           sudo fc-cache -f
 
