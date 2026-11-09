@@ -45,7 +45,7 @@ University of Lille / University of Bordeaux\\
 ### 2027 
 - Junior PC Member at TechDebt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
 - Junior PC Member at MSR'27 [\icon{\faLink}](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
-- Committee Member in Artifact Track at FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
+- PC in Artifact Track at FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow PC Member at ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
 - Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).

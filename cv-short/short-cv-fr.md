@@ -35,7 +35,7 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 ### 2027 
 - Membre du PC junior à TechDebt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
 - Membre du PC junior à MSR'27 [\icon{\faLink}](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
-- Membre du comité de suivi des artefacts à FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
+- PC dans la piste des artefacts à FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 
 ## Enseignement
 
