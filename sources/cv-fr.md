@@ -46,7 +46,7 @@ Université de Lille / Université de Bordeaux\\
 - Membre du PC junior à TechDebt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
 - Membre du PC junior à MSR'27 [\icon{\faLink}](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
 - Membre du comité de suivi des artefacts à FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
-- Shadow Reviewer à ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
+- Membre Shadow PC à ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 - Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
 - Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
 - Responsable du site Web GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
