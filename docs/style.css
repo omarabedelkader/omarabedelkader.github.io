@@ -899,6 +899,224 @@ a.tab:hover {
   line-height: 1;
 }
 
+/* Services: one card, permanent services on the front, non-permanent on the back */
+.service-flip {
+  margin: 6px 0 12px;
+}
+
+.service-flip-switch {
+  display: inline-flex;
+  gap: 2px;
+  max-width: 100%;
+  margin-bottom: 12px;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+}
+
+.service-flip-option {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 5px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.1;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.service-flip-option:hover {
+  color: var(--text);
+}
+
+.service-flip-option:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 22%, transparent);
+}
+
+.service-flip-option[aria-pressed="true"] {
+  background: var(--brand);
+  color: var(--surface);
+}
+
+.service-flip-option-count {
+  min-width: 20px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, currentColor 14%, transparent);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.service-flip-card {
+  perspective: 1800px;
+}
+
+.service-flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1), height 300ms ease;
+}
+
+.service-flip[data-face="dated"] .service-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.service-face {
+  border: 1px solid color-mix(in srgb, var(--border) 82%, var(--brand));
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-2) 94%, var(--brand)),
+    var(--surface)
+  );
+  box-shadow: 0 8px 22px rgba(17, 24, 39, 0.04);
+  padding: 0 14px 12px;
+}
+
+.service-flip.is-ready .service-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.service-flip.is-ready .service-face-dated {
+  transform: rotateY(180deg);
+}
+
+.service-face[hidden] {
+  display: none !important;
+}
+
+.service-face-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  margin: 0 -14px 12px;
+  padding: 10px 10px 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-face-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.service-face-meta {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.service-face-flip {
+  appearance: none;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  border: 1px solid color-mix(in srgb, var(--brand) 35%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand) 10%, var(--surface));
+  color: var(--brand);
+  cursor: pointer;
+  transition: transform 200ms ease, background-color 160ms ease;
+}
+
+.service-face-flip:hover {
+  transform: rotate(180deg);
+  background: color-mix(in srgb, var(--brand) 16%, var(--surface));
+}
+
+.service-face-flip:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 22%, transparent);
+}
+
+/* Two arrows chasing each other: "turn over" */
+.service-face-flip-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(45deg);
+}
+
+.service-face-flip-icon::before,
+.service-face-flip-icon::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 3px solid transparent;
+}
+
+.service-face-flip-icon::before {
+  top: -4px;
+  right: -1px;
+  border-left-color: currentColor;
+  transform: rotate(-45deg);
+}
+
+.service-face-flip-icon::after {
+  bottom: -4px;
+  left: -1px;
+  border-right-color: currentColor;
+  transform: rotate(-45deg);
+}
+
+.service-permanent-group ul {
+  margin: 0;
+}
+
+.service-face-dated .publication-group:last-child {
+  margin-bottom: 0;
+}
+
+.service-flip.is-instant .service-flip-inner,
+.service-flip.is-instant .service-face-flip {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-flip-inner,
+  .service-flip-option,
+  .service-face-flip {
+    transition: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .service-flip-switch {
+    display: flex;
+    width: 100%;
+  }
+
+  .service-flip-option {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 5px 8px;
+  }
+}
+
 .publication-bulk-actions {
   display: inline-flex;
   align-items: center;

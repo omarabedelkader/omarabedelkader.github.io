@@ -33,7 +33,8 @@ RULES: dict[str, Rule] = {
     "interests": Rule(),
     "about-me": Rule(groups=2, bullets=2),
     "publications": Rule(),
-    "services": Rule(groups=1, bullets=3),
+    # The "Permanent" group (no year) first, then the latest year.
+    "services": Rule(groups=2, bullets=2),
     "teaching": Rule(groups=1, bullets=2),
     "software": Rule(bullets=1),
     "public-talks": Rule(groups=1, bullets=2),

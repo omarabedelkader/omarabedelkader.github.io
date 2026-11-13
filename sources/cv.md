@@ -42,42 +42,31 @@ University of Lille / University of Bordeaux\\
 
 ## Services
 
-### 2027 
+### Permanent
+- Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
+- Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
+- Website Maintainer GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Project Leader and Maintainer for multiples projects (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) and many more [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
+- Founder and Maintainer of the organization Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
+- Member in the organization Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
+
+### 2027
 - Junior PC Member at TechDebt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
 - Junior PC Member at MSR'27 [\icon{\faLink}](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
 - PC in Artifact Track at FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow PC Member at ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
-- Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
-- Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
-- Website Maintainer GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- Project Leader and Maintainer for multiples projects (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) and many more [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
-- Member in the organization Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
-- Founder and Maintainer of the organization Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
 
 ### 2026
 - Member of the organizing committee, GDR-SciLog’26 [\icon{\faLink}](https://scilog2026.fr).
 - Member of the organizing committee, ESUG’26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html).
-- Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
-- Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
 - President of Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu), a student association focused on AI and neuroscience.
-- Website Maintainer GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- Project Leader and Maintainer for multiples projects (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) and many more [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
-- Member in the organization Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
-- Founder and Maintainer of the organization Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
 
 ### 2025
 - Member of the organizing committee ESUG’25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)
 - Sub reviewer at BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io).
-- Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
-- Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
-- Project Leader and Maintainer for multiples projects (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) and many more [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
-- Member in the organization Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
-- Founder and Maintainer of the organization Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
 
 ### 2024
 - Member of the organizing committee ESUG’24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
-- Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
-- Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
 
 ### 2023
 - Volunteer First Aider in the French Red Cross

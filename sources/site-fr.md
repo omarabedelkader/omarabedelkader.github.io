@@ -41,43 +41,31 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 
 ## Services 
 
-### 2027 
+### Permanents
+- Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
+- Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Mainteneur de site Web [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Chef de projet et mainteneur pour de multiples projets ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et de nombreux [plus](https://github.com/orgs/pharo-llm/repositories)).
+- Fondateur et responsable de l’organisation [Pharo-LLM](https://github.com/pharo-llm).
+- Membre de l'organisation [Pharo-AI](https://github.com/pharo-ai).
+
+### 2027
 - Membre du PC junior à [TechDebt'27](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
 - Membre du PC junior à [MSR'27](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
 - Membre du comité de suivi des artefacts chez [FormaliSE'27](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer à [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
-- Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteursdelia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') [Ministère de la Transition Écologique](https://www.ecologie.gouv.fr).
-- Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
-- Mainteneur de site Web [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- Chef de projet et mainteneur pour de multiples projets ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et de nombreux [plus](https://github.com/orgs/pharo-llm/repositories)).
-- Responsable de l'organisation [Pharo-LLM](https://github.com/pharo-llm).
-- Membre de l'organisation [Pharo-AI](https://github.com/pharo-ai).
-
 
 ### 2026
-- Membre du comité organisateur
-- Membre du comité organisateur
-- Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
-- Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
+- Membre du comité organisateur, [GDR-SciLog’26](https://scilog2026.fr).
+- Membre du comité organisateur, [ESUG’26](https://esug.org/2026-Conference/announcement.html).
 - Président de [Synapse-NeuroTech-Lille](https://theneurotech.eu), une association étudiante axée sur l'IA et les neurosciences.
-- Mainteneur de site Web [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- Chef de projet et mainteneur pour de multiples projets ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et de nombreux [plus](https://github.com/orgs/pharo-llm/repositories)).
-- Responsable de l'organisation [Pharo-LLM](https://github.com/pharo-llm).
-- Membre de l'organisation [Pharo-AI](https://github.com/pharo-ai).
 
 ### 2025
-- Membre du comité organisateur
+- Membre du comité organisateur [ESUG’25](https://esug.org/2025-Conference/conf2025.html)
 - Sous-réviseur chez [BENEVOL'25](https://benevol2025.github.io).
-- Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
-- Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
-- Chef de projet et mainteneur pour de multiples projets ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) et de nombreux [plus](https://github.com/orgs/pharo-llm/repositories)).
-- Fondateur de l'organisation [Pharo-LLM](https://github.com/pharo-llm).
-- Membre de l'organisation [Pharo-AI](https://github.com/pharo-ai).
 
 ### 2024
-- Membre du comité organisateur
-- Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
-- Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
+- Membre du comité organisateur [ESUG’24](https://esug.org/2024-Conference/call2024.html).
 
 ---
 

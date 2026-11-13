@@ -133,6 +133,7 @@
       const groupText = `${toggle.textContent || ""} ${body.textContent || ""}`.toLowerCase();
       if (groupText.includes(q)) setPublicationGroupOpen(toggle, body, true);
     });
+    revealMatchingServiceFace(panel, query);
   }
 
   function enhanceProfileInterests(header) {
@@ -672,6 +673,27 @@
       const headingId = heading.id || `service-group-${index + 1}`;
       const contentId = `${headingId}-items`;
 
+      // A `###` group without a year ("Permanent") holds the ongoing services:
+      // it stays a plain list, shown on the front of the services flip card.
+      if (!/\b(?:19|20)\d{2}\b/.test(title)) {
+        const permanent = createEl("div", { class: "service-permanent-group", id: headingId });
+        permanent.dataset.title = title;
+        heading.parentNode.insertBefore(permanent, heading);
+        let node = heading.nextSibling;
+        heading.remove();
+        while (node && !isGroupBoundary(node)) {
+          const next = node.nextSibling;
+          permanent.append(node);
+          node = next;
+        }
+        permanent.querySelectorAll("li").forEach((item) => {
+          const marker = item.querySelector(".current-item-marker, .service-current-marker");
+          if (marker) marker.remove();
+          item.classList.add("service-item", "service-permanent-item");
+        });
+        return;
+      }
+
       const group = createEl("section", { class: "publication-group service-group" });
       const groupHeading = createEl("h3", { class: "publication-heading service-heading", id: headingId });
       const toggle = createEl("button", {
@@ -741,6 +763,7 @@
     });
 
     const serviceGroups = Array.from(panel.querySelectorAll(".service-group"));
+    const permanentGroups = Array.from(panel.querySelectorAll(".service-permanent-group"));
     addServiceCurrentFilter(panel, serviceGroups, isFrench);
     addGroupBulkToggle(
       panel,
@@ -750,6 +773,167 @@
         close: isFrench ? "Tout fermer" : "Collapse all services"
       }
     );
+    if (permanentGroups.length > 0) {
+      buildServiceFlipCard(panel, permanentGroups, serviceGroups, isFrench);
+    }
+  }
+
+  // Two faces of one card: the permanent services (no years) on the front,
+  // the non-permanent ones (grouped by year) on the back.
+  function buildServiceFlipCard(panel, permanentGroups, datedGroups, isFrench) {
+    const isBoundary = (node) => node.nodeType === 1 && node.tagName === "HR";
+    const first = Array.from(panel.children).find((element) => !isBoundary(element));
+    if (!first) return;
+
+    const countText = (count) => (count === 1 ? "1 service" : `${count} services`);
+    const permanentCount = permanentGroups.reduce((sum, group) => sum + group.querySelectorAll("li").length, 0);
+    const datedCount = datedGroups.reduce((sum, group) => sum + group.querySelectorAll("li").length, 0);
+    const faces = {
+      permanent: {
+        title: permanentGroups[0].dataset.title || (isFrench ? "Permanents" : "Permanent"),
+        count: permanentCount
+      },
+      dated: {
+        title: isFrench ? "Non permanents" : "Non-permanent",
+        count: datedCount
+      }
+    };
+
+    const flip = createEl("div", { class: "service-flip" });
+    flip.dataset.face = "permanent";
+    const switcher = createEl("div", {
+      class: "service-flip-switch",
+      role: "group",
+      "aria-label": isFrench ? "Type de services" : "Kind of services"
+    });
+    const card = createEl("div", { class: "service-flip-card" });
+    const inner = createEl("div", { class: "service-flip-inner" });
+
+    const buttons = {};
+    const faceEls = {};
+    Object.entries(faces).forEach(([key, face]) => {
+      const faceId = `service-face-${key}`;
+      const button = createEl("button", {
+        class: "service-flip-option",
+        type: "button",
+        "aria-controls": faceId,
+        "aria-pressed": key === "permanent" ? "true" : "false"
+      });
+      button.append(
+        createEl("span", { class: "service-flip-option-label", textContent: face.title }),
+        createEl("span", { class: "service-flip-option-count", textContent: String(face.count) })
+      );
+      switcher.append(button);
+      buttons[key] = button;
+
+      const faceEl = createEl("section", {
+        class: `service-face service-face-${key}`,
+        id: faceId,
+        "aria-label": face.title
+      });
+      faceEl.dataset.face = key;
+      const header = createEl("header", { class: "service-face-header" });
+      header.append(
+        createEl("span", { class: "service-face-title", textContent: face.title }),
+        createEl("span", { class: "service-face-meta", textContent: countText(face.count) })
+      );
+      const flipBack = createEl("button", {
+        class: "service-face-flip",
+        type: "button",
+        "aria-label": key === "permanent"
+          ? (isFrench ? "Retourner : services non permanents" : "Flip: non-permanent services")
+          : (isFrench ? "Retourner : services permanents" : "Flip: permanent services"),
+        title: isFrench ? "Retourner la carte" : "Flip the card"
+      });
+      flipBack.append(createEl("span", { class: "service-face-flip-icon", "aria-hidden": "true" }));
+      flipBack.addEventListener("click", () => show(key === "permanent" ? "dated" : "permanent"));
+      header.append(flipBack);
+      const body = createEl("div", { class: "service-face-body" });
+      faceEl.append(header, body);
+      faceEls[key] = { el: faceEl, body };
+      inner.append(faceEl);
+    });
+
+    panel.insertBefore(flip, first);
+    let node = flip.nextSibling;
+    while (node && !isBoundary(node)) {
+      const next = node.nextSibling;
+      const target = permanentGroups.includes(node) ? faceEls.permanent : faceEls.dated;
+      target.body.append(node);
+      node = next;
+    }
+    faceEls.dated.el.hidden = true;
+    if ("inert" in faceEls.dated.el) faceEls.dated.el.inert = true;
+
+    card.append(inner);
+    flip.append(switcher, card);
+
+    const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const activeFace = () => faceEls[flip.dataset.face].el;
+    const syncHeight = () => {
+      const height = activeFace().offsetHeight;
+      if (height > 0) inner.style.height = `${height}px`;
+    };
+
+    function show(key, options = {}) {
+      if (!faceEls[key] || flip.dataset.face === key) return;
+      const incoming = faceEls[key].el;
+      const outgoing = activeFace();
+      window.clearTimeout(flip.flipTimer);
+
+      incoming.hidden = false;
+      if ("inert" in incoming) incoming.inert = false;
+      if ("inert" in outgoing) outgoing.inert = true;
+      flip.dataset.face = key;
+      Object.entries(buttons).forEach(([name, button]) => {
+        button.setAttribute("aria-pressed", name === key ? "true" : "false");
+      });
+      syncHeight();
+
+      const instant = reducedMotion || options.animate === false;
+      flip.classList.toggle("is-instant", instant);
+      flip.flipTimer = window.setTimeout(() => {
+        if (flip.dataset.face !== key) return;
+        outgoing.hidden = true;
+        flip.classList.remove("is-instant");
+      }, instant ? 0 : 700);
+    }
+
+    Object.entries(buttons).forEach(([key, button]) => {
+      button.addEventListener("click", () => show(key));
+    });
+
+    if ("ResizeObserver" in window) {
+      const observer = new ResizeObserver(syncHeight);
+      observer.observe(faceEls.permanent.el);
+      observer.observe(faceEls.dated.el);
+    } else {
+      window.addEventListener("resize", syncHeight);
+    }
+    panel.addEventListener("groups-visibility-change", () => window.setTimeout(syncHeight, 210));
+
+    // Search and links can point into the hidden face: turn the card over first.
+    flip.showServiceFace = show;
+    flip.classList.add("is-ready");
+  }
+
+  function revealServiceFace(target, options = {}) {
+    const face = target?.closest?.(".service-face");
+    const flip = face?.closest(".service-flip");
+    if (face && flip && typeof flip.showServiceFace === "function") {
+      flip.showServiceFace(face.dataset.face, options);
+    }
+  }
+
+  function revealMatchingServiceFace(panel, query) {
+    const q = query.toLowerCase();
+    panel.querySelectorAll(".service-flip").forEach((flip) => {
+      const active = flip.querySelector(`.service-face[data-face="${flip.dataset.face}"]`);
+      if (active && (active.textContent || "").toLowerCase().includes(q)) return;
+      const other = Array.from(flip.querySelectorAll(".service-face"))
+        .find((face) => face !== active && (face.textContent || "").toLowerCase().includes(q));
+      if (other) revealServiceFace(other, { animate: false });
+    });
   }
 
   function enhanceStudentGroups(panel) {
@@ -1359,8 +1543,10 @@
         if (currentToggle && currentToggle.getAttribute("aria-checked") !== "true") {
           currentToggle.click();
         }
+        revealServiceFace(currentToggle, { animate: false });
       }
 
+      revealServiceFace(target, { animate: false });
       const group = target.closest(".publication-group, .service-group");
       const groupToggle = group?.querySelector(".publication-toggle");
       const groupBody = group?.querySelector(".publication-list");
