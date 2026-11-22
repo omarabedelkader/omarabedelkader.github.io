@@ -91,21 +91,27 @@ PROTECTED_TERMS = (
     "DeGatto",
     "EESMACF",
     "ESUG",
+    "Foutse Khomh",
     "EVREF",
     "FrameNet",
     "GDR-SciLog",
     "GitHub",
+    "Gumbel-Softmax",
     "Google Summer of Code",
     "Hugging Face",
     "ICSE",
     "ICSME",
     "IDMC",
     "INERIS",
+    "Isabelle Pradaud",
     "Inria",
     "IWST",
+    "Jorge Garcia Flores",
+    "Joseph Le Roux",
     "LaBRI",
     "LatexDo",
     "LinearSVC",
+    "Miguel Couceiro",
     "MiniLM",
     "Model Context Protocol",
     "ORCID",
@@ -116,6 +122,9 @@ PROTECTED_TERMS = (
     "Pharo-Infer",
     "Pharo-LLM",
     "Pharo-MCP",
+    "SWAT Lab",
+    "Synapse-Neurotech-ULille",
+    "Van-Hung Rayane",
     "PharoLLM",
     "Progress",
     "Qwen",
@@ -655,8 +664,14 @@ def previous_translations(output: Path, state: dict[str, list[str]]) -> dict[str
 
     output_lines = output.read_text(encoding="utf-8").split("\n")
     if len(output_lines) != len(fingerprints):
-        # Lines were added to or removed from the translated file, so it can no longer be aligned.
-        return {}
+        # Lines were added to or removed from the translated file by hand, so it can no
+        # longer be aligned with its source. Re-translating everything would silently
+        # discard every hand correction, so stop instead.
+        raise SystemExit(
+            f"{output}: has {len(output_lines)} lines but its last translation had "
+            f"{len(fingerprints)}. Add or remove lines only in the source file, then re-run; "
+            "edit existing lines of the translation in place."
+        )
 
     known: dict[str, deque[str]] = {}
     for fingerprint, line in zip(fingerprints, output_lines):

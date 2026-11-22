@@ -56,13 +56,13 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 
 ### 2026:
 - ESUG 2026 : ChatPharo : un assistant IA au sein de Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}]() [\icon{\faVideo}]()
-- ESUG 2026 : Pharo-LLM : Construire un écosystème LLM souverain à Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
+- ESUG 2026 : Pharo-LLM : construire un écosystème LLM souverain en Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
 
 ## Expériences professionnelles
 
 - **Doctorant** · *Oct. 2024 - Oct. 2027*  
   Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
-- **Chercheur invité** · *Sept. 2026 - Déc. 2026*  
+- **Stagiaire** · *Sept. 2026 - Déc. 2026*  
   Polytechnique Montréal · Montréal, Canada
 - **Ingénieur IA** · *Sept. 2023 - Sept. 2024*  
   Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France

@@ -52,11 +52,9 @@ def latex(text: str) -> str:
 
 def render_latex(rows: list[dict], language: str, short: bool) -> str:
     headings = labels(language)
-    headings[3] = "Heures" if language == "fr" else "Hours"
+    # Short header on one line, so the course column keeps the width.
+    headings[3] = "H. (EQTD)"
     cells = [rf"\textbf{{{latex(label)}}}" for label in headings]
-    cells[3] = rf"\shortstack[l]{{\textbf{{{headings[3]}}}\\\textbf{{(EQTD)}}}}"
-    if short:
-        cells[3] = rf"\textbf{{{headings[3]} (EQTD)}}"
     lines = [
         "```{=latex}", r"\begingroup" + (r"\footnotesize" if short else r"\small"),
         r"\setlength{\tabcolsep}{3pt}", r"\setlength{\aboverulesep}{1pt}",
@@ -81,7 +79,9 @@ def render_latex(rows: list[dict], language: str, short: bool) -> str:
             r"\multicolumn{3}{@{}l}{\textbf{" + total_label(language)
             + r"}} & \textbf{" + hours(total, language) + r"} & & & \\",
         ])
-    lines.extend([r"\bottomrule", r"\end{tabularx}\par", r"\endgroup", "```"])
+    # The full CV ends on the total row; the section separator follows the table.
+    closing = [r"\bottomrule", r"\end{tabularx}\par"] if short else [r"\end{tabularx}\par\vspace{0.6\baselineskip}"]
+    lines.extend(closing + [r"\endgroup", "```"])
     return "\n".join(lines)
 
 

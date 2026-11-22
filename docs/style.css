@@ -1038,6 +1038,15 @@ a.tab:hover {
   transition: transform 200ms ease, background-color 160ms ease;
 }
 
+/* The "expand all" button sits in the face header, just before the flip button. */
+.service-face-header .publication-bulk-actions {
+  margin-left: auto;
+}
+
+.service-face-header .publication-bulk-actions + .service-face-flip {
+  margin-left: 0;
+}
+
 .service-face-flip:hover {
   transform: rotate(180deg);
   background: color-mix(in srgb, var(--brand) 16%, var(--surface));

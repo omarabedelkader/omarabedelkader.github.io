@@ -62,7 +62,7 @@ The list of my publications can be seen [here](https://www.omarabedelkader.com/p
 
 - **PhD Student** · *Oct. 2024 - Oct. 2027*  
   Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
-- **Invited Researcher** · *Sept. 2026 - Dec. 2026*  
+- **Intern** · *Sept. 2026 - Dec. 2026*  
   Polytechnique Montréal · Montréal, Canada
 - **AI Engineer** · *Sept. 2023 - Sept. 2024*  
   Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France

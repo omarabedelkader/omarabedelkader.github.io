@@ -11,7 +11,6 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 - Je poursuis actuellement un doctorat en informatique à l'[Université de Lille](https://www.univ-lille.fr).
 - Je suis actuellement impliqué dans plusieurs initiatives open source, de recherche, d'IA et communautaires, où je contribue en tant que fondateur, responsable, chef de projet, président et membre actif. 
 - Vous pouvez voir la liste complète de mes responsabilités actuelles [ici](services.html).
-- Vous pouvez voir mon CV court [ici](cv-short/).
 
 
 ### Récompenses :
@@ -82,7 +81,7 @@ J'ai encadré Mehdi Elkolei dans son travail d'extension de Complishon, le moteu
 
 
 ### 2025
-- Srajal Dwivedi, stage Google Summer of Code, 3 mois, mai 2025 - juillet 2025 
+- Srajal Dwivedi, stage Google Summer of Code, 3 mois, mai 2025 - juillet 2025  
 J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM dans l'IDE Pharo. Il s'agissait d'un projet Google Summer of Code 2025. Srajal a amélioré l'interface utilisateur de ChatPharo et a mis en œuvre de nouvelles fonctionnalités pour faciliter l'interaction avec les LLM. Le projet a été bien accueilli par la communauté Pharo et a contribué à l'adoption de ChatPharo par les développeurs. Il s'agissait également de l'un des premiers projets à intégrer des LLM dans l'IDE Pharo.
 
 ---
@@ -91,11 +90,11 @@ J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM da
 
 ### 2026:
 - ESUG 2026 : ChatPharo : un assistant IA dans Pharo [📄]() [🎥]()
-- ESUG 2026 : Pharo-LLM : Construire un écosystème LLM souverain en Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
-- French Brain Awareness Week : AI and the brain : two ways of learning, what does that change for our daily lives ? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
+- ESUG 2026 : Pharo-LLM : construire un écosystème LLM souverain en Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
+- Semaine du Cerveau : L’IA et le cerveau : deux façons d’apprendre, qu’est-ce que cela change dans notre quotidien ? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 ### 2025:
-- ESUG 2025 : ChatPharo : Une architecture ouverte pour comprendre comment dialoguer en direct avec les LLM, Gdańsk, Pologne [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
-- GT GL : ChatPharo : Parler en direct aux LLM de Pharo, Lille, France
+- ESUG 2025 : ChatPharo : une architecture ouverte pour comprendre comment dialoguer en direct avec les LLM, Gdańsk, Pologne [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
+- GT GL : ChatPharo : parler en direct aux LLM depuis Pharo, Lille, France
 - Séminaire scientifique : LLM101-2, Lille, France
 - Séminaire scientifique : LLM101, Lille, France

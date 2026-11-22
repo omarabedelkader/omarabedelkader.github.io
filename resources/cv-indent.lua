@@ -24,6 +24,12 @@ function Pandoc(doc)
       -- Section separators belong to the page margin, not the last subsection.
       close_to(0)
       blocks:insert(block)
+    elseif block.t == "BulletList" and #levels > 0 and levels[#levels] <= 2 then
+      -- A list straight under a section title (no `###` group) steps in once more,
+      -- so every section shows the same staircase.
+      blocks:insert(pandoc.RawBlock("latex", "\\begin{cvindent}"))
+      blocks:insert(block)
+      blocks:insert(pandoc.RawBlock("latex", "\\end{cvindent}"))
     else
       blocks:insert(block)
     end

@@ -164,7 +164,12 @@ def _format_publication(entry: dict[str, str], language: str = "en", extras: boo
 
 
 def _format_inline_citation(entry: dict[str, str], language: str = "en") -> str:
-    # A citation inside a sentence stays short: the extra links are in the publication list.
+    # A citation inside a sentence is only a link: the full reference is in the publication list.
+    doi = entry.get("doi", "")
+    if doi:
+        return f"[DOI]({_link_target(doi)})"
+    if entry.get("url"):
+        return f"[Link]({_link_target(entry['url'])})"
     return _format_publication(entry, language, extras=False).removeprefix("- ")
 
 

@@ -96,6 +96,18 @@ class CVTranslationTests(unittest.TestCase):
             out = translator._translate_plain_text("Member of the organizing committee, [ESUG’25](https://esug.org).")
         self.assertIn("[ESUG’25](https://esug.org)", out)
 
+    def test_misaligned_translation_is_refused_not_overwritten(self):
+        source = self.directory / "cv.md"
+        output = self.directory / "cv-fr.md"
+        source.write_text("## Hobbies\n\nHello\n")
+        output.write_text("## Loisirs\n\nBonjour corrigé\n\n---\n")  # a line added by hand
+        state = {translation.state_key(output): [translation.line_fingerprint(line) for line in source.read_text().split("\n")]}
+        translation.TRANSLATION_STATE_FILE.write_text(json.dumps(state))
+        argv = ["translate-markdown.py", "--input", str(source), "--output", str(output), "--source", "en", "--target", "fr", "--quiet"]
+        with patch("sys.argv", argv), self.assertRaises(SystemExit):
+            translation.main()
+        self.assertIn("Bonjour corrigé", output.read_text())
+
     def test_other_languages_and_prose_are_not_rewritten(self):
         self.assertIsNone(translation.fixed_cv_translation("## Education", "en", "de"))
         self.assertIsNone(translation.fixed_cv_translation("Education is important.", "en", "fr"))

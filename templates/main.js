@@ -850,7 +850,7 @@
       header.append(flipBack);
       const body = createEl("div", { class: "service-face-body" });
       faceEl.append(header, body);
-      faceEls[key] = { el: faceEl, body };
+      faceEls[key] = { el: faceEl, body, header, flipBack };
       inner.append(faceEl);
     });
 
@@ -862,6 +862,15 @@
       target.body.append(node);
       node = next;
     }
+    // A toolbar that only holds the "expand all" button would take a whole empty
+    // row inside the card: put the button in the face header, next to the flip button.
+    Object.values(faceEls).forEach(({ body, header, flipBack }) => {
+      const toolbar = Array.from(body.children).find((child) => child.classList.contains("section-bulk-toolbar"));
+      const actions = toolbar && toolbar.querySelector(".publication-bulk-actions");
+      if (!actions) return;
+      header.insertBefore(actions, flipBack);
+      if (!toolbar.textContent.trim() && toolbar.children.length === 0) toolbar.remove();
+    });
     faceEls.dated.el.hidden = true;
     if ("inert" in faceEls.dated.el) faceEls.dated.el.inert = true;
 

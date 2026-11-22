@@ -59,23 +59,18 @@ Université de Lille / Université de Bordeaux\\
 ### 2026
 - Membre du comité d’organisation, GDR-SciLog’26 [\icon{\faLink}](https://scilog2026.fr).
 - Membre du comité d’organisation, ESUG’26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html).
-- Président de Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu), une association étudiante axée sur l'IA et les neurosciences.
 
 ### 2025
 - Membre du comité d’organisation, ESUG’25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)
 - Sous-relecteur à BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io).
-
-### 2024
-- Membre du comité d’organisation, ESUG’24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
-
-### 2023
-- Secouriste bénévole auprès de la Croix-Rouge française
 
 ---
 
 ## Enseignement
 
 {{TEACHING_FROM_DATA}}
+
+---
 
 ## Logiciels
 
@@ -101,7 +96,7 @@ J'ai encadré Mehdi Elkolei dans son travail d'extension de Complishon, le moteu
 
 
 ### 2025
-- Srajal Dwivedi, stage Google Summer of Code, 3 mois, mai 2025 - juillet 2025 
+- Srajal Dwivedi, stage Google Summer of Code, 3 mois, mai 2025 - juillet 2025  
 J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM dans l'IDE Pharo. Il s'agissait d'un projet Google Summer of Code 2025. Srajal a amélioré l'interface utilisateur de ChatPharo et a mis en œuvre de nouvelles fonctionnalités pour faciliter l'interaction avec les LLM. Le projet a été bien accueilli par la communauté Pharo et a contribué à l'adoption de ChatPharo par les développeurs. Il s'agissait également de l'un des premiers projets à intégrer des LLM dans l'IDE Pharo.
 
 ---
@@ -110,12 +105,12 @@ J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM da
 
 ### 2026:
 - ESUG 2026 : ChatPharo : un assistant IA au sein de Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}]() [\icon{\faVideo}]()
-- ESUG 2026 : Pharo-LLM : Construire un écosystème LLM souverain à Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
-- Semaine française du cerveau : L’IA et le cerveau : deux façons d’apprendre, qu’est-ce que cela change dans notre quotidien ? Lille, France [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
+- ESUG 2026 : Pharo-LLM : construire un écosystème LLM souverain en Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
+- Semaine du Cerveau : L’IA et le cerveau : deux façons d’apprendre, qu’est-ce que cela change dans notre quotidien ? Lille, France [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 ### 2025:
-- ESUG 2025 : ChatPharo : Une architecture ouverte pour comprendre comment dialoguer en direct avec les LLM, Gdańsk, Pologne [\icon{\faFilePdf}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://www.youtube.com/watch?v=_ur_RJORez0)
-- GT GL : ChatPharo : Parler en direct aux LLM de Pharo, Lille, France
+- ESUG 2025 : ChatPharo : une architecture ouverte pour comprendre comment dialoguer en direct avec les LLM, Gdańsk, Pologne [\icon{\faFilePdf}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://www.youtube.com/watch?v=_ur_RJORez0)
+- GT GL : ChatPharo : parler en direct aux LLM depuis Pharo, Lille, France
 - Séminaire scientifique : LLM101-2, Lille, France
 - Séminaire scientifique : LLM101, Lille, France
 
@@ -125,12 +120,21 @@ J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM da
 
 - **Doctorant** · *Oct. 2024 - Oct. 2027*  
   Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
-- **Chercheur invité** · *Sept. 2026 - Déc. 2026*  
+- **Stagiaire** · *Sept. 2026 - Déc. 2026*  
   Polytechnique Montréal · Montréal, Canada
+  - Recherche en IA pour le génie logiciel (AI4SE) au sein du laboratoire SWAT, dirigé par le Pr Foutse Khomh.
+  - Développement de solutions innovantes pour le génie logiciel au sein d'une équipe d'experts.
+  - Mise en œuvre de techniques de pointe telles que l'apprentissage profond et l'apprentissage par renforcement.
 - **Ingénieur IA** · *Sept. 2023 - Sept. 2024*  
   Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France
+  - Mémoire de master en alternance au Centre d'information et de veille scientifique (CIVS), sous la direction d'Isabelle Pradaud, Van-Hung Rayane et Miguel Couceiro.
+  - Développement d'INERIS-IA, une plateforme de fouille de textes basée sur Flask qui classe les documents selon les objectifs stratégiques de l'institut.
+  - Combinaison de l'annotation automatique et de la validation humaine pour constituer un corpus d'entraînement de qualité.
 - **Stagiaire** · *Juin 2023 - Août 2023*  
   Laboratoire d'Informatique de Paris Nord (LIPN) · Villetaneuse, France
+  - Recherche en traitement automatique des langues sur la génération d'histoires, sous la direction de Jorge Garcia Flores et Joseph Le Roux.
+  - Étude comparative de méthodes d'échantillonnage (estimateur de la fonction de score, Gumbel-Softmax, opérateurs de Stein).
+  - Prototype d'un VAE discret générant des récits littéraires à partir d'un plan latent.
 
 
 ---
@@ -146,11 +150,32 @@ J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM da
 
 ---
 
+## Bénévolat
+
+### 2027
+- Président de Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu) : gestion de l’association.
+
+### 2026
+- Président de Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu) : gestion de l’association, organisation des réunions et gestion des financements ; présentation lors de la Semaine du Cerveau.
+
+### 2025
+- Président de Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu) : gestion de l’association, ouverture d’un compte bancaire et constitution d’un effectif de 6 membres.
+
+### 2024
+- Président de Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu) : création de l’association.
+- Étudiant volontaire à ESUG’24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
+
+### 2023
+- Secouriste bénévole auprès de la Croix-Rouge française
+
+---
+
+
 ## Loisirs
 
 - **Activités nautiques :** Natation · Plongée
 - **Sports de plein air et d'aventure :** Randonnée · Ski · Parachutisme
-- **Activités créatives et artistiques :** Photo
+- **Activités créatives et artistiques :** Photographie
 - **Sports de précision :** Boxe · Bowling · Golf
 
 ---

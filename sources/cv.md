@@ -59,23 +59,18 @@ University of Lille / University of Bordeaux\\
 ### 2026
 - Member of the organizing committee, GDR-SciLog’26 [\icon{\faLink}](https://scilog2026.fr).
 - Member of the organizing committee, ESUG’26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html).
-- President of Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu), a student association focused on AI and neuroscience.
 
 ### 2025
 - Member of the organizing committee, ESUG’25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)
 - Sub-reviewer at BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io).
-
-### 2024
-- Member of the organizing committee, ESUG’24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
-
-### 2023
-- Volunteer First Aider with the French Red Cross
 
 ---
 
 ## Teaching
 
 {{TEACHING_FROM_DATA}}
+
+---
 
 ## Software
 
@@ -101,7 +96,7 @@ I supervised Mehdi Elkolei in his work on extending Complishon, Pharo’s contex
 
 
 ### 2025
-- Srajal Dwivedi, Google Summer of Code Internship, 3 months, May 2025 - July 2025 
+- Srajal Dwivedi, Google Summer of Code Internship, 3 months, May 2025 - July 2025  
 I supervised Srajal on the ChatPharo project, which aimed to integrate LLMs into the Pharo IDE. It was a Google Summer of Code 2025 project. Srajal improved ChatPharo's user interface and implemented new features to facilitate interaction with LLMs. The project was well-received by the Pharo community and contributed to the adoption of ChatPharo by developers. It was also one of the first projects to integrate LLMs into the Pharo IDE.
 
 ---
@@ -125,12 +120,21 @@ I supervised Srajal on the ChatPharo project, which aimed to integrate LLMs into
 
 - **PhD Student** · *Oct. 2024 - Oct. 2027*  
   Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
-- **Invited Researcher** · *Sept. 2026 - Dec. 2026*  
+- **Intern** · *Sept. 2026 - Dec. 2026*  
   Polytechnique Montréal · Montréal, Canada
+  - Research in AI for Software Engineering (AI4SE) within the SWAT Lab, headed by Prof. Foutse Khomh.
+  - Developing innovative solutions for software engineering within a team of experts.
+  - Applying state-of-the-art techniques such as deep learning and reinforcement learning.
 - **AI Engineer** · *Sept. 2023 - Sept. 2024*  
   Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France
+  - Work-study Master's thesis at the Scientific Information and Monitoring Centre (CIVS), supervised by Isabelle Pradaud, Van-Hung Rayane and Miguel Couceiro.
+  - Developed INERIS-IA, a Flask-based text-mining platform that classifies documents according to the institute's strategic goals.
+  - Combined automatic labelling with human validation to build a high-quality training corpus.
 - **Intern** · *June 2023 - Aug. 2023*  
   Laboratoire d'Informatique de Paris Nord (LIPN) · Villetaneuse, France
+  - Research in Natural Language Processing on story generation, supervised by Jorge Garcia Flores and Joseph Le Roux.
+  - Comparative study of sampling methods (score function estimator, Gumbel-Softmax, Stein operators).
+  - Built a prototype discrete VAE that generates literary narratives from a latent plan.
 
 
 ---
@@ -145,6 +149,27 @@ I supervised Srajal on the ChatPharo project, which aimed to integrate LLMs into
   Lebanese University · Beirut, Lebanon
 
 ---
+
+## Volunteering
+
+### 2027
+- President of Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu): managing the association.
+
+### 2026
+- President of Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu): managing the association, organising meetings and handling funding; gave a talk during French Brain Awareness Week.
+
+### 2025
+- President of Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu): managing the association, opening its bank account and growing it to 6 members.
+
+### 2024
+- President of Synapse-Neurotech-ULille [\icon{\faLink}](https://theneurotech.eu): founded the association.
+- Student Volunteer at ESUG’24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
+
+### 2023
+- Volunteer First Aider with the French Red Cross
+
+---
+
 
 ## Hobbies
 

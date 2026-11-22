@@ -11,7 +11,6 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 - I am currently pursuing a Ph.D. in Computer Science at the [University of Lille](https://www.univ-lille.fr).
 - I am currently involved in several open-source, research, AI, and community initiatives, where I contribute as a founder, maintainer, project leader, president, and active member. 
 - You can see the full list of my current responsibilities [here](services.html).
-- You can see my short CV [here](cv-short/).
 
 
 ### Awards:
@@ -82,7 +81,7 @@ I supervised Mehdi Elkolei in his work on extending Complishon, Pharo’s contex
 
 
 ### 2025
-- Srajal Dwivedi, Google Summer of Code Internship, 3 months, May 2025 - July 2025 
+- Srajal Dwivedi, Google Summer of Code Internship, 3 months, May 2025 - July 2025  
 I supervised Srajal on the ChatPharo project, which aimed to integrate LLMs into the Pharo IDE. It was a Google Summer of Code 2025 project. Srajal improved ChatPharo's user interface and implemented new features to facilitate interaction with LLMs. The project was well-received by the Pharo community and contributed to the adoption of ChatPharo by developers. It was also one of the first projects to integrate LLMs into the Pharo IDE.
 
 ---

@@ -86,9 +86,12 @@ def style_resume_entries(markdown: str) -> str:
     )
     entry_re = re.compile(
         r"^- \*\*(?P<role>.+?)\*\*(?: · \*(?P<dates>.+?)\*)?[ \t]*\n"
-        r"[ \t]+(?P<organization>[^\n]+)",
+        r"[ \t]+(?P<organization>[^\n]+)"
+        # Optional description bullets, indented under the entry.
+        r"(?P<details>(?:\n[ \t]+[-+][ \t]+[^\n]+)*)",
         re.MULTILINE,
     )
+    detail_re = re.compile(r"^[ \t]+[-+][ \t]+(.+)$", re.MULTILINE)
 
     def replace_entry(match: re.Match[str]) -> str:
         organization, _, location = match["organization"].partition(" · ")
@@ -96,6 +99,14 @@ def style_resume_entries(markdown: str) -> str:
         command = r"\cvexperience" + "".join(
             "{" + latex_escape(field.strip()) + "}" for field in fields
         )
+        items = detail_re.findall(match["details"])
+        if items:
+            # Keep the entry and its bullets on one page (about 110 characters per line).
+            lines_needed = 2 + sum(1 + len(item) // 110 for item in items)
+            command = rf"\needspace{{{lines_needed}\baselineskip}}" + "\n" + command
+            command += "\n\\begin{cvdetails}\n" + "\n".join(
+                "\\item " + latex_escape(item.strip()) for item in items
+            ) + "\n\\end{cvdetails}"
         return "\n```{=latex}\n" + command + "\n```\n"
 
     def replace_section(match: re.Match[str]) -> str:
@@ -104,7 +115,21 @@ def style_resume_entries(markdown: str) -> str:
     return section_re.sub(replace_section, markdown)
 
 
-def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
+SITE_URL = "https://www.omarabedelkader.com"
+
+
+def other_language_note(output_pdf: Path, language: str) -> str:
+    """A small closing line, written in the other language, linking to that version of the CV."""
+    if language == "en":
+        other_name, text = output_pdf.name.replace("-en.", "-fr."), "Ce CV est également disponible en français :"
+    else:
+        other_name, text = output_pdf.name.replace("-fr.", "-en."), "This CV is also available in English:"
+    url = f"{SITE_URL}/{output_pdf.parent.name}/{other_name}"
+    return "\n\n```{=latex}\n\\cvotherlanguage{" + latex_escape(text) + "}{" + url + "}\n```\n"
+
+
+def prepare_markdown(markdown: str, output_pdf: Path, language: str) -> str:
+    """The Markdown that Pandoc turns into the CV's LaTeX."""
     rendered_md = inject_publications(
         markdown,
         resources / "publications.bib",
@@ -115,6 +140,11 @@ def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
     rendered_md = style_doi_links(rendered_md)
     rendered_md = inject_teaching(rendered_md, language, output="latex")
     rendered_md = style_resume_entries(rendered_md)
+    return rendered_md.rstrip() + other_language_note(output_pdf, language)
+
+
+def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
+    rendered_md = prepare_markdown(markdown, output_pdf, language)
 
     pypandoc.convert_text(
         rendered_md,

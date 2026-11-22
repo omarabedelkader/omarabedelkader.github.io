@@ -80,6 +80,44 @@
   \endgroup
 }
 
+\usepackage{needspace}
+
+% Description bullets under an experience entry: indented past the entry's
+% text, with a little air between bullets and before the next entry.
+\newenvironment{cvdetails}{%
+  \begin{itemize}[leftmargin=2.6em, labelsep=0.5em, topsep=2pt, itemsep=2pt, parsep=0pt, partopsep=0pt]
+  \small
+}{%
+  \end{itemize}\vspace{3pt}
+}
+
+% French typography would replace the list bullets with long dashes; keep the
+% same round bullets as the English CV.
+\ifdefined\frenchsetup
+  \frenchsetup{StandardLists=true}
+\fi
+
+% Closing line: the link to the CV in the other language, small and gray, in the
+% footer of the last page (so it never pushes the CV onto an extra page).
+\usepackage{fancyhdr}
+% The page style is defined once, globally; \cvotherlanguage only stores the
+% text (globally too), so it also works inside a section's indentation group.
+\newcommand{\cvotherlanguagetext}{}
+\newcommand{\cvotherlanguageurl}{}
+\fancypagestyle{cvlastpage}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+  \fancyfoot[C]{\footnotesize\color{cvgray}%
+    \ifdefined\NoAutoSpacing\NoAutoSpacing\fi
+    \cvotherlanguagetext~\href{\cvotherlanguageurl}{\textcolor{cvgray}{\nolinkurl{\cvotherlanguageurl}}}}%
+}
+\newcommand{\cvotherlanguage}[2]{%
+  \gdef\cvotherlanguagetext{#1}%
+  \gdef\cvotherlanguageurl{#2}%
+  \thispagestyle{cvlastpage}%
+}
+
 % ---------------------------------------------------------
 % Lists (tight academic CV style)
 % ---------------------------------------------------------

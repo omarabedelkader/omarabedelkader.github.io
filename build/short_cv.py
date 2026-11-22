@@ -14,6 +14,7 @@ from teaching import TOKEN as TEACHING_TOKEN, SHORT_TOKEN as SHORT_TEACHING_TOKE
 H2_RE = re.compile(r"^##\s+(.+?)\s*$")
 H3_RE = re.compile(r"^###\s+")
 BULLET_RE = re.compile(r"^\s*[-+]\s+")
+NESTED_BULLET_RE = re.compile(r"^\s+[-+]\s+")
 HR_RE = re.compile(r"^\s*-{3,}\s*$")
 
 PUBLICATIONS_URL = "https://www.omarabedelkader.com/publications"
@@ -26,6 +27,7 @@ class Rule:
     groups: int | None = None  # `###` groups kept, counted from the top
     bullets: int | None = None  # bullets kept in each group
     first_line_only: bool = False  # drop the description lines under a bullet
+    nested: bool = True  # keep the indented sub-bullets under a bullet
 
 
 # Keyed by the slug of the English `##` heading. Sections not listed are left out.
@@ -39,7 +41,7 @@ RULES: dict[str, Rule] = {
     "teaching": Rule(),  # The shared teaching renderer selects the two latest entries.
     "software": Rule(bullets=1),
     "public-talks": Rule(groups=1, bullets=2),
-    "professional-experience": Rule(),
+    "professional-experience": Rule(nested=False),
     "education": Rule(),
     "languages": Rule(),
 }
@@ -80,6 +82,8 @@ def limit_bullets(lines: list[str], rule: Rule) -> list[str]:
     count = 0
     keeping = True
     for line in lines:
+        if not rule.nested and NESTED_BULLET_RE.match(line):
+            continue
         if BULLET_RE.match(line):
             count += 1
             keeping = rule.bullets is None or count <= rule.bullets
