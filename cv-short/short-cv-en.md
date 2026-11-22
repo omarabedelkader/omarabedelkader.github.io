@@ -34,7 +34,7 @@ The list of my publications can be seen [here](https://www.omarabedelkader.com/p
 
 ### Permanent
 - Contributor at Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
-- Member at Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
+- Member of Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
 
 ### 2027
 - Junior PC Member at TechDebt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
@@ -55,8 +55,8 @@ The list of my publications can be seen [here](https://www.omarabedelkader.com/p
 ## Public Talks
 
 ### 2026:
-- ESUG 2026:  ChatPharo: an AI Assistant inside Pharo [\icon{\faFilePdf}]() [\icon{\faVideo}]()
-- ESUG 2026:  Pharo-LLM: Building a sovereign LLM ecosystem in Pharo [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
+- ESUG 2026: ChatPharo: an AI Assistant inside Pharo, Plovdiv, Bulgaria [\icon{\faFilePdf}]() [\icon{\faVideo}]()
+- ESUG 2026: Pharo-LLM: Building a sovereign LLM ecosystem in Pharo, Plovdiv, Bulgaria [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
 
 ## Professional Experience
 

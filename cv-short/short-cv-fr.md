@@ -4,7 +4,7 @@ date: ""
 ---
 
 ```{=latex}
-\cvheader{Omar AbedelKader}{Doctorat en science  informatique\\
+\cvheader{Omar AbedelKader}{Doctorat en informatique\\
 EVREF - Inria / Progress - LaBRI \\
 Université de Lille / Université de Bordeaux\\
 \icon{\faMapMarker*}~Lille, France}{\icon{\faCalendar*}~Dernière mise à jour : \today\\
@@ -16,15 +16,15 @@ Université de Lille / Université de Bordeaux\\
 
 ## Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 
-## A propos
+## À propos
 
-### Biographie:
+### Biographie :
 - Je suis un chercheur en IA avec une vaste expérience en intelligence artificielle et en génie logiciel.
 - Je poursuis actuellement un doctorat en informatique à l'Université de Lille [\icon{\faLink}](https://www.univ-lille.fr).
 
 ### Récompenses :
 - Prix du meilleur article (3e place) — IWST 2025, Gdańsk, Pologne
-- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Témoignage d'ancien élève — IDMC 2024, Université de Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ## Publications
 
@@ -50,17 +50,17 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 - Interface conversationnelle en direct entre les développeurs Pharo et les grands modèles de langage.
 
 ### INERIS-IA [\icon{\faGithub}](https://github.com/omarabedelkader/INERIS-IA)
-- Plateforme d'IA développée chez INERIS pour la classification des documents et la gestion des connaissances.
+- Plateforme d'IA développée à l'INERIS pour la classification de documents et la gestion des connaissances.
 
-## Causeries/ conférences publiques
+## Présentations publiques
 
 ### 2026:
-- ESUG 2026 : ChatPharo : un assistant IA à l'intérieur de Pharo [\icon{\faFilePdf}]() [\icon{\faVideo}]()
-- ESUG 2026 :  Pharo-LLM : Construire un écosystème LLM souverain dans Pharo [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
+- ESUG 2026 : ChatPharo : un assistant IA au sein de Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}]() [\icon{\faVideo}]()
+- ESUG 2026 : Pharo-LLM : Construire un écosystème LLM souverain à Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
 
 ## Expériences professionnelles
 
-- **Doctorante** · *Oct. 2024 - Oct. 2027*  
+- **Doctorant** · *Oct. 2024 - Oct. 2027*  
   Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
 - **Chercheur invité** · *Sept. 2026 - Déc. 2026*  
   Polytechnique Montréal · Montréal, Canada
@@ -73,12 +73,12 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 
 - **Doctorat en informatique** · *2024 - 2027*  
   Université de Lille · Villeneuve-d’Ascq, France
-- **Master en traitement du langage naturel** · *2022 - 2024*  
+- **Master de traitement automatique des langues** · *2022 - 2024*  
   Université de Lorraine · Nancy, France
 - **Licence en science des données** · *2019 - 2022*  
   Université Libanaise · Beyrouth, Liban
 
 ## Langues
 
-- **French:** Langue maternelle
-- **French:** B2
+- **Français :** Langue maternelle
+- **Anglais :** B2

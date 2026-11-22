@@ -46,26 +46,14 @@ MARKDOWN_EMPHASIS_RE = re.compile(
 )
 EMPHASIZED_NOT_RE = re.compile(r"(\*\*|__|\*|_)not\1", re.IGNORECASE)
 TOKEN_RE = re.compile(r"XQMDTOKEN\d+QX")
-# Editorial choices must win over provider wording and older cached translations.
-# Keep the parser-facing section titles stable for the PDF renderers as well.
-CV_FRENCH_TERMS = {
-    "Education": "Éducation",
-    "Hobbies": "Loisirs",
-    "Teaching": "Enseignement",
-    "Professional Experience": "Expériences professionnelles",
-    "Ph.D. in Computer Science": "Doctorat en informatique",
-    "Master in Natural Language Processing": "Master en traitement du langage naturel",
-    "Bachelor in Data Science": "Licence en science des données",
-    "University of Lille": "Université de Lille",
-    "University of Lorraine": "Université de Lorraine",
-    "Lebanese University": "Université Libanaise",
-    "University of Lille · Villeneuve-d’Ascq, France":
-        "Université de Lille · Villeneuve-d’Ascq, France",
-    "University of Lorraine · Nancy, France": "Université de Lorraine · Nancy, France",
-    "Lebanese University · Beirut, Lebanon": "Université Libanaise · Beyrouth, Liban",
-    "Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France":
-        "Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France",
-}
+# Fixed English -> French wording, kept in resources/translation-glossary.json.
+# These choices always win over the translation provider and older translations:
+# - a line, heading or bold label that is exactly a glossary term is replaced on
+#   every run, even when the line was translated before;
+# - a multi-word term inside a longer sentence is locked before translation, so
+#   the provider never sees (or rewrites) it.
+GLOSSARY_FILE = Path(__file__).resolve().parents[1] / "resources" / "translation-glossary.json"
+CV_FRENCH_TERMS: dict[str, str] = json.loads(GLOSSARY_FILE.read_text(encoding="utf-8"))
 
 
 def fixed_cv_translation(line: str, source: str, target: str) -> str | None:
@@ -78,7 +66,7 @@ def fixed_cv_translation(line: str, source: str, target: str) -> str | None:
     prefix, label, suffix = "", core, ""
     heading = re.fullmatch(r"(#{1,6}\s+)(.+)", core)
     degree = re.fullmatch(
-        r"([-+]\s+\*\*)([^*]+)(\*\*(?:\s*·\s*\*\d{4}\s*[-–]\s*\d{4}\*)?)", core
+        r"([-+]\s+\*\*)([^*]+)(\*\*(?:\s*·\s*\*[^*\n]+\*)?)", core
     )
     if heading:
         prefix, label = heading.groups()
@@ -416,11 +404,16 @@ class MarkdownTranslator:
             return self._translate_chunk(text)
 
         try:
-            return self._translate_chunk(text, attempts=1)
+            translated = self._translate_chunk(text, attempts=1)
+            # Providers sometimes drop a placeholder (and with it a link or a
+            # protected name); such a translation is unusable.
+            if sorted(TOKEN_RE.findall(translated)) == sorted(TOKEN_RE.findall(text)):
+                return translated
         except RuntimeError:
-            translated = self._translate_around_tokens(text)
-            self._remember_translation(text, translated)
-            return translated
+            pass
+        translated = self._translate_around_tokens(text)
+        self._remember_translation(text, translated)
+        return translated
 
     def _translate_around_tokens(self, text: str) -> str:
         translated: list[str] = []
@@ -467,6 +460,14 @@ class MarkdownTranslator:
 
     def _protect_terms(self, text: str, protector: Protector) -> str:
         protected = text
+        if (self.translator.source, self.target) == ("en", "fr"):
+            # Single words such as "Teaching" are only replaced as whole labels
+            # (see fixed_cv_translation); inside a sentence they need the provider.
+            terms = [term for term in CV_FRENCH_TERMS if " " in term]
+            for term in sorted(terms, key=len, reverse=True):
+                pattern = rf"(?<![A-Za-z0-9_-]){re.escape(term)}(?![A-Za-z0-9_-])"
+                french = CV_FRENCH_TERMS[term]
+                protected = re.sub(pattern, lambda match: protector.add(french), protected)
         for term in sorted(PROTECTED_TERMS, key=len, reverse=True):
             pattern = rf"(?<![A-Za-z0-9_-]){re.escape(term)}(?![A-Za-z0-9_-])"
             protected = re.sub(pattern, lambda match: protector.add(match.group(0)), protected)
@@ -490,6 +491,8 @@ class MarkdownTranslator:
         replacements = {
             "doctorat. en Informatique": "doctorat en informatique",
             "doctorat. en informatique": "doctorat en informatique",
+            # "PhD Student" must stay masculine in the French CV.
+            "Doctorante": "Doctorant",
             "Grands modèles linguistiques": "Grands modèles de langage",
             "Intelligence de code": "Intelligence du code",
             "Maintenance Logiciel": "Maintenance logicielle",

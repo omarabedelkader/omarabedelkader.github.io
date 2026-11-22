@@ -20,6 +20,8 @@ SOURCE = """## Education
 - **Bachelor in Data Science** · *2019 - 2022*  
   Lebanese University · Beirut, Lebanon
 
+- **PhD Student** · *Oct. 2024 - Oct. 2027*  
+
 ## Hobbies
 
 ## Teaching
@@ -56,8 +58,9 @@ class CVTranslationTests(unittest.TestCase):
         self.assertIn("## Enseignement", text)
         self.assertIn("## Expériences professionnelles", text)
         self.assertIn("- **Doctorat en informatique** · *2024 - 2027*  \n", text)
-        self.assertIn("- **Master en traitement du langage naturel** · *2022 - 2024*  \n", text)
+        self.assertIn("- **Master de traitement automatique des langues** · *2022 - 2024*  \n", text)
         self.assertIn("- **Licence en science des données** · *2019 - 2022*  \n", text)
+        self.assertIn("- **Doctorant** · *Oct. 2024 - Oct. 2027*  \n", text)
         self.assertIn("  Université de Lille · Villeneuve-d’Ascq, France\n", text)
         self.assertIn("  Université de Lorraine · Nancy, France\n", text)
         self.assertIn("  Université Libanaise · Beyrouth, Liban\n", text)
@@ -70,6 +73,28 @@ class CVTranslationTests(unittest.TestCase):
     def test_fresh_translation_preserves_wording_dates_and_tokens(self):
         translator = translation.MarkdownTranslator(source="en", target="fr")
         self.assert_cv(translator.translate_markdown(SOURCE))
+
+    def test_phd_student_is_masculine(self):
+        translator = translation.MarkdownTranslator(source="en", target="fr")
+        self.assertEqual(translator._postprocess_translation("**Doctorante**"), "**Doctorant**")
+
+    def test_glossary_terms_are_locked_inside_sentences(self):
+        translator = translation.MarkdownTranslator(source="en", target="fr")
+        seen = []
+        with patch.object(translator, "_translate_protected_text", side_effect=lambda text: seen.append(text) or text):
+            out = translator._translate_plain_text("I did a Master in Natural Language Processing at University of Lorraine.")
+        self.assertNotIn("Natural Language Processing", seen[0])
+        self.assertIn("Master de traitement automatique des langues", out)
+        self.assertIn("Université de Lorraine", out)
+
+    def test_dropped_link_placeholder_is_not_accepted(self):
+        translator = translation.MarkdownTranslator(source="en", target="fr")
+        def provider(text, attempts=3):
+            return "Membre du comité d’organisation," if "XQMDTOKEN" in text else "Membre du comité d’organisation, "
+        with patch.object(translator, "_translate_chunk", side_effect=provider), \
+                patch.object(translator, "_remember_translation"):
+            out = translator._translate_plain_text("Member of the organizing committee, [ESUG’25](https://esug.org).")
+        self.assertIn("[ESUG’25](https://esug.org)", out)
 
     def test_other_languages_and_prose_are_not_rewritten(self):
         self.assertIsNone(translation.fixed_cv_translation("## Education", "en", "de"))
@@ -95,7 +120,7 @@ class CVTranslationTests(unittest.TestCase):
             self.assertEqual(first, output.read_text())
             source.write_text(SOURCE.replace("2022 - 2024", "2022 - 2025"))
             self.assertEqual(translation.main(), 0)
-            self.assertIn("**Master en traitement du langage naturel** · *2022 - 2025*", output.read_text())
+            self.assertIn("**Master de traitement automatique des langues** · *2022 - 2025*", output.read_text())
 
 
 if __name__ == "__main__":

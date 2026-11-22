@@ -4,7 +4,7 @@ date: ""
 ---
 
 ```{=latex}
-\cvheader{Omar AbedelKader}{Doctorat en science  informatique\\
+\cvheader{Omar AbedelKader}{Doctorat en informatique\\
 EVREF - Inria / Progress - LaBRI \\
 Université de Lille / Université de Bordeaux\\
 \icon{\faMapMarker*}~Lille, France}{\icon{\faCalendar*}~Dernière mise à jour : \today\\
@@ -16,9 +16,9 @@ Université de Lille / Université de Bordeaux\\
 
 ## Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI4SE
 
-## A propos
+## À propos
 
-### Biographie:
+### Biographie :
 - Je suis un chercheur en IA avec une vaste expérience en intelligence artificielle et en génie logiciel.
 - Je poursuis actuellement un doctorat en informatique à l'Université de Lille [\icon{\faLink}](https://www.univ-lille.fr).
 - Je suis actuellement impliqué dans plusieurs initiatives open source, de recherche, d'IA et communautaires, où je contribue en tant que fondateur, responsable, chef de projet, président et membre actif. 
@@ -27,7 +27,7 @@ Université de Lille / Université de Bordeaux\\
 
 ### Récompenses :
 - Prix du meilleur article (3e place) — IWST 2025, Gdańsk, Pologne
-- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Témoignage d'ancien élève — IDMC 2024, Université de Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 
 
@@ -56,31 +56,31 @@ Université de Lille / Université de Bordeaux\\
 ### Permanent
 - Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
 - Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
-- Responsable du site Web GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- Chef de projet et mainteneur pour de multiples projets (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) et bien d'autres [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
-- Fondateur et responsable de l'organisation Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
+- Responsable du site web du GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Chef de projet et responsable de la maintenance de plusieurs projets (ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/chatpharo), Pharo-Infer [\icon{\faGithub}](https://github.com/pharo-llm/pharo-infer) et bien d'autres [\icon{\faGithub}](https://github.com/orgs/pharo-llm/repositories)).
+- Fondateur et responsable de l’organisation Pharo-LLM [\icon{\faGithub}](https://github.com/pharo-llm).
 - Membre de l'organisation Pharo-AI [\icon{\faGithub}](https://github.com/pharo-ai).
 
 ### 2027
 - Membre du PC junior à TechDebt'27 [\icon{\faLink}](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
 - Membre du PC junior à MSR'27 [\icon{\faLink}](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
-- PC dans la piste des artefacts à FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
-- Membre Shadow PC à ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
+- Membre du comité d'évaluation des artefacts à FormaliSE'27 [\icon{\faLink}](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
+- Membre du Shadow PC à ICSE'27 [\icon{\faLink}](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 
 ### 2026
-- Membre du comité organisateur, GDR-SciLog’26 [\icon{\faLink}](https://scilog2026.fr).
-- Membre du comité organisateur, ESUG’26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html).
+- Membre du comité d’organisation, GDR-SciLog’26 [\icon{\faLink}](https://scilog2026.fr).
+- Membre du comité d’organisation, ESUG’26 [\icon{\faLink}](https://esug.org/2026-Conference/announcement.html).
 - Président de Synapse-NeuroTech-Lille [\icon{\faLink}](https://theneurotech.eu), une association étudiante axée sur l'IA et les neurosciences.
 
 ### 2025
-- Membre du comité organisateur ESUG’25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)
-- Sous-réviseur à BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io).
+- Membre du comité d’organisation, ESUG’25 [\icon{\faLink}](https://esug.org/2025-Conference/conf2025.html)
+- Sous-relecteur à BENEVOL'25 [\icon{\faLink}](https://benevol2025.github.io).
 
 ### 2024
-- Membre du comité organisateur ESUG’24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
+- Membre du comité d’organisation, ESUG’24 [\icon{\faLink}](https://esug.org/2024-Conference/call2024.html).
 
 ### 2023
-- Bénévole secouriste à la Croix-Rouge française
+- Secouriste bénévole auprès de la Croix-Rouge française
 
 ---
 
@@ -107,36 +107,36 @@ Université de Lille / Université de Bordeaux\\
 - Conception d'une architecture ouverte et extensible pour expérimenter plusieurs backends LLM.
 
 ### INERIS-IA [\icon{\faGithub}](https://github.com/omarabedelkader/INERIS-IA)
-- Plateforme d'IA développée chez INERIS pour la classification des documents et la gestion des connaissances.
-- Construit une interface Web basée sur Flask intégrant plusieurs modèles ML et NLP.
-- Formé des modèles de classification de documents alignés sur les objectifs de la COP 2027 et les thèmes stratégiques INERIS.
-- Mise en œuvre de fonctionnalités supplémentaires, notamment la similitude des documents, l'extraction de mots clés et l'amélioration de la qualité du corpus.
+- Plateforme d'IA développée à l'INERIS pour la classification de documents et la gestion des connaissances.
+- Développement d'une interface web basée sur Flask intégrant plusieurs modèles de ML et de TAL.
+- Entraînement de modèles de classification de documents alignés sur les objectifs de la COP 2027 et les thèmes stratégiques de l'INERIS.
+- Mise en œuvre de fonctionnalités supplémentaires, notamment la similarité entre documents, l'extraction de mots-clés et l'amélioration de la qualité du corpus.
 
 ---
 
-## Etudiants
+## Étudiants
 
 
 ### 2026
-- Mehdi Elkolei, Bachelor Intership, 4 mois, avril 2026 - juillet 2026  
-J'ai supervisé Mehdi Elkolei dans son travail sur l'extension de Complishon, le moteur de complétion de code contextuel de Pharo. Son projet s'est concentré sur quatre extensions axées sur l'UX : la tolérance aux fautes de frappe, l'expansion implicite des préfixes, les entrées d'achèvement groupées et la correspondance des cas de chameau. J'ai guidé la direction technique et les choix de conception, avec une attention particulière à la convivialité, à la modularité et à l'intégration avec l'architecture existante. Elkolei, M., AbedelKader, O., Ducasse, S., & Zaitsev (2026). Alternative UX Extensions and Their Trade-offs for Code Completion in Pharo. *International Workshop on Smalltalk Technologies (IWST)*. [DOI](https://doi.org/10.48550/arXiv.2607.24253).
+- Mehdi Elkolei, stage de licence, 4 mois, avril 2026 - juillet 2026  
+J'ai encadré Mehdi Elkolei dans son travail d'extension de Complishon, le moteur de complétion de code contextuel de Pharo. Son projet portait sur quatre extensions axées sur l'expérience utilisateur : la tolérance aux fautes de frappe, l'expansion implicite des préfixes, le regroupement des propositions de complétion et la correspondance en camelCase. J’ai orienté l’approche technique et les choix de conception, en accordant une attention particulière à la convivialité, à la modularité et à l’intégration dans l’architecture existante. Elkolei, M., AbedelKader, O., Ducasse, S., & Zaitsev (2026). Alternative UX Extensions and Their Trade-offs for Code Completion in Pharo. *International Workshop on Smalltalk Technologies (IWST)*. [DOI](https://doi.org/10.48550/arXiv.2607.24253).
 
 
 ### 2025
-- Srajal Dwivedi, Google Summer of Code Intership, 3 mois, mai 2025 - juillet 2025 
-J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans l'IDE Pharo. C'était un projet Google Summer of Code 2025. Srajal a amélioré l'interface utilisateur de ChatPharo et mis en œuvre de nouvelles fonctionnalités pour faciliter l'interaction avec les LLM. Le projet a été bien accueilli par la communauté Pharo et a contribué à l'adoption de ChatPharo par les développeurs. Il a également été l'un des premiers projets à intégrer les LLM dans l'IDE Pharo.
+- Srajal Dwivedi, stage Google Summer of Code, 3 mois, mai 2025 - juillet 2025 
+J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM dans l'IDE Pharo. Il s'agissait d'un projet Google Summer of Code 2025. Srajal a amélioré l'interface utilisateur de ChatPharo et a mis en œuvre de nouvelles fonctionnalités pour faciliter l'interaction avec les LLM. Le projet a été bien accueilli par la communauté Pharo et a contribué à l'adoption de ChatPharo par les développeurs. Il s'agissait également de l'un des premiers projets à intégrer des LLM dans l'IDE Pharo.
 
 ---
 
-## Causeries/ conférences publiques
+## Présentations publiques
 
 ### 2026:
-- ESUG 2026 : ChatPharo : un assistant IA à l'intérieur de Pharo [\icon{\faFilePdf}]() [\icon{\faVideo}]()
-- ESUG 2026 :  Pharo-LLM : Construire un écosystème LLM souverain dans Pharo [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
-- French Brain Awareness Week : AI and the brain : two ways of learning, what does that change for our daily lives ? [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
+- ESUG 2026 : ChatPharo : un assistant IA au sein de Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}]() [\icon{\faVideo}]()
+- ESUG 2026 : Pharo-LLM : Construire un écosystème LLM souverain à Pharo, Plovdiv, Bulgarie [\icon{\faFilePdf}](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [\icon{\faVideo}]()
+- Semaine française du cerveau : L’IA et le cerveau : deux façons d’apprendre, qu’est-ce que cela change dans notre quotidien ? Lille, France [\icon{\faLink}](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 ### 2025:
-- ESUG 2025 : ChatPharo : Une architecture ouverte pour comprendre comment parler en direct aux LLM,  Gdansk, Pologne [\icon{\faFilePdf}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://www.youtube.com/watch?v=_ur_RJORez0)
+- ESUG 2025 : ChatPharo : Une architecture ouverte pour comprendre comment dialoguer en direct avec les LLM, Gdańsk, Pologne [\icon{\faFilePdf}](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [\icon{\faVideo}](https://www.youtube.com/watch?v=_ur_RJORez0)
 - GT GL : ChatPharo : Parler en direct aux LLM de Pharo, Lille, France
 - Séminaire scientifique : LLM101-2, Lille, France
 - Séminaire scientifique : LLM101, Lille, France
@@ -145,7 +145,7 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 
 ## Expériences professionnelles
 
-- **Doctorante** · *Oct. 2024 - Oct. 2027*  
+- **Doctorant** · *Oct. 2024 - Oct. 2027*  
   Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
 - **Chercheur invité** · *Sept. 2026 - Déc. 2026*  
   Polytechnique Montréal · Montréal, Canada
@@ -161,7 +161,7 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 
 - **Doctorat en informatique** · *2024 - 2027*  
   Université de Lille · Villeneuve-d’Ascq, France
-- **Master en traitement du langage naturel** · *2022 - 2024*  
+- **Master de traitement automatique des langues** · *2022 - 2024*  
   Université de Lorraine · Nancy, France
 - **Licence en science des données** · *2019 - 2022*  
   Université Libanaise · Beyrouth, Liban
@@ -170,7 +170,7 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 
 ## Loisirs
 
-- **Activités nautiques :** Natation / plongée
+- **Activités nautiques :** Natation · Plongée
 - **Sports de plein air et d'aventure :** Randonnée · Ski · Parachutisme
 - **Activités créatives et artistiques :** Photo
 - **Sports de précision :** Boxe · Bowling · Golf
@@ -180,7 +180,7 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 
 ## Langues
 
-- **French:** Langue maternelle
-- **French:** B2
+- **Français :** Langue maternelle
+- **Anglais :** B2
 
 ---

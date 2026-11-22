@@ -43,16 +43,16 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 ### Permanent
 - Contributor at [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
-- Member at [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
-- Website Maintainer [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
-- Project Leader and Maintainer for multiples projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
-- Founder and Maintainer of the organization [Pharo-LLM](https://github.com/pharo-llm).
-- Member in the organization [Pharo-AI](https://github.com/pharo-ai).
+- Member of [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
+- Website Maintainer for [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
+- Project Leader and Maintainer for multiple projects ([ChatPharo](https://github.com/pharo-llm/chatpharo), [Pharo-Infer](https://github.com/pharo-llm/pharo-infer) and many [more](https://github.com/orgs/pharo-llm/repositories)).
+- Founder and Maintainer of the [Pharo-LLM](https://github.com/pharo-llm) organization.
+- Member of the [Pharo-AI](https://github.com/pharo-ai) organization.
 
 ### 2027
 - Junior PC Member at [TechDebt'27](https://conf.researchr.org/committee/TechDebt-2027/TechDebt-2027-junior-program-committee-junior-program-committee)
 - Junior PC Member at [MSR'27](https://2027.msrconf.org/committee/msr-2027-junior-pc-technical-papers---junior-program-committee)
-- Committee Member in Artifact Track at [FormaliSE'27](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
+- Committee Member in the Artifact Track at [FormaliSE'27](https://2027.formalise.org/committee/Formalise-2027-artifact-track-artifact-evaluation-committee-members)
 - Shadow Reviewer at [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 
 ### 2026
@@ -61,11 +61,11 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 - President of [Synapse-NeuroTech-Lille](https://theneurotech.eu), a student association focused on AI and neuroscience.
 
 ### 2025
-- Member of the organizing committee [ESUG’25](https://esug.org/2025-Conference/conf2025.html)
-- Sub reviewer at [BENEVOL'25](https://benevol2025.github.io).
+- Member of the organizing committee, [ESUG’25](https://esug.org/2025-Conference/conf2025.html)
+- Sub-reviewer at [BENEVOL'25](https://benevol2025.github.io).
 
 ### 2024
-- Member of the organizing committee [ESUG’24](https://esug.org/2024-Conference/call2024.html).
+- Member of the organizing committee, [ESUG’24](https://esug.org/2024-Conference/call2024.html).
 
 ---
 
@@ -77,25 +77,25 @@ Interests: Artificial Intelligence · Software Engineering · LLMs · AI4SE
 
 
 ### 2026
-- Mehdi Elkolei, Bachelor Intership, 4 month, April 2026 - July 2026  
-I supervised Mehdi Elkolei on his work on extending Complishon, Pharo’s context-aware code completion engine. His project focused on four UX-oriented extensions: typo tolerance, implicit prefix expansion, grouped completion entries, and camel-case matching. I guided the technical direction and design choices, with particular attention to usability, modularity, and integration with the existing architecture. \cite{iwst2}
+- Mehdi Elkolei, Bachelor Internship, 4 months, April 2026 - July 2026  
+I supervised Mehdi Elkolei in his work on extending Complishon, Pharo’s context-aware code completion engine. His project focused on four UX-oriented extensions: typo tolerance, implicit prefix expansion, grouped completion entries, and camel-case matching. I guided the technical direction and design choices, with particular attention to usability, modularity, and integration with the existing architecture. \cite{iwst2}
 
 
 ### 2025
-- Srajal Dwivedi, Google Summer of Code Intership, 3 month, May 2025 - July 2025 
-I supervised Srajal the ChatPharo project, which aimed to integrate LLMs into the Pharo IDE. It was a Google Summer of Code 2025 project. Srajal improved ChatPharo's user interface and implemented new features to facilitate interaction with LLMs. The project was well-received by the Pharo community and contributed to the adoption of ChatPharo by developers. It was also one of the first projects to integrate LLMs into the Pharo IDE.
+- Srajal Dwivedi, Google Summer of Code Internship, 3 months, May 2025 - July 2025 
+I supervised Srajal on the ChatPharo project, which aimed to integrate LLMs into the Pharo IDE. It was a Google Summer of Code 2025 project. Srajal improved ChatPharo's user interface and implemented new features to facilitate interaction with LLMs. The project was well-received by the Pharo community and contributed to the adoption of ChatPharo by developers. It was also one of the first projects to integrate LLMs into the Pharo IDE.
 
 ---
 
 ## Public Talks
 
 ### 2026:
-- ESUG 2026:  ChatPharo: an AI Assistant inside Pharo [📄]() [🎥]()
-- ESUG 2026:  Pharo-LLM: Building a sovereign LLM ecosystem in Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
+- ESUG 2026: ChatPharo: an AI Assistant inside Pharo [📄]() [🎥]()
+- ESUG 2026: Pharo-LLM: Building a sovereign LLM ecosystem in Pharo [📄](https://archive.esug.org/ESUG2026/ESUG/2026-07-07-ESUG-Pharo-LLM.pdf) [🎥]()
 - French Brain Awareness Week: AI and the brain: two ways of learning, what does that change for our daily lives? [🔗](https://www.semaineducerveau.fr/manifestation/ateliers-conferences-et-expositions-a-linstitut-pasteur-de-lille-espace-1894/)
 
 ### 2025:
-- ESUG 2025: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs,  Gdansk, Poland [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
+- ESUG 2025: ChatPharo: An Open Architecture for Understanding How to Talk Live to LLMs, Gdańsk, Poland [📄](https://archive.esug.org/ESUG2025/day4/407-abed-chatpharo.pdf) [🎥](https://www.youtube.com/watch?v=_ur_RJORez0)
 - GT GL: ChatPharo: Talking Live to LLMs from Pharo, Lille, France
 - Scientific Seminar: LLM101-2, Lille, France
 - Scientific Seminar: LLM101, Lille, France
