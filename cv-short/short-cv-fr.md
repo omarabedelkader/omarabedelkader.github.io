@@ -24,7 +24,7 @@ Université de Lille / Université de Bordeaux\\
 
 ### Récompenses :
 - Prix du meilleur article (3e place) — IWST 2025, Gdańsk, Pologne
-- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France * [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ## Publications
 
@@ -32,7 +32,7 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 
 ## Services
 
-### Permanents
+### Permanent
 - Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
 - Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
 
@@ -42,9 +42,7 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 
 ## Enseignement
 
-### 2027
-- Assistant d'enseignement à l'IUT : *Mise à jour du Logiciel* 12h Tutoriels IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Assistante pédagogique à Polytech : *Base de données* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+{{TEACHING_SHORT_FROM_DATA}}
 
 ## Logiciels
 
@@ -63,7 +61,7 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 ## Expériences professionnelles
 
 - **Doctorante** · *Oct. 2024 - Oct. 2027*  
-  INRIA Lille / LaBRI Bordeaux
+  Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
 - **Chercheur invité** · *Sept. 2026 - Déc. 2026*  
   Polytechnique Montréal · Montréal, Canada
 - **Ingénieur IA** · *Sept. 2023 - Sept. 2024*  
@@ -71,14 +69,14 @@ La liste de mes publications est disponible [ici](https://www.omarabedelkader.co
 - **Stagiaire** · *Juin 2023 - Août 2023*  
   Laboratoire d'Informatique de Paris Nord (LIPN) · Villetaneuse, France
 
-## éducation
+## Éducation
 
-- **Doctorat en informatique**  
-  l'Université de Lille
-- **M.Sc. en traitement du langage naturel**  
-  L'Université de Lorraine
-- **B.Sc. en science des données**  
-  Université Libanaise
+- **Doctorat en informatique** · *2024 - 2027*  
+  Université de Lille · Villeneuve-d’Ascq, France
+- **Master en traitement du langage naturel** · *2022 - 2024*  
+  Université de Lorraine · Nancy, France
+- **Licence en science des données** · *2019 - 2022*  
+  Université Libanaise · Beyrouth, Liban
 
 ## Langues
 

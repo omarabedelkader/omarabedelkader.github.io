@@ -9,6 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import re
 import unicodedata
+from teaching import TOKEN as TEACHING_TOKEN, SHORT_TOKEN as SHORT_TEACHING_TOKEN
 
 H2_RE = re.compile(r"^##\s+(.+?)\s*$")
 H3_RE = re.compile(r"^###\s+")
@@ -35,7 +36,7 @@ RULES: dict[str, Rule] = {
     "publications": Rule(),
     # The "Permanent" group (no year) first, then the latest year.
     "services": Rule(groups=2, bullets=2),
-    "teaching": Rule(groups=1, bullets=2),
+    "teaching": Rule(),  # The shared teaching renderer selects the two latest entries.
     "software": Rule(bullets=1),
     "public-talks": Rule(groups=1, bullets=2),
     "professional-experience": Rule(),
@@ -146,6 +147,8 @@ def shorten(markdown: str, reference: str | None = None, *, language: str = "en"
                 if language == "fr"
                 else f"The list of my publications can be seen [here]({PUBLICATIONS_URL})."
             )
+        elif section_slug(rule_heading) == "teaching" and TEACHING_TOKEN in "\n".join(body):
+            text = SHORT_TEACHING_TOKEN
         else:
             text = "\n".join(shorten_section(body, rule))
         parts.append(f"## {heading}\n\n{text}".rstrip())

@@ -17,6 +17,7 @@ import yaml
 
 from last_updated import last_updated_label
 from publications import inject_publications
+from teaching import inject_teaching
 
 
 # ======================================================
@@ -627,6 +628,7 @@ def build_page(config: dict, posts_by_lang: dict[str, list[BlogPost]]) -> list[P
         config["lang"],
         include_selected=True,
     )
+    rendered_md = inject_teaching(rendered_md, config["lang"], output="html")
     rendered_md = inject_news(rendered_md, config["lang"])
     rendered_md = inject_blog_summary(rendered_md, config["lang"], posts_by_lang)
     rendered_md = web_icon_links(rendered_md)
@@ -721,6 +723,7 @@ def build_short_cv_pages() -> list[Path]:
             RESOURCES / "publications.bib",
             lang,
         )
+        markdown = inject_teaching(markdown, lang, output="html")
         convert_blog_markdown(
             markdown=markdown,
             html_path=html_path,

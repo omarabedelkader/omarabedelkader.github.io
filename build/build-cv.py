@@ -6,6 +6,7 @@ import pypandoc
 from last_updated import last_updated_label
 from publications import inject_publications
 from short_cv import shorten
+from teaching import inject_teaching
 
 BUILD_DIR = Path(__file__).resolve().parent
 ROOT = BUILD_DIR.parent  # ← project root
@@ -76,6 +77,33 @@ def style_doi_links(markdown: str) -> str:
     return DOI_LINK_RE.sub(r"[\\textcolor{cvblue}{DOI}](\1)", markdown)
 
 
+def style_resume_entries(markdown: str) -> str:
+    """Use the same institution-first layout for experience and education."""
+    section_re = re.compile(
+        r"(^## (?:Professional Experience|Expériences professionnelles|Education|Éducation))[ \t]*\n"
+        r"(.*?)(?=^## |\Z)",
+        re.MULTILINE | re.DOTALL,
+    )
+    entry_re = re.compile(
+        r"^- \*\*(?P<role>.+?)\*\*(?: · \*(?P<dates>.+?)\*)?[ \t]*\n"
+        r"[ \t]+(?P<organization>[^\n]+)",
+        re.MULTILINE,
+    )
+
+    def replace_entry(match: re.Match[str]) -> str:
+        organization, _, location = match["organization"].partition(" · ")
+        fields = [organization, match["dates"] or "", match["role"], location]
+        command = r"\cvexperience" + "".join(
+            "{" + latex_escape(field.strip()) + "}" for field in fields
+        )
+        return "\n```{=latex}\n" + command + "\n```\n"
+
+    def replace_section(match: re.Match[str]) -> str:
+        return match[1] + "\n" + entry_re.sub(replace_entry, match[2])
+
+    return section_re.sub(replace_section, markdown)
+
+
 def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
     rendered_md = inject_publications(
         markdown,
@@ -85,6 +113,8 @@ def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
     )
     rendered_md = style_interests_heading(rendered_md)
     rendered_md = style_doi_links(rendered_md)
+    rendered_md = inject_teaching(rendered_md, language, output="latex")
+    rendered_md = style_resume_entries(rendered_md)
 
     pypandoc.convert_text(
         rendered_md,
@@ -94,6 +124,7 @@ def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
         extra_args=[
             "--pdf-engine=xelatex",
             "--citeproc",
+            f"--lua-filter={resources / 'cv-indent.lua'}",
             f"--metadata=lang={'fr-FR' if language == 'fr' else 'en-US'}",
             f"--bibliography={resources / 'publications.bib'}",
             f"--csl={resources / 'apa.csl'}",
@@ -111,7 +142,10 @@ for input_md, output_pdf, language in cv_builds:
     render_pdf(markdown, output_pdf, language)
     # Readable copy next to the PDF, with the publication list filled in. Edit sources/, not this file.
     output_pdf.with_suffix(".md").write_text(
-        inject_publications(markdown, resources / "publications.bib", language, grouping="rank"),
+        inject_teaching(
+            inject_publications(markdown, resources / "publications.bib", language, grouping="rank"),
+            language, output="markdown",
+        ),
         encoding="utf-8",
     )
 

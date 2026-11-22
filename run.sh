@@ -40,6 +40,9 @@ echo "Preparing Python dependencies..."
 run_command python -m pip --disable-pip-version-check install -q --upgrade pip
 run_command python -m pip --disable-pip-version-check install -q -r "$REQUIREMENTS_FILE"
 
+echo "Checking CV translation rules..."
+run_command python -m unittest discover -s "$ROOT_DIR/tests" -p 'test_*.py'
+
 run_task() {
   local number="$1"
   local title="$2"

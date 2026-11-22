@@ -46,6 +46,52 @@ MARKDOWN_EMPHASIS_RE = re.compile(
 )
 EMPHASIZED_NOT_RE = re.compile(r"(\*\*|__|\*|_)not\1", re.IGNORECASE)
 TOKEN_RE = re.compile(r"XQMDTOKEN\d+QX")
+# Editorial choices must win over provider wording and older cached translations.
+# Keep the parser-facing section titles stable for the PDF renderers as well.
+CV_FRENCH_TERMS = {
+    "Education": "Éducation",
+    "Hobbies": "Loisirs",
+    "Teaching": "Enseignement",
+    "Professional Experience": "Expériences professionnelles",
+    "Ph.D. in Computer Science": "Doctorat en informatique",
+    "Master in Natural Language Processing": "Master en traitement du langage naturel",
+    "Bachelor in Data Science": "Licence en science des données",
+    "University of Lille": "Université de Lille",
+    "University of Lorraine": "Université de Lorraine",
+    "Lebanese University": "Université Libanaise",
+    "University of Lille · Villeneuve-d’Ascq, France":
+        "Université de Lille · Villeneuve-d’Ascq, France",
+    "University of Lorraine · Nancy, France": "Université de Lorraine · Nancy, France",
+    "Lebanese University · Beirut, Lebanon": "Université Libanaise · Beyrouth, Liban",
+    "Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France":
+        "Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France",
+}
+
+
+def fixed_cv_translation(line: str, source: str, target: str) -> str | None:
+    """Translate fixed CV labels while keeping Markdown, dates and whitespace."""
+    if (source, target) != ("en", "fr"):
+        return None
+    core = line.strip()
+    if re.fullmatch(r"\{\{[^{}]+\}\}", core):
+        return line
+    prefix, label, suffix = "", core, ""
+    heading = re.fullmatch(r"(#{1,6}\s+)(.+)", core)
+    degree = re.fullmatch(
+        r"([-+]\s+\*\*)([^*]+)(\*\*(?:\s*·\s*\*\d{4}\s*[-–]\s*\d{4}\*)?)", core
+    )
+    if heading:
+        prefix, label = heading.groups()
+    elif degree:
+        prefix, label, suffix = degree.groups()
+    replacement = CV_FRENCH_TERMS.get(label)
+    if replacement is None:
+        return None
+    leading = line[:len(line) - len(line.lstrip())]
+    trailing = line[len(line.rstrip()):]
+    return leading + prefix + replacement + suffix + trailing
+
+
 PROTECTED_TERMS = (
     "AbedelKader",
     "AI4SE",
@@ -254,6 +300,9 @@ class MarkdownTranslator:
         return "".join(translated)
 
     def _translate_markdown_line(self, line: str) -> str:
+        fixed = fixed_cv_translation(line, self.translator.source, self.target)
+        if fixed is not None:
+            return fixed
         if not line.strip() or HR_RE.fullmatch(line) or line in self.known_lines:
             return line
 
@@ -329,6 +378,9 @@ class MarkdownTranslator:
         return "".join(translated)
 
     def _translate_plain_text(self, text: str) -> str:
+        fixed = fixed_cv_translation(text, self.translator.source, self.target)
+        if fixed is not None:
+            return fixed
         if not re.search(r"[A-Za-z]", text):
             return text
 
@@ -630,9 +682,9 @@ def main() -> int:
         previous = known.get(line_fingerprint(source_line))
         if previous:
             # A source line repeated in the file keeps its translations in order.
-            output_lines.append(previous.popleft() if len(previous) > 1 else previous[0])
-        else:
-            output_lines.append(translated_line)
+            translated_line = previous.popleft() if len(previous) > 1 else previous[0]
+        fixed = fixed_cv_translation(source_line, args.source, args.target)
+        output_lines.append(fixed if fixed is not None else translated_line)
 
     args.output.write_text("\n".join(output_lines), encoding="utf-8")
     state[state_key(args.output)] = [line_fingerprint(line) for line in source_lines]

@@ -71,20 +71,7 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 
 ## Enseignement
 
-### 2027
-- Assistant d'enseignement à l'IUT : *Mise à jour du Logiciel* Tutoriels de 12h [IUT-Lille](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Assistante pédagogique à Polytech : *Base de données* 16h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Assistante pédagogique à Polytech : *L'internet* 12h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-
-
-### 2026
-- Assistant d'enseignement à l'IUT : *Introduction au développement de logiciels* 41,5 h Labs [IUT-Lille](https://moodle.univ-lille.fr/course/view.php?id=28289)
-- Assistant d'enseignement à l'IUT : *Mise à jour du Logiciel* Tutoriels de 12h [IUT-Lille](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Assistante pédagogique à Polytech : *Base de données* 16h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Assistante pédagogique à Polytech : *L'internet* 12h Labs [Polytech-Lille](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-
----
-
+{{TEACHING_FROM_DATA}}
 
 ## Etudiants
 

@@ -6,7 +6,8 @@
 % Engine & Font
 % ---------------------------------------------------------
 \usepackage{fontspec}
-\setmainfont{Times New Roman}
+% Same font family and weights as SWE_Resume_Template/resume.tex.
+\usepackage[default]{lato}
 
 % ---------------------------------------------------------
 % Micro-typography & Spacing
@@ -61,12 +62,51 @@
 \setlength{\columnsep}{16pt}
 \setlength{\columnseprule}{0pt}
 
+% Teaching table: flexible course column and light horizontal rules.
+\usepackage{tabularx}
+\usepackage{booktabs}
+
+% Template-style experience and education entries. Each heading stays on one page;
+% long institution names wrap without colliding with the right-aligned dates.
+\newcommand{\cvexperience}[4]{%
+  \par\addvspace{2pt}\noindent
+  \begingroup\small
+  \setlength{\tabcolsep}{4pt}%
+  \renewcommand{\arraystretch}{1}%
+  \begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}Xr@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4}
+  \end{tabularx}\par
+  \endgroup
+}
+
 % ---------------------------------------------------------
 % Lists (tight academic CV style)
 % ---------------------------------------------------------
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=1.3em, itemsep=0pt, parsep=0pt, topsep=2pt}
 \setlist[enumerate]{leftmargin=1.5em, itemsep=0pt, parsep=0pt, topsep=2pt}
+
+% Each heading's contents move one step to the right. The PDF-only Pandoc
+% filter nests these environments, so wrapped lines keep the same margin.
+\newlength{\cvindentstep}
+\setlength{\cvindentstep}{1.3em}
+\newenvironment{cvindent}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{\cvindentstep}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}%
+    \setlength{\parsep}{\parskip}%
+    \setlength{\itemsep}{0pt}%
+  }%
+  \item\relax
+  % The enclosing environment already supplies the content's indentation.
+  \setlist[itemize,1]{leftmargin=0pt}%
+  \setlist[enumerate,1]{leftmargin=0pt}%
+}{%
+  \end{list}%
+}
 
 % ---------------------------------------------------------
 % Section Formatting

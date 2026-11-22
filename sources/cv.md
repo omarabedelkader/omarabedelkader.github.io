@@ -27,7 +27,7 @@ University of Lille / University of Bordeaux\\
 
 ### Awards:
 - Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland
-- Alumni Testimonial — IDMC 2024, University of Lorraine, France * [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Alumni Testimonial — IDMC 2024, University of Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 
 
@@ -75,18 +75,7 @@ University of Lille / University of Bordeaux\\
 
 ## Teaching
 
-### 2027
-- Teaching assistant at IUT : *Software Maintenance* 12h Tutorials IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Teaching assistant at Polytech: *DataBase* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Teaching assistant at Polytech: *Internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-
-### 2026
-- Teaching assistant at IUT: *Introduction to Software Development* 41,5 h Labs IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
-- Teaching assistant at IUT : *Software Maintenance* 12h Tutorials IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Teaching assistant at Polytech: *DataBase* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Teaching assistant at Polytech: *Internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-
----
+{{TEACHING_FROM_DATA}}
 
 ## Software
 
@@ -94,14 +83,12 @@ University of Lille / University of Bordeaux\\
 - Live conversational interface between Pharo developers and large language models.
 - Enables interactive discussions with LLMs directly from the Pharo environment.
 - Designed an open and extensible architecture to experiment with multiple LLM backends.
-- GitHub Repository: ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/ChatPharo)
 
 ### INERIS-IA [\icon{\faGithub}](https://github.com/omarabedelkader/INERIS-IA)
 - AI platform developed at INERIS for document classification and knowledge management.
 - Built a Flask-based web interface integrating multiple ML and NLP models.
 - Trained document classification models aligned with COP 2027 objectives and INERIS strategic themes.
 - Implemented additional features including document similarity, keyword extraction, and corpus quality improvement.
-- GitHub Repository: INERIS-IA [\icon{\faGithub}](https://github.com/omarabedelkader/INERIS-IA)
 
 ---
 
@@ -137,7 +124,7 @@ I supervised Srajal the ChatPharo project, which aimed to integrate LLMs into th
 ## Professional Experience
 
 - **PhD Student** · *Oct. 2024 - Oct. 2027*  
-  INRIA Lille / LaBRI Bordeaux
+  Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
 - **Invited Researcher** · *Sept. 2026 - Dec. 2026*  
   Polytechnique Montréal · Montréal, Canada
 - **AI Engineer** · *Sept. 2023 - Sept. 2024*  
@@ -150,12 +137,12 @@ I supervised Srajal the ChatPharo project, which aimed to integrate LLMs into th
 
 ## Education
 
-- **Ph.D. in Computer Science**  
-  University of Lille
-- **M.Sc. in Natural Language Processing**  
-  University of Lorraine
-- **B.Sc. in Data Science**  
-  Lebanese University
+- **Ph.D. in Computer Science** · *2024 - 2027*  
+  University of Lille · Villeneuve-d’Ascq, France
+- **Master in Natural Language Processing** · *2022 - 2024*  
+  University of Lorraine · Nancy, France
+- **Bachelor in Data Science** · *2019 - 2022*  
+  Lebanese University · Beirut, Lebanon
 
 ---
 

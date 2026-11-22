@@ -27,7 +27,7 @@ Université de Lille / Université de Bordeaux\\
 
 ### Récompenses :
 - Prix du meilleur article (3e place) — IWST 2025, Gdańsk, Pologne
-- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France * [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Témoignage d'anciens élèves — IDMC 2024, Université de Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 
 
@@ -42,7 +42,7 @@ Université de Lille / Université de Bordeaux\\
 
 ## Services 
 
-### Permanents
+### Permanent
 - Contributeur à Café IA [\icon{\faLink}](https://cafeia.org) (Conseil National du Numérique [\icon{\faLink}](https://www.conseil-ia-numerique.fr)).
 - Membre du Club IA et Transition écologique [\icon{\faLink}](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') (Ministère de la Transition Écologique [\icon{\faLink}](https://www.ecologie.gouv.fr)).
 - Responsable du site Web GDR-SciLog [\icon{\faLink}](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
@@ -75,18 +75,7 @@ Université de Lille / Université de Bordeaux\\
 
 ## Enseignement
 
-### 2027
-- Assistant d'enseignement à l'IUT : *Mise à jour du Logiciel* 12h Tutoriels IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Assistante pédagogique à Polytech : *Base de données* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Assistante pédagogique à Polytech : *L'internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-
-### 2026
-- Assistant d'enseignement à l'IUT : *Introduction au développement de logiciels* 41,5 h Labos IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/view.php?id=28289)
-- Assistant d'enseignement à l'IUT : *Mise à jour du Logiciel* 12h Tutoriels IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Assistante pédagogique à Polytech : *Base de données* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-- Assistante pédagogique à Polytech : *L'internet* 12h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
-
----
+{{TEACHING_FROM_DATA}}
 
 ## Logiciels
 
@@ -94,14 +83,12 @@ Université de Lille / Université de Bordeaux\\
 - Interface conversationnelle en direct entre les développeurs Pharo et les grands modèles de langage.
 - Permet des discussions interactives avec les LLM directement à partir de l'environnement Pharo.
 - Conception d'une architecture ouverte et extensible pour expérimenter plusieurs backends LLM.
-- Référentiel GitHub : ChatPharo [\icon{\faGithub}](https://github.com/pharo-llm/ChatPharo)
 
 ### INERIS-IA [\icon{\faGithub}](https://github.com/omarabedelkader/INERIS-IA)
 - Plateforme d'IA développée chez INERIS pour la classification des documents et la gestion des connaissances.
 - Construit une interface Web basée sur Flask intégrant plusieurs modèles ML et NLP.
 - Formé des modèles de classification de documents alignés sur les objectifs de la COP 2027 et les thèmes stratégiques INERIS.
 - Mise en œuvre de fonctionnalités supplémentaires, notamment la similitude des documents, l'extraction de mots clés et l'amélioration de la qualité du corpus.
-- GitHub Référentiel : INERIS-IA [\icon{\faGithub}](https://github.com/omarabedelkader/INERIS-IA)
 
 ---
 
@@ -137,7 +124,7 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 ## Expériences professionnelles
 
 - **Doctorante** · *Oct. 2024 - Oct. 2027*  
-  INRIA Lille / LaBRI Bordeaux
+  Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
 - **Chercheur invité** · *Sept. 2026 - Déc. 2026*  
   Polytechnique Montréal · Montréal, Canada
 - **Ingénieur IA** · *Sept. 2023 - Sept. 2024*  
@@ -148,18 +135,18 @@ J'ai supervisé Srajal le projet ChatPharo, qui visait à intégrer les LLM dans
 
 ---
 
-## éducation
+## Éducation
 
-- **Doctorat en informatique**  
-  l'Université de Lille
-- **M.Sc. en traitement du langage naturel**  
-  L'Université de Lorraine
-- **B.Sc. en science des données**  
-  Université Libanaise
+- **Doctorat en informatique** · *2024 - 2027*  
+  Université de Lille · Villeneuve-d’Ascq, France
+- **Master en traitement du langage naturel** · *2022 - 2024*  
+  Université de Lorraine · Nancy, France
+- **Licence en science des données** · *2019 - 2022*  
+  Université Libanaise · Beyrouth, Liban
 
 ---
 
-## Les loisirs
+## Loisirs
 
 - **Activités nautiques :** Natation / plongée
 - **Sports de plein air et d'aventure :** Randonnée · Ski · Parachutisme

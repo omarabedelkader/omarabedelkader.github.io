@@ -24,7 +24,7 @@ University of Lille / University of Bordeaux\\
 
 ### Awards:
 - Best Paper Award (3rd place) — IWST 2025, Gdańsk, Poland
-- Alumni Testimonial — IDMC 2024, University of Lorraine, France * [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
+- Alumni Testimonial — IDMC 2024, University of Lorraine, France [\icon{\faLink}](https://idmc.univ-lorraine.fr/temoignage-alumni-master-tal-omar/)
 
 ## Publications
 
@@ -42,9 +42,7 @@ The list of my publications can be seen [here](https://www.omarabedelkader.com/p
 
 ## Teaching
 
-### 2027
-- Teaching assistant at IUT : *Software Maintenance* 12h Tutorials IUT-Lille [\icon{\faLink}](https://moodle.univ-lille.fr/course/info.php?id=43765)
-- Teaching assistant at Polytech: *DataBase* 16h Labs Polytech-Lille [\icon{\faLink}](https://www.polytech-lille.fr/formation/informatique-et-statistique/)
+{{TEACHING_SHORT_FROM_DATA}}
 
 ## Software
 
@@ -63,7 +61,7 @@ The list of my publications can be seen [here](https://www.omarabedelkader.com/p
 ## Professional Experience
 
 - **PhD Student** · *Oct. 2024 - Oct. 2027*  
-  INRIA Lille / LaBRI Bordeaux
+  Centre Inria de l’Université de Lille · Villeneuve-d’Ascq, France
 - **Invited Researcher** · *Sept. 2026 - Dec. 2026*  
   Polytechnique Montréal · Montréal, Canada
 - **AI Engineer** · *Sept. 2023 - Sept. 2024*  
@@ -73,12 +71,12 @@ The list of my publications can be seen [here](https://www.omarabedelkader.com/p
 
 ## Education
 
-- **Ph.D. in Computer Science**  
-  University of Lille
-- **M.Sc. in Natural Language Processing**  
-  University of Lorraine
-- **B.Sc. in Data Science**  
-  Lebanese University
+- **Ph.D. in Computer Science** · *2024 - 2027*  
+  University of Lille · Villeneuve-d’Ascq, France
+- **Master in Natural Language Processing** · *2022 - 2024*  
+  University of Lorraine · Nancy, France
+- **Bachelor in Data Science** · *2019 - 2022*  
+  Lebanese University · Beirut, Lebanon
 
 ## Languages
 
