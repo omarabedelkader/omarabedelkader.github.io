@@ -8,7 +8,7 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 
 ### Biographie:
 - Je suis un chercheur en IA avec une vaste expérience en intelligence artificielle et en génie logiciel.  
-- Je poursuis actuellement un doctorat en informatique au [l'Université de Lille](https://www.univ-lille.fr).
+- Je poursuis actuellement un doctorat en informatique au [Université de Lille](https://www.univ-lille.fr).
 - Je suis actuellement impliqué dans plusieurs initiatives open source, de recherche, d'IA et communautaires, où je contribue en tant que fondateur, responsable, chef de projet, président et membre actif. 
 - Vous pouvez voir la liste complète de mes responsabilités actuelles [ici](services.html).
 - Vous pouvez voir mon court CV [ici](cv-short/).
@@ -41,7 +41,7 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 
 ## Services 
 
-### Permanents
+### Permanent
 - Contributeur à [Café IA](https://cafeia.org) ([Conseil National du Numérique](https://www.conseil-ia-numerique.fr)).
 - Membre de [Club IA et Transition écologique](https://greentechinnovation.fr/les-acteurs-de-lia/#:~:text=Pour%20accélérer%20la%20transition%20écologique,%2Fstartups%2FPME%20et%20d') ([Ministère de la Transition Écologique](https://www.ecologie.gouv.fr)).
 - Mainteneur de site Web [GDR-SciLog](https://gdr-scilog.cnrs.fr/uncategorized/omar-abedelkader/)
@@ -56,16 +56,16 @@ Centres d'intérêt : Intelligence artificielle · Génie logiciel · LLM · AI
 - Shadow Reviewer à [ICSE'27](https://conf.researchr.org/track/icse-2027/icse-2027-shadow-research-track-program-committee)
 
 ### 2026
-- Membre du comité organisateur, [GDR-SciLog’26](https://scilog2026.fr).
-- Membre du comité organisateur, [ESUG’26](https://esug.org/2026-Conference/announcement.html).
+- Membre du comité organisateur
+- Membre du comité organisateur
 - Président de [Synapse-NeuroTech-Lille](https://theneurotech.eu), une association étudiante axée sur l'IA et les neurosciences.
 
 ### 2025
-- Membre du comité organisateur [ESUG’25](https://esug.org/2025-Conference/conf2025.html)
+- Membre du comité organisateur
 - Sous-réviseur chez [BENEVOL'25](https://benevol2025.github.io).
 
 ### 2024
-- Membre du comité organisateur [ESUG’24](https://esug.org/2024-Conference/call2024.html).
+- Membre du comité organisateur
 
 ---
 
