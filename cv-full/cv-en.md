@@ -147,6 +147,12 @@ I supervised Srajal on the ChatPharo project, which aimed to integrate LLMs into
   - Research in AI for Software Engineering (AI4SE) within the SWAT Lab, headed by Prof. Foutse Khomh.
   - Developing innovative solutions for software engineering within a team of experts.
   - Applying state-of-the-art techniques such as deep learning and reinforcement learning.
+- **Sessional Lecturer** · *2026 - 2027*  
+  Polytech Lille · Villeneuve-d’Ascq, France
+  - Labs in Internet and Advanced Databases (L3).
+- **Sessional Lecturer** · *2025 - 2027*  
+  IUT de Lille · Lille, France
+  - Lectures, tutorials, labs and projects in Application Maintenance, Introduction to Development and Implementing a Client Requirement (L1–L3).
 - **AI Engineer** · *Sept. 2023 - Sept. 2024*  
   Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France
   - Work-study Master's thesis at the Scientific Information and Monitoring Centre (CIVS), supervised by Isabelle Pradaud, Van-Hung Rayane and Miguel Couceiro.

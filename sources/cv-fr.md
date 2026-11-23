@@ -125,15 +125,21 @@ J'ai encadré Srajal sur le projet ChatPharo, qui visait à intégrer les LLM da
   - Recherche en IA pour le génie logiciel (AI4SE) au sein du laboratoire SWAT, dirigé par le Pr Foutse Khomh.
   - Développement de solutions innovantes pour le génie logiciel au sein d'une équipe d'experts.
   - Mise en œuvre de techniques de pointe telles que l'apprentissage profond et l'apprentissage par renforcement.
+- **Enseignant vacataire** · *2026 - 2027*  
+  Polytech Lille · Villeneuve-d’Ascq, France
+  - TP d’Internet et de Bases de données avancées (L3).
+- **Enseignant vacataire** · *2025 - 2027*  
+  IUT de Lille · Lille, France
+  - CM, TD, TP et projets : Maintenance applicative, Initiation au développement, Implémentation d’un besoin client (L1–L3).
 - **Ingénieur IA** · *Sept. 2023 - Sept. 2024*  
   Institut national de l'environnement industriel et des risques (INERIS) · Verneuil-en-Halatte, France
   - Mémoire de master en alternance au Centre d'information et de veille scientifique (CIVS), sous la direction d'Isabelle Pradaud, Van-Hung Rayane et Miguel Couceiro.
   - Développement d'INERIS-IA, une plateforme de fouille de textes basée sur Flask qui classe les documents selon les objectifs stratégiques de l'institut.
-  - Combinaison de l'annotation automatique et de la validation humaine pour constituer un corpus d'entraînement de qualité.
+  - Annotation automatique combinée à une validation humaine pour constituer un corpus d'entraînement de qualité.
 - **Stagiaire** · *Juin 2023 - Août 2023*  
   Laboratoire d'Informatique de Paris Nord (LIPN) · Villetaneuse, France
-  - Recherche en traitement automatique des langues sur la génération d'histoires, sous la direction de Jorge Garcia Flores et Joseph Le Roux.
-  - Étude comparative de méthodes d'échantillonnage (estimateur de la fonction de score, Gumbel-Softmax, opérateurs de Stein).
+  - Recherche en TAL sur la génération d'histoires, sous la direction de Jorge Garcia Flores et Joseph Le Roux.
+  - Étude comparative de méthodes d'échantillonnage (SFE, Gumbel-Softmax, opérateurs de Stein).
   - Prototype d'un VAE discret générant des récits littéraires à partir d'un plan latent.
 
 

@@ -140,7 +140,10 @@ def prepare_markdown(markdown: str, output_pdf: Path, language: str) -> str:
     rendered_md = style_doi_links(rendered_md)
     rendered_md = inject_teaching(rendered_md, language, output="latex")
     rendered_md = style_resume_entries(rendered_md)
-    return rendered_md.rstrip() + other_language_note(output_pdf, language)
+    # A separator after the last section has nothing to separate (and can push the
+    # closing line onto a page of its own).
+    rendered_md = re.sub(r"(?:\n\s*-{3,}\s*)+\s*\Z", "", rendered_md.rstrip())
+    return rendered_md + other_language_note(output_pdf, language)
 
 
 def render_pdf(markdown: str, output_pdf: Path, language: str) -> None:
