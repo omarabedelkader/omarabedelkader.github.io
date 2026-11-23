@@ -616,6 +616,64 @@ html.theme-dark .topbar-github .topbar-logo {
   color: var(--muted);
 }
 
+/* Tab bar row: the tabs, then the active section's controls on the right */
+.tabs-row {
+  display: flex;
+  /* If the tabs need two lines, the controls stay level with the first one. */
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.tabs-row .tabs {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.tab-tools {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.tab-tools:empty {
+  display: none;
+}
+
+.tab-tools-group[hidden] {
+  display: none !important;
+}
+
+.tab-tools .publication-filter,
+.tab-tools .section-bulk-toolbar {
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+.tab-tools .publication-bulk-actions {
+  margin-left: 0;
+}
+
+/* In the tab bar the switch speaks for itself ("Selected Publications"). */
+.tab-tools .publication-filter-label {
+  display: none;
+}
+
+@media (max-width: 680px) {
+  .tabs-row {
+    flex-wrap: wrap;
+  }
+
+  .tab-tools {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .tab-tools .publication-filter {
+    flex-wrap: wrap;
+  }
+}
+
 /* Tabs */
 .tabs {
   display: flex;

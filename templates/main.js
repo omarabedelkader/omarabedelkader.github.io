@@ -1312,7 +1312,12 @@
 
     const panels = createEl("div", { class: "panels" });
 
-    sticky.append(tabs);
+    // The tab bar row also holds the active section's own controls (filters,
+    // "expand all"), on the right, instead of a separate row inside the panel.
+    const tabRow = createEl("div", { class: "tabs-row" });
+    const tabTools = createEl("div", { class: "tab-tools" });
+    tabRow.append(tabs, tabTools);
+    sticky.append(tabRow);
     shell.append(header, sticky, panels);
 
     // --------- Move content before first H2 into header ----------
@@ -1401,9 +1406,21 @@
         enhanceTalkGroups(panel);
       }
 
+      // Move the panel's controls row (if any) up into the tab bar.
+      let tools = null;
+      const controls = Array.from(panel.children).find((child) =>
+        child.classList.contains("publication-filter") || child.classList.contains("section-bulk-toolbar"));
+      if (controls) {
+        tools = createEl("div", { class: "tab-tools-group" });
+        tools.dataset.panel = panelId;
+        tools.hidden = true;
+        tools.append(controls);
+        tabTools.append(tools);
+      }
+
       tabs.append(tabBtn);
       panels.append(panel);
-      sections.push({ title, key, tabBtn, panel });
+      sections.push({ title, key, tabBtn, panel, tools });
     });
 
     // Replace main content with shell
@@ -1494,6 +1511,7 @@
         s.tabBtn.setAttribute("aria-selected", active ? "true" : "false");
         s.tabBtn.tabIndex = active ? 0 : -1;
         s.panel.hidden = !active;
+        if (s.tools) s.tools.hidden = !active;
       });
 
       const activeSection = sections[safeIndex];
